@@ -6,7 +6,7 @@ Dependencies: DOMAIN_OVERVIEW.md
 Stage: Stage 2 — Business Capability Model
 -->
 
-# Business Capability Map — Happy Feet School ERP
+# Business Capability Model — Happy Feet School ERP
 
 **Stage:** 2 — Business Capability Model
 **Source:** PRODUCT_OVERVIEW_v2.md, DOMAIN_OVERVIEW.md
