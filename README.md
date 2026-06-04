@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains a structured domain intelligence system for designing and implementing a School ERP tailored to a privately owned preschool environment (Hyderabad, India).
+This repository contains a structured domain intelligence system for designing and implementing a School ERP tailored to a privately owned preschool environment (Happyfeet - Hyderabad, India).
 
 The work focuses on understanding the domain deeply to system design decisions.
 
