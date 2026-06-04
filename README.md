@@ -1,4 +1,4 @@
-# School ERP Domain Intelligence Repository
+# HappyFeet School ERP Domain Knowledge
 
 ## Overview
 
