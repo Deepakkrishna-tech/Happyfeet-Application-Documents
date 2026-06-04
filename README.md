@@ -2,7 +2,7 @@
 
 Welcome! This repository contains the complete documentation for the **HappyFeet School ERP** — covering how the school operates, what the system will do, and the rules it will follow.
 
-**Enterprise Resource Planning**: Is a type of software system that organizations use to manage and integrate the core parts of their business—such as finance, HR, manufacturing, supply chain, services, and procurement—all within a single, centralized platform.
+A School ERP (Enterprise Resource Planning) is a centralized, cloud-based software platform that integrates and automates a school's daily academic, administrative, financial, and communication operations into a single system.
 
 These documents are here for your review. Please read through them and flag anything that looks incorrect or incomplete.
 
