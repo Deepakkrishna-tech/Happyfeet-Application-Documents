@@ -3,6 +3,7 @@ docs_dir: docs
 theme:
   name: material
 nav:
+  - Home: index.md
   - Domain Overview: domain-overview.md
   - Business Capability Model: business-capability-model.md
   - Organization Model: organization-model.md
