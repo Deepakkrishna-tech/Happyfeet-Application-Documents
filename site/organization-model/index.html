@@ -1,0 +1,2646 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../business-capability-model/">
+      
+      
+        <link rel="next" href="../business-processes/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Organization Model - Happyfeet Application Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#organization-model-happy-feet-school-erp" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Happyfeet Application Docs" class="md-header__button md-logo" aria-label="Happyfeet Application Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Happyfeet Application Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Organization Model
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Happyfeet Application Docs" class="md-nav__button md-logo" aria-label="Happyfeet Application Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Happyfeet Application Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../domain-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Domain Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../business-capability-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Business Capability Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organization Model
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organization Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-organizational-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Organizational Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-role-profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Role Profiles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Role Profiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#admin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Admin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branch-admin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Branch Admin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coordinator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coordinator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#teacher" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Teacher
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accountant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accountant
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parent-guardian" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parent / Guardian
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-decision-authority-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Decision Authority Matrix
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-escalation-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Escalation Paths
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Escalation Paths">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-attendance-correction-escalation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Attendance Correction Escalation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-welfare-concern-escalation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Welfare Concern Escalation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-incident-report-escalation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Incident Report Escalation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-enrollment-escalation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Enrollment Escalation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-bonafide-certificate-escalation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 Bonafide Certificate Escalation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46-progress-card-return-escalation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6 Progress Card Return Escalation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#47-migration-mode-exit-escalation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.7 Migration Mode Exit Escalation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-approval-chains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Approval Chains
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Approval Chains">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-staff-onboarding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Staff Onboarding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-staff-exit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Staff Exit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-academic-year-setup-9-step-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Academic Year Setup (9-Step Sequence)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-cofee-import-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 CoFee Import Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-information-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Information Boundaries
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Information Boundaries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-student-data-access-by-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Student Data Access by Role
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-staff-data-access-by-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Staff Data Access by Role
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-communication-access-by-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Communication Access by Role
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-financial-data-boundaries-critical-distinctions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 Financial Data Boundaries — Critical Distinctions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-multi-branch-authority-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Multi-Branch Authority Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-key-organizational-tensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Key Organizational Tensions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../business-processes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Business Processes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../business-rules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Business Rules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../domain-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Domain Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../domain-glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Domain Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-organizational-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Organizational Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-role-profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Role Profiles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Role Profiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#admin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Admin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branch-admin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Branch Admin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coordinator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coordinator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#teacher" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Teacher
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accountant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accountant
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parent-guardian" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parent / Guardian
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-decision-authority-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Decision Authority Matrix
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-escalation-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Escalation Paths
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Escalation Paths">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-attendance-correction-escalation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Attendance Correction Escalation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-welfare-concern-escalation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Welfare Concern Escalation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-incident-report-escalation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Incident Report Escalation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-enrollment-escalation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Enrollment Escalation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-bonafide-certificate-escalation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 Bonafide Certificate Escalation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46-progress-card-return-escalation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6 Progress Card Return Escalation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#47-migration-mode-exit-escalation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.7 Migration Mode Exit Escalation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-approval-chains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Approval Chains
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Approval Chains">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-staff-onboarding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Staff Onboarding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-staff-exit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Staff Exit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-academic-year-setup-9-step-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Academic Year Setup (9-Step Sequence)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-cofee-import-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 CoFee Import Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-information-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Information Boundaries
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Information Boundaries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-student-data-access-by-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Student Data Access by Role
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-staff-data-access-by-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Staff Data Access by Role
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-communication-access-by-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Communication Access by Role
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-financial-data-boundaries-critical-distinctions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 Financial Data Boundaries — Critical Distinctions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-multi-branch-authority-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Multi-Branch Authority Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-key-organizational-tensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Key Organizational Tensions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<!-- ABOUT
+File: ORGANIZATION_MODEL.md
+Purpose: Documents who holds authority over what decisions, how that authority escalates, and what each role can and cannot see across Happy Feet's operations.
+Scope: 5 staff roles plus Parent (profiles, decision authority matrix, 7 escalation paths, 4 approval chains, information boundary tables, multi-branch authority model, 5 organizational tensions); excludes process workflows and capability definitions.
+Dependencies: DOMAIN_OVERVIEW.md, BUSINESS_CAPABILITY_MAP.md
+Stage: Stage 3 — Organizational Intelligence
+-->
+
+<h1 id="organization-model-happy-feet-school-erp">Organization Model — Happy Feet School ERP</h1>
+<blockquote>
+<p><strong>About This Document:</strong> This document defines every role in the Happy Feet school — their responsibilities, the decisions they can make, what information they can access, and how authority escalates when a decision exceeds their remit. It covers 5 staff roles plus the Parent role, seven escalation paths, four approval chains, and the information boundaries between roles. Read this if you are designing access control, approval workflows, or role-based features; you can skip it if you are focused purely on business processes or capability scope.</p>
+</blockquote>
+<p><strong>Stage:</strong> 3 — Organizational Intelligence</p>
+<hr />
+<h2 id="1-organizational-structure">1. Organizational Structure</h2>
+<pre><code>Admin(s) (School Owner)
+│
+├── Branch A
+│   ├── Branch Admin(s) (Principal)
+│   │   ├── Coordinator(s) (Front Desk)
+│   │   ├── Teacher(s) (Class-scoped)
+│   │   └── Accountant(s)
+│   └── [Parents — read-only, child-scoped, not staff]
+│
+└── Branch B (planned)
+    └── [Same structure once provisioned]
+</code></pre>
+<p><strong>Important structural notes:</strong>
+- A staff member holds exactly one role. No dual roles, no role combinations.
+- A staff member can be bound to more than one branch under that same role (multi-branch binding). In any given session, they operate in one branch.
+- Branch Admin cannot be bound to multiple branches by themselves — only Admin creates branch bindings.
+- The child (student) is the subject of all records and is never a system user.
+- Parents are portal users, not staff. Their access is governed by hard business rules and cannot be adjusted by any staff role.</p>
+<hr />
+<h2 id="2-role-profiles">2. Role Profiles</h2>
+<h3 id="admin">Admin</h3>
+<p><strong>Who:</strong> School owner or designated super-administrator. Multiple Admin accounts are permitted.</p>
+<p><strong>Scope:</strong> All branches. No boundary within the system.</p>
+<p><strong>Operating modes:</strong>
+- <strong>Global view:</strong> Cross-branch summaries — admissions, enrollment, attendance, financials, staff, governance.
+- <strong>Branch-specific context:</strong> Admin switches into any branch via the branch switcher and gains full operational authority for that branch, equivalent to Branch Admin authority.</p>
+<p><strong>Unique authorities (no other role can do these):</strong>
+- Create and configure new branches
+- Create and deactivate branch bindings for any staff member
+- Access the cross-branch governance log
+- Issue Bonafide certificates when outstanding dues exist
+- Correct attendance with no time limit
+- Configure RBAC permissions system-wide
+- Manage global WhatsApp deeplink templates
+- Receive the monthly governance digest email
+- Manually activate or delay academic year activation
+- Exit Migration Mode (no other role can trigger this)</p>
+<p><strong>Override confirmation rule:</strong> When Admin performs an action normally owned by another role (marking attendance, drafting a progress card, sending a fee communication), the system surfaces a one-click confirmation identifying the action and stating it will be logged as an Admin action. Every confirmed Admin override is recorded in the audit log.</p>
+<hr />
+<h3 id="branch-admin">Branch Admin</h3>
+<p><strong>Who:</strong> Principal or head of a single branch. One or more per branch. Bound to their assigned branch.</p>
+<p><strong>Scope:</strong> Full authority within one branch. Cannot access other branches.</p>
+<p><strong>Core responsibilities:</strong> The 9-step academic year setup; admissions review and enrollment completion; staff provisioning and deprovisioning for roles below Branch Admin; fee structure and transport configuration; opening balances; progress card review and publication; attendance oversight and correction up to 30 calendar days; year-end rollover; student lifecycle transitions (discontinuation, TC issuance); incident report publish decisions; authorised pickup list management; school notice board; PTM note recording; school inbox management.</p>
+<p><strong>Inherited capability:</strong> Branch Admin inherits the full capability set of Coordinator, Teacher, and Accountant within the branch.</p>
+<p><strong>Template management toggle:</strong> Enabled by default. When disabled by Admin, the Branch Admin can use WhatsApp templates but cannot create or edit them. This is the only per-account permission variation in V1.</p>
+<hr />
+<h3 id="coordinator">Coordinator</h3>
+<p><strong>Who:</strong> Admin assistant or front desk person. One or more per branch.</p>
+<p><strong>Scope:</strong> Intake, communication, and gate operations within the branch.</p>
+<p><strong>Can do:</strong> Advance admissions applications; mark student attendance for any class in the branch; mark staff attendance; manage school timetable and calendar; send absence notification deeplinks; send general announcements; view and reply to school inbox messages; record visitor log entries; view the school notice board.</p>
+<p><strong>Extended data access (read-only, access-logged):</strong> Student name, primary contact, emergency contacts, allergy and critical medication alert flags, submitted document list and status (name and status only — not document content), student photo, and active authorised pickup list (for gate verification).</p>
+<p><strong>Hard limits:</strong> Cannot complete an enrollment independently. Cannot access fee data, invoices, payment history. Cannot access progress cards. Cannot access full medical records or Aadhaar data. Cannot create incident reports. Cannot add, edit, or deactivate pickup list entries. Cannot view the communication log.</p>
+<hr />
+<h3 id="teacher">Teacher</h3>
+<p><strong>Who:</strong> Class teacher. Assigned to one or more class slots across one or more classes.</p>
+<p><strong>Scope:</strong> Strictly scoped to assigned class slots (Primary, Assistant, or Temporary). No access to students outside assigned class.</p>
+<p><strong>Class slot model:</strong>
+- <strong>Primary slot</strong> — mandatory on every class; responsible for all class-level teacher actions.
+- <strong>Assistant slot</strong> — optional; identical permissions to Primary within the class.
+- <strong>Temporary slot</strong> — optional; identical permissions; carries a configurable end date. Access lapses automatically when end date passes.</p>
+<p><strong>Can do:</strong> Mark daily attendance for own class; correct attendance within 7 calendar days; draft and submit progress cards; flag students for welfare concerns; create incident reports for own class students; view authorised pickup list for own class students (read-only); create and view PTM notes for own class students; send absence notification deeplinks; log daily activity entries (meals, naps, activities, health checks, notes); view the school notice board.</p>
+<p><strong>Hard limits:</strong> Cannot view fee data. Cannot access students outside assigned class. Cannot see medical records or Aadhaar data. Cannot correct attendance beyond 7 calendar days. Cannot add, edit, or deactivate pickup list entries. Cannot view the communication log. Cannot view the school inbox.</p>
+<hr />
+<h3 id="accountant">Accountant</h3>
+<p><strong>Who:</strong> Finance staff. One or more per branch.</p>
+<p><strong>Scope:</strong> Financial visibility and fee communication within the branch.</p>
+<p><strong>Can do:</strong> Upload CoFee XLSX and import financial data; view the financial dashboard; view Day Care billing summary; generate Day Care billing summary export; create HAPPY_FEET_NATIVE invoices; generate Razorpay payment links; record payments; send fee reminder and payment confirmation deeplinks; view and reply to the Fee Query channel; view student data and attendance for billing context; view the expense log; view the school notice board.</p>
+<p><strong>Hard limits:</strong> Cannot enter opening balances (Branch Admin and Admin only). Cannot edit student data. Cannot access medical records, Aadhaar, or progress cards. Cannot record expense entries. Cannot access the general school inbox. Cannot add or edit pickup list entries.</p>
+<hr />
+<h3 id="parent-guardian">Parent / Guardian</h3>
+<p><strong>Who:</strong> A child's family member. Not a staff member.</p>
+<p><strong>Scope:</strong> Read-only, child-scoped. For parents with multiple enrolled children, each child appears on a separate tab.</p>
+<p><strong>Access trigger:</strong> Portal access is created when Accountant records the first payment — not at enrollment. Parents cannot self-register.</p>
+<p><strong>Can view:</strong> Child profile, attendance history, class timetable (child's class only), fee structure (not payment history or outstanding balances in V1), published progress cards, document submission status, notification inbox, authorised pickup list for their child (read-only), published incident reports (selected fields only — no internal notes), school notice board (branch-scoped, with unread badge), school calendar.</p>
+<p><strong>Can do:</strong> Send messages to the school inbox (text only; maximum 5 per child per day; linked to a specific enrolled child). Submit fee queries through the Fee Query channel.</p>
+<p><strong>Hard limits:</strong> Cannot see invoice history, outstanding balances, or payment records in V1. Cannot see other students' data. Cannot see any staff data. Cannot edit the pickup list. Cannot see welfare concern records. Cannot see PTM notes. Parent access rules cannot be changed by any staff role, including Admin.</p>
+<hr />
+<h2 id="3-decision-authority-matrix">3. Decision Authority Matrix</h2>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Coordinator</th>
+<th>Teacher</th>
+<th>Accountant</th>
+<th>Branch Admin</th>
+<th>Admin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Create a student application (walk-in)</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Advance an application</td>
+<td>Yes</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Complete enrollment (all four conditions met)</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Waive a document requirement at enrollment</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Yes (with logged reason)</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Override class capacity at enrollment</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Yes (with logged reason)</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Add applicant to waitlist</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Enter opening balance</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Enter existing Admission ID for migrated student profile (Migration Mode only)</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Create a HAPPY_FEET_NATIVE invoice</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Generate a Razorpay payment link</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Record a payment</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Upload CoFee XLSX</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+<td>—</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Resolve CoFee import exception</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Configure fee structure per programme</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Configure transport zone rates</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Mark student attendance</td>
+<td>Yes (any class)</td>
+<td>Yes (own class)</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Correct attendance — same day</td>
+<td>—</td>
+<td>Yes</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Correct attendance — Day 2 to Day 7</td>
+<td>—</td>
+<td>Yes (reason required)</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Correct attendance — Day 8 to Day 30</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Yes (logged)</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Correct attendance — beyond Day 30</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Yes (governance log)</td>
+</tr>
+<tr>
+<td>Mark staff attendance</td>
+<td>Yes</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Flag welfare concern</td>
+<td>—</td>
+<td>Yes (own class)</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Review welfare concern</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Create incident report</td>
+<td>—</td>
+<td>Yes (own class)</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Publish incident report to parent portal</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Manage authorised pickup list</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>View pickup list at gate</td>
+<td>Yes</td>
+<td>Yes (own class)</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Draft progress card</td>
+<td>—</td>
+<td>Yes (own class)</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Submit progress card</td>
+<td>—</td>
+<td>Yes (own class)</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Review progress card (as delegate)</td>
+<td>—</td>
+<td>Yes (if designated)</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Publish progress card</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Return progress card to Teacher</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Generate progress card PDF</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Configure academic year and terms</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Configure programmes and milestones</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Enter school calendar / holidays</td>
+<td>Yes</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Configure timetable</td>
+<td>Yes</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Post to school notice board</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Send announcements</td>
+<td>Yes</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Send absence deeplink</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Send fee reminder deeplink</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Send payment confirmation deeplink</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Create/edit global WhatsApp templates</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Create/edit branch WhatsApp templates</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Yes (if toggle enabled)</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Initiate student discontinuation</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Acknowledge outstanding invoice at discontinuation</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Issue Transfer Certificate</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Issue Bonafide — no outstanding dues</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Issue Bonafide — outstanding dues exist</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Yes (governance log)</td>
+</tr>
+<tr>
+<td>Execute year-end rollover</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Flag student for rollover review</td>
+<td>—</td>
+<td>Yes (own class)</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Enter Migration Mode</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Exit Migration Mode</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Provision staff accounts (roles below Branch Admin)</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Provision Branch Admin accounts</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Create multi-branch staff binding</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Configure RBAC permissions</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Access audit log</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Yes (own branch)</td>
+<td>Yes (all branches)</td>
+</tr>
+<tr>
+<td>Access governance log</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Access cross-branch dashboard</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-escalation-paths">4. Escalation Paths</h2>
+<h3 id="41-attendance-correction-escalation">4.1 Attendance Correction Escalation</h3>
+<pre><code>Same day
+└── Teacher (no reason required)
+
+Day 2 → Day 7
+└── Teacher (one sentence reason required)
+
+Day 8 → Day 30
+└── Branch Admin (logged with reason)
+
+Beyond Day 30
+└── Admin only (logged with reason; governance log entry)
+</code></pre>
+<hr />
+<h3 id="42-welfare-concern-escalation">4.2 Welfare Concern Escalation</h3>
+<pre><code>Teacher observes a concern during the school day
+└── Teacher flags welfare concern from attendance or daily journal screen
+    └── Free-text observation required (mandatory)
+    └── WelfareConcernRecord created (permanent, immutable)
+    └── In-app notification fires to Branch Admin immediately
+
+Branch Admin reviews within 3 school days
+└── Branch Admin marks REVIEWED or ESCALATED with a note
+    └── If ESCALATED → Branch Admin handles externally (no system workflow beyond the record)
+
+If not reviewed within 3 school days
+└── System fires a reminder notification to Branch Admin
+    └── If still not reviewed → reminder continues; record remains OPEN
+
+Parents are never notified of welfare concern records.
+Teacher sees only their own flags. Branch Admin sees all for their branch. Admin sees all.
+</code></pre>
+<hr />
+<h3 id="43-incident-report-escalation">4.3 Incident Report Escalation</h3>
+<pre><code>Incident occurs during school hours
+└── Teacher (own class) or Branch Admin creates a formal incident report
+    └── Record created in M3 (permanent)
+
+Branch Admin reviews
+└── Decision: Publish to parent portal OR Keep internal
+    └── If Publish → In-app notification fires to parent (#7, bypasses opt-out)
+    └── If Keep internal → Record exists permanently; parent never sees it
+
+Published incident report — parent view:
+    Date, incident type, what happened, action taken (selected fields only)
+    Internal notes and staff witness details are never shown to parents under any circumstances.
+</code></pre>
+<hr />
+<h3 id="44-enrollment-escalation">4.4 Enrollment Escalation</h3>
+<pre><code>Application submitted
+└── Coordinator can advance (track documents, follow up) but cannot complete enrollment
+
+Four conditions checked independently:
+1. Programme assigned → Branch Admin assigns
+2. Documents cleared or each missing one individually waived with reason → Branch Admin
+3. Class capacity available, OR Branch Admin records capacity override with reason
+4. At least one active authorised pickup list entry exists → Branch Admin enters before enrollment
+
+All four conditions met
+└── Branch Admin completes enrollment
+
+If class is full and Branch Admin does not override:
+└── Branch Admin adds applicant to per-class waitlist
+    └── When a slot opens (discontinuation, transfer, capacity increase)
+    └── Branch Admin is shown the next waitlisted applicant and can proceed with enrollment
+    └── No automated parent notification — Branch Admin contacts parent directly
+</code></pre>
+<hr />
+<h3 id="45-bonafide-certificate-escalation">4.5 Bonafide Certificate Escalation</h3>
+<pre><code>Student completes programme (PP2 or equivalent)
+└── Branch Admin initiates from student profile
+    └── System displays outstanding dues as a live snapshot
+
+No outstanding dues:
+└── Branch Admin proceeds directly
+    └── Issuance confirmed — irreversible
+    └── Parent portal access revoked; status: Bonafide Issued
+
+Outstanding dues exist:
+└── Branch Admin cannot proceed
+└── Admin must proceed with a recorded reason
+    └── Governance log entry created
+    └── Outstanding dues snapshot permanently attached to the record
+    └── Issuance confirmed — irreversible
+</code></pre>
+<hr />
+<h3 id="46-progress-card-return-escalation">4.6 Progress Card Return Escalation</h3>
+<pre><code>Teacher drafts progress card (invisible to all until submitted)
+└── Teacher submits to Branch Admin review
+
+Branch Admin review:
+└── Publish → parent portal; attendance snapshot locked; notification #12
+└── Return with note → Branch Admin must explicitly reopen the card
+    └── Teacher receives notification that card has been returned
+    └── Teacher re-edits and resubmits
+    └── Branch Admin reviews again (loop until published)
+
+Delegate Reviewer (if configured for the class):
+└── Reviews submitted card; adds a review note visible to Branch Admin only
+└── Cannot publish — authority remains exclusively with Branch Admin
+</code></pre>
+<hr />
+<h3 id="47-migration-mode-exit-escalation">4.7 Migration Mode Exit Escalation</h3>
+<pre><code>Admin is ready to take a branch live
+└── Admin navigates to Migration Mode checklist
+    └── System verifies all six checklist items
+
+Any item incomplete and not acknowledged:
+└── System blocks exit
+└── Admin must either complete the item or explicitly acknowledge the gap with a logged reason
+
+All items green or acknowledged:
+└── System presents confirmation prompt (irreversible warning)
+└── Admin confirms
+    └── Invoice generation unlocked for the branch
+    └── Razorpay payment links become available
+    └── All suppressed parent portal activation invites fire simultaneously
+    └── Opening balance window closure rule resumes for subsequent events
+    └── Exit event permanently recorded in governance log: actor, timestamp, full checklist snapshot
+
+Re-entry is not permitted. This state cannot be reversed by any role.
+</code></pre>
+<hr />
+<h2 id="5-approval-chains">5. Approval Chains</h2>
+<h3 id="51-staff-onboarding">5.1 Staff Onboarding</h3>
+<pre><code>Branch Admin creates staff profile (name, designation, employment type, salary)
+→ Mandatory documents attached (Aadhaar, education certificates, agreement)
+→ Branch Admin sends portal invite (7-day, resendable) or skips if no system access required
+→ Staff member activates account on first login
+→ Role and class assignments take effect at next login after assignment
+</code></pre>
+<p><strong>Multi-branch binding (Admin only):</strong></p>
+<pre><code>Admin navigates to staff account settings
+→ Admin adds branch binding in staff_branch_bindings
+→ On next login, staff member sees branch selector and chooses working branch for the session
+</code></pre>
+<hr />
+<h3 id="52-staff-exit">5.2 Staff Exit</h3>
+<pre><code>Branch Admin initiates exit from staff profile
+
+Gate 1 (Teachers only):
+└── Primary slot on all assigned classes must be reassigned before exit can proceed
+└── Branch Admin assigns a replacement Primary teacher to each class
+└── Once all Primary slots covered → Gate 1 cleared
+
+Gate 2 (all staff):
+└── All salary holds must be formally resolved
+    └── Hold type 1: First-month salary held — must be formally released
+    └── Hold type 2: Degree in custody — must be returned
+└── Once all holds resolved → Gate 2 cleared
+
+Both gates cleared:
+→ Branch Admin confirms exit
+→ Profile becomes read-only
+→ System access revoked automatically
+</code></pre>
+<hr />
+<h3 id="53-academic-year-setup-9-step-sequence">5.3 Academic Year Setup (9-Step Sequence)</h3>
+<pre><code>Step 1: Create academic year (start and end dates)
+Step 2: Set term dates; set progress card submission window open/close dates per term
+Step 3: Configure programme definitions (billing model, milestone set, attendance model)
+Step 4: Create classes (name, capacity, teacher slots)
+Step 5: Configure transport zones (if offered)
+Step 6: Enter school calendar for the year (holidays block attendance system-wide)
+Step 7: Configure weekly timetable per class
+Step 8: Define milestones per programme
+Step 9: Specify required document types per programme
+</code></pre>
+<p>Actor: Branch Admin or Admin. Every change to term dates, programmes, or milestones is permanently logged with actor, timestamp, and before/after values.</p>
+<hr />
+<h3 id="54-cofee-import-flow">5.4 CoFee Import Flow</h3>
+<pre><code>Accountant downloads XLSX report from CoFee
+→ Accountant uploads XLSX to Happy Feet (M7)
+→ System applies admission number normalisation rule (if configured)
+→ Each row matched against student registry by Admission Number (primary) or Phone Number (secondary)
+
+Four match cases:
+  Case A: Row matches COFEE_IMPORT invoice → update amount_paid_to_date; no exception
+  Case B: Row matches HAPPY_FEET_NATIVE invoice AND transaction_id matches an existing Razorpay payment
+         → RAZORPAY_COFEE_CONFLICT exception; Accountant reviews
+         → Voiding Razorpay payment record requires Branch Admin approval
+  Case C: Row matches HAPPY_FEET_NATIVE invoice AND no matching transaction_id
+         → Import as new payment against existing invoice; not an exception
+  Case D: No matching invoice in Happy Feet
+         → Create COFEE_IMPORT invoice + payment record; normal import
+
+Unmatched rows (no student found):
+→ Routed to import exceptions list
+→ Accountant resolves: link to correct student, mark not applicable, or flag for 7-day follow-up
+
+Import timestamp updated and visible to Accountant, Branch Admin, and Admin on financial dashboard.
+</code></pre>
+<hr />
+<h2 id="6-information-boundaries">6. Information Boundaries</h2>
+<p>Enforced at the application layer — every data request is validated against the requesting user's branch binding before any data is returned.</p>
+<h3 id="61-student-data-access-by-role">6.1 Student Data Access by Role</h3>
+<table>
+<thead>
+<tr>
+<th>Data Category</th>
+<th>Admin</th>
+<th>Branch Admin</th>
+<th>Coordinator</th>
+<th>Teacher</th>
+<th>Accountant</th>
+<th>Parent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Student name, class, programme</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Own class</td>
+<td>Yes (billing context)</td>
+<td>Own child only</td>
+</tr>
+<tr>
+<td>Primary contact name and phone</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (read-only, access-logged)</td>
+<td>Own class only</td>
+<td>Yes (billing context)</td>
+<td>Own child only</td>
+</tr>
+<tr>
+<td>Emergency contacts</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (read-only, access-logged)</td>
+<td>Own class only</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Full medical records</td>
+<td>Yes (access-logged)</td>
+<td>Yes (access-logged)</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Aadhaar number</td>
+<td>Yes (access-logged)</td>
+<td>Yes (access-logged)</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Allergy and critical medication alerts</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (read-only)</td>
+<td>Own class (read-only)</td>
+<td>No</td>
+<td>No (alert is internal)</td>
+</tr>
+<tr>
+<td>Student photo</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (read-only, access-logged, gate identification)</td>
+<td>Own class (read-only, access-logged)</td>
+<td>No</td>
+<td>Own child only</td>
+</tr>
+<tr>
+<td>Document list and status</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (name and status only — not content)</td>
+<td>No</td>
+<td>No</td>
+<td>Own child (status only)</td>
+</tr>
+<tr>
+<td>Document content</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Fee structure (programme)</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>Own child (structure only, not payment history)</td>
+</tr>
+<tr>
+<td>Invoice history and payment records</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>No (V1)</td>
+</tr>
+<tr>
+<td>Outstanding balances</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>No (V1)</td>
+</tr>
+<tr>
+<td>Progress cards (draft)</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>Own class (own drafts only)</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Progress cards (submitted, unpublished)</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Progress cards (published)</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>Own child only</td>
+</tr>
+<tr>
+<td>Authorised pickup list</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (read-only, gate verification)</td>
+<td>Own class (read-only)</td>
+<td>No</td>
+<td>Own child (read-only)</td>
+</tr>
+<tr>
+<td>Welfare concern records</td>
+<td>Yes</td>
+<td>Yes (own branch)</td>
+<td>No</td>
+<td>Own flags only</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Incident reports (internal)</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>Can create for own class; cannot see others</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Incident reports (published)</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>Can create for own class</td>
+<td>No</td>
+<td>Own child (selected fields only)</td>
+</tr>
+<tr>
+<td>PTM notes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>Own class only</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Daily journal entries</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (read-only)</td>
+<td>Own class</td>
+<td>No</td>
+<td>Own child (read-only, 30-day feed)</td>
+</tr>
+<tr>
+<td>Audit log (own branch)</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Governance log</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="62-staff-data-access-by-role">6.2 Staff Data Access by Role</h3>
+<table>
+<thead>
+<tr>
+<th>Data Category</th>
+<th>Admin</th>
+<th>Branch Admin</th>
+<th>Coordinator</th>
+<th>Teacher</th>
+<th>Accountant</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Staff name, role, designation</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Staff contact and employment records</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Salary history</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Staff leave records</td>
+<td>Yes</td>
+<td>Yes (own branch)</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Staff certification records</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Staff Aadhaar</td>
+<td>Yes (access-logged)</td>
+<td>Yes (access-logged)</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Daily staff attendance</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (can mark; cannot view history)</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Staff exit records</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Visitor log</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (can create and view)</td>
+<td>No</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="63-communication-access-by-role">6.3 Communication Access by Role</h3>
+<table>
+<thead>
+<tr>
+<th>Channel</th>
+<th>Admin</th>
+<th>Branch Admin</th>
+<th>Coordinator</th>
+<th>Teacher</th>
+<th>Accountant</th>
+<th>Parent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>School inbox (view and reply)</td>
+<td>Yes</td>
+<td>Yes (own branch)</td>
+<td>Yes (own branch)</td>
+<td>No</td>
+<td>No</td>
+<td>Can initiate; can reply</td>
+</tr>
+<tr>
+<td>Fee Query channel (view and reply)</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>Yes (designated first responder)</td>
+<td>Can initiate</td>
+</tr>
+<tr>
+<td>Communication log (full, own branch)</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Fee communication log</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>Yes (fee-related only)</td>
+<td>No</td>
+</tr>
+<tr>
+<td>School notice board (view)</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (own branch)</td>
+</tr>
+<tr>
+<td>School notice board (post/archive)</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>WhatsApp deeplinks — absence</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>WhatsApp deeplinks — fee reminder</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>WhatsApp deeplinks — payment confirmation</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>WhatsApp deeplinks — incident notification</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Global template management</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Branch template management</td>
+<td>Yes</td>
+<td>Yes (if toggle enabled)</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Announcements (send)</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>System notifications (receive)</td>
+<td>Yes (staff alerts)</td>
+<td>Yes (branch alerts)</td>
+<td>No</td>
+<td>Yes (class alerts)</td>
+<td>Yes (financial alerts)</td>
+<td>Yes (child alerts)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="64-financial-data-boundaries-critical-distinctions">6.4 Financial Data Boundaries — Critical Distinctions</h3>
+<table>
+<thead>
+<tr>
+<th>Boundary</th>
+<th>Branch Admin</th>
+<th>Accountant</th>
+<th>Admin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Enter opening balances</td>
+<td>Yes</td>
+<td><strong>No</strong></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Configure fee structures</td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Upload CoFee XLSX import</td>
+<td>No</td>
+<td><strong>Yes</strong></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Create HAPPY_FEET_NATIVE invoices</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Generate Razorpay payment links</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Record payments</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Record expense entries</td>
+<td>Yes</td>
+<td><strong>No (view only)</strong></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>View Day Care billing summary</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Access budget overview</td>
+<td>V2 only</td>
+<td>V2 only</td>
+<td>V2 only</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key:</strong> Accountant cannot enter opening balances (financial position decision — Branch Admin authority) and cannot record expense entries (branch management accountability — Branch Admin authority).</p>
+<hr />
+<h2 id="7-multi-branch-authority-model">7. Multi-Branch Authority Model</h2>
+<p>Happy Feet supports two branches. The authority model across branches is governed by three principles:</p>
+<p><strong>Principle 1 — Branch isolation is enforced at the data layer.</strong>
+Every data request is validated against the requesting user's branch binding before any data is returned. A staff member bound to Branch A cannot see Branch B data even if they navigate directly to a Branch B URL.</p>
+<p><strong>Principle 2 — Admin is the only role with cross-branch authority.</strong>
+Admin operates in a global view that aggregates data across all branches. No other role sees cross-branch data. When Admin switches into a branch, they hold full Branch Admin authority for that branch for the duration of that context.</p>
+<p><strong>Principle 3 — Multi-branch binding does not aggregate branches.</strong>
+A multi-branch staff member works in one branch per session; logout required to switch. No "all-branches" view exists for non-Admin roles.</p>
+<table>
+<thead>
+<tr>
+<th>Cross-Branch Capability</th>
+<th>Admin</th>
+<th>All Other Roles</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cross-branch enrollment and attendance summary</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Cross-branch financial dashboard</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Cross-branch staff roster</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Cross-branch governance log</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Create a new branch</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Assign Branch Admin to a branch</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Create multi-branch staff binding</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Switch into a specific branch for full operational access</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8-key-organizational-tensions">8. Key Organizational Tensions</h2>
+<p>These are structural tensions built into the role model intentionally. They are not bugs — they reflect deliberate business decisions. Understanding them prevents incorrect assumptions during design.</p>
+<p><strong>Tension 1: Coordinator can advance admissions but cannot complete enrollment.</strong>
+Enrollment has legal and financial consequences (fee snapshot, pickup list requirement, capacity override authority) — it is a Branch Admin decision. Coordinator prepares; Branch Admin decides.</p>
+<p><strong>Tension 2: Accountant has the deepest financial access but cannot enter opening balances.</strong>
+Opening balances establish the financial baseline — a management-level position decision, not a transaction. Accountant transacts; Branch Admin decides the starting position.</p>
+<p><strong>Tension 3: Teacher can flag welfare concerns but cannot see other teachers' flags.</strong>
+Visibility is limited to prevent peer dynamics from discouraging flagging. Each teacher sees only their own flags; Branch Admin sees all.</p>
+<p><strong>Tension 4: Branch Admin can issue Bonafide with no dues; Admin required when dues exist.</strong>
+The routine case stays within Branch Admin authority to avoid friction. The exception (dues + issuance) must be attributed to Admin with a governance log entry — the system escalates required authority, not blocks the action.</p>
+<p><strong>Tension 5: Parents cannot see outstanding balances or invoice history in V1.</strong>
+This is a V1/V2 scope boundary, not a product philosophy. CoFee owns the payment status conversation in V1; Happy Feet shows fee structure only. Full parent financial visibility is V2.</p>
+<hr />
+<h2 id="summary">Summary</h2>
+<p>The Happy Feet organization model is a five-role hierarchy with a clean separation between management authority (Admin, Branch Admin), operational execution (Coordinator, Teacher, Accountant), and consumer access (Parent). Authority escalates upward as the consequences of a decision become more irreversible — Bonafide issuance with dues requires Admin; attendance correction beyond 30 days requires Admin; Migration Mode exit requires Admin. Every escalation path leaves a governance log entry. The most distinctive organizational characteristic is the strict information boundary around children's sensitive data (medical records, Aadhaar, welfare concerns), which is enforced at the data layer and cannot be adjusted by any role including Admin.</p>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

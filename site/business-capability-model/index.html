@@ -1,0 +1,1727 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../domain-overview/">
+      
+      
+        <link rel="next" href="../organization-model/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Business Capability Model - Happyfeet Application Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#business-capability-map-happy-feet-school-erp" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Happyfeet Application Docs" class="md-header__button md-logo" aria-label="Happyfeet Application Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Happyfeet Application Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Business Capability Model
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Happyfeet Application Docs" class="md-nav__button md-logo" aria-label="Happyfeet Application Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Happyfeet Application Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../domain-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Domain Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Business Capability Model
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Business Capability Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reading-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reading Guide
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tier-1-core-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tier 1 — Core Capabilities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tier 1 — Core Capabilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c1-student-intake-enrollment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C1. Student Intake &amp; Enrollment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c2-student-lifecycle-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C2. Student Lifecycle Governance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c3-daily-attendance-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C3. Daily Attendance Operations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c4-fee-management-financial-visibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C4. Fee Management &amp; Financial Visibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c5-academic-progress-tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C5. Academic Progress Tracking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c6-parent-communication-daily-child-visibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C6. Parent Communication &amp; Daily Child Visibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tier-2-supporting-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tier 2 — Supporting Capabilities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tier 2 — Supporting Capabilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#s1-school-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S1. School Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s2-staff-records" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S2. Staff Records
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s3-child-safety-infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S3. Child Safety Infrastructure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tier-3-administrative-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tier 3 — Administrative Capabilities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tier 3 — Administrative Capabilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a1-identity-access-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A1. Identity &amp; Access Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a2-reporting-operational-visibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A2. Reporting &amp; Operational Visibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tier-4-compliance-governance-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tier 4 — Compliance &amp; Governance Capabilities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tier 4 — Compliance &amp; Governance Capabilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#g1-data-governance-auditability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        G1. Data Governance &amp; Auditability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g2-go-live-migration-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        G2. Go-Live &amp; Migration Governance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#capability-summary-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capability Summary Table
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-observations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Observations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../organization-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organization Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../business-processes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Business Processes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../business-rules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Business Rules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../domain-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Domain Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../domain-glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Domain Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reading-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reading Guide
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tier-1-core-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tier 1 — Core Capabilities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tier 1 — Core Capabilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c1-student-intake-enrollment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C1. Student Intake &amp; Enrollment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c2-student-lifecycle-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C2. Student Lifecycle Governance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c3-daily-attendance-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C3. Daily Attendance Operations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c4-fee-management-financial-visibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C4. Fee Management &amp; Financial Visibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c5-academic-progress-tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C5. Academic Progress Tracking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c6-parent-communication-daily-child-visibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C6. Parent Communication &amp; Daily Child Visibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tier-2-supporting-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tier 2 — Supporting Capabilities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tier 2 — Supporting Capabilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#s1-school-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S1. School Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s2-staff-records" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S2. Staff Records
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s3-child-safety-infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S3. Child Safety Infrastructure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tier-3-administrative-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tier 3 — Administrative Capabilities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tier 3 — Administrative Capabilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a1-identity-access-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A1. Identity &amp; Access Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a2-reporting-operational-visibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A2. Reporting &amp; Operational Visibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tier-4-compliance-governance-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tier 4 — Compliance &amp; Governance Capabilities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tier 4 — Compliance &amp; Governance Capabilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#g1-data-governance-auditability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        G1. Data Governance &amp; Auditability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g2-go-live-migration-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        G2. Go-Live &amp; Migration Governance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#capability-summary-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capability Summary Table
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-observations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Observations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<!-- ABOUT
+File: BUSINESS_CAPABILITY_MAP.md
+Purpose: Maps all 13 business capabilities across four tiers to define what Happy Feet must be able to do and the business outcome each capability delivers.
+Scope: 13 capabilities (C1–C6 Core, S1–S3 Supporting, A1–A2 Administrative, G1–G2 Compliance) with sub-capabilities and outcomes per tier; excludes process flows, role authority, and technical design.
+Dependencies: DOMAIN_OVERVIEW.md
+Stage: Stage 2 — Business Capability Mapping
+-->
+
+<h1 id="business-capability-map-happy-feet-school-erp">Business Capability Map — Happy Feet School ERP</h1>
+<blockquote>
+<p><strong>About This Document:</strong> This document catalogues everything the Happy Feet ERP must be able to do, organised into 13 named capabilities across four tiers (Core, Supporting, Administrative, and Compliance). Each capability entry states what the system does and what business outcome it delivers. Read this if you need to understand the full scope of system functionality; you can skip it if you are focused on a specific process flow or role and already know which capabilities are relevant.</p>
+</blockquote>
+<p><strong>Stage:</strong> 2 — Business Capability Model</p>
+<hr />
+<h2 id="reading-guide">Reading Guide</h2>
+<p>Capabilities are grouped into four tiers by business criticality:</p>
+<ul>
+<li><strong>Tier 1 — Core:</strong> The school cannot operate without these.</li>
+<li><strong>Tier 2 — Supporting:</strong> These enable Tier 1 capabilities to function correctly.</li>
+<li><strong>Tier 3 — Administrative:</strong> These keep operations running and give leadership visibility.</li>
+<li><strong>Tier 4 — Compliance &amp; Governance:</strong> These meet legal, safety, and accountability requirements.</li>
+</ul>
+<hr />
+<h2 id="tier-1-core-capabilities">Tier 1 — Core Capabilities</h2>
+<h3 id="c1-student-intake-enrollment">C1. Student Intake &amp; Enrollment</h3>
+<p>The school must formally accept children and establish their operational records before any other function applies to them.</p>
+<table>
+<thead>
+<tr>
+<th>Sub-Capability</th>
+<th>Description</th>
+<th>Business Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Admissions Processing</td>
+<td>Accept applications via public form or walk-in; assign programme and class; verify documents against programme requirements; waive individually with a recorded reason. <strong>Admission ID assignment:</strong> for students migrated from existing school records (pre-go-live), Admin or Branch Admin manually enters the student's historically assigned Admission ID during Migration Mode — the system preserves it as the permanent ID; for new admissions after go-live, the system auto-generates the Admission ID at profile creation. In both cases the ID is permanent and never changes. Admin/Branch Admin is responsible for ensuring migrated Admission IDs are unique and consistently formatted before entry; the system enforces uniqueness at save time.</td>
+<td>School has a searchable, auditable record of every child who has ever applied; Admission IDs for migrated students match the school's historical records, ensuring CoFee import matching and continuity across all prior documentation</td>
+</tr>
+<tr>
+<td>Enrollment Execution</td>
+<td>Enforce four independent enrollment conditions (programme assigned, documents cleared/waived, class capacity available/override recorded, at least one active pickup list entry); snapshot fee structure at enrollment</td>
+<td>Enrollment cannot proceed without confirming child safety prerequisites; fee terms are locked at the moment of enrollment</td>
+</tr>
+<tr>
+<td>Waitlist Management</td>
+<td>Per-class ordered waitlist for approved applicants when capacity is full; Branch Admin notifies parents and proceeds when a slot opens</td>
+<td>No approved applicant is silently lost when a class fills</td>
+</tr>
+<tr>
+<td>Re-admission</td>
+<td>Reopen an existing profile rather than creating a new application; retain same Admission ID and full prior history; outstanding dues persist</td>
+<td>Returning students enter the system with continuity of record; prior debt is not erased by re-entry</td>
+</tr>
+<tr>
+<td>Parent Portal Activation</td>
+<td>Triggered by Accountant recording the first payment — not by enrollment completion</td>
+<td>Parent access is tied to a financial act, not an administrative one; portal is available from the first payment forward</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="c2-student-lifecycle-governance">C2. Student Lifecycle Governance</h3>
+<p>The school must track every student's operational state from enrollment through departure and ensure transitions are intentional, recorded, and irreversible where appropriate.</p>
+<table>
+<thead>
+<tr>
+<th>Sub-Capability</th>
+<th>Description</th>
+<th>Business Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Status Management</td>
+<td>Five mutually exclusive statuses: Active, Discontinued, Completed Programme, Bonafide Issued, Transfer Certificate Issued; three per-student lifecycle switches (billing, attendance, parent portal) independently controllable with logged reasons</td>
+<td>Every student has one unambiguous operational state at all times</td>
+</tr>
+<tr>
+<td>Year-End Rollover</td>
+<td>Manually triggered preview-and-confirm workflow; Branch Admin reviews all Active students, adjusts class assignments, acknowledges outstanding dues per invoice; all Active students transition to Completed Programme; switches reset to ON</td>
+<td>Academic year closes cleanly with no automatic transitions; outstanding dues are acknowledged before the year ends</td>
+</tr>
+<tr>
+<td>Discontinuation</td>
+<td>Branch Admin must acknowledge each outstanding invoice individually with a recorded reason before discontinuation completes; all three switches disable simultaneously</td>
+<td>A student mid-year withdrawal is a deliberate, recorded decision — not an administrative shortcut</td>
+</tr>
+<tr>
+<td>Bonafide Certificate Issuance</td>
+<td>Irreversible; Admin required when outstanding dues exist; outstanding dues snapshot permanently attached to the record</td>
+<td>School can issue a Bonafide certificate even with outstanding debt — but only with Admin authority and a permanent record</td>
+</tr>
+<tr>
+<td>Transfer Certificate Issuance</td>
+<td>Irreversible; per-invoice acknowledgment of outstanding dues required; leaving date, destination school, conduct remark, and reason recorded; TC and Bonafide are mutually exclusive</td>
+<td>No child leaves the school system without a deliberate, attributed decision</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="c3-daily-attendance-operations">C3. Daily Attendance Operations</h3>
+<p>The school must record daily attendance for every student enrolled in any programme — Nursery, PP1, PP2, Play Group, Day Care, or any future programme added by configuration. For Day Care students, staff-recorded check-in and check-out timestamps are additionally maintained as operational records to support billing calculations under the student's assigned Day Care Billing Plan.</p>
+<table>
+<thead>
+<tr>
+<th>Sub-Capability</th>
+<th>Description</th>
+<th>Business Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Manual Attendance</td>
+<td>Teacher marks Present / Absent / Late / Half-Day per class</td>
+<td>High attendance in a preschool application maximizes tuition revenue and optimizes staffing ratios by giving administrators the real-time data needed to predict enrollment trends and minimize operational overhead.</td>
+</tr>
+<tr>
+<td>Day Care Billing Computation</td>
+<td>Staff-recorded check-in and check-out timestamps are maintained as operational records for Day Care students; billing is calculated according to the student's assigned Day Care Billing Plan (Monthly, Weekly, Day-wise, Hour-wise, Term-wise)</td>
+<td>Day Care billing is plan-governed and independent from attendance records</td>
+</tr>
+<tr>
+<td>Attendance Correction</td>
+<td>Time-bounded by role: Teacher (same day → 7 days), Branch Admin (8–30 days), Admin (unlimited); every correction requires a reason beyond the same-day window</td>
+<td>Errors can be corrected but the correction window and authority required grow narrower over time, creating accountability</td>
+</tr>
+<tr>
+<td>Parent Absence Notification</td>
+<td>Immediate in-app notification to parent when a student is marked Absent</td>
+<td>Parents are informed of absences in real time, replacing informal WhatsApp messages</td>
+</tr>
+<tr>
+<td>Chronic Absence Alerting</td>
+<td>Branch Admin configures consecutive or total-in-period threshold per programme; system fires an in-app alert to Branch Admin immediately when threshold is crossed</td>
+<td>Attendance patterns that signal a risk are surfaced proactively, not discovered retrospectively</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="c4-fee-management-financial-visibility">C4. Fee Management &amp; Financial Visibility</h3>
+<table>
+<thead>
+<tr>
+<th>Sub-Capability</th>
+<th>Description</th>
+<th>Business Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fee Structure Configuration</td>
+<td>Branch Admin configures base fees per programme (billing model, billing schedule); transport zone rates (distance band, trip type, monthly amount); student category assignments</td>
+<td>Fee terms are formally recorded and tied to each enrolled student at enrollment</td>
+</tr>
+<tr>
+<td>Opening Balance Entry</td>
+<td>Branch Admin or Admin enters historical outstanding balances per student before the first invoice is generated; window cannot close during Migration Mode</td>
+<td>Schools adopting mid-year have their financial history correctly represented in the system from day one</td>
+</tr>
+<tr>
+<td>CoFee Import</td>
+<td>Accountant uploads CoFee XLSX; Happy Feet maps rows to students via Admission Number (normalised if configured); writes invoices and payments permanently into its own financial database; exceptions routed to a resolution queue</td>
+<td>Financial data from CoFee lives in Happy Feet as first-class data — not a reference-only import</td>
+</tr>
+<tr>
+<td>Lightweight Invoice Creation</td>
+<td>Accountant, Branch Admin, or Admin creates a HAPPY_FEET_NATIVE invoice for any fee head, any student, any amount; blocked during Migration Mode</td>
+<td>School can collect ad-hoc fees (events, materials, late charges) without waiting for a CoFee billing cycle</td>
+</tr>
+<tr>
+<td>Razorpay Payment Links</td>
+<td>Generated from a HAPPY_FEET_NATIVE invoice; shareable with parent; payment confirmation recorded automatically; blocked during Migration Mode</td>
+<td>School can request payment and receive confirmation without handling cash or manual reconciliation</td>
+</tr>
+<tr>
+<td>Day Care Billing Summary Export</td>
+<td>Computed from assigned Day Care Billing Plans and, where required by the plan, staff-recorded check-in/check-out timestamps; Accountant exports and takes to CoFee for invoice generation</td>
+<td>Day Care billing is determined by the assigned billing plan and operational timestamp records</td>
+</tr>
+<tr>
+<td>Financial Dashboard</td>
+<td>Outstanding balances with last import timestamp; overdue invoices; fee collection summary by period; expense summary</td>
+<td>Accountant and Branch Admin see the financial picture at all times without a separate spreadsheet</td>
+</tr>
+<tr>
+<td>Fee Query Channel</td>
+<td>Parent submits fee question from portal Fee Query option; routes directly to Accountant's fee communication log; Accountant views and replies; Branch Admin and Admin can also reply</td>
+<td>Fee questions are handled by the right person without going through a general inbox — and every exchange is permanently logged</td>
+</tr>
+<tr>
+<td>Expense Logging</td>
+<td>Branch Admin records expenses with an expense category on every entry</td>
+<td>School has a categorised record of operational costs alongside income data</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="c5-academic-progress-tracking">C5. Academic Progress Tracking</h3>
+<table>
+<thead>
+<tr>
+<th>Sub-Capability</th>
+<th>Description</th>
+<th>Business Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Submission Window Management</td>
+<td>Branch Admin sets open and close dates per term for each programme; system opens and closes the window; in-app alert fires to Teachers and Branch Admin on opening</td>
+<td>Progress submissions happen in a defined period, not on an ad-hoc basis</td>
+</tr>
+<tr>
+<td>Progress Card Authoring</td>
+<td>Teacher drafts milestone ratings and observation text; drafts are invisible to Branch Admin and parents; Teacher submits to Branch Admin review</td>
+<td>Drafts stay private until the Teacher is ready to submit — no accidental early publication</td>
+</tr>
+<tr>
+<td>Delegate Reviewer</td>
+<td>Branch Admin designates a Teacher as Delegate Reviewer for a specific class; delegate reviews submitted cards and adds a note visible to Branch Admin only; delegate cannot publish</td>
+<td>Review load can be distributed without granting publication authority</td>
+</tr>
+<tr>
+<td>Branch Admin Review &amp; Publication</td>
+<td>Branch Admin can publish or return a submitted card — cannot edit content; attribution is permanent at submission; attendance snapshot locked at publication moment</td>
+<td>Progress card content belongs to the Teacher; Branch Admin is the gatekeeper, not the author</td>
+</tr>
+<tr>
+<td>PDF Progress Card Generation</td>
+<td>Branch Admin generates a PDF of any published card; PDF includes school name, branch, academic year, term, student details, milestone ratings, observations, attendance snapshot, and publication attribution</td>
+<td>Parents receive a formal, printable academic record</td>
+</tr>
+<tr>
+<td>Published Card Revision</td>
+<td>Branch Admin opens a revision; original is archived; parents see the last published version until revision is published</td>
+<td>Errors can be corrected without deleting the original record</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="c6-parent-communication-daily-child-visibility">C6. Parent Communication &amp; Daily Child Visibility</h3>
+<p>The school must replace informal, untracked WhatsApp communication with structured, permanently logged channels that give parents real-time visibility into their child's safety and daily experience.</p>
+<table>
+<thead>
+<tr>
+<th>Sub-Capability</th>
+<th>Description</th>
+<th>Business Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Daily Activity Logging</td>
+<td>Teacher logs meals, naps, activities, health checks, and general notes per child per day from the attendance screen; batch entry supported</td>
+<td>Every parent knows what their child ate, did, and how they felt today — without the teacher sending individual WhatsApp messages</td>
+</tr>
+<tr>
+<td>Parent Activity Feed</td>
+<td>Parents see a chronological feed for the current day and past 30 days on the portal; filterable by type and date; end-of-day summary notification fires at a configurable time if entries were made</td>
+<td>Parents who cannot check WhatsApp during work hours have a permanent, catchable record rather than a message that disappears</td>
+</tr>
+<tr>
+<td>Structured Announcements</td>
+<td>Branch Admin or Coordinator sends to four audience levels: all parents, by programme, by class, or individual; recipient count shown before send; every announcement permanently logged</td>
+<td>Broadcast communication is intentional and attributed — not an informal group message</td>
+</tr>
+<tr>
+<td>School Notice Board</td>
+<td>Branch Admin and Admin post notices; no other role can post; no notification sent — parents see an unread badge on next portal visit; archived notices permanently retained</td>
+<td>Low-urgency informational notices reach parents without triggering notification fatigue</td>
+</tr>
+<tr>
+<td>School Inbox (Two-Way)</td>
+<td>Parent initiates a message from the portal, linked to a specific child; Branch Admin or Coordinator replies; thread continues until Branch Admin marks CLOSED; Teacher and Accountant have no access</td>
+<td>Parents can raise concerns through a logged, structured channel instead of calling the school directly</td>
+</tr>
+<tr>
+<td>System-Triggered Notifications</td>
+<td>12 named events trigger automatic notifications; 5 are mandatory and bypass parent opt-out</td>
+<td>Critical lifecycle events (portal invite, enrollment, Bonafide, incident report published, pickup list change) always reach parents</td>
+</tr>
+<tr>
+<td>WhatsApp Deeplink Templates</td>
+<td>Pre-filled WhatsApp message templates for absence notification, fee reminder, payment confirmation, and incident notification; tap-to-send; logged per tap</td>
+<td>Staff use structured, approved message text — not free-form WhatsApp — for operational communications with parents</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="tier-2-supporting-capabilities">Tier 2 — Supporting Capabilities</h2>
+<h3 id="s1-school-configuration">S1. School Configuration</h3>
+<p>All operational modules depend on a correctly configured academic framework. No admissions, attendance, fee collection, or progress tracking can begin until configuration is complete.</p>
+<table>
+<thead>
+<tr>
+<th>Sub-Capability</th>
+<th>Description</th>
+<th>Business Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Academic Year &amp; Term Setup</td>
+<td>9-step sequenced setup: academic year dates, term dates with progress window dates, programme definitions, class creation, transport zones, school calendar, timetable, milestones, document types</td>
+<td>All downstream modules have the operational framework they need before the year begins</td>
+</tr>
+<tr>
+<td>Programme Configuration</td>
+<td>Three programme types (Academic, Non-Academic, Event); each carries its own billing model, attendance model, milestone set, and progress card inclusion; default set pre-loaded, fully configurable</td>
+<td>School can add or change programmes — new grades, dance classes, summer camps — without development work</td>
+</tr>
+<tr>
+<td>Class &amp; Teacher Slot Management</td>
+<td>Each class has a Primary slot (mandatory), an optional Assistant slot, and an optional Temporary slot with configurable end date and 7-day expiry alert</td>
+<td>Extended-leave cover is formalised with a clear end date and proactive alert — not handled by informal arrangement</td>
+</tr>
+<tr>
+<td>School Calendar &amp; Holiday Management</td>
+<td>Branch Admin enters holidays and events for the full year; holidays disable attendance for all roles — no override exists</td>
+<td>School calendar is the authoritative reference; attendance cannot be marked on a day the school has declared closed</td>
+</tr>
+<tr>
+<td>Progress Submission Window Configuration</td>
+<td>Branch Admin sets open and close dates per term and per programme during academic year setup; window can open early to spread review load</td>
+<td>Progress submission is a planned, scheduled activity — not an ad-hoc decision</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="s2-staff-records">S2. Staff Records</h3>
+<p>The school must maintain employment records, manage leave formally, track certification compliance, and ensure no teacher exits without class coverage being arranged first.</p>
+<table>
+<thead>
+<tr>
+<th>Sub-Capability</th>
+<th>Description</th>
+<th>Business Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Staff Profile &amp; Employment Records</td>
+<td>Name, designation, employment type, starting salary; mandatory documents (Aadhaar, education certificates, agreement); append-only salary history</td>
+<td>Staff records are permanent and auditable — salary changes and document submissions leave a trail</td>
+</tr>
+<tr>
+<td>Leave Management</td>
+<td>Branch Admin records leave requests (type, dates, status, notes); approved leave automatically links to daily attendance entries and marks them On Leave; records are append-only</td>
+<td>Leave is formally tracked with balance-level discipline — not managed via informal WhatsApp</td>
+</tr>
+<tr>
+<td>Certification Tracking with Expiry Alerts</td>
+<td>NTT, Montessori, First Aid, Police Verification, Employment Agreement — each with an alert threshold; in-app alert to Branch Admin when threshold is approaching; Branch Admin can upload renewed document from the alert</td>
+<td>No certification expires unnoticed; Branch Admin acts before the expiry, not after</td>
+</tr>
+<tr>
+<td>Staff Exit Gate</td>
+<td>Teacher exit requires replacement Primary slot assignment confirmed; all staff exit requires all salary holds resolved; profile becomes read-only on confirmation</td>
+<td>No teacher leaves without class coverage arranged; no staff member exits with unresolved financial holds</td>
+</tr>
+<tr>
+<td>Daily Staff Attendance</td>
+<td>Marked by Branch Admin, Coordinator, or Admin; backdatable 7 calendar days with a logged reason</td>
+<td>Staff attendance is tracked with the same discipline as student attendance</td>
+</tr>
+<tr>
+<td>Visitor Log</td>
+<td>Coordinator records name, purpose, and time of each visitor; Branch Admin and Admin view the full log</td>
+<td>School premises access is recorded, not remembered informally</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="s3-child-safety-infrastructure">S3. Child Safety Infrastructure</h3>
+<p>For children aged 18 months to 6 years, safety protocols are not advisory — they are operationally enforced at the system level.</p>
+<table>
+<thead>
+<tr>
+<th>Sub-Capability</th>
+<th>Description</th>
+<th>Business Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authorised Pickup List Management</td>
+<td>Per-student list of named individuals permitted to collect the child; owned by Branch Admin and Admin; at least one active entry required at enrollment; every addition and deactivation permanently logged; mandatory notification to parent on any change</td>
+<td>Release of a child at the gate is controlled by a verified list, not by staff judgement alone</td>
+</tr>
+<tr>
+<td>Gate Pickup Verification</td>
+<td>Coordinator looks up the student profile at departure; system displays the student's active Authorised Pickup List; Coordinator confirms who is collecting; system blocks and alerts if person is not on the list</td>
+<td>No child can be released to an unregistered person — the block is a system enforcement, not a policy reminder</td>
+</tr>
+<tr>
+<td>Welfare Concern Flagging &amp; Review Queue</td>
+<td>Teacher flags a student with a mandatory free-text observation; WelfareConcernRecord created (permanent, immutable); Branch Admin receives in-app alert; if unreviewed in 3 school days, a reminder fires; Branch Admin marks REVIEWED or ESCALATED with a note</td>
+<td>Welfare concerns are formally escalated, not discussed informally; a permanent, attributed record exists regardless of what happened after</td>
+</tr>
+<tr>
+<td>Incident Reporting &amp; Publication Governance</td>
+<td>Teacher or Branch Admin creates a formal incident record; Branch Admin decides to publish to parent portal or keep internal; parent notification on publication; internal notes never shown to parents</td>
+<td>School handles incidents through a documented decision process — not an informal conversation; the publish/keep-internal distinction is a deliberate trust management tool</td>
+</tr>
+<tr>
+<td>Allergy Protocol Compliance Audit Trail</td>
+<td>When Teacher logs a Meal entry for a student with active allergy alerts, system surfaces warning inline and requires explicit confirmation that allergy protocol was followed; confirmation permanently logged</td>
+<td>For children with allergies, every meal is an accountability record — the system creates an audit trail that cannot be skipped</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="tier-3-administrative-capabilities">Tier 3 — Administrative Capabilities</h2>
+<h3 id="a1-identity-access-management">A1. Identity &amp; Access Management</h3>
+<p>Every user must see exactly what their role permits — no more, no less — and every access must be enforceable and auditable.</p>
+<table>
+<thead>
+<tr>
+<th>Sub-Capability</th>
+<th>Description</th>
+<th>Business Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Role Provisioning &amp; Deprovisioning</td>
+<td>Five built-in roles, fixed; one role per staff member; 7-day email invite; access revoked automatically on staff exit, student discontinuation, or certificate issuance</td>
+<td>Access is formally granted and formally revoked — no accounts persist beyond the need</td>
+</tr>
+<tr>
+<td>Multi-Branch Staff Binding</td>
+<td>Admin creates branch bindings per staff member; on login, staff choose their working branch for the session; all actions scoped and logged to the selected branch</td>
+<td>A staff member covering two branches holds one account; their scope is enforced session-by-session, not by policy</td>
+</tr>
+<tr>
+<td>Parent Portal Access</td>
+<td>Created on first payment recording; child-scoped by hard business rule; cannot be modified by any staff role; access revoked on Bonafide or TC issuance</td>
+<td>Parents see only their own child's data — this is a fixed constraint, not a configurable setting</td>
+</tr>
+<tr>
+<td>Session Lifecycle Management</td>
+<td>30-minute inactivity timeout for all roles; role and class assignment changes take effect at next login; branch data isolation enforced on every data request</td>
+<td>No session stays open indefinitely; changes to access rights take effect cleanly at login</td>
+</tr>
+<tr>
+<td>Admin Override Confirmation</td>
+<td>When Admin performs an action owned by another role, a one-click confirmation surfaces before proceeding; the override is recorded in the audit log</td>
+<td>Admin's ability to act across all roles is intentional and documented — not invisible to the record</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="a2-reporting-operational-visibility">A2. Reporting &amp; Operational Visibility</h3>
+<p>Admin and Branch Admin must be able to see the school's operational state without asking staff for verbal updates.</p>
+<table>
+<thead>
+<tr>
+<th>Sub-Capability</th>
+<th>Description</th>
+<th>Business Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Role-Filtered Dashboards</td>
+<td>Pre-computed widgets: active student count, today's attendance, enrollment by programme and class, outstanding balance with import timestamp, recent admissions, expense summary; Accountant sees financial-only view; Admin additionally sees cross-branch comparison</td>
+<td>The school owner can see the complete operational picture from one screen at any time</td>
+</tr>
+<tr>
+<td>CSV Exports</td>
+<td>Available for: student list, enrollment, attendance, staff attendance, invoice list, payment list, communication log, governance report, expense log, daily journal, welfare concern report, leave register; every export automatically access-logged with actor, timestamp, and filter parameters</td>
+<td>Authorised roles can extract data for analysis or external reporting; every extraction is traceable</td>
+</tr>
+<tr>
+<td>Audit Log Access</td>
+<td>Admin (all branches), Branch Admin (own branch only); no other role has direct access</td>
+<td>Every action across every module is retrievable — no action is lost or unattributable</td>
+</tr>
+<tr>
+<td>Governance Log</td>
+<td>A filtered view of the audit log showing only override-class actions; visible to Admin only; Admin can access from the dashboard</td>
+<td>Admin has a dedicated, clean view of every exception and override taken across the school — without wading through routine operations</td>
+</tr>
+<tr>
+<td>Monthly Governance Digest</td>
+<td>Auto-generated email to Admin on the 1st of each month; covers all branches; includes override actions, fee activity, and attendance metrics from the prior month</td>
+<td>Admin receives a structured monthly accountability summary without having to run a report</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="tier-4-compliance-governance-capabilities">Tier 4 — Compliance &amp; Governance Capabilities</h2>
+<h3 id="g1-data-governance-auditability">G1. Data Governance &amp; Auditability</h3>
+<p>Every significant action in the system must leave an immutable, attributed record. Sensitive data must be protected from export and accidental disclosure.</p>
+<table>
+<thead>
+<tr>
+<th>Sub-Capability</th>
+<th>Description</th>
+<th>Business Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Immutable Audit Trail</td>
+<td>Every action across every module — enrollment, attendance, payment, permission change — is written to a permanent log; no role can edit or remove any entry; records carry: timestamp, actor name and role, branch, module, action type, target entity, before state, after state, and reason where required</td>
+<td>The school can demonstrate exactly who did what, when, and why — for any action, in any module, at any time</td>
+</tr>
+<tr>
+<td>Sensitive Data Protection</td>
+<td>Aadhaar numbers and medical records: access-logged on every read; never exported, emailed, or included in any notification; visible to Branch Admin and Admin only</td>
+<td>Sensitive personal data cannot leak through exports, notifications, or role overreach — even accidentally</td>
+</tr>
+<tr>
+<td>Override Accountability</td>
+<td>Every exception path — capacity override, document waiver, attendance correction beyond 30 days, Bonafide or TC issuance with outstanding dues, discontinuation acknowledgments — requires a recorded reason and generates a governance log entry</td>
+<td>Exceptions are sanctioned, not bypassed; every deviation from normal operation is documented</td>
+</tr>
+<tr>
+<td>Data Retention Enforcement</td>
+<td>Financial records retained for 7 years; communication logs for 3 years; student profiles, audit entries, and welfare concern records never deleted</td>
+<td>The school meets legal and operational retention requirements without manual archiving</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="g2-go-live-migration-governance">G2. Go-Live &amp; Migration Governance</h3>
+<p>Every school arrives with existing students, financial history, and operational rhythm. The transition to Happy Feet must be managed as a protected, one-time business phase — not an informal process.</p>
+<table>
+<thead>
+<tr>
+<th>Sub-Capability</th>
+<th>Description</th>
+<th>Business Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Migration Mode</td>
+<td>Admin-controlled, per-branch system state; suppresses invoice generation, Razorpay payment links, and parent portal activation; leaves data preparation tools fully operational; one-time per branch; cannot be re-entered</td>
+<td>The school can prepare all data at its own pace without triggering irreversible financial or access consequences prematurely</td>
+</tr>
+<tr>
+<td>Migration Checklist</td>
+<td>Six-item checklist: (1) <strong>student profiles</strong> — including correct existing Admission IDs entered for all migrated students; (2) authorised pickup lists; (3) opening balances; (4) CoFee XLSX import; (5) academic year setup; (6) staff accounts. Admin cannot exit Migration Mode until all items are green or individually acknowledged with a logged reason.</td>
+<td>Go-live requires a deliberate, documented confirmation that the school has prepared its data — not just an Admin clicking a button; migrated Admission IDs are verified before live operation begins</td>
+</tr>
+<tr>
+<td>CoFee Import Bridge</td>
+<td>Accountant uploads CoFee XLSX; system maps rows to students, writes invoices and payments into Happy Feet's financial database as permanent records; unmatched rows routed to an exceptions queue with three resolution options; every row has a traceable outcome</td>
+<td>No financial record is silently lost during migration; every import row is matched, skipped, or manually resolved</td>
+</tr>
+<tr>
+<td>Admission Number Normalisation</td>
+<td>One-time configuration before the first CoFee import; Branch Admin specifies the format difference between CoFee and Happy Feet IDs; a preview function verifies the rule against 5 sample IDs before saving; applied automatically on all subsequent imports; match type (exact vs normalised) logged per row</td>
+<td>Format mismatches between CoFee and Happy Feet do not send every import row to the exception queue</td>
+</tr>
+<tr>
+<td>Historical Attendance Marker</td>
+<td>Available during Migration Mode only; Branch Admin enters "Days present before go-live" per student from the paper register; locks permanently on Migration Mode exit; feeds into academic year attendance percentage and progress card attendance snapshot</td>
+<td>Schools that go live mid-year have a meaningful, accurate full-year attendance figure — not a figure that starts at zero from go-live day</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="capability-summary-table">Capability Summary Table</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Capability</th>
+<th>Tier</th>
+<th>Primary Owners</th>
+<th>Source Module(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C1</td>
+<td>Student Intake &amp; Enrollment</td>
+<td>Core</td>
+<td>Branch Admin, Coordinator, Accountant</td>
+<td>M5, M3, M1</td>
+</tr>
+<tr>
+<td>C2</td>
+<td>Student Lifecycle Governance</td>
+<td>Core</td>
+<td>Branch Admin, Admin</td>
+<td>M6, M3</td>
+</tr>
+<tr>
+<td>C3</td>
+<td>Daily Attendance Operations</td>
+<td>Core</td>
+<td>Coordinator, Teacher, Branch Admin</td>
+<td>M8</td>
+</tr>
+<tr>
+<td>C4</td>
+<td>Fee Management &amp; Financial Visibility</td>
+<td>Core</td>
+<td>Accountant, Branch Admin, Admin</td>
+<td>M7, M11</td>
+</tr>
+<tr>
+<td>C5</td>
+<td>Academic Progress Tracking</td>
+<td>Core</td>
+<td>Teacher, Branch Admin</td>
+<td>M9, M2</td>
+</tr>
+<tr>
+<td>C6</td>
+<td>Parent Communication &amp; Daily Child Visibility</td>
+<td>Core</td>
+<td>Teacher, Branch Admin, Coordinator</td>
+<td>M12, M10</td>
+</tr>
+<tr>
+<td>S1</td>
+<td>School Configuration</td>
+<td>Supporting</td>
+<td>Branch Admin, Admin</td>
+<td>M2</td>
+</tr>
+<tr>
+<td>S2</td>
+<td>Staff Records</td>
+<td>Supporting</td>
+<td>Branch Admin, Admin</td>
+<td>M4</td>
+</tr>
+<tr>
+<td>S3</td>
+<td>Child Safety Infrastructure</td>
+<td>Supporting</td>
+<td>Branch Admin, Admin, Teacher, Coordinator</td>
+<td>M3, M8</td>
+</tr>
+<tr>
+<td>A1</td>
+<td>Identity &amp; Access Management</td>
+<td>Administrative</td>
+<td>Admin, Branch Admin</td>
+<td>M1</td>
+</tr>
+<tr>
+<td>A2</td>
+<td>Reporting &amp; Operational Visibility</td>
+<td>Administrative</td>
+<td>Admin, Branch Admin, Accountant</td>
+<td>M11</td>
+</tr>
+<tr>
+<td>G1</td>
+<td>Data Governance &amp; Auditability</td>
+<td>Compliance</td>
+<td>Admin</td>
+<td>M1, M11 (all modules write to audit log)</td>
+</tr>
+<tr>
+<td>G2</td>
+<td>Go-Live &amp; Migration Governance</td>
+<td>Compliance</td>
+<td>Admin, Branch Admin</td>
+<td>M4, M7 (Migration Mode)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="key-observations">Key Observations</h2>
+<p><strong>1. Safety capabilities are not optional supporting features.</strong>
+S3 (Child Safety Infrastructure) is Tier 2 but architecturally non-negotiable. Weakening the pickup list, welfare concern pathway, or allergy audit trail creates legal and operational risk specific to the 18-months–6-years age group.</p>
+<p><strong>2. C6 (Parent Communication) replaces a broken process, not a missing feature.</strong>
+The current state is informal WhatsApp with no log, no accountability, and no archive. Every C6 sub-capability targets one specific failure mode of that process — making it higher-stakes than a typical ERP communication module.</p>
+<p><strong>3. G2 (Migration Governance) is a business phase, not a technical one.</strong>
+Migration Mode is a named operational state with legal and financial consequences, not a setup wizard. The one-time, irreversible exit is designed to make go-live traceable and deliberate.</p>
+<p><strong>4. Fee management is record-keeping in V1, collection in V2.</strong>
+CoFee owns invoice generation and collection in V1; Happy Feet records the financial picture. C4 in V1 = financial visibility + light ad-hoc billing only. Full billing engine is V2.</p>
+<p><strong>5. The immutable audit trail is a cross-cutting behavioural property, not a module.</strong>
+Every module writes to the same audit log. G1 is not a separate module to build — it is a constraint every module must implement from the start.</p>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

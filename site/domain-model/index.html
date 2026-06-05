@@ -1,0 +1,3131 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../business-rules/">
+      
+      
+        <link rel="next" href="../domain-glossary/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Domain Model - Happyfeet Application Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#domain-model-happy-feet-school-erp" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Happyfeet Application Docs" class="md-header__button md-logo" aria-label="Happyfeet Application Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Happyfeet Application Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Domain Model
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Happyfeet Application Docs" class="md-nav__button md-logo" aria-label="Happyfeet Application Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Happyfeet Application Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../domain-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Domain Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../business-capability-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Business Capability Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../organization-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organization Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../business-processes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Business Processes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../business-rules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Business Rules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Domain Model
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Domain Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-actors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Actors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-entities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Entities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Entities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Branch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-academic-year" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Academic Year
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-term" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Term
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-programme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Programme
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Class
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-student-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6 Student Profile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-admission-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7 Admission Application
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#28-waitlist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.8 Waitlist
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#29-fee-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.9 Fee Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#210-invoice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.10 Invoice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#211-payment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.11 Payment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212-opening-balance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.12 Opening Balance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#213-attendance-record" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.13 Attendance Record
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#214-progress-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.14 Progress Card
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#215-milestone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.15 Milestone
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#216-daily-journal-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.16 Daily Journal Entry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#217-welfare-concern-record" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.17 Welfare Concern Record
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#218-incident-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.18 Incident Report
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#219-authorised-pickup-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.19 Authorised Pickup List
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#220-ptm-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.20 PTM Note
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#221-transport-zone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.21 Transport Zone
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#222-staff-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.22 Staff Profile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#223-leave-record" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.23 Leave Record
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#224-salary-hold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.24 Salary Hold
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#225-visitor-log-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.25 Visitor Log Entry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#226-whatsapp-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.26 WhatsApp Template
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#227-school-notice-board-post" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.27 School Notice Board Post
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#228-school-inbox-thread" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.28 School Inbox Thread
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#229-fee-query-thread" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.29 Fee Query Thread
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#230-announcement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.30 Announcement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#231-audit-log-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.31 Audit Log Entry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#232-governance-log-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.32 Governance Log Entry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#233-migration-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.33 Migration Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#234-historical-attendance-marker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.34 Historical Attendance Marker
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#235-day-care-billing-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.35 Day Care Billing Plan
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-business-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Business Events
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Business Events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3a-setup-and-configuration-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3A — Setup and Configuration Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3b-admissions-and-enrollment-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3B — Admissions and Enrollment Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3c-daily-operations-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3C — Daily Operations Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3d-financial-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3D — Financial Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3e-progress-assessments-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3E — Progress &amp; Assessments Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3f-safety-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3F — Safety Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3g-student-lifecycle-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3G — Student Lifecycle Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3h-staff-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3H — Staff Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Documents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-entity-relationships" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Entity Relationships
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-lifecycle-state-maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Lifecycle State Maps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Lifecycle State Maps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-student-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Student Status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-progress-card-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Progress Card Status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-welfare-concern-record-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Welfare Concern Record Status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-incident-report-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 Incident Report Status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65-school-inbox-fee-query-thread-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5 School Inbox / Fee Query Thread Status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#66-migration-mode-per-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.6 Migration Mode — Per Branch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#67-staff-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.7 Staff Status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#68-cofee-import-row-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.8 CoFee Import Row Status
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../domain-glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Domain Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-actors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Actors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-entities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Entities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Entities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Branch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-academic-year" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Academic Year
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-term" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Term
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-programme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Programme
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Class
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-student-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6 Student Profile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-admission-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7 Admission Application
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#28-waitlist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.8 Waitlist
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#29-fee-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.9 Fee Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#210-invoice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.10 Invoice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#211-payment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.11 Payment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212-opening-balance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.12 Opening Balance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#213-attendance-record" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.13 Attendance Record
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#214-progress-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.14 Progress Card
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#215-milestone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.15 Milestone
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#216-daily-journal-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.16 Daily Journal Entry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#217-welfare-concern-record" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.17 Welfare Concern Record
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#218-incident-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.18 Incident Report
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#219-authorised-pickup-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.19 Authorised Pickup List
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#220-ptm-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.20 PTM Note
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#221-transport-zone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.21 Transport Zone
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#222-staff-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.22 Staff Profile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#223-leave-record" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.23 Leave Record
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#224-salary-hold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.24 Salary Hold
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#225-visitor-log-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.25 Visitor Log Entry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#226-whatsapp-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.26 WhatsApp Template
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#227-school-notice-board-post" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.27 School Notice Board Post
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#228-school-inbox-thread" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.28 School Inbox Thread
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#229-fee-query-thread" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.29 Fee Query Thread
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#230-announcement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.30 Announcement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#231-audit-log-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.31 Audit Log Entry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#232-governance-log-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.32 Governance Log Entry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#233-migration-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.33 Migration Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#234-historical-attendance-marker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.34 Historical Attendance Marker
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#235-day-care-billing-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.35 Day Care Billing Plan
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-business-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Business Events
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Business Events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3a-setup-and-configuration-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3A — Setup and Configuration Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3b-admissions-and-enrollment-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3B — Admissions and Enrollment Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3c-daily-operations-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3C — Daily Operations Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3d-financial-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3D — Financial Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3e-progress-assessments-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3E — Progress &amp; Assessments Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3f-safety-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3F — Safety Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3g-student-lifecycle-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3G — Student Lifecycle Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3h-staff-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3H — Staff Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Documents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-entity-relationships" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Entity Relationships
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-lifecycle-state-maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Lifecycle State Maps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Lifecycle State Maps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-student-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Student Status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-progress-card-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Progress Card Status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-welfare-concern-record-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Welfare Concern Record Status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-incident-report-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 Incident Report Status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65-school-inbox-fee-query-thread-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5 School Inbox / Fee Query Thread Status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#66-migration-mode-per-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.6 Migration Mode — Per Branch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#67-staff-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.7 Staff Status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#68-cofee-import-row-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.8 CoFee Import Row Status
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<!-- ABOUT
+File: DOMAIN_MODEL.md
+Purpose: Identifies every actor, entity, event, document, lifecycle state, and relationship in the Happy Feet domain — business meaning only, no technical modeling.
+Scope: 11 actors, 34 entities, 27 business events, 10 documents, 8 lifecycle state maps, entity relationship summary; excludes database schemas, APIs, data types, and implementation.
+Dependencies: DOMAIN_OVERVIEW.md, BUSINESS_CAPABILITY_MAP.md, ORGANIZATION_MODEL.md, BUSINESS_PROCESSES.md, BUSINESS_RULES.md
+Stage: Stage 6 — Domain Concepts
+-->
+
+<h1 id="domain-model-happy-feet-school-erp">Domain Model — Happy Feet School ERP</h1>
+<blockquote>
+<p><strong>About This Document:</strong> This document is a structured map of every meaningful record, actor, event, and document in the Happy Feet domain — expressed in business terms, not technical ones. It covers 11 actors, 34 entities, 27 business events, 10 document types, and 8 lifecycle state maps, along with a summary of how these elements relate to one another. Read this when designing data models, writing domain logic, or tracing how a business concept moves through the system; you can skip it if your work is confined to a single process or UI surface you already understand well.</p>
+</blockquote>
+<p><strong>Stage:</strong> 6 — Domain Concepts</p>
+<hr />
+<h2 id="1-actors">1. Actors</h2>
+<table>
+<thead>
+<tr>
+<th>Actor</th>
+<th>Type</th>
+<th>Scope</th>
+<th>Primary Goal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Admin</td>
+<td>Human</td>
+<td>All branches, all modules</td>
+<td>Complete operational visibility; sole authority over cross-branch governance, Migration Mode, and overrides no other role can execute</td>
+</tr>
+<tr>
+<td>Branch Admin</td>
+<td>Human</td>
+<td>Own branch, all modules</td>
+<td>Operate the branch end-to-end without paper or WhatsApp intermediaries</td>
+</tr>
+<tr>
+<td>Coordinator</td>
+<td>Human</td>
+<td>Own branch — intake, gate, inbox</td>
+<td>Advance admissions, verify authorised pickup at gate, mark student attendance for any class, manage school inbox</td>
+</tr>
+<tr>
+<td>Teacher</td>
+<td>Human</td>
+<td>Assigned class slots only</td>
+<td>Mark attendance, log daily activities, submit progress cards</td>
+</tr>
+<tr>
+<td>Accountant</td>
+<td>Human</td>
+<td>Own branch — financial data</td>
+<td>Financial visibility, CoFee import, fee communication</td>
+</tr>
+<tr>
+<td>Parent / Guardian</td>
+<td>Human</td>
+<td>Own child's data — read-only</td>
+<td>Real-time visibility into child's safety and daily school activity</td>
+</tr>
+<tr>
+<td>Child / Student</td>
+<td>Human</td>
+<td>Subject of all records — never a system user</td>
+<td>Central entity around which every safety rule, health record, and daily log is organised</td>
+</tr>
+<tr>
+<td>CoFee</td>
+<td>External system</td>
+<td>Primary invoice and payment lifecycle (V1)</td>
+<td>Generate invoices, collect payments, produce XLSX exports</td>
+</tr>
+<tr>
+<td>Razorpay</td>
+<td>External system</td>
+<td>Ad-hoc payment links (V1)</td>
+<td>Process single payments; confirm automatically in Happy Feet</td>
+</tr>
+<tr>
+<td>WhatsApp</td>
+<td>External platform</td>
+<td>Manual parent communication (V1)</td>
+<td>Deliver pre-filled deeplink messages tapped by staff</td>
+</tr>
+<tr>
+<td>Notification Engine</td>
+<td>Internal system</td>
+<td>All modules</td>
+<td>Fire 12 named system notifications on defined trigger events</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-entities">2. Entities</h2>
+<p>For each entity: what it is, why it exists, key business attributes, and what it connects to.</p>
+<hr />
+<h3 id="21-branch">2.1 Branch</h3>
+<p>The operational unit that scopes all data, staff, and students. Every data request is validated against the requesting user's branch binding before data is returned.</p>
+<p><strong>Key attributes:</strong> Name, location, active status, Migration Mode state (per-branch)
+<strong>Relationships:</strong> Contains Academic Years, Classes, Staff, Students, Fee Structures, and all audit records</p>
+<hr />
+<h3 id="22-academic-year">2.2 Academic Year</h3>
+<p>The annual operational period. Every downstream module (admissions, attendance, fees, progress) depends on a confirmed Academic Year configuration.</p>
+<p><strong>Key attributes:</strong> Start date, end date, activation status, activation mode (automatic or manual override)
+<strong>Lifecycle:</strong> Configured (upcoming) → Active (at midnight on start date) → Closed (at year-end rollover)
+<strong>Relationships:</strong> Has Terms; has configured Programmes, Classes, Calendar, Timetable, Milestones, Document Types</p>
+<hr />
+<h3 id="23-term">2.3 Term</h3>
+<p>A sub-period within an Academic Year. The scheduling unit for progress card submission windows.</p>
+<p><strong>Key attributes:</strong> Term number, start date, end date, progress card submission window (open date, close date)
+<strong>Relationships:</strong> Belongs to Academic Year; defines submission window for Progress Cards</p>
+<hr />
+<h3 id="24-programme">2.4 Programme</h3>
+<p>A course offering with its own billing model, attendance model, and milestone structure. Fully configurable — no fixed list.</p>
+<p><strong>Key attributes:</strong> Name, type, billing model, attendance model, milestone set (full or simplified), progress card inclusion</p>
+<table>
+<thead>
+<tr>
+<th>Programme type</th>
+<th>Examples</th>
+<th>Billing model</th>
+<th>Attendance</th>
+<th>Progress cards</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Academic</td>
+<td>Nursery, PP1, PP2, Grade 1–10</td>
+<td>Term-based</td>
+<td>Daily class</td>
+<td>Yes — configurable milestone set</td>
+</tr>
+<tr>
+<td>Non-Academic</td>
+<td>Play Group, Day Care, Summer Camp</td>
+<td>Monthly / Session</td>
+<td>Daily or session</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>Event</td>
+<td>Annual Day, field trip</td>
+<td>One-off fee</td>
+<td>Not applicable</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Default set (pre-loaded, not hardcoded):</strong> Play Group, Nursery, PP1, PP2, Day Care
+<strong>Relationships:</strong> Has Classes, Milestones, Fee Structure, required document types</p>
+<hr />
+<h3 id="25-class">2.5 Class</h3>
+<p>A named group of students within a programme, with capacity and teacher slots.</p>
+<p><strong>Key attributes:</strong> Name, capacity (with override history), three teacher slot fields</p>
+<table>
+<thead>
+<tr>
+<th>Slot</th>
+<th>Mandatory</th>
+<th>End date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primary</td>
+<td>Yes — every class must have one</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Assistant</td>
+<td>No</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Temporary</td>
+<td>No</td>
+<td>Configurable; access lapses automatically</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Relationships:</strong> Belongs to Programme and Branch; has Students, Timetable, Progress Cards; has a Waitlist when full</p>
+<hr />
+<h3 id="26-student-profile">2.6 Student Profile</h3>
+<p>The permanent record of a child from admission through all lifecycle transitions. Never deleted regardless of status.</p>
+<p><strong>Key attributes:</strong> Permanent Admission ID, name, date of birth, status, programme, class, guardian contacts, emergency contacts, medical records (access-logged), allergy flags, critical medication flags, document list, Historical Attendance Marker
+<strong>Relationships:</strong> Has Attendance Records, Progress Cards, Daily Journal entries, Welfare Concern Records, Incident Reports, PTM Notes, Invoices, Opening Balance, Authorised Pickup List</p>
+<hr />
+<h3 id="27-admission-application">2.7 Admission Application</h3>
+<p>A formal request for a child to attend the school. Exists before a Student Profile is created; becomes the Student Profile on enrollment completion.</p>
+<p><strong>Key attributes:</strong> Child details, programme preference, guardian contacts, medical history, submitted documents, application status
+<strong>Lifecycle:</strong> Applied → Approved → Enrolled | Declined | Waitlisted
+<strong>Relationships:</strong> Transitions to Student Profile on Enrollment; linked to Waitlist if class is full</p>
+<hr />
+<h3 id="28-waitlist">2.8 Waitlist</h3>
+<p>An ordered queue of approved applicants for a class that has reached capacity.</p>
+<p><strong>Key attributes:</strong> Per-class; entries ordered by date added; permanently logged
+<strong>Lifecycle:</strong> Student added → class slot opens → Branch Admin offers enrollment → Accepted (proceeds to P04) or Declined (position permanently logged)
+<strong>Relationships:</strong> Belongs to Class; references Admission Application</p>
+<hr />
+<h3 id="29-fee-structure">2.9 Fee Structure</h3>
+<p>The billing configuration for a programme that is snapshotted per student at enrollment.</p>
+<p><strong>Key attributes:</strong> Programme, billing model, billing schedule, per-term amounts, student category, transport zone (if applicable)
+<strong>Snapshot rule:</strong> Snapshotted as a full data copy at enrollment completion; governs billing for that student's enrolment period; subsequent programme-level changes do not automatically update existing snapshots
+<strong>Relationships:</strong> Belongs to Programme; one snapshot per enrolled Student; feeds Invoices</p>
+<hr />
+<h3 id="210-invoice">2.10 Invoice</h3>
+<p>A formal record of a financial obligation — either imported from CoFee or created natively.</p>
+<p><strong>Key attributes:</strong> Source (COFEE_IMPORT or HAPPY_FEET_NATIVE), auto-generated invoice number, fee head, amount, due date, payment status</p>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Created by</th>
+<th>Blocked during Migration Mode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>COFEE_IMPORT</td>
+<td>CoFee XLSX import</td>
+<td>No — import runs normally</td>
+</tr>
+<tr>
+<td>HAPPY_FEET_NATIVE</td>
+<td>Accountant, Branch Admin, or Admin</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Relationships:</strong> Belongs to Student; has Payments; HAPPY_FEET_NATIVE invoices can have Razorpay payment links</p>
+<hr />
+<h3 id="211-payment">2.11 Payment</h3>
+<p>A recorded financial transaction applied against an Invoice. Never deleted.</p>
+<p><strong>Key attributes:</strong> Amount, date, source (CoFee or Razorpay), transaction ID (Razorpay), linked invoice
+<strong>Lifecycle:</strong> Recorded → permanent
+<strong>Relationships:</strong> Belongs to Invoice and Student</p>
+<hr />
+<h3 id="212-opening-balance">2.12 Opening Balance</h3>
+<p>A historical outstanding amount for a student migrated into Happy Feet before go-live.</p>
+<p><strong>Key attributes:</strong> Student, amount, entered by, entry date
+<strong>Window rule:</strong> Available before the first invoice is generated for that student; window stays open during Migration Mode; closes permanently once the first invoice is generated post-Migration Mode exit
+<strong>Relationships:</strong> Belongs to Student; feeds financial dashboard outstanding balance</p>
+<hr />
+<h3 id="213-attendance-record">2.13 Attendance Record</h3>
+<p>The daily record of a student's attendance status for academic purposes. Teacher-managed. Independent from Day Care billing records.</p>
+<p><strong>Key attributes:</strong> Student, date, class, status (Present / Absent / Late / Half-Day), marked by (staff actor and role), correction log</p>
+<blockquote>
+<p>Note: CHECK_IN and CHECK_OUT timestamps for Day Care billing are maintained as separate operational records (see Day Care Billing Plan — §2.35 and P07B), not on the Attendance Record.</p>
+</blockquote>
+<p><strong>Status derivation:</strong>
+- Teacher (or authorised secondary actor) marks Present, Absent, Late, or Half-Day directly on the class attendance screen
+- If no record is created within the marking window: reminder notification fires to the responsible Teacher; if still unmarked, escalation notification fires to Branch Admin; no attendance record exists for the student until created by authorised staff or bulk-marked by Branch Admin</p>
+<p><strong>Valid statuses:</strong> Present / Absent / Late / Half-Day</p>
+<p><strong>Day Care:</strong> Day Care billing is independent from attendance status and is governed by the assigned Day Care Billing Plan (§2.35). Attendance records and Day Care billing records are separate business concepts.
+<strong>Relationships:</strong> Belongs to Student and Class; triggers parent notification #3 on Absent; feeds Progress Card attendance snapshot at publication</p>
+<hr />
+<h3 id="214-progress-card">2.14 Progress Card</h3>
+<p>A formal termly academic assessment of a student's development, submitted by Teacher and published by Branch Admin.</p>
+<p><strong>Key attributes:</strong> Student, term, academic year, milestone ratings, Teacher observation text, attribution (drafter, submitter), attendance snapshot (locked at publication — immutable), status, publication date
+<strong>Lifecycle:</strong> DRAFT → SUBMITTED → PUBLISHED | RETURNED → (loop) | ARCHIVED (on revision)
+<strong>Relationships:</strong> Belongs to Student and Term; has Milestones; attendance snapshot locked from live Attendance Records at publication; visible to Parent (published only)</p>
+<hr />
+<h3 id="215-milestone">2.15 Milestone</h3>
+<p>A developmental domain assessed within a progress card.</p>
+<p><strong>Key attributes:</strong> Programme, domain name, rating scale, milestone set (full or simplified)
+<strong>Lifecycle:</strong> Configured per programme at academic year setup → used in all progress cards for that programme
+<strong>Relationships:</strong> Belongs to Programme; appears in Progress Card</p>
+<hr />
+<h3 id="216-daily-journal-entry">2.16 Daily Journal Entry</h3>
+<p>A per-child record of a specific activity during the school day. Immutable after saving; corrections appended as new entries. Never deleted.</p>
+<p><strong>Key attributes:</strong> Student, date, entry type, entered by Teacher, timestamp, type-specific fields</p>
+<table>
+<thead>
+<tr>
+<th>Entry type</th>
+<th>Key fields</th>
+<th>Parent visibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Meal</td>
+<td>Description, quantity, allergy protocol confirmed Y/N</td>
+<td>Full</td>
+</tr>
+<tr>
+<td>Nap</td>
+<td>Duration, quality</td>
+<td>Full</td>
+</tr>
+<tr>
+<td>Toilet</td>
+<td>Type</td>
+<td>"Toilet visit logged" — no detail ever shown</td>
+</tr>
+<tr>
+<td>Activity</td>
+<td>Name, participation level</td>
+<td>Full</td>
+</tr>
+<tr>
+<td>Health Check</td>
+<td>Temperature (optional), condition, medication administered</td>
+<td>Full</td>
+</tr>
+<tr>
+<td>General Note</td>
+<td>Free text (500 chars max)</td>
+<td>Full</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Allergy rule:</strong> Meal entries for students with active allergy flags require Teacher to confirm "allergy protocol was followed" before saving. Confirmation permanently logged — creates an immutable audit trail.
+<strong>Relationships:</strong> Belongs to Student; visible to Parent (30-day feed, filterable); Coordinator can view read-only</p>
+<hr />
+<h3 id="217-welfare-concern-record">2.17 Welfare Concern Record</h3>
+<p>A Teacher's formal observation of a student wellbeing concern. Permanent and immutable. Never visible to parents.</p>
+<p><strong>Key attributes:</strong> Student, flagging Teacher, timestamp, mandatory free-text description ("Describe what you observed"), status (OPEN / REVIEWED / ESCALATED), Branch Admin review note, review timestamp
+<strong>Lifecycle:</strong> Created (OPEN) → Branch Admin reviews within 3 school days → REVIEWED or ESCALATED; status changes appended; record permanent
+<strong>Relationships:</strong> Belongs to Student; triggers Branch Admin notification #8; teachers see own flags only</p>
+<hr />
+<h3 id="218-incident-report">2.18 Incident Report</h3>
+<p>A formal record of a notable event (injury, behavioural episode, medical event) during school hours. Append-only; never deleted. Internal notes and staff witness details never shown to parents under any circumstances.</p>
+<p><strong>Key attributes:</strong> Student, date of occurrence, incident type, what happened, action taken, internal notes (staff only), staff witnesses (staff only), status (INTERNAL / PUBLISHED)
+<strong>Lifecycle:</strong> Created (INTERNAL) → Branch Admin reviews → PUBLISHED to parent portal or remains INTERNAL (one-way)
+<strong>Published parent view:</strong> Date, incident type, what happened, action taken only
+<strong>Relationships:</strong> Belongs to Student; when published, triggers mandatory parent notification #7 (bypasses opt-out)</p>
+<hr />
+<h3 id="219-authorised-pickup-list">2.19 Authorised Pickup List</h3>
+<p>The per-student list of named individuals permitted to collect the child at the school gate. An absolute safety enforcement mechanism.</p>
+<p><strong>Key attributes:</strong> Per student; entries: name, relationship, contact number, active status; every addition/deactivation permanently logged with actor, reason, and timestamp
+<strong>Invariant:</strong> At least one active entry required at all times from enrollment. Deactivating the last active entry is blocked. Guardian is not automatically on the list — must be explicitly added.
+<strong>Lifecycle:</strong> First entry required before enrollment completes → managed by Branch Admin throughout enrolment → entries log on every change; minimum one active entry enforced
+<strong>Relationships:</strong> Belongs to Student; verified at gate by Coordinator using the student profile (system blocks release if person not listed — see P07A); readable by Teacher (own class) and Coordinator (gate verification); every change triggers mandatory parent notification (bypasses opt-out)</p>
+<hr />
+<h3 id="220-ptm-note">2.20 PTM Note</h3>
+<p>A Parent-Teacher Meeting observation record for a student. Internal staff record only — never visible to parents.</p>
+<p><strong>Key attributes:</strong> Student, teacher, meeting date, observation text
+<strong>Lifecycle:</strong> Created during or after PTM → permanent
+<strong>Relationships:</strong> Belongs to Student; visible to Branch Admin, Admin, own Teacher only</p>
+<hr />
+<h3 id="221-transport-zone">2.21 Transport Zone</h3>
+<p>A distance band with a fixed monthly billing rate for school-owned transport.</p>
+<p><strong>Key attributes:</strong> Zone name, distance band, trip type, fixed monthly amount per student
+<strong>Billing:</strong> Fixed per zone — not variable by actual usage
+<strong>Lifecycle:</strong> Configured at academic year setup → students opt-in per zone; transport activated/deactivated at any time, taking effect from the next billing period
+<strong>Relationships:</strong> Belongs to Branch/Academic Year; assigned per Student; drives transport billing line item in Fee Structure</p>
+<hr />
+<h3 id="222-staff-profile">2.22 Staff Profile</h3>
+<p>The employment record for a school staff member. Never deleted.</p>
+<p><strong>Key attributes:</strong> Name, designation, employment type, role, branch bindings, salary history (append-only), documents (Aadhaar, education certificates, employment agreement with hold type noted), leave records, certifications with expiry dates, status</p>
+<p><strong>Certification expiry alert thresholds:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Document</th>
+<th>Alert threshold</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NTT Certificate</td>
+<td>60 days before expiry</td>
+</tr>
+<tr>
+<td>Montessori Certification</td>
+<td>60 days before expiry</td>
+</tr>
+<tr>
+<td>First Aid Certificate</td>
+<td>30 days before expiry</td>
+</tr>
+<tr>
+<td>Police Verification</td>
+<td>60 days before computed expiry (issue date + 3 years)</td>
+</tr>
+<tr>
+<td>Annual Employment Agreement</td>
+<td>30 days before renewal date</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Lifecycle:</strong> Created by Branch Admin → Active → (On Leave, temporary) → Exited (read-only; access revoked)
+<strong>Relationships:</strong> Bound to one or more Branches via Branch Bindings; occupies Teacher Slots on Classes; has Leave Records, Salary Holds, Certifications</p>
+<hr />
+<h3 id="223-leave-record">2.23 Leave Record</h3>
+<p>A formal leave request for a staff member. Append-only.</p>
+<p><strong>Key attributes:</strong> Staff member, leave type (Sick / Casual / Emergency / Planned), start date, end date, status (Approved / Rejected / Pending), notes
+<strong>Approved leave:</strong> Automatically links to the corresponding daily staff attendance entries and marks them On Leave with the leave reference
+<strong>Relationships:</strong> Belongs to Staff Profile; links to Staff Attendance entries</p>
+<hr />
+<h3 id="224-salary-hold">2.24 Salary Hold</h3>
+<p>A financial hold on a staff member's salary or documents that must be formally resolved before exit can proceed.</p>
+<p><strong>Key attributes:</strong> Hold type (first-month salary held / degree in custody), status (active / resolved), resolution notes</p>
+<table>
+<thead>
+<tr>
+<th>Hold type</th>
+<th>Resolution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>First-month salary held</td>
+<td>Formally released by Branch Admin</td>
+</tr>
+<tr>
+<td>Degree in custody</td>
+<td>Returned to staff member and logged</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Relationships:</strong> Belongs to Staff Profile; blocks Staff Exit (Gate 2) until resolved</p>
+<hr />
+<h3 id="225-visitor-log-entry">2.25 Visitor Log Entry</h3>
+<p>A record of a non-staff visitor to school premises. Operational security record.</p>
+<p><strong>Key attributes:</strong> Visitor name, purpose, entry time, recorded by (Coordinator)
+<strong>Lifecycle:</strong> Created by Coordinator → permanent
+<strong>Relationships:</strong> Belongs to Branch; visible to Branch Admin and Admin</p>
+<hr />
+<h3 id="226-whatsapp-template">2.26 WhatsApp Template</h3>
+<p>A pre-approved message template for staff-to-parent WhatsApp deeplink communications.</p>
+<p><strong>Key attributes:</strong> Type, scope (Global or Branch-scoped), content, placeholder fields, version history, active status</p>
+<table>
+<thead>
+<tr>
+<th>Template type</th>
+<th>Sent by</th>
+<th>Available placeholders</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Absence notification</td>
+<td>Admin, Branch Admin, Coordinator, Teacher</td>
+<td>student.name, student.class, attendance.date, school.name, branch.name</td>
+</tr>
+<tr>
+<td>Fee reminder</td>
+<td>Admin, Branch Admin, Accountant</td>
+<td>student.name, invoice.amount, invoice.due_date, invoice.fee_head, school.name, branch.name</td>
+</tr>
+<tr>
+<td>Payment confirmation</td>
+<td>Admin, Branch Admin, Accountant</td>
+<td>student.name, payment.amount, payment.date, invoice.remaining_balance, school.name, branch.name</td>
+</tr>
+<tr>
+<td>Incident notification</td>
+<td>Branch Admin only</td>
+<td>student.name, student.class, incident.date, school.name, branch.name</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Fallback chain at send time:</strong> Branch-scoped template → Global template → Blocked (in-app alert to Branch Admin)
+<strong>Lifecycle:</strong> Created → active immediately → versions retained on edit; cannot be deleted if it is the last active template of its type for the branch — only deactivated
+<strong>Relationships:</strong> Global: created by Admin; Branch: created by Branch Admin (if toggle enabled); used by eligible roles at send time</p>
+<hr />
+<h3 id="227-school-notice-board-post">2.27 School Notice Board Post</h3>
+<p>A branch-wide, non-transactional notice. No notification fires on posting — parents see an unread badge on next portal visit.</p>
+<p><strong>Key attributes:</strong> Content, posted by, post date, archived status
+<strong>Lifecycle:</strong> Posted → archived (permanently retained; cannot be deleted)
+<strong>Relationships:</strong> Belongs to Branch; visible to all staff roles and Parents (branch-scoped)</p>
+<hr />
+<h3 id="228-school-inbox-thread">2.28 School Inbox Thread</h3>
+<p>A two-way asynchronous message thread between a parent and the school, linked to a specific enrolled child.</p>
+<p><strong>Key attributes:</strong> Linked enrolled child, messages, staff replies, thread status (active / CLOSED), message timestamps
+<strong>Rules:</strong> Maximum 5 parent-initiated messages per student per day; staff replies have no limit; messages cannot be deleted by any role; retained 3 years; CLOSED is terminal
+<strong>Relationships:</strong> Linked to Student and Parent; handled by Branch Admin and Coordinator; Teacher and Accountant have no access</p>
+<hr />
+<h3 id="229-fee-query-thread">2.29 Fee Query Thread</h3>
+<p>A dedicated channel for parent fee-related questions, routed directly to Accountant's fee communication log.</p>
+<p><strong>Key attributes:</strong> Linked enrolled child, query content, Accountant replies, thread status (active / CLOSED)
+<strong>Rules:</strong> Separate from school inbox; Coordinator has no access; CLOSED is terminal; all messages permanently logged
+<strong>Relationships:</strong> Linked to Student; handled by Accountant primarily; Branch Admin and Admin can also view and reply</p>
+<hr />
+<h3 id="230-announcement">2.30 Announcement</h3>
+<p>A broadcast communication from the school to a defined parent audience. Sent as an in-app notification.</p>
+<p><strong>Key attributes:</strong> Audience level, content, sender, send time, recipient count (shown before send)</p>
+<table>
+<thead>
+<tr>
+<th>Audience level</th>
+<th>Recipients</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>All parents</td>
+<td>Every parent with an active portal account in the branch</td>
+</tr>
+<tr>
+<td>By programme</td>
+<td>All parents of students in a specific programme</td>
+</tr>
+<tr>
+<td>By class</td>
+<td>All parents of students in a specific class</td>
+</tr>
+<tr>
+<td>Individual</td>
+<td>A single parent account</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Relationships:</strong> Sent by Branch Admin, Coordinator, or Admin; received by Parents; permanently logged</p>
+<hr />
+<h3 id="231-audit-log-entry">2.31 Audit Log Entry</h3>
+<p>A permanent, immutable record of every action taken in the system. No role can edit or delete any entry.</p>
+<p><strong>Key attributes:</strong> Timestamp, actor (name and role), branch, module, action type, target entity, before state, after state, reason (where required)
+<strong>Relationships:</strong> Written by every module on every action; accessible to Admin (all branches) and Branch Admin (own branch only)</p>
+<hr />
+<h3 id="232-governance-log-entry">2.32 Governance Log Entry</h3>
+<p>A filtered view of the Audit Log showing only override-class actions. Visible to Admin only.</p>
+<p><strong>Override-class actions captured:</strong> Attendance corrections beyond 30 days; Bonafide/TC with outstanding dues; capacity overrides; document waivers; discontinuation acknowledgments; Migration Mode entry and exit
+<strong>Relationships:</strong> Subset of Audit Log; drives Monthly Governance Digest email</p>
+<hr />
+<h3 id="233-migration-checklist">2.33 Migration Checklist</h3>
+<p>The per-branch go-live readiness tracker maintained during Migration Mode.</p>
+<p><strong>Six checklist items:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Green when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Student profiles</td>
+<td>All expected profiles created and verified</td>
+</tr>
+<tr>
+<td>Authorised pickup lists</td>
+<td>Every student has at least one active entry</td>
+</tr>
+<tr>
+<td>Opening balances</td>
+<td>All students have opening balances entered</td>
+</tr>
+<tr>
+<td>CoFee XLSX import</td>
+<td>Last import run with zero unresolved exceptions</td>
+</tr>
+<tr>
+<td>Academic year setup</td>
+<td>All 9 steps confirmed complete</td>
+</tr>
+<tr>
+<td>Staff accounts</td>
+<td>All staff provisioned and accounts activated</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Rules:</strong> Admin cannot exit Migration Mode until every item is green or explicitly acknowledged with a logged reason. Complete checklist state is permanently captured in the Governance Log on exit.
+<strong>Relationships:</strong> Belongs to Branch; controls Migration Mode exit</p>
+<hr />
+<h3 id="234-historical-attendance-marker">2.34 Historical Attendance Marker</h3>
+<p>A single per-student manual entry of school days present before the system go-live date.</p>
+<p><strong>Key attributes:</strong> Student, days-present value, entered by Branch Admin, entry date
+<strong>Rules:</strong> Available during Migration Mode only; locks permanently on Migration Mode exit; cannot be edited thereafter by any role; accuracy depends entirely on paper register data
+<strong>Relationships:</strong> Belongs to Student; contributes to annual attendance percentage and Progress Card attendance snapshot</p>
+<hr />
+<h3 id="235-day-care-billing-plan">2.35 Day Care Billing Plan</h3>
+<p>The billing configuration assigned to a Day Care programme or student. Determines how billing is calculated for each billing period. All Day Care billing behaviour is governed by the assigned plan.</p>
+<p><strong>Key attributes:</strong> Billing mode (Monthly | Weekly | Day-wise | Hour-wise | Term-wise), hour plan (for Hour-wise mode: 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 hours), rate/amount, scope (programme-level or student-level), effective dates</p>
+<p><strong>Billing mode notes:</strong>
+- Monthly, Weekly, Term-wise: flat-rate fees — billing is not duration-derived
+- Day-wise: billed per attendance day
+- Hour-wise: billed per configured hour plan; staff-recorded check-in/check-out timestamps support calculations where the plan requires them</p>
+<p><strong>Invariant:</strong> Every Day Care student must have an assigned Day Care Billing Plan before billing can be computed for that student.</p>
+<p><strong>Managed by:</strong> Branch Admin (configured in M7 fee settings)</p>
+<p><strong>Relationships:</strong> Assigned to Day Care programme or student; referenced by Day Care Billing Summary export (see §4 Documents); governs EX-32 and FR-03 billing behaviour; check-in/check-out timestamps (see CheckInOutEvent) support billing where required by the plan</p>
+<p><strong>SupplementaryService type:</strong> <code>DAY_CARE</code> — sits alongside <code>TRANSPORT</code> on the student enrollment record as an optional supplementary service (DECISION-008). The enrollment record stays singular. Billing generates one consolidated invoice with multiple line items, one per active supplementary service. The <code>DAY_CARE</code> line item is governed by the assigned Day Care Billing Plan; the <code>TRANSPORT</code> line item is governed by the Transport Zone rate. SupplementaryServiceType enum values: <code>TRANSPORT</code>, <code>DAY_CARE</code>.</p>
+<hr />
+<h2 id="3-business-events">3. Business Events</h2>
+<p>Events that trigger state changes, notifications, or workflow initiations.</p>
+<h3 id="3a-setup-and-configuration-events">3A — Setup and Configuration Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Trigger</th>
+<th>Primary Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Academic Year Configured</td>
+<td>Branch Admin completes all 9 steps</td>
+<td>All downstream modules become operational</td>
+</tr>
+<tr>
+<td>Academic Year Activated</td>
+<td>Midnight on configured start date (or Admin manual override)</td>
+<td>New year becomes the active period</td>
+</tr>
+<tr>
+<td>Staff Account Provisioned</td>
+<td>Branch Admin creates profile and sends portal invite</td>
+<td>7-day invite window opens</td>
+</tr>
+<tr>
+<td>Staff Account Activated</td>
+<td>Staff member logs in for the first time</td>
+<td>Role and class assignments take effect at this login</td>
+</tr>
+<tr>
+<td>Migration Mode Entered</td>
+<td>Admin confirms entry</td>
+<td>Invoice generation, payment links, and portal activation suppressed</td>
+</tr>
+<tr>
+<td>Migration Mode Exited</td>
+<td>Admin confirms exit after checklist cleared</td>
+<td>All suppressed events fire simultaneously; Historical Attendance Marker locks</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="3b-admissions-and-enrollment-events">3B — Admissions and Enrollment Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Trigger</th>
+<th>Primary Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Application Submitted</td>
+<td>Parent submits public form or Branch Admin creates walk-in</td>
+<td>Status: Applied; Student Profile not yet created</td>
+</tr>
+<tr>
+<td>Programme Assigned</td>
+<td>Branch Admin assigns programme and class</td>
+<td>Status: Approved; Student Profile initiated in M3</td>
+</tr>
+<tr>
+<td>Enrollment Completed</td>
+<td>All four conditions satisfied; Branch Admin confirms</td>
+<td>Status: Enrolled; fee structure snapshotted; Admission ID assigned</td>
+</tr>
+<tr>
+<td>Application Declined</td>
+<td>Branch Admin or Admin records reason</td>
+<td>Status: Declined; application permanently retained; can be reopened</td>
+</tr>
+<tr>
+<td>Student Added to Waitlist</td>
+<td>Class full; Branch Admin adds applicant</td>
+<td>Waitlist position recorded; no automated parent notification</td>
+</tr>
+<tr>
+<td>First Payment Recorded</td>
+<td>Accountant records first payment</td>
+<td>Portal invite sent to parent (notification #1 — bypasses opt-out)</td>
+</tr>
+<tr>
+<td>Parent Portal Activated</td>
+<td>Parent logs in for the first time</td>
+<td>Portal live; scoped to enrolled child(ren)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="3c-daily-operations-events">3C — Daily Operations Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Trigger</th>
+<th>Primary Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Attendance Marked by Teacher</td>
+<td>Teacher marks student Present / Absent / Late / Half-Day on class attendance screen</td>
+<td>Attendance record created; parent notification #3 fires immediately on Absent (opt-outable)</td>
+</tr>
+<tr>
+<td>Attendance Not Marked — Reminder</td>
+<td>Marking window closes with no attendance record for one or more students</td>
+<td>Reminder notification fires to responsible Teacher</td>
+</tr>
+<tr>
+<td>Attendance Not Marked — Escalation</td>
+<td>Reminder sent; no record created after reminder</td>
+<td>Escalation notification fires to Branch Admin</td>
+</tr>
+<tr>
+<td>Day Care Check-In Recorded</td>
+<td>Authorised staff records Day Care student arrival time</td>
+<td>CHECK_IN timestamp stored as operational record (see P07B)</td>
+</tr>
+<tr>
+<td>Day Care Check-Out Recorded</td>
+<td>Authorised staff records Day Care student departure time at departure</td>
+<td>CHECK_OUT timestamp stored as operational record; billing applied per assigned Day Care Billing Plan where required</td>
+</tr>
+<tr>
+<td>Unregistered Person at Gate</td>
+<td>Person not on pickup list presents at departure (see P07A)</td>
+<td>System blocks; Coordinator escalates to Branch Admin; Branch Admin proceeds with governance log entry or refuses release</td>
+</tr>
+<tr>
+<td>Welfare Concern Flagged</td>
+<td>Teacher submits flag with mandatory observation text</td>
+<td>WelfareConcernRecord created; Branch Admin notification #8 fires</td>
+</tr>
+<tr>
+<td>Chronic Absence Threshold Crossed</td>
+<td>System detects threshold breach on every Absent mark</td>
+<td>Branch Admin notification #9 fires with link to student attendance history</td>
+</tr>
+<tr>
+<td>Attendance Corrected</td>
+<td>Authorised role corrects within time window</td>
+<td>Correction logged with original status, new status, actor, timestamp, reason</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="3d-financial-events">3D — Financial Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Trigger</th>
+<th>Primary Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Opening Balance Entered</td>
+<td>Branch Admin enters historical balance</td>
+<td>Financial starting point established; feeds financial dashboard</td>
+</tr>
+<tr>
+<td>Invoice Created</td>
+<td>CoFee import or Accountant/Branch Admin action</td>
+<td>Financial obligation recorded; opens balance window closes on first invoice</td>
+</tr>
+<tr>
+<td>Payment Recorded</td>
+<td>CoFee import, Razorpay confirmation, or manual recording</td>
+<td>Payment applied against invoice; financial dashboard updated</td>
+</tr>
+<tr>
+<td>CoFee Import Run</td>
+<td>Accountant uploads XLSX</td>
+<td>Rows matched and written; exceptions routed; import timestamp updated</td>
+</tr>
+<tr>
+<td>CoFee Import Exception Raised</td>
+<td>Unmatched row or conflict detected</td>
+<td>Exception routed to resolution queue; three resolution options available</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="3e-progress-assessments-events">3E — Progress &amp; Assessments Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Trigger</th>
+<th>Primary Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Progress Card Window Opened</td>
+<td>Branch Admin's configured open date reached</td>
+<td>Teachers and Branch Admin notified in-app (notification #5)</td>
+</tr>
+<tr>
+<td>Progress Card Submitted</td>
+<td>Teacher submits draft to Branch Admin</td>
+<td>Card visible to Branch Admin; attribution permanent</td>
+</tr>
+<tr>
+<td>Progress Card Published</td>
+<td>Branch Admin publishes</td>
+<td>Card visible to parent portal; attendance snapshot locked; notification #12 fires</td>
+</tr>
+<tr>
+<td>Progress Card Returned</td>
+<td>Branch Admin returns submitted card</td>
+<td>Branch Admin must explicitly reopen; Teacher notified; re-edit loop begins</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="3f-safety-events">3F — Safety Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Trigger</th>
+<th>Primary Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Incident Report Created</td>
+<td>Teacher or Branch Admin creates formal record</td>
+<td>Incident record in INTERNAL state; Branch Admin notified</td>
+</tr>
+<tr>
+<td>Incident Report Published</td>
+<td>Branch Admin decides to publish</td>
+<td>Parent notification #7 fires (bypasses opt-out); parent sees selected fields only</td>
+</tr>
+<tr>
+<td>Pickup List Entry Added</td>
+<td>Branch Admin adds authorised person</td>
+<td>Entry logged; mandatory parent notification fires (bypasses opt-out)</td>
+</tr>
+<tr>
+<td>Pickup List Entry Deactivated</td>
+<td>Branch Admin deactivates entry (minimum one active required)</td>
+<td>Entry logged; mandatory parent notification fires (bypasses opt-out)</td>
+</tr>
+<tr>
+<td>Allergy Protocol Confirmation Logged</td>
+<td>Teacher confirms before saving Meal entry for allergy-flagged student</td>
+<td>Immutable compliance audit trail entry created</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="3g-student-lifecycle-events">3G — Student Lifecycle Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Trigger</th>
+<th>Primary Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Student Discontinued</td>
+<td>Branch Admin confirms after per-invoice acknowledgment</td>
+<td>All three switches disabled simultaneously; access revoked; status: Discontinued</td>
+</tr>
+<tr>
+<td>Year-End Rollover Confirmed</td>
+<td>Branch Admin confirms after per-invoice acknowledgment</td>
+<td>Active → Completed Programme; all switches reset to ON</td>
+</tr>
+<tr>
+<td>Bonafide Certificate Issued</td>
+<td>Branch Admin (no dues) or Admin (dues exist) confirms</td>
+<td>Irreversible; parent portal revoked; status: Bonafide Issued; governance log entry if dues existed</td>
+</tr>
+<tr>
+<td>Transfer Certificate Issued</td>
+<td>Branch Admin (no dues) or Admin (dues exist) confirms</td>
+<td>Irreversible; parent portal revoked; status: TC Issued; governance log entry if dues existed</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="3h-staff-events">3H — Staff Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Trigger</th>
+<th>Primary Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Staff Exit Confirmed</td>
+<td>Both gates cleared; Branch Admin confirms</td>
+<td>Profile read-only; access revoked</td>
+</tr>
+<tr>
+<td>Teacher Exit Gate Cleared (Gate 1)</td>
+<td>All Primary slots reassigned</td>
+<td>Teacher exit unblocked from Gate 1</td>
+</tr>
+<tr>
+<td>Salary Hold Resolved (Gate 2)</td>
+<td>Hold formally released or degree returned</td>
+<td>Staff exit unblocked from Gate 2</td>
+</tr>
+<tr>
+<td>Certification Expiry Alert Triggered</td>
+<td>Certification approaches expiry threshold</td>
+<td>Branch Admin notification #11 fires with document details</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-documents">4. Documents</h2>
+<p>Formal records that are produced by or consumed within Happy Feet operations.</p>
+<table>
+<thead>
+<tr>
+<th>Document</th>
+<th>Created by</th>
+<th>Purpose</th>
+<th>Irreversible</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Admission Application Form</td>
+<td>Parent (public form) or Branch Admin (walk-in)</td>
+<td>Entry point to student intake</td>
+<td>No — Declined applications can be reopened</td>
+</tr>
+<tr>
+<td>Progress Card</td>
+<td>Teacher (draft/submit); Branch Admin (publishes)</td>
+<td>Formal termly academic assessment; PDF-exportable</td>
+<td>No — revisions create new versions; original archived</td>
+</tr>
+<tr>
+<td>Transfer Certificate</td>
+<td>Branch Admin or Admin</td>
+<td>Formal record of student transfer; physical TC produced externally</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Bonafide Certificate</td>
+<td>Branch Admin or Admin</td>
+<td>Formal record of programme completion; physical certificate produced externally</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>CoFee XLSX Import File</td>
+<td>CoFee (external)</td>
+<td>Monthly financial sync from CoFee to Happy Feet</td>
+<td>N/A — import only</td>
+</tr>
+<tr>
+<td>Day Care Billing Summary Export</td>
+<td>Accountant (generates from M7)</td>
+<td>Computed billing amounts (per assigned Day Care Billing Plans and operational timestamp records) exported for CoFee invoice generation</td>
+<td>N/A — export only</td>
+</tr>
+<tr>
+<td>Staff Employment Documents</td>
+<td>Branch Admin (uploads)</td>
+<td>Mandatory onboarding documents; stored per staff profile</td>
+<td>No — documents can be renewed; history retained</td>
+</tr>
+<tr>
+<td>Student Profile Documents</td>
+<td>Parent (uploads via portal) or Branch Admin</td>
+<td>Programme-specific enrollment requirements; individually waivable with reason</td>
+<td>No — documents can be updated</td>
+</tr>
+<tr>
+<td>CSV Exports</td>
+<td>Authorised roles (generate on demand)</td>
+<td>Role-filtered data extracts; every generation access-logged; Aadhaar/medical excluded</td>
+<td>N/A — export only</td>
+</tr>
+<tr>
+<td>Monthly Governance Digest Email</td>
+<td>System (auto-generated, 1st of month)</td>
+<td>Override and exception summary for Admin; covers all branches</td>
+<td>N/A — informational</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-entity-relationships">5. Entity Relationships</h2>
+<p>A summary of key entity-to-entity connections. This is not a data model — it describes business ownership and dependency.</p>
+<table>
+<thead>
+<tr>
+<th>Entity</th>
+<th>Belongs to / Owned by</th>
+<th>Has / Contains</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Branch</td>
+<td>System</td>
+<td>Academic Years, Classes, Staff Profiles, Student Profiles, Audit Log</td>
+</tr>
+<tr>
+<td>Academic Year</td>
+<td>Branch</td>
+<td>Terms, Programmes, School Calendar, Timetable</td>
+</tr>
+<tr>
+<td>Term</td>
+<td>Academic Year</td>
+<td>Progress Card Submission Window</td>
+</tr>
+<tr>
+<td>Programme</td>
+<td>Academic Year / Branch</td>
+<td>Classes, Milestones, Fee Structure (template), Document Requirements</td>
+</tr>
+<tr>
+<td>Class</td>
+<td>Programme / Branch</td>
+<td>Teacher Slots, Students, Timetable, Waitlist</td>
+</tr>
+<tr>
+<td>Student Profile</td>
+<td>Branch</td>
+<td>Attendance Records, Progress Cards, Daily Journal entries, Welfare Concern Records, Incident Reports, PTM Notes, Invoices, Opening Balance, Authorised Pickup List</td>
+</tr>
+<tr>
+<td>Admission Application</td>
+<td>Branch</td>
+<td>Converts to Student Profile on enrollment</td>
+</tr>
+<tr>
+<td>Waitlist</td>
+<td>Class</td>
+<td>Ordered references to Admission Applications</td>
+</tr>
+<tr>
+<td>Fee Structure (snapshot)</td>
+<td>Student Profile (one per enrolled student)</td>
+<td>Drives Invoice creation</td>
+</tr>
+<tr>
+<td>Invoice</td>
+<td>Student Profile</td>
+<td>Payments</td>
+</tr>
+<tr>
+<td>Payment</td>
+<td>Invoice</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Opening Balance</td>
+<td>Student Profile</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Attendance Record</td>
+<td>Student Profile / Class / Date</td>
+<td>Teacher-entered status (Present / Absent / Late / Half-Day); correction log</td>
+</tr>
+<tr>
+<td>Day Care Billing Plan</td>
+<td>Day Care Programme / Student</td>
+<td>Day Care check-in/check-out operational records (separate from Attendance Record)</td>
+</tr>
+<tr>
+<td>Progress Card</td>
+<td>Student Profile / Term</td>
+<td>Milestone ratings, attendance snapshot, version history</td>
+</tr>
+<tr>
+<td>Milestone</td>
+<td>Programme</td>
+<td>Appears in every Progress Card for that programme</td>
+</tr>
+<tr>
+<td>Daily Journal Entry</td>
+<td>Student Profile / Date</td>
+<td>Type-specific activity data</td>
+</tr>
+<tr>
+<td>Welfare Concern Record</td>
+<td>Student Profile</td>
+<td>Status history (immutable append)</td>
+</tr>
+<tr>
+<td>Incident Report</td>
+<td>Student Profile</td>
+<td>Status (INTERNAL / PUBLISHED)</td>
+</tr>
+<tr>
+<td>Authorised Pickup List</td>
+<td>Student Profile</td>
+<td>Named entries with active/inactive status</td>
+</tr>
+<tr>
+<td>PTM Note</td>
+<td>Student Profile</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Transport Zone</td>
+<td>Branch / Academic Year</td>
+<td>Assigned per student as a fee line item</td>
+</tr>
+<tr>
+<td>Staff Profile</td>
+<td>Branch (via Branch Binding)</td>
+<td>Teacher Slots on Classes, Leave Records, Salary Holds, Certifications</td>
+</tr>
+<tr>
+<td>Leave Record</td>
+<td>Staff Profile</td>
+<td>Linked Staff Attendance entries</td>
+</tr>
+<tr>
+<td>Salary Hold</td>
+<td>Staff Profile</td>
+<td>Blocks Staff Exit (Gate 2)</td>
+</tr>
+<tr>
+<td>WhatsApp Template</td>
+<td>Branch (branch-scoped) or System (global)</td>
+<td>Versioned content history</td>
+</tr>
+<tr>
+<td>School Inbox Thread</td>
+<td>Student Profile / Parent</td>
+<td>Messages and staff replies</td>
+</tr>
+<tr>
+<td>Fee Query Thread</td>
+<td>Student Profile / Parent</td>
+<td>Parent fee queries and Accountant replies</td>
+</tr>
+<tr>
+<td>Audit Log Entry</td>
+<td>All modules (cross-cutting)</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Governance Log Entry</td>
+<td>Audit Log (filtered subset)</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Migration Checklist</td>
+<td>Branch</td>
+<td>Six checklist items; controls Migration Mode exit</td>
+</tr>
+<tr>
+<td>Historical Attendance Marker</td>
+<td>Student Profile</td>
+<td>Single value; locks on Migration Mode exit</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-lifecycle-state-maps">6. Lifecycle State Maps</h2>
+<h3 id="61-student-status">6.1 Student Status</h3>
+<pre><code>Admission Application
+  Applied
+  └── Approved (programme assigned)
+      └── Enrolled (all four conditions met)
+          └── Active (first payment recorded; portal activated)
+              ├── Discontinued (irreversible; all three switches off)
+              ├── Completed Programme (year-end rollover; switches reset ON)
+              │   └── Active (re-admission, same ID, same history)
+              ├── Bonafide Issued (irreversible; portal revoked)
+              └── Transfer Certificate Issued (irreversible; portal revoked)
+      └── Waitlisted (class full; approved applicant held)
+  └── Declined (reversible; can be reopened)
+
+Discontinued → Active (re-admission, same ID, same history, dues persist)
+
+Note: Bonafide Issued and Transfer Certificate Issued are mutually exclusive.
+</code></pre>
+<hr />
+<h3 id="62-progress-card-status">6.2 Progress Card Status</h3>
+<pre><code>DRAFT (Teacher editing; invisible to Branch Admin and parents)
+└── SUBMITTED (Teacher submits; visible to Branch Admin)
+    ├── DELEGATE_REVIEWED (if delegate configured; note added for Branch Admin)
+    └── PUBLISHED (Branch Admin publishes; attendance snapshot locked; visible to parents)
+        └── ARCHIVED (when Branch Admin opens a revision)
+    └── RETURNED (Branch Admin returns; Branch Admin must reopen for Teacher to re-edit)
+        └── SUBMITTED (re-edit loop — continues until PUBLISHED)
+</code></pre>
+<hr />
+<h3 id="63-welfare-concern-record-status">6.3 Welfare Concern Record Status</h3>
+<pre><code>OPEN (created by Teacher; permanent; Branch Admin must review within 3 school days)
+└── REVIEWED (Branch Admin marks with note)
+└── ESCALATED (Branch Admin marks; formal incident report may follow)
+
+Note: Record is permanent and immutable. Status changes are appended, not overwritten.
+</code></pre>
+<hr />
+<h3 id="64-incident-report-status">6.4 Incident Report Status</h3>
+<pre><code>INTERNAL (created; Branch Admin reviews)
+└── PUBLISHED (Branch Admin publishes; parent sees selected fields only — never internal notes or staff witnesses)
+
+Note: One-way transition. Append-only. Never deleted.
+</code></pre>
+<hr />
+<h3 id="65-school-inbox-fee-query-thread-status">6.5 School Inbox / Fee Query Thread Status</h3>
+<pre><code>Active (parent initiates; staff replies; parent can reply back)
+└── CLOSED (Branch Admin closes; terminal; no further messages)
+
+Note: Messages cannot be deleted by any role. Retained 3 years.
+</code></pre>
+<hr />
+<h3 id="66-migration-mode-per-branch">6.6 Migration Mode — Per Branch</h3>
+<pre><code>Normal Operation
+└── Migration Mode (Admin enters; invoice generation, payment links, portal activation suppressed)
+    └── Live (Admin exits after checklist cleared; all suppressed events fire simultaneously; CANNOT re-enter)
+</code></pre>
+<hr />
+<h3 id="67-staff-status">6.7 Staff Status</h3>
+<pre><code>Active
+└── On Leave (linked to approved Leave Record; temporary)
+    └── Active (returns from leave)
+└── Exited (profile read-only; access revoked; requires Gate 1 and Gate 2 cleared)
+</code></pre>
+<hr />
+<h3 id="68-cofee-import-row-status">6.8 CoFee Import Row Status</h3>
+<pre><code>Each row:
+├── Case A: Matches COFEE_IMPORT invoice → amount_paid_to_date updated; not an exception
+├── Case B: Matches HAPPY_FEET_NATIVE invoice + matching Razorpay transaction ID → RAZORPAY_COFEE_CONFLICT exception
+│   └── Accountant reviews; voiding Razorpay record requires Branch Admin approval
+├── Case C: Matches HAPPY_FEET_NATIVE invoice + no Razorpay duplicate → imported as payment; not an exception
+├── Case D: No matching invoice → COFEE_IMPORT invoice + payment created; normal flow
+└── Unmatched (no student found) → Exception queue
+    ├── Link to correct student manually
+    ├── Mark not applicable
+    └── Flag for 7-day follow-up
+
+Note: No row is ever silently dropped. Every row has a traceable outcome.
+</code></pre>
+<hr />
+<h2 id="summary">Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Actors</td>
+<td>11</td>
+</tr>
+<tr>
+<td>Entities</td>
+<td>34</td>
+</tr>
+<tr>
+<td>Business Events</td>
+<td>27</td>
+</tr>
+<tr>
+<td>Documents</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Lifecycle State Maps</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<p>The domain's structural centre is the <strong>Student Profile</strong> — every safety rule, financial obligation, daily record, academic assessment, and communication thread ultimately references it. The domain's defining constraint is the <strong>age group (18 months–6 years)</strong>: three entities exist exclusively because children in this age group cannot advocate for themselves — the Authorised Pickup List, the Welfare Concern Record, and the Daily Journal entry's allergy protocol audit trail.</p>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
