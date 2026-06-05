@@ -1,0 +1,7 @@
+{
+  "name": "happyfeet-docs",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "python -m pip install -r requirements.txt && python -m mkdocs build"
+  }
+}
