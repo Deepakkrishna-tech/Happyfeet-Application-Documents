@@ -2,6 +2,6 @@
   "name": "happyfeet-docs",
   "version": "1.0.0",
   "scripts": {
-    "build": "python -m pip install -r requirements.txt && python -m mkdocs build"
+    "build": "python3 -m pip install --user -r requirements.txt && python3 -m mkdocs build"
   }
 }
