@@ -6,7 +6,7 @@ Dependencies: DOMAIN_OVERVIEW.md
 Stage: Stage 2 — Business Capability Mapping
 -->
 
-# Business Capability Map — Happy Feet School ERP
+# Business Capability Model — Happy Feet School ERP
 
 > **About This Document:** This document catalogues everything the Happy Feet ERP must be able to do, organised into 13 named capabilities across four tiers (Core, Supporting, Administrative, and Compliance). Each capability entry states what the system does and what business outcome it delivers. Read this if you need to understand the full scope of system functionality; you can skip it if you are focused on a specific process flow or role and already know which capabilities are relevant.
 
