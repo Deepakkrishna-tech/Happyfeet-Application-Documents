@@ -1,0 +1,12 @@
+site_name: Happyfeet Application Docs
+docs_dir: docs
+theme:
+  name: material
+nav:
+  - Domain Overview: domain-overview.md
+  - Business Capability Model: business-capability-model.md
+  - Organization Model: organization-model.md
+  - Business Processes: business-processes.md
+  - Business Rules: business-rules.md
+  - Domain Model: domain-model.md
+  - Domain Glossary: domain-glossary.md
