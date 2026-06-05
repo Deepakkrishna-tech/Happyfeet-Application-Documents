@@ -11,9 +11,6 @@ Stage: Stage 6 — Domain Concepts
 > **About This Document:** This document is a structured map of every meaningful record, actor, event, and document in the Happy Feet domain — expressed in business terms, not technical ones. It covers 11 actors, 34 entities, 27 business events, 10 document types, and 8 lifecycle state maps, along with a summary of how these elements relate to one another. Read this when designing data models, writing domain logic, or tracing how a business concept moves through the system; you can skip it if your work is confined to a single process or UI surface you already understand well.
 
 **Stage:** 6 — Domain Concepts
-**Source:** PRODUCT_OVERVIEW_v2.md, DOMAIN_OVERVIEW.md, BUSINESS_CAPABILITY_MAP.md, ORGANIZATION_MODEL.md, BUSINESS_PROCESSES.md, BUSINESS_RULES.md
-**Date:** 2026-06-05
-**Status:** Complete
 
 ---
 
@@ -769,5 +766,3 @@ Note: No row is ever silently dropped. Every row has a traceable outcome.
 The domain's structural centre is the **Student Profile** — every safety rule, financial obligation, daily record, academic assessment, and communication thread ultimately references it. The domain's defining constraint is the **age group (18 months–6 years)**: three entities exist exclusively because children in this age group cannot advocate for themselves — the Authorised Pickup List, the Welfare Concern Record, and the Daily Journal entry's allergy protocol audit trail.
 
 ---
-
-**Next recommended artifact:** DOMAIN_GLOSSARY.md (Stage 7) — definition, Indian context, related terms, role usage, and process usage for every domain term encountered across Stages 1–6.

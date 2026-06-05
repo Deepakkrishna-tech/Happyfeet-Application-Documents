@@ -11,9 +11,6 @@ Stage: Stage 7 — Domain Glossary
 > **About This Document:** This document defines every term used across the Happy Feet project in plain language, including Indian-context terminology where relevant. It covers approximately 100 terms grouped by domain — roles, academic concepts, student lifecycle, safety, finances, staff, communication, and governance. Read this whenever you encounter an unfamiliar term in any other project document; you do not need to read it end-to-end, but it is the definitive reference for terminology consistency across the project.
 
 **Stage:** 7 — Domain Glossary
-**Source:** PRODUCT_OVERVIEW_v2.md, Stages 1–6 artifacts
-**Date:** 2026-06-05
-**Status:** Complete
 
 ---
 
@@ -387,5 +384,3 @@ A pickup list change notification also fires unconditionally (bypasses opt-out) 
 | Year-End Rollover | Lifecycle | Always manual; per-invoice acknowledgment required; never automatic |
 
 ---
-
-**Next recommended artifact:** DOMAIN_KNOWLEDGE_BASE.md (Stage 9, skipping Stage 8) — executive summary, critical concepts, critical rules, critical processes, critical risks, and the top 20 things every new team member must know.

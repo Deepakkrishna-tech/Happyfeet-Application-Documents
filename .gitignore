@@ -1,0 +1,9 @@
+# Ignore generated MkDocs build artifacts
+site/
+
+# Ignore Python virtual environments
+.venv/
+
+# Ignore caches
+__pycache__/
+*.py[cod]

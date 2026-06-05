@@ -11,9 +11,6 @@ Stage: Stage 5 — Business Rules
 > **About This Document:** This document catalogues all 162 rules the Happy Feet ERP must enforce, covering access control, enrolment, attendance, student lifecycle, child safety, fees, communication, and data integrity. Rules are separated into six categories — explicit, implicit, invariants, compliance, safety, and financial — and numbered for cross-referencing across other project documents. Read this when implementing validation logic, designing data models, or writing test cases; it is the authoritative reference for what the system must allow, prevent, and enforce.
 
 **Stage:** 5 — Business Rules
-**Source:** PRODUCT_OVERVIEW_v2.md, DOMAIN_OVERVIEW.md, BUSINESS_CAPABILITY_MAP.md, ORGANIZATION_MODEL.md, BUSINESS_PROCESSES.md
-**Date:** 2026-06-05
-**Status:** Complete
 
 ---
 
@@ -480,5 +477,3 @@ If the admission number format in CoFee differs from Happy Feet's format and nor
 The defining characteristic of this rule set is the concentration of safety-critical invariants around child release at the gate (INV-01, INV-02, SR-01, SR-02, SR-03) and the data immutability requirements that protect both governance accountability and child welfare records (INV-04, INV-08, INV-09, INV-10, INV-13). Every exception path is sanctioned — no rule has an untracked bypass.
 
 ---
-
-**Next recommended artifact:** DOMAIN_MODEL.md (Stage 6) — business entities, their lifecycle states, key attributes (business meaning only), and relationships, derived from the rules and processes documented in Stages 1–5.

@@ -11,9 +11,6 @@ Stage: Stage 4 — Business Process Intelligence
 > **About This Document:** This document describes all 32 operational processes in the Happy Feet ERP, from initial school setup and student admissions through daily attendance, fee collection, safety escalations, and end-of-year reporting. Each process entry includes its trigger, the normal (happy) path, exception and escalation paths, and the expected outcome. Read this if you are building, reviewing, or testing any workflow in the system; it is the primary reference for how work actually flows end-to-end.
 
 **Stage:** 4 — Business Process Intelligence
-**Source:** PRODUCT_OVERVIEW_v2.md, DOMAIN_OVERVIEW.md, BUSINESS_CAPABILITY_MAP.md, ORGANIZATION_MODEL.md
-**Date:** 2026-06-04
-**Status:** Complete
 
 ---
 

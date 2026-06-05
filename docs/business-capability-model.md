@@ -10,10 +10,7 @@ Stage: Stage 2 — Business Capability Mapping
 
 > **About This Document:** This document catalogues everything the Happy Feet ERP must be able to do, organised into 13 named capabilities across four tiers (Core, Supporting, Administrative, and Compliance). Each capability entry states what the system does and what business outcome it delivers. Read this if you need to understand the full scope of system functionality; you can skip it if you are focused on a specific process flow or role and already know which capabilities are relevant.
 
-**Stage:** 2 — Business Capability Mapping
-**Source:** PRODUCT_OVERVIEW_v2.md, DOMAIN_OVERVIEW.md
-**Date:** 2026-06-04
-**Status:** Complete
+**Stage:** 2 — Business Capability Model
 
 ---
 

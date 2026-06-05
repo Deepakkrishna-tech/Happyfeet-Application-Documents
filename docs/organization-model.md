@@ -11,9 +11,6 @@ Stage: Stage 3 — Organizational Intelligence
 > **About This Document:** This document defines every role in the Happy Feet school — their responsibilities, the decisions they can make, what information they can access, and how authority escalates when a decision exceeds their remit. It covers 5 staff roles plus the Parent role, seven escalation paths, four approval chains, and the information boundaries between roles. Read this if you are designing access control, approval workflows, or role-based features; you can skip it if you are focused purely on business processes or capability scope.
 
 **Stage:** 3 — Organizational Intelligence
-**Source:** PRODUCT_OVERVIEW_v2.md, DOMAIN_OVERVIEW.md, BUSINESS_CAPABILITY_MAP.md
-**Date:** 2026-06-04
-**Status:** Complete
 
 ---
 
@@ -594,5 +591,3 @@ This is a V1/V2 scope boundary, not a product philosophy. CoFee owns the payment
 The Happy Feet organization model is a five-role hierarchy with a clean separation between management authority (Admin, Branch Admin), operational execution (Coordinator, Teacher, Accountant), and consumer access (Parent). Authority escalates upward as the consequences of a decision become more irreversible — Bonafide issuance with dues requires Admin; attendance correction beyond 30 days requires Admin; Migration Mode exit requires Admin. Every escalation path leaves a governance log entry. The most distinctive organizational characteristic is the strict information boundary around children's sensitive data (medical records, Aadhaar, welfare concerns), which is enforced at the data layer and cannot be adjusted by any role including Admin.
 
 ---
-
-**Next recommended artifact:** BUSINESS_PROCESSES.md (Stage 4) — trigger → workflow → outcome for every major operational process, with Primary Workflow , exception path, and escalation path mapped explicitly.

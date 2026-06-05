@@ -11,9 +11,6 @@ Stage: Stage 1 — Domain Discovery
 > **About This Document:** This document provides a high-level overview of the Happy Feet School ERP — who the stakeholders are, what the system covers, and what falls outside its scope. It describes the school's business model, revenue streams, operational cycle, and the boundary between Version 1 and Version 2 delivery phases. Read this first if you are new to the project; it is safe to skip if you are already familiar with the school's context and domain boundaries.
 
 **Stage:** 1 — Domain Discovery
-**Source:** PRODUCT_OVERVIEW_v2.md
-**Date:** 2026-06-04
-**Status:** Complete
 
 ---
 
