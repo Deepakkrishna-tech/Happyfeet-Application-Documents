@@ -8,8 +8,9 @@ Stage: Stage 1 — Domain Discovery
 
 # Domain Overview — Happy Feet School ERP
 
+> **About This Document:** This document provides a high-level overview of the Happy Feet School ERP — who the stakeholders are, what the system covers, and what falls outside its scope. It describes the school's business model, revenue streams, operational cycle, and the boundary between Version 1 and Version 2 delivery phases. Read this first if you are new to the project; it is safe to skip if you are already familiar with the school's context and domain boundaries.
+
 **Stage:** 1 — Domain Discovery
-**Source:** PRODUCT_OVERVIEW_v2.md
 **Date:** 2026-06-04
 **Status:** Complete
 
@@ -17,15 +18,17 @@ Stage: Stage 1 — Domain Discovery
 
 ## 1. What Business Is Being Operated
 
-Happy Feet is the administration platform for a single, privately owned preschool in Hyderabad, India. 105 students enrolled across one active branch; a second branch is planned. Programmes: Play Group, Nursery, PP1, PP2, and Day Care (children aged ~18 months to 6 years). Not a franchise, not a government institution, not a SaaS product. Multi-branch architecture is included for the known second branch only — not for general multi-tenancy.
+Happy Feet Application is an administration platform for a single privately owned preschool in Hyderabad, India. It currently serves 105 enrolled students across one active branch, with the architecture designed to support multiple branches as the school scales. Programmes offered are Play Group, Nursery, PP1, PP2, and Day Care — covering children aged approximately 18 months to 6 years.
 
-The school's business depends on three operations: **enrolling children and collecting fees**, **delivering daily care and education**, and **maintaining parent trust**. The trust dependency is the most fragile — safety failure, communication gaps, or financial opacity damage it irreversibly.
+Early childhood education is a critical phase in a child's development, and preschools require reliable systems to manage their operations without administrative overhead consuming staff time. Happy Feet application addresses this by streamlining admissions — parents complete admission forms online, reducing paperwork — and giving administrators clear control over class assignments, ensuring every child is placed in the right programme.
+
+The school runs on three core operations: enrolling children and collecting fees, delivering daily care and education, and maintaining parent trust. Of these, parent trust is the most critical — safety incidents, communication gaps, or financial opacity can damage it permanently.
 
 ---
 
-## 2. Problems Solved by Stakeholder
+## 2. Operational Gaps by Stakeholder
 
-**Owner / Admin:** No real-time visibility; relies entirely on verbal staff updates for enrollment, fees, attendance, and incidents.
+**Owner / Admin:** No real-time visibility; relies entirely on verbal staff updates for admissions, enrollment, fees, attendance, and incidents.
 
 **Branch Admin (Principal):**
 - Admission forms are paper-based — unsearchable, not portable across years
@@ -63,7 +66,7 @@ The school's business depends on three operations: **enrolling children and coll
 |---|---|---|
 | Admin | Human | School owner or super-administrator; full authority across all branches |
 | Branch Admin | Human | Principal or branch head; primary operational actor for a single branch |
-| Teacher | Human | Class teacher; scoped to assigned class slots |
+| Teacher | Human | Class teacher; scoped to assigned class slots. Three slot types exist — Primary, Assistant, and Temporary — reflecting operational responsibility. All three carry identical system permissions under the Teacher role; they are not distinct actor types |
 | Coordinator | Human | Admin assistant or front-desk; intake, gate operations, communication |
 | Accountant | Human | Finance staff; fee management, CoFee import, billing communications |
 | Parent / Guardian | Human | Child's family; read-only access to child's school activity |
@@ -73,8 +76,6 @@ The school's business depends on three operations: **enrolling children and coll
 | Actor | Type | Role in Business |
 |---|---|---|
 | Child / Student | Human | Subject of all records; never a system user |
-| Teaching Assistant | Human | Occupies the Assistant slot on a class; same system role as Teacher |
-| Temporary Teacher | Human | Covers extended staff absence; Temporary slot with configurable end date |
 
 ### System and External Actors
 
@@ -88,8 +89,6 @@ The school's business depends on three operations: **enrolling children and coll
 | APAAR / PEN | Government identifier | Unique student academic ID; voluntary consent required |
 | DPDP Act | Legal framework | India's Digital Personal Data Protection Act; governs data handling |
 
-> APAAR, PEN, and UDISE+ submission workflows are not in scope for V1.
-
 ---
 
 ## 5. Business Model
@@ -97,8 +96,8 @@ The school's business depends on three operations: **enrolling children and coll
 | Revenue stream | Billing model | Key rule |
 |---|---|---|
 | Academic programmes (Nursery, PP1, PP2, Play Group) | Term-based | Full term fee even for mid-term admissions; no pro-rating |
-| Day Care | Usage-based | Full day (≥4 hrs) = 1.0 unit; half day (<4 hrs) = 0.5 unit |
-| Transport (optional) | Fixed monthly by zone | Per distance band and trip type; opt-in per student |
+| Day Care | Plan-based (see Day Care Billing Plan) | Staff-recorded check-in/check-out timestamps support operational tracking and billing calculations where required by the assigned Day Care Billing Plan (Monthly, Weekly, Day-wise, Hour-wise, Term-wise) |
+| Transport (optional, school-owned) | Fixed monthly by zone | Per distance band and trip type; opt-in per student |
 | Event / one-off | One-off fee | Annual Day, field trips, etc. |
 
 **V1:** CoFee owns invoice generation and payment collection. Happy Feet records the financial picture via CoFee XLSX import; also supports HAPPY_FEET_NATIVE invoices and Razorpay payment links for ad-hoc collection.
@@ -125,7 +124,7 @@ Student categories (e.g. Standard, Staff Child, Subsidised) allow different fee 
 - Holidays (entered in M2) block attendance for all roles — no override
 - Progress card submission windows: open/close dates set by Branch Admin per term
 - Academic year activation: automatic at midnight on configured start date; Admin can manually override (logged)
-- Day Care billing: continuous; accumulates daily from QR timestamps
+- Day Care: staff-recorded check-in/check-out timestamps support operational tracking and billing calculations where required by the assigned Day Care Billing Plan
 
 ---
 
@@ -144,8 +143,8 @@ Children aged 18 months–6 years cannot advocate for themselves. Four safety ru
 
 | Dimension | Day Care model |
 |---|---|
-| Attendance | Check-in and check-out time, not presence/absence |
-| Billing | Derived from QR gate timestamps (hours in care) |
+| Attendance | Standard attendance records apply (Present / Absent / Late / Half-Day) |
+| Billing | Governed by the assigned Day Care Billing Plan (Monthly, Weekly, Day-wise, Hour-wise, Term-wise); staff-recorded check-in/check-out timestamps support billing calculations where required by the plan |
 | Daily record | Meals, naps, toileting, health checks logged per child |
 | Nature | Childcare operations sharing the school platform — not a school attendance model |
 
@@ -167,7 +166,7 @@ The current state — informal WhatsApp — fails because it has no log, no acco
 - Admissions and enrollment (application, waitlist, four enrollment conditions)
 - Student lifecycle (status transitions, rollover, TC issuance, Bonafide)
 - Fee management (fee structures, CoFee import, lightweight invoices, Razorpay payment links, Day Care billing)
-- Attendance management (QR check-in/out, manual fallback, corrections, chronic absence alerts)
+- Attendance management (teacher-marked, corrections, chronic absence alerts)
 - Progress tracking (submission windows, draft → publish workflow, PDF generation)
 - Communication (announcements, deeplinks, school inbox, notice board, 12 system notifications)
 - Reports and analytics (role-filtered dashboards, CSV exports, audit log, governance log)
@@ -197,7 +196,7 @@ The current state — informal WhatsApp — fails because it has no log, no acco
 
 **9.1 Immutability** — Financial records, audit entries, student profiles, admission IDs, welfare concern records, incident reports, PTM notes, and leave records are never deleted; status changes and corrections are appended, not overwritten. Both a governance requirement and a parent trust requirement.
 
-**9.2 Governance Log** — Every override action (attendance correction beyond 7 days, Bonafide with outstanding dues, capacity overrides, document waivers, Migration Mode entry/exit) generates a permanent governance log entry visible to Admin only. This makes "exceptions always have a sanctioned path" operationally true.
+**9.2 Governance Log** — Every override action (attendance correction beyond 30 days, Bonafide or TC issuance with outstanding dues, discontinuation acknowledgments, capacity overrides, document waivers, Migration Mode entry/exit) generates a permanent governance log entry visible to Admin only. This makes "exceptions always have a sanctioned path" operationally true.
 
 **9.3 Multi-Branch ≠ Multi-Tenancy** — The two-branch architecture exists for one known second branch; no per-branch pricing, no tenant isolation question. Multi-branch from day one purely to avoid a future rebuild.
 
@@ -215,11 +214,8 @@ The current state — informal WhatsApp — fails because it has no log, no acco
 - [INFERRED] APAAR/PEN registration is not part of any planned workflow — noted as a compliance reality only.
 
 **Open questions:**
-1. Will the second branch share staff accounts (multi-branch binding) or operate with fully independent staff?
-2. Is there future intention to expand to schools other than this one? (franchise architecture implications)
-3. Does the school own transport or coordinate with third-party providers?
-4. Does the client expect digital support for APAAR registration or UDISE+ data preparation in any version?
-5. Is Day Care attended by the same children enrolled in Play Group/Nursery (extended hours), or is it a separate-child population?
+
+1. What is your preschool's current registration status on the UDISE+ portal, and have you already started collecting parent consent for generating student APAAR IDs? QUESTION-006.
 
 ---
 
