@@ -51,15 +51,18 @@ distinct slice of the school's operations:
 
 ## Getting Started
 
+**Authoritative today:** the **Domain Overview** (narrative source of truth) and the **Decision Log & Build Specification** (every decision, rule, enumeration, state machine, and invariant, indexed by system pillar). The Stage-5 documents below (rows 2–7) are being regenerated from these two — if anything conflicts, the Domain Overview and Decision Log win.
+
 | Step | Document | Read If |
 |---|---|---|
-| 0 | **Domain Overview** | You are new to the project — read this first |
-| 1 | **Business Capability Model** | You need to understand what the system can do |
-| 2 | **Organization Model** | You need to understand who has authority over what |
-| 3 | **Business Processes** | You need to understand how work flows end-to-end |
-| 4 | **Business Rules** | You need the explicit rules, invariants, and constraints |
-| 5 | **Domain Model** | You need the entity and relationship map |
-| 6 | **Domain Glossary** | You need definitions for any term used in this project |
+| 0 | **Domain Overview** | You are new to the project — read this first (narrative source of truth) |
+| 1 | **Decision Log & Build Specification** | You are building — all decisions, rules, states, and invariants, organised into system pillars (0→1) |
+| 2 | Business Capability Model | You need to understand what the system can do |
+| 3 | Organization Model | You need to understand who has authority over what |
+| 4 | Business Processes | You need to understand how work flows end-to-end |
+| 5 | Business Rules | You need the explicit rules, invariants, and constraints |
+| 6 | Domain Model | You need the entity and relationship map |
+| 7 | Domain Glossary | You need definitions for any term used in this project |
 
 ---
 
@@ -73,7 +76,7 @@ distinct slice of the school's operations:
 | M4 | Staff Records | Employment records, certifications with expiry alerts, leave management, staff exit gates, visitor log |
 | M5 | Admissions | Student intake from application through enrollment, waitlist management, parent portal activation |
 | M6 | Student Lifecycle | Status management — discontinuation, rollover, Transfer Certificate, Bonafide certificate, re-admission |
-| M7 | Fee Management | Fee structures, CoFee XLSX import, lightweight invoices, Razorpay payment links, Day Care billing, Fee Query channel, financial dashboard |
+| M7 | Fee Management | Canonical financial ledger (single source of payment truth); fee structures, CoFee import (temporary V1 source, retired at V2), lightweight invoices, Razorpay payment links, Day Care billing, Fee Query channel, financial dashboard |
 | M8 | Attendance Management | Daily attendance marking, corrections, chronic absence alerting, gate pickup verification, Day Care check-in/check-out |
 | M9 | Curriculum & Lesson Planning | Structured lesson plans authored per class and programme, published to parents |
 | M10 | Progress & Assessments | Progress card authoring, review, Branch Admin publication, PDF generation, submission window management |
@@ -83,3 +86,5 @@ distinct slice of the school's operations:
 | M14 | Reporting & Governance | Role-filtered dashboards, CSV exports, audit log, governance log, monthly digest |
 | M15 | Daily Care Log | Per-child structured daily records — meals, naps, activities, health checks — as the primary parent engagement channel |
 | M16 | Migration Mode | Controlled go-live data entry workflow; entry/exit state per branch; suppresses automated workflows until Branch Admin confirms readiness |
+
+> The 16 modules above are a **capability catalog**. For data-ownership boundaries they resolve to ~12 bounded contexts, with Migration Mode as a cross-cutting state — see the System Pillars index and Bounded-Context Map in the **Decision Log & Build Specification**.
