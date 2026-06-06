@@ -41,7 +41,9 @@ A preschool operates across four broad areas on any given day: admissions and en
 
 **Teacher:** Paper attendance registers with no management rollup, no parent notification, and no structured channel for welfare concerns or daily child activity recording.
 
-**Accountant:** F Fee tracking in CoFee is disconnected from student records; reconciliation requires manual cross-referencing across systems.
+**Coordinator:** Gate release and visitor log managed on paper with no audit trail; parent communication routed through personal WhatsApp with no log or accountability; intake documentation handled manually with no structured handoff to Branch Admin.
+
+**Accountant:** Fee tracking in CoFee (the school's current payment software) is disconnected from student records; reconciliation requires manual cross-referencing across systems.
 
 **Parent / Guardian:**  Informal WhatsApp updates — no structure, no archive, no guaranteed delivery; no self-service view of attendance, progress, or fees.
 
@@ -56,6 +58,7 @@ A preschool operates across four broad areas on any given day: admissions and en
 | Owner / Admin | Real-time operational visibility across the system |
 | Branch Admin | Complete daily admin without paper or WhatsApp intermediaries |
 | Teacher | Structured attendance, activity logging, and progress submission within class scope |
+| Coordinator | Structured gate operations, digital visitor log, and accountable communication channel replacing personal WhatsApp |
 | Accountant | Financial visibility and fee communication without parallel spreadsheets |
 | Parent | Structured, permanent view of child's daily school activity from one screen |
 
@@ -87,11 +90,11 @@ A preschool operates across four broad areas on any given day: admissions and en
 | CoFee | External system | Primary payment collection and invoice lifecycle in V1 |
 | Razorpay | External payment gateway | Ad-hoc payment links in V1; full integration in V2 |
 | WhatsApp (deeplinks) | External platform | Manual tap-to-send parent communication in V1 |
-| SMS Gateway (e.g. MSG91) | External service | OTP delivery for authentication and general parent notifications in V1 |
-| Notification engine | Internal | Fires 12 named system notifications on defined trigger events |
+| SMS Gateway (e.g. MSG91) | External service | OTP delivery for authentication, general parent notifications, and automated absence alerts sent to the parent's primary registered phone number after attendance verification in V1 |
+| Notification engine | Internal | Fires a defined set of named system notifications on defined trigger events — full list to be documented in the Communication module specification |
 | UDISE+ | Government system | National school registry; annual school reporting obligation |
-| APAAR / PEN | Government identifier | Unique student academic ID; voluntary consent required |
-| DPDP Act | Legal framework | India's Digital Personal Data Protection Act; governs data handling |
+
+> **Authentication model:** The login and session lifecycle for all roles — including OTP flow, session timeout, and parent portal authentication — is documented in the Identity & Access Management specification. See M1 documentation.
 
 ---
 
@@ -102,9 +105,10 @@ A preschool operates across four broad areas on any given day: admissions and en
 | Academic programmes (Nursery, PP1, PP2, Play Group) | Term-based | Full term fee even for mid-term admissions; no pro-rating |
 | Day Care | Plan-based (see Day Care Billing Plan) | Staff-recorded check-in/check-out timestamps support operational tracking and billing calculations where required by the assigned Day Care Billing Plan (Monthly, Weekly, Day-wise, Hour-wise, Term-wise) |
 | Transport (optional, school-owned) | Fixed monthly by zone | Per distance band and trip type; opt-in per student |
+| Meal Plan (optional, configurable) | Plan-based | Configurable per branch by Admin or Branch Admin; inactive by default — activated only when the branch begins offering meals; billing model and cycle defined at configuration time |
 | Event / one-off | One-off fee | Annual Day, field trips, etc. |
 
-**V1:** CoFee owns invoice generation and payment collection. Happy Feet records the financial picture via CoFee XLSX import; also supports HAPPY_FEET_NATIVE invoices and Razorpay payment links for ad-hoc collection.
+**V1:** CoFee owns invoice generation and payment collection. Happy Feet records the financial picture via CoFee XLSX import; also supports directly issued Happy Feet invoices (invoices generated and tracked within Happy Feet for cases not managed through CoFee, such as one-off charges or corrections) and Razorpay payment links for ad-hoc collection.
 **V2:** Happy Feet owns the full billing engine natively via Razorpay API; CoFee redundant. V1 financial tables are designed to accept V2 data with no schema migration.
 
 Student categories (e.g. Standard, Staff Child, Subsidised) allow different fee structures per group.
@@ -122,7 +126,7 @@ Student categories (e.g. Standard, Staff Child, Subsidised) allow different fee 
 | Each Term (×3) | Attendance marking, daily activity logging, fee collection, parent communication |
 | Progress Reporting Window (×3) | Teacher drafts/submits → Branch Admin reviews and publishes |
 | Year-End Rollover | Branch Admin reviews Active students, acknowledges outstanding dues → Active → Completed Programme; switches reset |
-| Migration Window (Entry/Exit) | Student profiles, opening balances, CoFee import, staff accounts — under Migration Mode |
+| Migration Window (Entry/Exit) | Student profiles, opening balances, CoFee import, staff accounts — under Migration Mode (one-time per branch at go-live) |
 
 
 **Calendar constraints:**
@@ -143,7 +147,7 @@ Student categories (e.g. Standard, Staff Child, Subsidised) allow different fee 
 
 - Staff Leave: Leave balances and approval workflows are tracked within the system. Approved leave is reflected against the timetable to flag coverage gaps.
 
-- Communication: Announcements can be composed and scheduled for a future date and time; the system publishes them automatically at the configured moment.
+- Communication: Announcements can be composed and scheduled for a future date and time; the system publishes them automatically at the configured moment. Absence SMS notifications fire automatically after daily or slot-based attendance is marked and verified; delivery is via the SMS gateway and is not configurable by parents.
 
 - Reporting: Dashboards are available on demand. Compliance digests and governance reports are generated on a configured schedule — weekly, termly, or at academic year close.
 
@@ -155,13 +159,13 @@ Student categories (e.g. Standard, Staff Child, Subsidised) allow different fee 
 
 ### 7.1 Child Safety as a Non-Negotiable Operating Requirement
 
-Children aged 18 months to 6 years cannot advocate for themselves. This makes safety rules in a preschool context non-negotiable invariants — they are not configurable, cannot be bypassed, and override every other operational consideration. Four rules operate at this level:
+Children aged 18 months to 6 years cannot advocate for themselves. This makes safety rules in a preschool context non-negotiable invariants — they are not configurable, cannot be bypassed, and override every other operational consideration. Five rules operate at this level:
 
 - **Authorised pickup** — the system blocks release to anyone not on a child's authorised pickup list. No override is permitted without a governance log entry.
 - **Allergy protocol** — when a meal entry involves a child with an active allergy flag, the Teacher must explicitly confirm the allergy protocol before proceeding. The confirmation is recorded as an immutable compliance audit entry.
 - **Welfare concern pathway** — a Teacher-raised welfare concern notifies the Branch Admin immediately; review is required within 3 school days. If unreviewed, a reminder fires automatically. The record is permanent, immutable, and never visible to parents.
 - **Incident reporting** — incidents are formally recorded by the Branch Admin, who decides whether to publish to parents or keep the record internal. Internal notes are never surfaced to parents under any circumstances.
-- **Sensitive document handling** - admission documents include government-issued identification (Aadhaar, birth certificates), national education identifiers (PEN, APAAR ID), and medical records (vaccination history). These are stored as structured records, access-controlled by role, and never exposed outside authorised system boundaries.
+- **Sensitive document handling** — admission documents include government-issued identification, national education identifiers, and medical records. These are subject to strict access control and data privacy rules. See §7.4 for the full data privacy constraint specification.
 
 ### 7.2 Day Care Is a Distinct Operational Model
 
@@ -184,13 +188,14 @@ Happy Feet replaces this with a single parent-facing channel where attendance is
 
 Happy Feet collects and stores a category of data that carries legal obligations under India's Digital Personal Data Protection (DPDP) Act. This includes government-issued identification (Aadhaar cards for children and parents), national education identifiers (PEN and APAAR ID), medical records (vaccination history), and passport-size photographs.
 
+Passport-size photographs are stored in V1 as part of the student admission record. Photo sharing and distribution to parents or external parties is deferred to V2 pending DPDP Act compliance review.
+
 Three rules govern this data category without exception:
 
 - **Access control by role** — sensitive documents are accessible only to roles with an explicit operational need; no role can access another role's data boundary.
 - **No external exposure** — sensitive records are never surfaced outside authorised system boundaries, regardless of request or context.
 - **Consent requirement** — collection of APAAR ID and PEN number requires documented voluntary parent consent; the system records consent status per student and does not treat these fields as mandatory.
 
-Photo sharing is deferred to V2, pending a full DPDP Act compliance review. Until then, no child photographs are stored or transmitted through the system.
 
 ---
 
@@ -200,17 +205,17 @@ Photo sharing is deferred to V2, pending a full DPDP Act compliance review. Unti
 
 - **Identity and access management** — roles, sessions, permissions, and multi-branch binding
 - **School configuration** — academic year, terms, programmes, classes, calendar, timetable, and developmental milestones
-- **Student records** — profiles, submitted documents, medical information, authorised pickup lists, and incident reports
-- **Staff records** — profiles, attendance, leave balances, certifications, and exit workflow
+- **Student records** — profiles, submitted documents, medical information, authorised pickup lists, and incident reports; PTM (Parent-Teacher Meeting) notes linked to the child's profile — immutable once submitted, visible to Branch Admin and authoring Teacher only, never visible to parents
+- **Staff records** — profiles, attendance, leave balances, certifications, and exit workflow; digital visitor log with entry/exit timestamps and audit trail, replacing the paper-based gate register
 - **Admissions and enrollment** — online application, waitlist, and four defined enrollment conditions (Waitlist is an admissions state managed within this module by Branch Admin — not a standalone module.)
-- **Student lifecycle** — status transitions, annual rollover, Transfer Certificate issuance, and Bonafide certificate generation
+- **Student lifecycle** — status transitions, annual rollover, Transfer Certificate issuance, and Bonafide certificate (a formal letter confirming a child's active enrollment status, commonly requested for bank accounts, travel documentation, or sibling admission applications) generation
 - **Fee management** — fee structures, CoFee import, lightweight invoice generation, Razorpay payment links, and Day Care billing plans
-- **Attendance management** — Teacher-marked daily attendance, corrections, chronic absence alerts, and real-time staff-to-child ratio monitoring with dashboard visibility and breach alerts (Staff-to-child ratio monitoring is a live function of present-marked attendance — not a standalone feature.)
+- **Attendance management** — Teacher-marked daily attendance, corrections, chronic absence alerts, and real-time staff-to-child ratio monitoring with dashboard visibility and breach alerts (Staff-to-child ratio monitoring is a live function of present-marked attendance — not a standalone feature.); automated SMS notification sent to the parent's primary registered phone number when a child is marked absent — triggered after attendance is collected and verified per day or slot
 - **Curriculum and lesson planning** — structured lesson plans authored by Teachers, linked to programme and class, and published to parents
 - **Progress and assessments** — term-scoped submission windows, draft-to-publish workflow, and PDF generation
 - **Meal management** — configurable per branch; daily menu planning with allergy-flagged meal entry confirmation and consumption tracking
 - **Transport management** — optional per student; fixed routes with assigned stops selected at admission, supporting both school-owned and third-party vehicles
-- **Communication** — announcements, WhatsApp deeplinks, school inbox, notice board, and 12 named system notifications
+- **Communication** — announcements, WhatsApp deeplinks, school inbox, notice board, and a defined set of named system notifications on defined trigger events — full list to be documented in the Communication module specification
 - **Daily Care Log** — structured parent-engagement feed covering meals, naps, activities, and health checks
 - **Reporting and governance** — role-filtered dashboards, CSV exports, audit log, and governance log
 - **Migration Mode** — reversible, per-branch operational state that controls the go-live data entry window for existing student records. See §9.4 for the full entry/exit specification.
@@ -221,11 +226,11 @@ Photo sharing is deferred to V2, pending a full DPDP Act compliance review. Unti
 
 - Pre-admission enquiry and lead management — handled offline in V1
 - Full Razorpay API integration for automated payment collection
-- Automated WhatsApp dispatch via Business API
+- Automated WhatsApp dispatch via Business API — In V1, WhatsApp messages are sent manually by staff via a pre-filled message link (deeplink). Automated dispatch directly from the system requires the WhatsApp Business API, which is deferred to V2.
 - Budget management and category-level expenditure tracking
 - AI intelligence and predictive analytics layer
 - Payroll data export
-- Photo sharing — deferred pending DPDP Act compliance framework
+- Photo sharing and distribution — passport-size photos are stored in V1 as admission records but are not shared or distributed through the system until a full DPDP Act compliance framework is in place
 - Full multi-branch management UI
 - Retention rate and cohort reporting
 - APAAR, PEN, and UDISE+ submission workflows
@@ -243,9 +248,9 @@ Photo sharing is deferred to V2, pending a full DPDP Act compliance review. Unti
 
 ## 9. Critical Domain Characteristics
 
-**9.1 Immutability** — Financial records, audit entries, student profiles, admission IDs, welfare concern records, incident reports, PTM notes, and leave records are never deleted; status changes and corrections are appended, not overwritten. Both a governance requirement and a parent trust requirement. Admission IDs follow a dual-path assignment model: for students migrated from existing records, Admin or Branch Admin enters the historically assigned Admission ID during Migration Mode and the system preserves it as the permanent ID; for new admissions after go-live, the system auto-generates the Admission ID at profile creation.
+**9.1 Immutability** — Financial records, audit entries, student profiles, admission IDs, welfare concern records, incident reports, PTM (Parent-Teacher Meeting) notes, and leave records are never overwritten or altered — corrections and status changes are appended as new entries, preserving the complete history. Deletion is governed by the retention periods defined in §9.6. Both a governance requirement and a parent trust requirement. Admission IDs follow a dual-path assignment model: for students migrated from existing records, Admin or Branch Admin enters the historically assigned Admission ID during Migration Mode and the system preserves it as the permanent ID; for new admissions after go-live, the system auto-generates the Admission ID at profile creation.
 
-**9.2 Governance Log** — Every override action (attendance correction beyond 30 days, Bonafide or TC issuance with outstanding dues, discontinuation acknowledgments, capacity overrides, document waivers, Migration Mode entry/exit) generates a permanent governance log entry visible to Admin only. This makes "exceptions always have a sanctioned path" operationally true.
+**9.2 Governance Log** — Every override action (attendance correction beyond 30 days, Bonafide or Transfer Certificate (TC) issuance with outstanding dues, discontinuation acknowledgments, capacity overrides, document waivers, Migration Mode entry/exit) generates a permanent governance log entry visible to Admin only. This makes "exceptions always have a sanctioned path" operationally true.
 
 **9.3 Multi-Branch ≠ Multi-Tenancy** — The two-branch architecture exists for one known second branch; no per-branch pricing, no tenant isolation question. Multi-branch from day one purely to avoid a future rebuild.
 
@@ -253,9 +258,13 @@ Photo sharing is deferred to V2, pending a full DPDP Act compliance review. Unti
 
 **9.5 CoFee Is a V1 Bridge** — CoFee manages the primary payment lifecycle in V1. The financial data model is designed so V2's Razorpay integration writes identical records — no migration, no data loss, no structural change required.
 
+**9.6 Retention periods** — Retention periods follow a two-tier model: financial records, fee transactions, and governance log entries are retained for a minimum of 7 years in line with standard accounting and tax compliance expectations; student profile records, welfare concern records, and incident reports are retained for the duration of the child's enrollment plus 3 years. PTM (Parent-Teacher Meeting) notes are retained for 2 years after the child's exit from the school — shorter than the student profile retention period, reflecting their nature as operational communication records rather than identity or medical records. Records are not actively deleted after these periods without an explicit Admin action and a logged justification — but permanent retention is not assumed or required by default.
+
 ---
 
 ## 10. Assumptions and Open Questions
+
+> **Note on question numbering:** Questions are numbered sequentially across all project documents. QUESTION-001 through QUESTION-005 were raised in earlier discovery sessions and are tracked in the project question log. This document picks up from QUESTION-006.
 
 **Assumptions (inferred — require client confirmation):**
 - [INFERRED] No separate admission fee; fees are programme-based term installments. Confirm: is there any registration or admission deposit collected separately from term fees?
@@ -271,12 +280,8 @@ Photo sharing is deferred to V2, pending a full DPDP Act compliance review. Unti
 3. QUESTION-008 — When a Branch Admin re-enters Migration Mode after exit (for corrections), is there a limit on how many times this is permitted, or is re-entry unrestricted with a governance log entry sufficient?
 4. QUESTION-009 — Does the school currently use a structured fee concession or sibling discount model that must be reflected in fee structures, or are all concessions handled ad hoc?
 5. QUESTION-010 — For the curriculum and lesson planning module: are lesson plans authored per teacher, per class, or per programme? And is parent visibility of lesson plans opt-in or on by default?
-
----
-
-## Summary
-
-Happy Feet is an administration platform for a 105-student privately owned preschool in Hyderabad on an annual 3-term cycle, served by five staff roles and parents across twelve integrated modules. The defining characteristic is the age group (18 months–6 years): safety rules — authorised pickup verification, allergy alert surfacing, welfare concern flagging, incident reporting — are non-negotiable and cannot be overridden without a permanently logged record.
+6. QUESTION-011 — The Pre-Year Setup is described as a 9-step configuration sequence but only 8 steps are enumerated (year/term dates, programmes, classes, transport zones, calendar, timetable, milestones, document types). What is the missing 9th step? Likely candidates: fee structures or student categories. Requires client confirmation before the onboarding workflow is finalised.
+7. QUESTION-012 — The Admissions and enrollment module references 'four defined enrollment conditions' as established terminology. These four conditions are not named anywhere in the document. What are the four conditions under which a student moves from application to enrolled status? Required before the admissions workflow can be built.
 
 ---
 
@@ -284,12 +289,18 @@ Happy Feet is an administration platform for a 105-student privately owned presc
 
 Decisions already made and rationale captured. These are not open for revisitation without a documented change request.
 
-| # | Decision | Options Considered | Decision Made | Rationale |
-|---|---|---|---|---|
-| D-001 | Admission ID model for migrated students | (1) Preserve existing school ID as permanent Admission ID; (2) Generate new Happy Feet ID, store old as Legacy ID | Option 1 — existing ID becomes the permanent Admission ID | School is going digital for the first time; existing IDs are already the operational source of truth across registers, CoFee, and parent documents. Introducing a new ID creates two IDs in circulation during transition, risking confusion for staff and parents. |
-| D-002 | Migration Mode design | (1) One-time permanent open/close switch; (2) Reversible entry/exit state per branch | Option 2 — reversible entry/exit state per branch | A one-time switch cannot accommodate post-exit corrections, which are operationally inevitable when entering 105 student records manually. Entry/exit with governance log provides auditability without blocking corrections. |
-| D-003 | V1 payment engine | (1) Build native Razorpay billing engine in V1; (2) Use CoFee as V1 bridge, migrate to Razorpay in V2 | Option 2 — CoFee as V1 bridge | School already operates with CoFee; rebuilding the payment lifecycle in V1 adds scope and risk without operational benefit. Financial data model is designed so V2 Razorpay integration writes identical records — no schema migration required at V2. |
-| D-004 | Multi-branch architecture | (1) Single-branch V1, rebuild for multi-branch at V2; (2) Multi-branch architecture from day one | Option 2 — multi-branch from day one | A known second branch is already planned. Retrofitting multi-branch later requires schema migration and re-engineering of role-binding logic. Building it correctly once is lower total cost. |
-| D-005 | Staff-to-child ratio | (1) Standalone ratio monitoring module; (2) Live function within Attendance module | Option 2 — folded into Attendance | Ratio is a direct derivative of present-marked attendance; it has no independent data source. A standalone module would duplicate attendance state with no additional value. |
+| # | Date | Decided By | Decision | Options Considered | Decision Made | Rationale |
+|---|---|---|---|---|---|---|
+| D-001 | — | — | Admission ID model for migrated students | (1) Preserve existing school ID as permanent Admission ID; (2) Generate new Happy Feet ID, store old as Legacy ID | Option 1 — existing ID becomes the permanent Admission ID | School is going digital for the first time; existing IDs are already the operational source of truth across registers, CoFee, and parent documents. Introducing a new ID creates two IDs in circulation during transition, risking confusion for staff and parents. |
+| D-002 | — | — | Migration Mode design | (1) One-time permanent open/close switch; (2) Reversible entry/exit state per branch | Option 2 — reversible entry/exit state per branch | A one-time switch cannot accommodate post-exit corrections, which are operationally inevitable when entering 105 student records manually. Entry/exit with governance log provides auditability without blocking corrections. |
+| D-003 | — | — | V1 payment engine | (1) Build native Razorpay billing engine in V1; (2) Use CoFee as V1 bridge, migrate to Razorpay in V2 | Option 2 — CoFee as V1 bridge | School already operates with CoFee; rebuilding the payment lifecycle in V1 adds scope and risk without operational benefit. Financial data model is designed so V2 Razorpay integration writes identical records — no schema migration required at V2. |
+| D-004 | — | — | Multi-branch architecture | (1) Single-branch V1, rebuild for multi-branch at V2; (2) Multi-branch architecture from day one | Option 2 — multi-branch from day one | A known second branch is already planned. Retrofitting multi-branch later requires schema migration and re-engineering of role-binding logic. Building it correctly once is lower total cost. |
+| D-005 | — | — | Staff-to-child ratio | (1) Standalone ratio monitoring module; (2) Live function within Attendance module | Option 2 — folded into Attendance | Ratio is a direct derivative of present-marked attendance; it has no independent data source. A standalone module would duplicate attendance state with no additional value. |
+
+---
+
+## Summary
+
+Happy Feet is an administration platform for a 105-student privately owned preschool in Hyderabad on an annual 3-term cycle, served by five staff roles and parents across sixteen integrated modules. The defining characteristic is the age group (18 months–6 years): safety rules — authorised pickup verification, allergy alert surfacing, welfare concern flagging, incident reporting — are non-negotiable and cannot be overridden without a permanently logged record.
 
 ---

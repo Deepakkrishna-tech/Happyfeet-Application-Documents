@@ -1,9 +1,6 @@
 # Happy Feet Application — Documentation Index
 
-> **NOTE** — This documentation is under active development. 
-> Domain Overview, Business Capability Model, and Organization Model 
-> are stable. Business Processes, Business Rules, and Domain Model 
-> are in active drafting and subject to change.
+> **NOTE** — This documentation index is under active development and subject to change.
 
 ---
 
