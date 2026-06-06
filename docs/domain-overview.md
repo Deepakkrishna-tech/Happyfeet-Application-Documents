@@ -94,8 +94,6 @@ A preschool operates across four broad areas on any given day: admissions and en
 | Notification engine | Internal | Fires a defined set of named system notifications on defined trigger events — full list to be documented in the Communication module specification |
 | UDISE+ | Government system | National school registry; annual school reporting obligation |
 
-> **Authentication model:** The login and session lifecycle for all roles — including OTP flow, session timeout, and parent portal authentication — is documented in the Identity & Access Management specification. See M1 documentation.
-
 ---
 
 ## 5. Business Model
@@ -111,7 +109,7 @@ A preschool operates across four broad areas on any given day: admissions and en
 **V1:** CoFee owns invoice generation and payment collection. Happy Feet records the financial picture via CoFee XLSX import; also supports directly issued Happy Feet invoices (invoices generated and tracked within Happy Feet for cases not managed through CoFee, such as one-off charges or corrections) and Razorpay payment links for ad-hoc collection.
 **V2:** Happy Feet owns the full billing engine natively via Razorpay API; CoFee redundant. V1 financial tables are designed to accept V2 data with no schema migration.
 
-Student categories (e.g. Standard, Staff Child, Subsidised) allow different fee structures per group.
+Student categories (Standard, Staff Child, Subsidised) determine the applicable fee structure per student. Payer routing is a separate student-level attribute assigned at admission: the primary payer is the parent or guardian by default; a secondary payer (employer, trust, or sponsor) can be added for students whose fees are covered by a third party. The fee structure is the same regardless of who pays.
 
 ---
 
@@ -121,12 +119,12 @@ Student categories (e.g. Standard, Staff Child, Subsidised) allow different fee 
 
 | Phase | Key Events |
 |---|---|
-| Pre-Year Setup | 9-step academic configuration: year/term dates, programmes, classes, transport zones, calendar, timetable, milestones, document types — must complete in sequence |
+| Pre-Year Setup | 9-step academic configuration (must complete in sequence): (1) Create academic year with start/end dates; (2) Set term dates and progress card submission windows per term; (3) Configure programme definitions and demographic field requirements; (4) Create classes with capacity and teacher slots; (5) Configure fee structures per programme and student category — define base fees, installment schedules, and category-based variants (Standard, Staff Child, Subsidised); payer routing (parent, employer, or sponsor) is assigned at the student level at admission, not at configuration time; (6) Configure transport zones (skip if not offered); (7) Enter school calendar; (8) Configure weekly timetable per class; (9) Define milestones per programme and specify required document types per programme. **Note:** Step 4 requires teacher profiles to already exist in the system. Teacher profiles are created during Phase 0 Master Data Setup, which runs inside Migration Mode at go-live — not as part of this annual sequence. See the Migration Window row below. |
 | Admissions Season (ongoing) | Application → document review → programme assignment → enrollment → first payment → parent portal activation |
 | Each Term (×3) | Attendance marking, daily activity logging, fee collection, parent communication |
 | Progress Reporting Window (×3) | Teacher drafts/submits → Branch Admin reviews and publishes |
 | Year-End Rollover | Branch Admin reviews Active students, acknowledges outstanding dues → Active → Completed Programme; switches reset |
-| Migration Window (Entry/Exit) | Student profiles, opening balances, CoFee import, staff accounts — under Migration Mode (one-time per branch at go-live) |
+| Migration Window (Entry/Exit) | **Phase 0 — Master Data Setup** (one-time per branch, runs inside Migration Mode at go-live): Create Admin and Branch Admin accounts; create staff profiles — teachers, coordinators, accountants; assign system roles and branch binding; enter existing student records and opening balances; import CoFee data. Phase 0 is a prerequisite for the annual Pre-Year Setup sequence. It runs once at go-live under Migration Mode controls (relaxed validation, workflow suppression, migrated record flagging). Once Branch Admin confirms all records are entered and verified, Migration Mode exits and the annual cycle begins. See §9.4 for the full Migration Mode specification. Mid-year staff changes are operational actions, not setup steps: a new teacher's profile is created in M4 at any time and can be assigned to a class slot immediately after; a departing teacher's slot becomes vacant and must be reassigned by Branch Admin — the timetable flags the gap automatically. These are covered by the staff leave and exit workflow in M4. |
 
 
 **Calendar constraints:**
@@ -196,7 +194,6 @@ Three rules govern this data category without exception:
 - **No external exposure** — sensitive records are never surfaced outside authorised system boundaries, regardless of request or context.
 - **Consent requirement** — collection of APAAR ID and PEN number requires documented voluntary parent consent; the system records consent status per student and does not treat these fields as mandatory.
 
-
 ---
 
 ## 8. Domain Boundaries
@@ -213,12 +210,12 @@ Three rules govern this data category without exception:
 - **Attendance management** — Teacher-marked daily attendance, corrections, chronic absence alerts, and real-time staff-to-child ratio monitoring with dashboard visibility and breach alerts (Staff-to-child ratio monitoring is a live function of present-marked attendance — not a standalone feature.); automated SMS notification sent to the parent's primary registered phone number when a child is marked absent — triggered after attendance is collected and verified per day or slot
 - **Curriculum and lesson planning** — structured lesson plans authored by Teachers, linked to programme and class, and published to parents
 - **Progress and assessments** — term-scoped submission windows, draft-to-publish workflow, and PDF generation
-- **Meal management** — configurable per branch; daily menu planning with allergy-flagged meal entry confirmation and consumption tracking
+- **Meal management** — optional per branch; inactive by default — activated only when the branch begins offering meals (skip if not offered); daily menu planning with allergy-flagged meal entry confirmation and consumption tracking; activated once as a branch-level toggle in M2 School Configuration when the branch begins offering meals — not part of the annual Pre-Year Setup sequence; no admission dependency in V1 since the school does not currently offer meals
 - **Transport management** — optional per student; fixed routes with assigned stops selected at admission, supporting both school-owned and third-party vehicles
 - **Communication** — announcements, WhatsApp deeplinks, school inbox, notice board, and a defined set of named system notifications on defined trigger events — full list to be documented in the Communication module specification
 - **Daily Care Log** — structured parent-engagement feed covering meals, naps, activities, and health checks
 - **Reporting and governance** — role-filtered dashboards, CSV exports, audit log, and governance log
-- **Migration Mode** — reversible, per-branch operational state that controls the go-live data entry window for existing student records. See §9.4 for the full entry/exit specification.
+- **Migration Mode** — reversible, per-branch operational state that controls the go-live data entry window. Covers two parallel workstreams: Phase 0 Master Data Setup (Admin and staff account creation, role assignments, branch binding) and existing student record entry and verification. Both workstreams must be complete before Branch Admin can exit Migration Mode and begin the annual Pre-Year Setup sequence. See §9.4 for the full entry/exit specification.
 
 ---
 
@@ -256,6 +253,8 @@ Three rules govern this data category without exception:
 
 **9.4 Migration Mode Is a Reversible Per-Branch Operational State** — A branch enters Migration Mode when manual entry of existing student records begins, and exits when the Branch Admin confirms all records are entered, verified, and operationally ready; the system then transitions to normal operations. While active: relaxed validation rules allow incomplete records to be saved (fields not yet available from paper registers); migrated records are flagged vs. post-go-live records; automated workflows (chronic absence alerts, fee reminders) are suppressed to avoid false triggers on incomplete data. On exit: all validation rules activate; normal workflows resume; the exit is logged with a timestamp and the confirming admin's identity. Re-entry is permitted if corrections are needed, with a governance log entry recording the reason for reopening.
 
+Phase 0 Master Data Setup — the creation of Admin, Branch Admin, staff profiles, and role assignments — runs inside Migration Mode at go-live. This is a prerequisite for the annual Pre-Year Setup sequence; specifically, teacher profiles must exist before classes can be created with teacher slot assignments in Step 4 of Pre-Year Setup. Phase 0 is a one-time activity per branch and does not repeat annually.
+
 **9.5 CoFee Is a V1 Bridge** — CoFee manages the primary payment lifecycle in V1. The financial data model is designed so V2's Razorpay integration writes identical records — no migration, no data loss, no structural change required.
 
 **9.6 Retention periods** — Retention periods follow a two-tier model: financial records, fee transactions, and governance log entries are retained for a minimum of 7 years in line with standard accounting and tax compliance expectations; student profile records, welfare concern records, and incident reports are retained for the duration of the child's enrollment plus 3 years. PTM (Parent-Teacher Meeting) notes are retained for 2 years after the child's exit from the school — shorter than the student profile retention period, reflecting their nature as operational communication records rather than identity or medical records. Records are not actively deleted after these periods without an explicit Admin action and a logged justification — but permanent retention is not assumed or required by default.
@@ -263,8 +262,6 @@ Three rules govern this data category without exception:
 ---
 
 ## 10. Assumptions and Open Questions
-
-> **Note on question numbering:** Questions are numbered sequentially across all project documents. QUESTION-001 through QUESTION-005 were raised in earlier discovery sessions and are tracked in the project question log. This document picks up from QUESTION-006.
 
 **Assumptions (inferred — require client confirmation):**
 - [INFERRED] No separate admission fee; fees are programme-based term installments. Confirm: is there any registration or admission deposit collected separately from term fees?
@@ -275,27 +272,9 @@ Three rules govern this data category without exception:
 
 **Open questions (require explicit client decision before build):**
 
-1. QUESTION-006 — What is your preschool's current registration status on the UDISE+ portal, and have you already started collecting parent consent for generating student APAAR IDs?
-2. QUESTION-007 — For students on the waitlist, does the school communicate a position number to parents, or is the waitlist managed silently by Branch Admin only?
-3. QUESTION-008 — When a Branch Admin re-enters Migration Mode after exit (for corrections), is there a limit on how many times this is permitted, or is re-entry unrestricted with a governance log entry sufficient?
-4. QUESTION-009 — Does the school currently use a structured fee concession or sibling discount model that must be reflected in fee structures, or are all concessions handled ad hoc?
-5. QUESTION-010 — For the curriculum and lesson planning module: are lesson plans authored per teacher, per class, or per programme? And is parent visibility of lesson plans opt-in or on by default?
-6. QUESTION-011 — The Pre-Year Setup is described as a 9-step configuration sequence but only 8 steps are enumerated (year/term dates, programmes, classes, transport zones, calendar, timetable, milestones, document types). What is the missing 9th step? Likely candidates: fee structures or student categories. Requires client confirmation before the onboarding workflow is finalised.
-7. QUESTION-012 — The Admissions and enrollment module references 'four defined enrollment conditions' as established terminology. These four conditions are not named anywhere in the document. What are the four conditions under which a student moves from application to enrolled status? Required before the admissions workflow can be built.
-
----
-
-## 11. Decision Log
-
-Decisions already made and rationale captured. These are not open for revisitation without a documented change request.
-
-| # | Date | Decided By | Decision | Options Considered | Decision Made | Rationale |
-|---|---|---|---|---|---|---|
-| D-001 | — | — | Admission ID model for migrated students | (1) Preserve existing school ID as permanent Admission ID; (2) Generate new Happy Feet ID, store old as Legacy ID | Option 1 — existing ID becomes the permanent Admission ID | School is going digital for the first time; existing IDs are already the operational source of truth across registers, CoFee, and parent documents. Introducing a new ID creates two IDs in circulation during transition, risking confusion for staff and parents. |
-| D-002 | — | — | Migration Mode design | (1) One-time permanent open/close switch; (2) Reversible entry/exit state per branch | Option 2 — reversible entry/exit state per branch | A one-time switch cannot accommodate post-exit corrections, which are operationally inevitable when entering 105 student records manually. Entry/exit with governance log provides auditability without blocking corrections. |
-| D-003 | — | — | V1 payment engine | (1) Build native Razorpay billing engine in V1; (2) Use CoFee as V1 bridge, migrate to Razorpay in V2 | Option 2 — CoFee as V1 bridge | School already operates with CoFee; rebuilding the payment lifecycle in V1 adds scope and risk without operational benefit. Financial data model is designed so V2 Razorpay integration writes identical records — no schema migration required at V2. |
-| D-004 | — | — | Multi-branch architecture | (1) Single-branch V1, rebuild for multi-branch at V2; (2) Multi-branch architecture from day one | Option 2 — multi-branch from day one | A known second branch is already planned. Retrofitting multi-branch later requires schema migration and re-engineering of role-binding logic. Building it correctly once is lower total cost. |
-| D-005 | — | — | Staff-to-child ratio | (1) Standalone ratio monitoring module; (2) Live function within Attendance module | Option 2 — folded into Attendance | Ratio is a direct derivative of present-marked attendance; it has no independent data source. A standalone module would duplicate attendance state with no additional value. |
+1. QUESTION-001 — What is your preschool's current registration status on the UDISE+ portal, and have you already started collecting parent consent for generating student APAAR IDs?
+2. QUESTION-002 — For students on the waitlist, does the school communicate a position number to parents, or is the waitlist managed silently by Branch Admin only?
+3. QUESTION-003 - When a child is marked present for Day Care, does the school need to know and record what that child ate that day — and will that ever affect what they are charged?
 
 ---
 
