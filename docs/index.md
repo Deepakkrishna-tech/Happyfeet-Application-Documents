@@ -51,18 +51,17 @@ distinct slice of the school's operations:
 
 ## Getting Started
 
-**Authoritative today:** the **Domain Overview** (narrative source of truth) and the **Decision Log & Build Specification** (every decision, rule, enumeration, state machine, and invariant, indexed by system pillar). The Stage-5 documents below (rows 2–7) are being regenerated from these two — if anything conflicts, the Domain Overview and Decision Log win.
+**Authoritative today:** the **Domain Overview** is the current source of truth. The Stage-5 documents below (rows 1–6) are being regenerated from it and may be out of date — if anything conflicts, the Domain Overview wins.
 
 | Step | Document | Read If |
 |---|---|---|
-| 0 | **Domain Overview** | You are new to the project — read this first (narrative source of truth) |
-| 1 | **Decision Log & Build Specification** | You are building — all decisions, rules, states, and invariants, organised into system pillars (0→1) |
-| 2 | Business Capability Model | You need to understand what the system can do |
-| 3 | Organization Model | You need to understand who has authority over what |
-| 4 | Business Processes | You need to understand how work flows end-to-end |
-| 5 | Business Rules | You need the explicit rules, invariants, and constraints |
-| 6 | Domain Model | You need the entity and relationship map |
-| 7 | Domain Glossary | You need definitions for any term used in this project |
+| 0 | **Domain Overview** | You are new to the project — read this first (source of truth) |
+| 1 | Business Capability Model | You need to understand what the system can do |
+| 2 | Organization Model | You need to understand who has authority over what |
+| 3 | Business Processes | You need to understand how work flows end-to-end |
+| 4 | Business Rules | You need the explicit rules, invariants, and constraints |
+| 5 | Domain Model | You need the entity and relationship map |
+| 6 | Domain Glossary | You need definitions for any term used in this project |
 
 ---
 
@@ -86,5 +85,3 @@ distinct slice of the school's operations:
 | M14 | Reporting & Governance | Role-filtered dashboards, CSV exports, audit log, governance log, monthly digest |
 | M15 | Daily Care Log | Per-child structured daily records — meals, naps, activities, health checks — as the primary parent engagement channel |
 | M16 | Migration Mode | Controlled go-live data entry workflow; entry/exit state per branch; suppresses automated workflows until Branch Admin confirms readiness |
-
-> The 16 modules above are a **capability catalog**. For data-ownership boundaries they resolve to ~12 bounded contexts, with Migration Mode as a cross-cutting state — see the System Pillars index and Bounded-Context Map in the **Decision Log & Build Specification**.
