@@ -238,7 +238,7 @@ Rules are numbered within each category for cross-reference (e.g. EX-04, IM-12, 
 
 **EX-82:** Financial records are retained for 7 years. Communication logs are retained for 3 years.
 
-**EX-83:** Daily journal entries are immutable after saving. Corrections are appended as new entries referencing the original.
+**EX-83:** Daily Care Logentries are immutable after saving. Corrections are appended as new entries referencing the original.
 
 **EX-84:** Incident reports are append-only and immutable. Corrections are appended as new entries.
 
@@ -339,7 +339,7 @@ Rules that must remain true at all times, regardless of any circumstances, worka
 | INV-06 | The fee structure snapshot at enrollment is the contractual basis for billing. It cannot be silently overwritten | Financial | High |
 | INV-07 | Every irreversible action (Bonafide, TC, Discontinuation, Rollover confirmation, Migration Mode exit) must be preceded by an explicit confirmation prompt stating the consequences | Governance | High |
 | INV-08 | WelfareConcernRecords are permanent and immutable. They cannot be deleted or overwritten by any role | Safety / Legal | Critical |
-| INV-09 | Daily journal entries are immutable after saving. They cannot be deleted or overwritten | Governance | High |
+| INV-09 | Daily Care Logentries are immutable after saving. They cannot be deleted or overwritten | Governance | High |
 | INV-10 | Incident reports are append-only and immutable. Internal notes and staff witness details are never shown to parents under any circumstances | Safety / Trust | Critical |
 | INV-11 | Parent access is always strictly child-scoped. It cannot be broadened to include other students or financial data beyond the V1-defined scope by any staff role | Privacy | Critical |
 | INV-12 | Branch data isolation is enforced on every data request. A staff member cannot access data from a branch to which they are not bound | Security | Critical |
@@ -406,7 +406,7 @@ Every significant incident is formally recorded regardless of the publish decisi
 Teachers see only their own welfare concern flags. Teachers cannot see flags raised by other Teachers. This is intentional — preventing peer dynamics from discouraging flagging.
 
 **SR-08 — Toilet entry detail is never shown to parents.**
-Toilet entries in the daily journal are shown to parents as "Toilet visit logged" — frequency only. No detail about toilet activity is ever surfaced to parents under any circumstances.
+Toilet entries in the Daily Care Logare shown to parents as "Toilet visit logged" — frequency only. No detail about toilet activity is ever surfaced to parents under any circumstances.
 
 **SR-09 — Allergy and medication alert flags are distinct from full medical records.**
 Allergy and critical medication alert flags are accessible to Coordinator (read-only) and Teacher (own class, read-only) for operational safety during the school day. Full medical records — including history, vaccination records, and Aadhaar — are restricted to Branch Admin and Admin only, access-logged on every read.

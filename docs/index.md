@@ -1,6 +1,25 @@
+> **Under Active Development** — This documentation is a living document. Content is incomplete, subject to change, and pending review. Do not treat any section as final until explicitly marked stable.
+
 # Happyfeet Application Documents
 
-Welcome to the Happyfeet Application documentation. This comprehensive resource describes the business domain, capabilities, processes, and rules governing the Happy Feet School ERP system.
+Welcome to the Happyfeet Application documentation. This resource describes the business domain, capabilities, processes, and rules governing the Happy Feet School ERP system — a purpose-built platform for managing early childhood education centres.
+
+## About the Application
+
+Happy Feet is a multi-branch School ERP designed for preschools and daycare centres. It covers the full operational lifecycle of a school: from onboarding students and staff, through day-to-day attendance and fee collection, to parent engagement and governance reporting.
+
+The system is organised into **12 functional modules**, each owning a distinct slice of the school's operations:
+
+- **Identity & access** for secure, role-based, multi-branch usage
+- **Configuration** to model the school's academic structure (years, terms, classes, timetables)
+- **Student and staff records** as the central source of truth for people data
+- **Admissions and lifecycle** to manage intake, rollover, and exit
+- **Fee management** with invoice generation and online payment integration
+- **Attendance** with daily marking, corrections, and absence alerting
+- **Progress and assessments** for authoring, reviewing, and publishing progress cards
+- **Communication** covering announcements, school inbox, and WhatsApp-linked notifications
+- **Daily Care Log** as the primary structured parent-engagement channel
+- **Reporting and governance** for dashboards, audit logs, and compliance digests
 
 ## Getting Started
 
@@ -34,6 +53,6 @@ This documentation is designed for stakeholders, developers, and project teams w
 | M9 | Progress & Assessments | Progress card authoring, delegate review, Branch Admin review and publication, PDF generation, submission window management |
 | M10 | Communication | Announcements, school notice board, school inbox (two-way), WhatsApp deeplink templates, system-triggered notifications |
 | M11 | Reporting & Governance | Role-filtered dashboards, CSV exports, audit log access, governance log, monthly governance digest |
-| M12 | Daily Journal | Per-child structured daily records — meals, naps, activities, health checks, general notes — as the primary parent engagement channel |
+| M12 | Daily Care Log | Per-child structured daily records — meals, naps, activities, health checks, general notes — as the primary parent engagement channel |
 
 ---

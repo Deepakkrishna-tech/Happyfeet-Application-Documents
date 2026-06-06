@@ -168,7 +168,7 @@ The current state — informal WhatsApp — fails because it has no log, no acco
 - Progress & assessments (submission windows, draft → publish workflow, PDF generation)
 - Communication (announcements, deeplinks, school inbox, notice board, 12 system notifications)
 - Reporting & governance (role-filtered dashboards, CSV exports, audit log, governance log)
-- Daily journal (meals, naps, activities, health checks, parent feed)
+- Daily Care Log(meals, naps, activities, health checks, parent feed)
 - Migration Mode (protected go-live phase per branch)
 
 ### Out of Scope — V2

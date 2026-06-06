@@ -104,7 +104,7 @@ A named group of students within a programme, with capacity and teacher slots.
 The permanent record of a child from admission through all lifecycle transitions. Never deleted regardless of status.
 
 **Key attributes:** Permanent Admission ID, name, date of birth, status, programme, class, guardian contacts, emergency contacts, medical records (access-logged), allergy flags, critical medication flags, document list, Historical Attendance Marker
-**Relationships:** Has Attendance Records, Progress Cards, Daily Journal entries, Welfare Concern Records, Incident Reports, PTM Notes, Invoices, Opening Balance, Authorised Pickup List
+**Relationships:** Has Attendance Records, Progress Cards, Daily Care Logentries, Welfare Concern Records, Incident Reports, PTM Notes, Invoices, Opening Balance, Authorised Pickup List
 
 ---
 
@@ -212,7 +212,7 @@ A developmental domain assessed within a progress card.
 
 ---
 
-### 2.16 Daily Journal Entry
+### 2.16 Daily Care LogEntry
 
 A per-child record of a specific activity during the school day. Immutable after saving; corrections appended as new entries. Never deleted.
 
@@ -610,7 +610,7 @@ A summary of key entity-to-entity connections. This is not a data model — it d
 | Term | Academic Year | Progress Card Submission Window |
 | Programme | Academic Year / Branch | Classes, Milestones, Fee Structure (template), Document Requirements |
 | Class | Programme / Branch | Teacher Slots, Students, Timetable, Waitlist |
-| Student Profile | Branch | Attendance Records, Progress Cards, Daily Journal entries, Welfare Concern Records, Incident Reports, PTM Notes, Invoices, Opening Balance, Authorised Pickup List |
+| Student Profile | Branch | Attendance Records, Progress Cards, Daily Care Logentries, Welfare Concern Records, Incident Reports, PTM Notes, Invoices, Opening Balance, Authorised Pickup List |
 | Admission Application | Branch | Converts to Student Profile on enrollment |
 | Waitlist | Class | Ordered references to Admission Applications |
 | Fee Structure (snapshot) | Student Profile (one per enrolled student) | Drives Invoice creation |
@@ -621,7 +621,7 @@ A summary of key entity-to-entity connections. This is not a data model — it d
 | Day Care Billing Plan | Day Care Programme / Student | Day Care check-in/check-out operational records (separate from Attendance Record) |
 | Progress Card | Student Profile / Term | Milestone ratings, attendance snapshot, version history |
 | Milestone | Programme | Appears in every Progress Card for that programme |
-| Daily Journal Entry | Student Profile / Date | Type-specific activity data |
+| Daily Care LogEntry | Student Profile / Date | Type-specific activity data |
 | Welfare Concern Record | Student Profile | Status history (immutable append) |
 | Incident Report | Student Profile | Status (INTERNAL / PUBLISHED) |
 | Authorised Pickup List | Student Profile | Named entries with active/inactive status |
@@ -763,6 +763,6 @@ Note: No row is ever silently dropped. Every row has a traceable outcome.
 | Documents | 10 |
 | Lifecycle State Maps | 8 |
 
-The domain's structural centre is the **Student Profile** — every safety rule, financial obligation, daily record, academic assessment, and communication thread ultimately references it. The domain's defining constraint is the **age group (18 months–6 years)**: three entities exist exclusively because children in this age group cannot advocate for themselves — the Authorised Pickup List, the Welfare Concern Record, and the Daily Journal entry's allergy protocol audit trail.
+The domain's structural centre is the **Student Profile** — every safety rule, financial obligation, daily record, academic assessment, and communication thread ultimately references it. The domain's defining constraint is the **age group (18 months–6 years)**: three entities exist exclusively because children in this age group cannot advocate for themselves — the Authorised Pickup List, the Welfare Concern Record, and the Daily Care Logentry's allergy protocol audit trail.
 
 ---

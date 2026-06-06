@@ -231,7 +231,7 @@ Beyond Day 30
 
 ```
 Teacher observes a concern during the school day
-└── Teacher flags welfare concern from attendance or daily journal screen
+└── Teacher flags welfare concern from attendance or Daily Care Logscreen
     └── Free-text observation required (mandatory)
     └── WelfareConcernRecord created (permanent, immutable)
     └── In-app notification fires to Branch Admin immediately
@@ -478,7 +478,7 @@ Enforced at the application layer — every data request is validated against th
 | Incident reports (internal) | Yes | Yes | No | Can create for own class; cannot see others | No | No |
 | Incident reports (published) | Yes | Yes | No | Can create for own class | No | Own child (selected fields only) |
 | PTM notes | Yes | Yes | No | Own class only | No | No |
-| Daily journal entries | Yes | Yes | Yes (read-only) | Own class | No | Own child (read-only, 30-day feed) |
+| Daily Care Logentries | Yes | Yes | Yes (read-only) | Own class | No | Own child (read-only, 30-day feed) |
 | Audit log (own branch) | Yes | Yes | No | No | No | No |
 | Governance log | Yes | No | No | No | No | No |
 

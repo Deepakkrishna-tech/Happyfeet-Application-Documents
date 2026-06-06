@@ -256,7 +256,7 @@ All limits are in calendar days, not working days. Every correction records: ori
 **Actors:** Teacher (entry), Parent (read-only feed on portal), Branch Admin (oversight).
 
 **Primary Workflow :**
-1. Teacher opens the attendance screen for their class. The daily journal entry panel appears on the same screen — no separate navigation required.
+1. Teacher opens the attendance screen for their class. The Daily Care Logentry panel appears on the same screen — no separate navigation required.
 2. Teacher selects a student and taps "Add activity."
 3. Teacher selects activity type: Meal, Nap, Toilet, Activity, Health Check, or General Note.
 4. Teacher fills in type-specific fields and saves. Entry is written to the student's daily log for that date.
@@ -266,7 +266,7 @@ All limits are in calendar days, not working days. Every correction records: ori
 
 **Exception paths:**
 - *Meal entry for student with active allergy alerts:* System surfaces the allergy warning inline and requires explicit confirmation: "Confirm allergy protocol was followed." Teacher must confirm before saving. Confirmation logged permanently with actor and timestamp — creating an allergy compliance audit trail.
-- *Entry made in error:* Daily journal entries are immutable after saving. Corrections are appended as new entries referencing the original. The original entry remains.
+- *Entry made in error:* Daily Care Logentries are immutable after saving. Corrections are appended as new entries referencing the original. The original entry remains.
 - *Toilet entry:* Parents see "Toilet visit logged" — frequency only. No detail shown to parents under any circumstances.
 
 **Outcome:** Every child has a permanent daily record replacing informal WhatsApp. Parents have a real-time, archived feed. Allergy protocol compliance is documented and auditable.
@@ -572,7 +572,7 @@ All limits are in calendar days, not working days. Every correction records: ori
 **Actors:** Teacher (flags), Branch Admin (reviews and acts), Admin (oversight).
 
 **Primary Workflow :**
-1. Teacher observes a concern during the school day. Teacher opens the attendance or daily journal screen for the student.
+1. Teacher observes a concern during the school day. Teacher opens the attendance or Daily Care Logscreen for the student.
 2. Teacher selects "Flag welfare concern."
 3. System requires a mandatory free-text field: "Describe what you observed." The flag cannot be saved without this description.
 4. System creates a WelfareConcernRecord (permanent, immutable): Teacher, timestamp, description, status **OPEN**.
