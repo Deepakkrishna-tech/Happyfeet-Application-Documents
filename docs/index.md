@@ -51,17 +51,15 @@ distinct slice of the school's operations:
 
 ## Getting Started
 
-**Authoritative today:** the **Domain Overview** is the current source of truth. The Stage-5 documents below (rows 1–6) are being regenerated from it and may be out of date — if anything conflicts, the Domain Overview wins.
-
 | Step | Document | Read If |
 |---|---|---|
 | 0 | **Domain Overview** | You are new to the project — read this first (source of truth) |
-| 1 | Business Capability Model | You need to understand what the system can do |
-| 2 | Organization Model | You need to understand who has authority over what |
-| 3 | Business Processes | You need to understand how work flows end-to-end |
-| 4 | Business Rules | You need the explicit rules, invariants, and constraints |
-| 5 | Domain Model | You need the entity and relationship map |
-| 6 | Domain Glossary | You need definitions for any term used in this project |
+| 1 | **Business Capability Model** | You need to understand what the system can do |
+| 2 | **Organization Model** | You need to understand who has authority over what |
+| 3 | **Business Processes** | You need to understand how work flows end-to-end |
+| 4 | **Business Rules** | You need the explicit rules, invariants, and constraints |
+| 5 | **Domain Model** | You need the entity and relationship map |
+| 6 | **Domain Glossary** | You need definitions for any term used in this project |
 
 ---
 
