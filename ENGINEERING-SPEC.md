@@ -1,7 +1,9 @@
 
-# Happy Feet School ERP — Decision Log & Build Specification
+# Happy Feet School ERP — Engineering Specification
 
-**Authoritative build sources:** `domain-overview.md` v1.2 (narrative source of truth) + this document (decisions, rules, enumerations, state machines, invariants, and the CoFee parser reference). On any conflict, `domain-overview.md` wins.
+> Decisions (with rationale), rules, and the build register that bridge the Domain Overview to code. Formerly `decision_log.md`.
+
+**Authoritative build sources:** `domain-overview.md` v1.3 (narrative source of truth) + this document (decisions, rules, enumerations, state machines, invariants, and the CoFee parser reference). On any conflict, `domain-overview.md` wins.
 
 **Document map:** Decision table (D-001…D-033) → Resolved Questions (Q-008…Q-012) → Architecture Review detail → Governance/Audit/Notification detail (D-027…D-033) → Open Questions (Q-013…Q-016) → CoFee Data Dictionary → Build Specification Register (ENUM/Authority/SM/INV/Boundaries/Index). The pillar index below re-organizes all of it by **domain and business operation**, ordered as a 0→1 build journey.
 
