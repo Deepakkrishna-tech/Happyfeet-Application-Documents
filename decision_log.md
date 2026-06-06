@@ -16,8 +16,8 @@ The system decomposes into **four tiers** built in sequence: lay the **Foundatio
 **P0 · Migration & Go-Live** — _getting a paper-run school's data into the system, once, safely._
 D-002, D-008, D-001 (migrated IDs), D-025/D-033 (historical CoFee import) · SM-06 · ENUM-16 · Q-008 · Boundary: paper-import permanently out of scope (staff are the migration engine).
 
-**P1 · Identity, Access & Multi-Branch** — _who the actors are, what they may do, and strict branch isolation._
-D-004 · ENUM-01, ENUM-02 · INV-11 · Authority Matrix (§2 of the Register).
+**P1 · Identity, Access & Multi-Branch** — _who the actors are, what they may do, how data is scoped, and how families relate to children._
+D-004, D-034 (RBAC×ABAC×ReBAC), D-035 (guardian/custody), D-036 (Transport Staff), D-037 (Teacher slot profiles), D-038 (delegation/break-glass), D-039 (SoD + staff-as-parent), D-040 (permissions-as-primitive) · ENUM-01, ENUM-02, ENUM-21, ENUM-22, ENUM-23 · INV-11, INV-21, INV-22, INV-23, INV-24 · Q-017, Q-018, Q-019, Q-020 · Authority Matrix + RBAC & Actor Model spec.
 
 **P2 · School Configuration & Time** — _the academic framework every other module derives from: year, terms, programmes, classes, calendar._
 D-006, D-009 · ENUM-03, ENUM-07, ENUM-08 · SM-01 · INV-06, INV-07, INV-08, INV-14, INV-15 · Q-011 (9-step Pre-Year Setup).
@@ -27,17 +27,17 @@ D-006, D-009 · ENUM-03, ENUM-07, ENUM-08 · SM-01 · INV-06, INV-07, INV-08, IN
 **P3 · Admissions & Enrollment** — _the intake funnel and the four gates that complete enrollment._
 D-015 (admissions track) · ENUM-10 · SM-02 (admissions) · Q-012 (Programme/Document/Capacity/Pickup gates).
 
-**P4 · Student Lifecycle & Records** — _the central entity: permanent records, status, rollover, certificates._
-D-001, D-015 (enrolled track) · ENUM-11 · SM-02 (enrolled) · INV-05.
+**P4 · Student Lifecycle & Records** — _the central entity: permanent records, status, rollover, certificates, cross-year & branch-transfer continuity._
+D-001, D-015 (enrolled track), D-048 (staff-exit/document/cross-year/branch-transfer) · ENUM-11, ENUM-26 (document states) · SM-02 (enrolled) · INV-05.
 
-**P5 · Finance & Fee Management** — _the money engine: one canonical ledger, CoFee as a temporary source, invoices, payments, self-serve._
-D-003/D-019/D-032 (CoFee→own-ledger), D-007, D-010, D-016, D-023, D-025, D-033 · ENUM-04, ENUM-05, ENUM-06, ENUM-07, ENUM-12, ENUM-17 · SM-03 · INV-09, INV-13, INV-17, INV-19 · Q-009, Q-014, Q-015, Q-016 · **CoFee → HF Ledger Data Dictionary**.
+**P5 · Finance & Fee Management** — _the money engine: one canonical ledger, CoFee as a temporary source, invoices, payments, tax, self-serve._
+D-003/D-019/D-032 (CoFee→own-ledger), D-007, D-010, D-016, D-023, D-025, D-033, D-044 (waiver/refund SoD), D-046 (Razorpay webhook), D-047 (GST/numbering/snapshot/receipts) · ENUM-04, ENUM-05, ENUM-06, ENUM-07, ENUM-12, ENUM-17 · SM-03 · INV-09, INV-13, INV-17, INV-19, INV-25, INV-29 · Q-009, Q-014, Q-015, Q-016 · **CoFee → HF Ledger Data Dictionary**.
 
 **P6 · Daily Operations: Attendance, Care & Transport** — _the everyday: marking, daily-care feed, day care, school-fleet boarding._
 D-005, D-014, D-021, D-024, D-022 (offline), D-011 (attendance compensating events) · ENUM-09 · INV-08.
 
-**P7 · Child Safety & Data Protection** — _the non-negotiable: pickup, allergy, welfare, incidents, sensitive data._
-D-013 (pickup hybrid), D-017 (welfare) · ENUM-18, ENUM-19 · SM-04 · INV-01, INV-02, INV-03, INV-18, INV-20 · Q-013 (safety-record retention).
+**P7 · Child Safety & Data Protection** — _the non-negotiable: pickup, allergy, welfare, incidents, classification, consent, erasability._
+D-013 (pickup hybrid), D-017 (welfare), D-041 (field classification + min-necessary), D-042 (PII vault/erasability), D-043 (consent lifecycle + Data Fiduciary), D-049 (MFA/step-up) · ENUM-18, ENUM-19, ENUM-24, ENUM-25, ENUM-26, ENUM-27 · SM-04 · INV-01, INV-02, INV-03, INV-18, INV-20, INV-26, INV-27, INV-28, INV-33 · Q-013, Q-021.
 
 **P8 · Academics: Curriculum & Progress** — _lesson plans and progress cards within term windows._
 Q-010 (authorship & parent visibility) · ENUM-08 (term windows) · (capability modules M9/M10).
@@ -55,8 +55,8 @@ D-026 · Q-016 (gross vs net) · derives from P5 ledger + live data.
 
 ### TIER D — Architecture & Delivery Posture (how it's built)
 
-**PX · Cross-Cutting Architecture** — _modular monolith, bounded contexts, offline-first, complexity matched to operating maturity._
-D-018, D-020, D-021 (context placement), D-022 · Bounded-Context Map · Register §6 (Cross-Cutting Build Constraints).
+**PX · Cross-Cutting Architecture** — _modular monolith, bounded contexts, offline-first, idempotency, resilience, auth, complexity matched to operating maturity._
+D-018, D-020, D-021 (context placement), D-022, D-045 (backup/DR/residency/observability), D-046 (idempotency principle + capacity-race), D-049 (MFA/step-up), D-050 (AWS ap-south-1 stack) · INV-30, INV-31, INV-32, INV-33 · Bounded-Context Map · Register §6 (Cross-Cutting Build Constraints).
 
 ---
 
@@ -99,6 +99,23 @@ Decisions already made and rationale captured. These are not open for revisitati
 | D-031 | Tamper-evidence for immutable logs | (1) Application-level "no edit/delete" rule only; (2) Hash-chaining + DB-level append-only + external anchor | Option 2 | Immutability (§9.1) is asserted as a *policy*, not enforced by a *mechanism* — a privileged DB/deploy actor can alter rows, too weak for POCSO/DPDP/financial evidentiary value. Each log entry stores `hash(entry_content + previous_hash)` so any retroactive edit/delete breaks the chain and is detectable. Revoke UPDATE/DELETE on log tables at the DB role level (append-only). Emit the latest chain-head hash in the monthly governance digest as an **external witness/anchor**, so even a full-table rewrite is detectable. Converts "immutable by policy" into "immutable by mechanism." Proportionate for V1; defer managed WORM / ledger DB (AWS QLDB, S3 Object Lock) to scale or compliance demand. Matches Certificate Transparency and hash-chained fintech/healthtech audit logs. |
 | D-032 | CoFee framing reconciliation (aligns §5/§9.5 with D-010) | (1) Keep §5/§9.5 CoFee-centric ("CoFee owns invoice generation and payment collection"); (2) Single-ledger framing — CoFee is a temporary V1 collection source feeding the HF canonical ledger, fully retired in V2 | Option 2 | Confirmed by product intent: CoFee is temporary; Happy Feet must be stable enough to **replace CoFee completely at V2**. HF is the canonical ledger from V1 (D-010); CoFee is one tagged, temporary source (D-003/D-025); V2 removes CoFee entirely (D-019). Parent fee visibility follows D-023 (self-serve from the HF ledger), **not** "check CoFee directly." **Document-sync action (next session):** reword domain-overview §5 ("CoFee owns invoice generation and payment collection") and §9.5 ("CoFee Is a V1 Bridge") to the single-ledger framing — staged here, applied to domain-overview after verification. |
 | D-033 | CoFee XLSX ingestion specification (concretises D-025) | — | Field→ledger mapping + idempotency strategy + reconciliation exception taxonomy | Client shared the actual CoFee export schema (~26 fields). Each row = a payment event against an `Invoice id` / `Fee head` for a student (`Admission number`). Mapped to the HF canonical ledger (D-010): CoFee `Amount paid` + `Transaction Id`/`UTR` are the ledger **event**; CoFee `Status` / `Amount paid till date` / `Remaining amount` are **reconciliation controls, not source of truth** — HF derives its own invoice state (D-016) from the payment events and *asserts* it against CoFee's summary; divergence → suspense ("Ledger Mismatch"). Idempotency key = `Transaction Id` (online) → `UTR` (bank transfer) → **synthesised deterministic key for offline Cash/Cheque that have neither** = `hash(Invoice id + Admission number + Fee head + Amount paid + Paid on)`, because `S.no` is per-file and unstable. Student resolved by `Admission number` (the permanent key, D-001); unresolved → suspense — expected and held during Migration Mode (§9.4 relaxed validation), a hard error in normal ops. The raw schema implies three model elements made explicit here: (a) **collection vs settlement are two events** — gross `Amount paid`/`Paid on` vs net `Total amount settled`/`Settled on` (gateway fees deducted); parent dues use gross, bank reconciliation uses net; (b) **advance/unapplied credit** — `Type=Advance` payments exist as on-account credit before applying to an invoice; (c) **refunds** (`Status=Refunded`) are appended compensating events (D-011), never deletions or reductions. Adopts the client's four validation rules as ingestion gates; non-INR `Currency` and unmappable `Fee head`/`Branch name` → exception. See detailed spec below. |
+| D-034 | RBAC architecture — Role × Scope × Relationship | (1) Pure role-based (role implies scope); (2) Hybrid RBAC + ABAC + ReBAC — role = action, scope-binding = data boundary (branch/class/route), relationship = parent-of/teacher-of | Option 2 — three-layer model | Access in a preschool is three-dimensional; collapsing scope and relationship into the role leaves custody, substitutes, and staff-as-parent with nowhere to live. Every authorization check resolves as `role-permission ∩ scope-binding ∩ relationship-edge`. Roles carry actions; branch/class/route bindings carry data scope (ABAC, INV-11); guardian↔child and teacher↔class are relationship edges (ReBAC, Zanzibar-style). Deny-by-default. Matches NIST RBAC (INCITS 359) + NIST ABAC (SP 800-162) + relationship-based access. See detailed spec below. |
+| D-035 | Guardian relationship & custody model | (1) One Parent account per child; (2) Multi-guardian edges with per-link capability flags, each guardian its own login | Option 2 | A single Parent role cannot express two parents, grandparent guardians, separated/divorced custody, or a legally-excluded parent — a safety + legal (POCSO/custody) + trust gap. Model guardian↔child as an edge with flags: `can_pickup`, `can_receive_comms`, `payer_role` (primary/secondary/none), `access_level` (full / view-only / **excluded**), `is_emergency_contact`. `access_level=excluded` + `can_pickup=false` handles the excluded parent; the exclusion is governance-logged and requires a recorded legal basis. Each guardian has its own login. Matches Brightwheel/Procare "family members." Custody-exclusion legal handling → Q-017. |
+| D-036 | Transport Staff role (new, narrow) | (1) Boarding/drop marked by Coordinator/Teacher; (2) Dedicated least-privilege Transport Staff (driver/attendant) role | Option 2 (pending Q-020) | D-024 introduced boarding/drop confirmation with **no actor**; the school owns its fleet (D-021), and home-stop boarding needs the person on the bus. Transport Staff may mark boarding/drop on an assigned route/trip and see **minimal** child info (name, photo, stop, emergency contact, allergy/medical-alert flag) — nothing else. Route/trip-scoped (ABAC). Least privilege (Saltzer–Schroeder). Whether drivers are login-holding employees or boarding is marked by existing staff → Q-020. |
+| D-037 | Teacher slot permission profiles | (1) Primary/Assistant/Temporary all identical (current); (2) Primary/Assistant = full Teacher; Temporary/substitute = reduced profile | Option 2 — reduced Temporary profile | Keeps the original identical-permissions decision for the two slots that matter, but a rotating one-day substitute with full access to children's medical/welfare/incident history is a disproportionate DPDP/POCSO exposure. Temporary profile = attendance + daily log for the covered slot + operational child info (name/photo/allergy-alert); **no** full medical/welfare history, **no** progress authoring; time-boxed to the assignment. Whether a substitute may raise welfare concerns → Q-018. |
+| D-038 | Delegation, deputy & break-glass | — | Time-boxed authority grants + logged emergency elevated access | Admin-only and Branch-Admin-only actions stall when the owner/principal is unavailable (a single point of failure, worse at branch 2). A **delegation grant** transfers a role's authority to a named deputy with an expiry; auto-revokes; writes a governance entry on grant and revoke. **Break-glass:** emergency elevated read (e.g., a substitute needs a child's medical record during an incident) is permitted but heavily access-logged and flagged for Admin review. Standard deputy/break-glass pattern (healthcare RBAC). |
+| D-039 | Separation of Duties + staff-as-parent segregation | — | Codified SoD pairs + self-access rule | Codify SoD: draft ≠ publish (progress, already present); **record-payment ≠ waive-fee** (Accountant records money; only Branch Admin/Admin forgive dues at TC/Bonafide/rollover); raise ≠ close (welfare review by Branch Admin); request ≠ approve (overrides). **Staff-as-parent** (the Staff Child category guarantees this case): a staff member accesses their own child only via the Parent relationship, never their staff role; staff-role self-access to their own child's sensitive records is blocked or access-logged + flagged. SOX-style controls; conflict-of-interest segregation. |
+| D-040 | Permissions-as-primitive + read-only Viewer grant | (1) Hardcode the fixed roles; (2) Roles = named bundles of atomic permissions; ship fixed bundles in V1 | Option 2 | Custom roles are V2 (D-018), but the **permission** must be the atomic primitive now: a role is a named set of capabilities (e.g., `attendance.mark`, `progress.publish`, `fee.waive`, `child.sensitive.read`). V1 ships ~7 fixed bundles; V2 "custom roles" = Admin composes bundles — a toggle, not a refactor. Also adds a read-only **Viewer/Auditor** as a time-boxed scoped grant (external CA, owner read-only), not a standing role; access-logged, auto-expiring. External-access need → Q-019. NIST RBAC (role = permission set). |
+| D-041 | Field-level data classification & minimum-necessary access | (1) Role→module access (current); (2) Role→field access derived from a data-classification map + minimum-necessary | Option 2 | Access modelled role→module over-exposes — a Teacher gets the full medical record when they need only the allergy/medical-alert flag. Classify every field into sensitivity tiers (Operational / Restricted / Sensitive / Regulated) with a stated purpose; derive each role's view from "minimum necessary for the function." Teacher sees the allergy/medical-alert flag, not vaccination/Aadhaar. **Coordinator (resolved with client):** handles intake documents for students *and* staff, may use the data to process and coordinate tasks, communicates between actors — but **cannot delete anything** and has no fee/financial or welfare/incident-authoring authority; all sensitive reads are access-logged (D-029). This resolves the Coordinator-intake contradiction. Matches HIPAA minimum-necessary. V1 ships the classification table; contextual/purpose-bound reveal is a V2 evolution on top (stays within D-018). |
+| D-042 | PII-vault separation (erasability vs immutability) | (1) Store PII inline in append-only records; (2) Store regulated PII by reference in a crypto-shreddable vault; the event/audit chain keeps only references + a PII-free skeleton | Option 2 | Append-only immutability (§9.1) and DPDP erasure/storage-limitation collide — you cannot both keep forever and erase on request. Regulated PII (Aadhaar, medical, photo) lives in a separate vault addressed by token; the immutable event and audit chains store the token + a non-PII skeleton. Erasure = destroy the vault entry / its key (crypto-shred), leaving a tombstoned, PII-free immutable record — the *fact* of the record and the audit chain survive, the *content* is gone. Resolves immutability vs erasure cleanly. Matches tokenization/vaulting (PCI) and crypto-shredding (GDPR/DPDP). Architecture decision — cheapest now, very expensive to retrofit. |
+| D-043 | Consent lifecycle + Data Fiduciary | (1) One-time consent flag (current, APAAR/PEN only); (2) Consent as a first-class lifecycle object across all personal data + data-principal rights + named Fiduciary | Option 2 | DPDP requires notice of purpose, withdrawal, and data-principal rights (access / correction / erasure / grievance) — a one-time flag meets none. Model consent per field/purpose with states (Notice → Granted → Withdrawn → Re-consented), each transition logged. Add a parent-facing **data-rights flow** (request access/correction/erasure/grievance) with an SLA, and name a **Data Fiduciary** (the school, operationally Admin) + grievance officer. Biggest compliance exposure; the erasure path depends on D-042. Matches DPDP Act consent + grievance redressal. |
+| D-044 | SoD on fee waivers & refunds (refines D-039) | (1) Accountant records waivers/refunds alone (current); (2) Two-actor maker-checker — Accountant records, Branch Admin/Admin approves | Option 2 | Reducing or refunding a charge is exactly the financial action SoD separates from recording money. Any fee reduction (waiver / concession / write-off) and any refund (`Status=Refunded`) requires Branch Admin/Admin approval before it applies, recorded as a governance entry. Closes the one control hole in the money path. SOX-style maker-checker. |
+| D-045 | Resilience: backup/DR, data residency, observability | — | Encrypted backups + PITR; India-region hosting; infra observability | Resilience is under-built vs governance — the system records truth immutably but has no recovery story. (a) **Backup/DR:** scheduled **encrypted** backups, point-in-time recovery, stated RPO/RTO — a school cannot lose 7-year financial + child-safety records. (b) **Data residency:** host in an **India region** (DPDP / data-localization) — a one-line decision now, a brutal migration later. (c) **Observability:** monitor and alert on the CoFee import job, SMS gateway, payment webhooks, and offline-sync queue (distinct from the business audit log). (d) **No PII in application/error logs** (extends INV-03 beyond notifications). Cloud DR + SRE practice. |
+| D-046 | Razorpay webhook + system-wide idempotency + capacity-race | — | Idempotent webhook ingestion; idempotency as a principle; atomic seat reservation | (a) **Razorpay webhook** ingestion with signature verification, idempotent on event id, and payment-link expiry — V1 shipped "payment links" with **no inbound confirmation path**, so link payments never reconcile without this. (b) **Idempotency as a system principle:** every externally-triggered or retried state change (webhook, SMS send, offline replay, import row) carries an idempotency key and applies exactly once — generalises D-025 beyond CoFee. (c) **Capacity-race fix:** enrollment seat allocation is an **atomic reservation**, not a read-then-write check, so two simultaneous enrollments cannot both take the last seat without a logged override (closes a Q-012 Capacity-Gate race). Webhook idempotency + exactly-once + atomic reservation. |
+| D-047 | Financial periphery: GST, numbering, fee-snapshot, parent receipts | — | Tax model; namespaced/gapless numbering; contractual snapshot; parent-facing receipts | The ledger core (D-010) is strong but its edges are where audits and disputes land. (a) **GST:** per-fee-head taxable flag + rate — tuition is exempt but transport/meals/materials/events may attract GST; invoices **and the parent UI** show the tax breakup. (b) **Numbering:** namespace invoice numbers so CoFee-imported and HF-native invoices cannot collide; tax **receipts are gapless and sequential**. (c) **Fee-structure snapshot at enrollment** is the immutable contractual basis, never overwritten by later fee changes (re-adds a financial invariant that was lost — INV-25). (d) **Parent-facing UI:** fee status **+ payment history + downloadable receipts** (with tax breakup) for reimbursement/corporate payers. Standard AR + Indian GST on ancillary services. |
+| D-048 | Lifecycle depth: staff exit, document entity, cross-year, branch transfer | — | Reassign in-flight work; document lifecycle; cross-year read access; safeguarding continuity | Student lifecycle is deep (D-015); staff/document/cross-year are thin. (a) **Staff exit:** on exit, reassign in-flight work — open welfare concerns, un-submitted progress drafts, Primary-marker slots — while authored immutable records persist. (b) **Document entity** gets its own lifecycle: Uploaded → Verified (by a named role) → Expired → Replaced, with format/size validation, virus scan, and versioning. (c) **Cross-year visibility:** after rollover, parents retain read-only access to prior-year published progress/attendance for the retention period (a Closed year is readable, not editable). (d) **Branch transfer:** a transferring child's safety history is linkable across branches via a logged, Admin-mediated link — closing the safeguarding-continuity gap without breaking branch isolation (INV-11). |
+| D-049 | Auth depth: MFA + step-up for sensitive actions | — | MFA for privileged staff; step-up re-auth on sensitive actions | Privileged staff hold financial + child-safety power on OTP-only auth. (a) **MFA for Admin/Branch Admin.** (b) **Step-up re-authentication** before sensitive actions: Aadhaar/medical reveal, TC/Bonafide issuance, fee waiver/refund approval, Migration exit, guardian exclusion. (c) **Parents:** OTP remains sufficient. (d) Session expiry / device management. Matches NIST 800-63 AAL / step-up auth for privileged users. |
+| D-050 | Hosting & infrastructure stack (concretises D-042/D-045) | (1) Generic India-region; (2) AWS **ap-south-1 (Mumbai)** managed stack | Option 2 — AWS ap-south-1 | Stack: **RDS PostgreSQL** (Prisma ORM), **S3** (documents + backups), **KMS** (envelope encryption), **Secrets Manager** (app secrets), all in ap-south-1 → India residency (DPDP, INV-32). ~$50–150/mo at ~500 students; managed services suit a solo dev. **Architectural corrections (must-follow):** (a) **PII vault = KMS envelope encryption** — *one* CMK + a *per-subject data key* (`GenerateDataKey`) stored encrypted in RDS; PII lives encrypted in DB/S3; crypto-shred (D-042) = delete the per-subject data-key row. **Not** Secrets Manager (that's for app secrets, not per-record PII) and **not** per-subject CMKs (≈500 CMKs ≈ $500/mo — cost blowout). (b) **Secrets Manager** holds DB creds + Razorpay/CoFee/MSG91 keys only. (c) **RDS t3.small** (not nano) for Prisma connection headroom; **automated snapshots + PITR** for D-045 RPO/RTO; **single-AZ in dev → Multi-AZ before go-live** (the one cost lever that moves $50→$150); **RDS Proxy** for Prisma connection pooling. (d) **S3 SSE-KMS** + versioning + **Object Lock** (WORM option for D-031 logs) + lifecycle on backups. (e) **DR:** cross-region backup to **ap-south-2 (Hyderabad)** — stays in India, geographically local. |
 
 ---
 
@@ -327,6 +344,8 @@ Priority classes:
 
 **Build impact:** notification entity carries `priority_class`, `channels[]`, and a per-attempt delivery record (`state`, `provider_ref`, `failure_reason`, `timestamp`). Safety-critical notifications drive a staff action-item queue when not confirmed within SLA.
 
+**Caveat — quiet-hours & fatigue (D-048 batch):** suppress **Standard** notifications during quiet hours (e.g., 21:00–07:00 IST) and batch the daily feed for multi-child parents; **Safety-critical** notifications ignore quiet-hours and always fire.
+
 ---
 
 ### D-028 — Log Taxonomy (audit spine + projections)
@@ -407,6 +426,8 @@ Schema: UTC timestamp · actor (id, role) · branch · **data category** (Aadhaa
 Converts "immutable by policy" into "immutable by mechanism."
 
 **Industry basis:** Certificate Transparency logs, hash-chained audit logs in fintech/healthtech, AWS QLDB cryptographic verification.
+
+**Caveat — write serialization:** each entry depends on the prior hash, so appends to one chain are inherently serial — a throughput ceiling at scale (fine at 105 students). Mitigation: **per-branch chains** or **periodic Merkle-batch anchoring** rather than per-entry chaining.
 
 ---
 
@@ -503,6 +524,21 @@ Does CoFee guarantee a stable, unique reference (`UTR`, receipt no., or other) f
 **QUESTION-016 — Dues figure basis: gross collected vs net settled (basis: D-033).**
 For parent-facing dues and the owner collection dashboard, should the figure reflect gross amount paid (what the parent paid) or net settled (what reached the bank)? Default assumption: dues = gross; cash reconciliation = net.
 
+**QUESTION-017 — Custody / guardian-exclusion handling (basis: D-035).**
+When a parent is to be excluded (`access_level=excluded`, `can_pickup=false`) for custody or safeguarding reasons, what legal basis must the school record (e.g., a court order on file), and who may set/reverse the exclusion? This is both a safety and a legal (POCSO/custody) decision.
+
+**QUESTION-018 — Substitute teacher welfare-raising (basis: D-037).**
+May a Temporary/substitute teacher raise a formal welfare concern, or is that reserved for Primary/Assistant? (Affects the reduced Temporary permission profile — safeguarding favours allowing it; data-exposure favours restricting it.)
+
+**QUESTION-019 — External read-only access (basis: D-040).**
+Does the school need to grant read-only access to an external party (chartered accountant for 7-year financial compliance, prospective investor, owner's read-only device)? If yes, confirm scope (finance only? whole branch?) and duration.
+
+**QUESTION-020 — Transport boarding actor (basis: D-036).**
+Are bus drivers/attendants school employees who should hold logins and mark boarding/drop themselves, or will an existing role (Coordinator/Teacher) mark it from a shared device? Determines whether Transport Staff is a login-holding role.
+
+**QUESTION-021 — Data minimisation: child Aadhaar (basis: D-041/D-042).**
+Should the system collect the **child's** Aadhaar at all in V1? No V1 function requires it, and collecting a young child's Aadhaar is significant DPDP liability. Options: don't collect / optional field / collect (consent-gated). Default recommendation: do not collect unless a named function needs it.
+
 ---
 
 ## CoFee → HF Ledger Data Dictionary (parser reference)
@@ -567,6 +603,149 @@ All suspense rows surface in the Accountant reconciliation queue; none are silen
 
 ---
 
+## RBAC & Actor Model Resolutions (D-034–D-040)
+
+Developer-ready specification of the access model. Reframes access as **Role × Scope × Relationship**. This is the canonical authorization reference; the Authority Matrix (Register §2) is the per-action quick-lookup.
+
+### Authorization model (D-034)
+
+Every authorization decision is **deny-by-default** and resolves as:
+
+```
+ALLOW  ⟺  role grants the action (RBAC)
+       ∧  subject ∈ actor's scope binding — branch / class / route (ABAC)
+       ∧  for child data: a permitting relationship edge exists — guardian-of / teacher-of (ReBAC)
+```
+
+- **RBAC** (role → actions) — NIST INCITS 359.
+- **ABAC** (scope bindings → data boundary) — NIST SP 800-162. Bindings: `branch` (all staff), `class` (teachers), `route/trip` (transport).
+- **ReBAC** (relationship edges → child-level access) — Zanzibar-style. Edges: `guardian-of(child)`, `teacher-of(class)`.
+- Roles are **named bundles of atomic permissions** (D-040); enforce scope at the data-access layer, not just the UI.
+
+### Roles — capabilities and limitations
+
+| Role | Can (capabilities) | Cannot (limitations) | Scope |
+|---|---|---|---|
+| **Admin** (Org Owner) | All config; activate/close year; control Migration Mode; TC/Bonafide *with* dues; view governance log; override any role (logged); manage staff/roles/bindings; grant delegations | Edit/delete immutable logs; read sensitive data un-logged; bypass safety invariants | All branches |
+| **Branch Admin** (Principal) | All branch ops; rollover; **publish** progress; record + publish incidents; review/close welfare; capacity override; document waiver; authorise pickup override; TC/Bonafide *without* dues | Cross-branch access; org-wide governance log (own-branch audit only); forgive fees beyond logged waivers | One branch |
+| **Coordinator** (Front Office) | Walk-in application intake; **collect & use intake documents for students *and* staff** (access-logged); visitor log; **initiate** gate release; coordinate/communicate between actors; templated parent comms; notice board | **Delete anything**; fee/financial data; welfare/incident *content* authoring; progress authoring; config; pickup *override* (escalates) | Branch |
+| **Teacher — Primary/Assistant** | Mark attendance (**Primary = authoritative marker**); daily care log; raise welfare; **draft** progress; allergy confirmation; lesson plans | **Publish** progress (SoD); fees; other classes; edit peers' marks (amend only); others' welfare flags | Assigned classes |
+| **Teacher — Temporary** (reduced profile, D-037) | Attendance + daily log for the covered slot; operational child info (name, photo, **allergy/medical-alert flag**) | Full medical/welfare/incident history; author/submit progress; persistent access | Time-boxed to covered slot |
+| **Accountant** | Canonical ledger; CoFee import; invoices; Razorpay links; fee-query comms; financial dashboard | **Waive/forgive** fees at dues-gated actions (SoD); academic/attendance/welfare writes; non-fee comms | Branch finance |
+| **Transport Staff** (Driver/Attendant, D-036) | Mark **boarding/drop** on assigned trip; minimal child info (name, photo, stop, emergency contact, allergy flag) | Academic/fee/welfare/profile access; any edit beyond boarding/drop | Assigned route/trip |
+| **Parent/Guardian** (relationship-based) | View own child's attendance, feed, published progress, fee status + **pay**, notice board, pickup list (read), published incidents; **issue one-time pickup codes**; manage own profile | Other children; staff data; internal welfare/incident notes; financial detail beyond own dues | Linked child(ren), per edge flags |
+| **Viewer/Auditor** (grant, not a standing role, D-040) | Read-only, time-boxed, scoped (e.g., finance export for external CA) | Any write; access beyond grant; persistence (auto-expires) | Per grant |
+
+### Guardian relationship edge (D-035) — ReBAC
+
+`GuardianLink { guardian_id, child_id, relationship_type, <flags> }`
+
+| Flag | Type | Meaning |
+|---|---|---|
+| `can_pickup` | bool | appears on the authorised pickup list |
+| `can_receive_comms` | bool | receives notifications / daily feed |
+| `payer_role` | enum | primary \| secondary \| none |
+| `access_level` | enum | full \| view-only \| **excluded** |
+| `is_emergency_contact` | bool | surfaced to staff/transport in emergencies |
+
+Rules: each guardian has its own login (invited by phone/email); **≥1 guardian per child must have `can_receive_comms`** (the child must be reachable); `access_level=excluded` ⇒ no view, no comms, not on pickup list, not shown in any feed, and the exclusion is governance-logged with a recorded legal basis (Q-017). The authorised pickup list = edges with `can_pickup=true` ∪ one-time codes (D-013); distinct from `payer_role`.
+
+### Scope bindings (D-034, ABAC)
+`branch` binding on every staff request (INV-11); multi-branch staff choose a working branch per session. `class` binding scopes Teachers; `route/trip` binding scopes Transport Staff. Authorization = role-permission **∩** binding.
+
+### Delegation & break-glass (D-038)
+- **Delegation grant** `{ grantor, grantee, role_scope, expires_at }` — governance-logged on grant and revoke; auto-revokes at expiry.
+- **Break-glass** — emergency elevated read; requires a reason; written to the access log and flagged for Admin review.
+
+### Separation-of-Duties matrix (D-039)
+
+| Duty A | Duty B (different actor) | Why |
+|---|---|---|
+| Draft progress (Teacher) | Publish progress (Branch Admin) | review gate |
+| Record/import payment (Accountant) | Waive/forgive dues (Branch Admin/Admin) | money recorded ≠ money forgiven |
+| Raise welfare (Teacher) | Review/close welfare (Branch Admin) | independent review |
+| Request override (any) | Approve override (Branch Admin/Admin) | sanctioned exception |
+
+**Staff-as-parent:** a staff member accesses their own child only through the Parent relationship edge, never their staff role; staff-role self-access to their own child's sensitive records is blocked or access-logged + flagged.
+
+### Permissions-as-primitive (D-040)
+`permission` = atomic capability (`attendance.mark`, `progress.draft`, `progress.publish`, `fee.record`, `fee.waive`, `child.sensitive.read`, `pickup.override`, …). `role` = a named set of permissions. V1 ships fixed sets (the roles above); V2 custom roles let Admin compose sets. Build the primitive now even though composition ships later.
+
+---
+
+## Data-Protection, Resilience & Hardening Resolutions (D-041–D-049)
+
+Developer-ready detail for the edge-hardening batch. Principle altitude — mechanisms named, implementation left to module specs. These address the five meta-patterns: resilience, financial periphery, idempotency/concurrency, DPDP full-lifecycle, and lifecycle depth.
+
+### Field-level data classification (D-041)
+
+Classify every stored field into a tier; access = **minimum necessary for the function**. Default deny; widen only with a stated purpose.
+
+| Tier | Examples | Who may view (operational) | Notes |
+|---|---|---|---|
+| **Operational** | Name, photo, class, attendance, daily-care log | Teacher (own class), Coordinator, Transport (route), Parent (own child) | low sensitivity |
+| **Restricted** | Contact numbers, address, fee status | Branch Admin, Accountant (fee only), Parent (own) | not in notifications/exports (INV-03) |
+| **Sensitive** | Full medical history, welfare/incident content, financial detail | Branch Admin, Admin; health/medical role as defined | access-logged (D-029) |
+| **Regulated** | Aadhaar, PEN/APAAR, vaccination, passport photo | **No standing operational view**; revealed on explicit, reasoned, step-up action only | vaulted (D-042), access-logged, step-up (D-049) |
+
+Key rule: a **Teacher sees the allergy/medical-alert flag (Operational)**, never the full medical record (Sensitive/Regulated). The **Coordinator** handles intake docs for students and staff and uses them to process/coordinate tasks (access-logged), but **cannot delete** and has no fee or welfare/incident-authoring authority.
+
+### PII vault & erasability (D-042)
+
+```
+Event / Audit record  →  { token, non-PII skeleton }      (immutable, hash-chained)
+PII Vault             →  { token → Aadhaar/medical/photo } (encrypted, crypto-shreddable)
+Erasure request       →  destroy vault entry/key  ⇒  record survives as a PII-free tombstone
+```
+
+The immutable chain never holds raw PII; erasure removes content without breaking the chain.
+
+### Consent lifecycle (D-043) — per field/purpose
+
+`Notice → Granted → Withdrawn → Re-consented` — every transition logged. Parent **data-rights flow**: request *access / correction / erasure / grievance*, each with an SLA, routed to the named **Data Fiduciary** (school/Admin) + grievance officer. Erasure requests execute via D-042.
+
+### Document lifecycle (D-048)
+
+`Uploaded → Verified (named role) → {Expired | Replaced}` — format/size validation, virus scan, versioning. Certification expiry already fires its alert; this generalises to all documents.
+
+### Fee maker-checker (D-044)
+
+`Accountant records waiver/refund (maker) → Branch Admin/Admin approves (checker) → applied + governance entry`. No fee reduction or refund applies on a single actor.
+
+### Engineering caveats on existing decisions
+
+- **Hash-chain serialization (caveat on D-031):** each entry depends on the prior hash, so appends to one chain are inherently serial. Fine at 105 students; a throughput ceiling later. Mitigation: **per-branch chains** or **periodic Merkle-batch anchoring** instead of per-entry chaining.
+- **Academic-day boundary (caveat on §9.8 / D-016):** define the day boundary explicitly (e.g., 00:00 IST). A **day-care checkout after midnight** and **hour-wise billing across midnight** must resolve against the defined boundary, not the wall clock — otherwise a late pickup splits across two billing days.
+- **Notification quiet-hours (caveat on D-027):** suppress non-safety notifications during quiet hours (e.g., 21:00–07:00 IST) and batch the daily feed for multi-child parents. **Safety-critical notifications ignore quiet-hours** and always fire.
+
+### Infrastructure stack (D-050) — AWS ap-south-1 (Mumbai)
+
+Stack: **Prisma + PostgreSQL on RDS** (already the chosen ORM/DB). All services in **ap-south-1** for India residency.
+
+| Concern | AWS service | Notes |
+|---|---|---|
+| Primary DB | **RDS PostgreSQL** t3.small (single-AZ in dev → **Multi-AZ before go-live**) | Prisma ORM; **RDS Proxy** for connection pooling (Prisma is connection-hungry); Multi-AZ is the $50→$150 lever |
+| Documents + backups | **S3** | SSE-KMS, versioning, **Object Lock** (WORM option for D-031 logs), lifecycle rules |
+| PII encryption / vault (D-042) | **KMS** | envelope encryption — see mechanism below |
+| App secrets | **Secrets Manager** | DB creds + Razorpay/CoFee/MSG91 keys **only** (not PII) |
+| Backup / DR (D-045) | RDS automated snapshots + **PITR**; cross-region to **ap-south-2 (Hyderabad)** | stated RPO/RTO; DR stays in India |
+
+**PII crypto-shred mechanism (the key correction):**
+
+```
+1 KMS CMK (master)                              ($1–2/mo total, any student count)
+  └─ per-subject Data Key (GenerateDataKey)     stored ENCRYPTED in RDS
+       └─ encrypts that subject's PII (Aadhaar/medical/photo) in DB/S3
+
+Erasure (D-042)  =  delete the per-subject encrypted data-key row
+                 ⇒ that subject's PII is mathematically unrecoverable
+                 ⇒ the immutable audit/event chain keeps a PII-free tombstone
+```
+
+This gives DPDP erasure + cost-stability + India residency in one design. **Do not** store per-record PII in Secrets Manager, and **do not** mint one CMK per student.
+
+---
+
 # Build Specification Register
 
 **Derived from `domain-overview.md` v1.2 — the authoritative source.** This register consolidates *every* build-relevant decision, rule, enumeration, state machine, and invariant from the completed domain overview into a form directly consumable by coding agents and junior developers. The decision table (D-001…D-033) above gives the **why**; this register gives the **what to build**, in testable terms. Items in §1–§8 of the overview that were always domain facts (and never numbered decisions) are captured here for the first time. On any conflict, `domain-overview.md` wins and this register is corrected.
@@ -581,7 +760,7 @@ Closed sets. Do not extend in code without a new decision. All are V1 unless not
 
 | ID | Enumeration | Values | Source |
 |---|---|---|---|
-| ENUM-01 | System roles | Admin, Branch Admin, Coordinator, Teacher, Accountant, Parent/Guardian (Child = non-user subject) | §4 |
+| ENUM-01 | System roles | Admin, Branch Admin, Coordinator, Teacher, Accountant, Transport Staff, Parent/Guardian (Child = non-user subject; Viewer/Auditor = read-only grant, not a standing role) | §4 / D-034/36/40 |
 | ENUM-02 | Teacher slot types | Primary, Assistant, Temporary — **identical permissions**; Primary is the authoritative attendance marker | §4 / D-014 |
 | ENUM-03 | Programmes | Play Group, Nursery, PP1, PP2, Day Care — **extensible** (config-driven, not hardcoded) | §1 |
 | ENUM-04 | Student categories | Standard, Staff Child, Subsidised — determine applicable fee structure | §5 |
@@ -601,6 +780,13 @@ Closed sets. Do not extend in code without a new decision. All are V1 unless not
 | ENUM-18 | Sensitive data categories | Aadhaar, Medical/vaccination, PEN/APAAR, Passport photo, Financial | §7.4 / D-029 |
 | ENUM-19 | Pickup authorisation paths | Standing-list (PIN/QR + photo), One-time parent code, Two-actor override | §7.1 / D-013 |
 | ENUM-20 | Log types | Audit (spine), Governance (filtered view), Compliance (tagged view), Access (distinct read log) | §9.10 / D-028/29 |
+| ENUM-21 | Scope binding types | Branch (all staff), Class (teachers), Route/Trip (transport) | D-034 |
+| ENUM-22 | Guardian capability flags | can_pickup, can_receive_comms, payer_role (primary/secondary/none), access_level (full/view-only/excluded), is_emergency_contact | D-035 |
+| ENUM-23 | Grant types | Delegation (time-boxed role authority), Break-glass (logged emergency read), Viewer/Auditor (read-only scoped) | D-038/40 |
+| ENUM-24 | Data sensitivity tiers | Operational, Restricted, Sensitive, Regulated | D-041 |
+| ENUM-25 | Consent states | Notice, Granted, Withdrawn, Re-consented | D-043 |
+| ENUM-26 | Document states | Uploaded, Verified, Expired, Replaced | D-048 |
+| ENUM-27 | Data-rights request types | Access, Correction, Erasure, Grievance | D-043 |
 
 ---
 
@@ -628,6 +814,9 @@ Who may perform each gated action. Enforce as the permission layer. "Two-actor" 
 | View governance log | **Admin only** | curated cross-branch view (not a redaction boundary, D-028) |
 | View audit log | **Admin (all branches), Branch Admin (own branch)** | §9.10 |
 | Migration Mode entry/exit/re-entry | **Admin** (with Branch Admin readiness confirmation) | logged; unlimited re-entry (Q-008) |
+| Mark transport boarding/drop | **Transport Staff** (or assigned role) | route/trip-scoped; minimal child info (D-036, Q-020) |
+| Grant / revoke delegation | **Admin / Branch Admin** (own scope) | time-boxed; governance-logged on grant + revoke (D-038) |
+| Set / reverse guardian exclusion | **Branch Admin / Admin** | governance-logged with recorded legal basis (D-035, Q-017) |
 
 ---
 
@@ -675,6 +864,19 @@ Always-true assertions. Each should have an automated test. Severity: 🔴 Criti
 | INV-18 | Sensitive-data reads/exports/prints are written to the access log | 🔴 | §7.4 / D-029 |
 | INV-19 | Academic fees are full-term with no pro-rating for mid-term admissions | 🟠 | §5 |
 | INV-20 | Internal incident notes and welfare records are never surfaced to parents under any circumstance | 🔴 | §7.1 |
+| INV-21 | Every authorization is deny-by-default and resolves as role-permission ∩ scope-binding ∩ relationship-edge; scope is enforced at the data layer, not only the UI | 🔴 | D-034 |
+| INV-22 | A guardian with `access_level=excluded` has no view, no comms, no pickup, no feed presence; the exclusion is governance-logged with a recorded legal basis | 🔴 | D-035 / Q-017 |
+| INV-23 | Separation of duties holds: draft≠publish, record-payment≠waive-fee, raise≠close-welfare, request≠approve-override | 🟠 | D-039 |
+| INV-24 | A staff member accesses their own enrolled child only via the Parent relationship, never their staff role; staff-role self-access to own-child sensitive data is blocked or logged + flagged | 🔴 | D-039 |
+| INV-25 | The fee-structure snapshot captured at enrollment is the immutable contractual basis and is never overwritten by later fee-structure changes | 🟠 | D-047 |
+| INV-26 | Field access follows minimum-necessary: a role sees only fields its function requires (Teacher = allergy/medical-alert flag, not full medical) | 🔴 | D-041 |
+| INV-27 | The immutable audit/event chain never stores raw regulated PII; PII is vaulted by token and crypto-shreddable, so erasure leaves a PII-free tombstone | 🔴 | D-042 |
+| INV-28 | Personal-data processing has a logged consent state and an honoured data-rights flow (access/correction/erasure/grievance) | 🔴 | D-043 |
+| INV-29 | No fee reduction (waiver/concession/write-off) or refund applies without a second-actor (Branch Admin/Admin) approval | 🟠 | D-044 |
+| INV-30 | Every externally-triggered or retried state change (webhook, SMS, offline replay, import row) carries an idempotency key and applies exactly once | 🔴 | D-046 |
+| INV-31 | Enrollment seat allocation is an atomic reservation; concurrent enrollments cannot both take the last seat without a logged override | 🟠 | D-046 |
+| INV-32 | Data is hosted in India (AWS ap-south-1; DR in ap-south-2); backups are encrypted; no PII appears in application/error logs | 🔴 | D-045 / D-050 |
+| INV-33 | Privileged staff use MFA; sensitive actions (Aadhaar/medical reveal, TC/Bonafide, fee waiver/refund, Migration exit, guardian exclusion) require step-up re-auth | 🔴 | D-049 |
 
 ---
 
@@ -693,6 +895,12 @@ Always-true assertions. Each should have an automated test. Severity: 🔴 Criti
 | Constraint | Rule | Source |
 |---|---|---|
 | Architecture | Modular monolith; 16 capability modules → 12 bounded contexts + Migration as cross-cutting state; modules share aggregates via a domain layer, never reach into each other's data | D-020 / §9.14 |
+| Access control | Hybrid RBAC + ABAC + ReBAC (Role × Scope × Relationship); deny-by-default; permissions are atomic primitives, roles are fixed bundles in V1 (custom roles V2); delegation + break-glass for continuity | D-034–D-040 |
+| Data protection | Field-level classification + minimum-necessary; regulated PII vaulted (crypto-shreddable) by token; consent as a logged lifecycle with data-rights flow; named Data Fiduciary | D-041–D-043 |
+| Idempotency & concurrency | Every external/retried state change carries an idempotency key (exactly-once); atomic reservation for capacity; single-marker for attendance | D-014 / D-046 |
+| Resilience | Encrypted backups + PITR (stated RPO/RTO); India-region hosting; infra observability on import/SMS/webhook/sync; no PII in app logs | D-045 |
+| Auth | MFA for privileged staff; step-up re-auth on sensitive actions; OTP for parents | D-049 |
+| Infra stack | AWS ap-south-1 (Mumbai): RDS PostgreSQL (Prisma) + RDS Proxy, S3 (SSE-KMS, Object Lock), KMS envelope encryption, Secrets Manager (app secrets only); DR to ap-south-2 (Hyderabad) | D-050 |
 | Admissions boundary | Admissions is a separate context from Student Records; transient applicant data never enters the permanent student store | D-020 |
 | Multi-branch | Branch-aware from day one (role binding, branch isolation); no per-branch pricing/tenancy in V1 | D-004 / §9.3 |
 | Offline-first | Attendance & daily-care capture work offline (local write → queue → sync); records show `pending-sync`; conflicts via single-marker rule | D-022 / §9.13 |
