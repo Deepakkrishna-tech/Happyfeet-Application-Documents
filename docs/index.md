@@ -662,7 +662,7 @@ When a child leaves the school, that child's parent access changes to a read-onl
 
 ## 12. Services and Subscriptions
 
-> **This section will change.** The final list depends on deployment choices still being worked out — in particular, where the application is hosted. New services may be added at any time as the build progresses, and this list is updated here whenever that happens. Treat it as a living list, not a final one.
+> **This section is subject to change** The final list depends on deployment choices still being worked out — in particular, where the application is hosted. New services may be added at any time as the build progresses, and this list is updated here whenever that happens. Treat it as a living list, not a final one.
 
 Happy Feet runs on a few outside services. Some are set up by the developer but billed to you, the school. Others are accounts the school owns directly. This is the list of what you pay for to keep the product running. The app itself installs on phones with no app-store fee, and parent notifications inside the app are free — so they are not listed here.
 
