@@ -80,7 +80,9 @@ The school runs on three core operations: enrolling children and collecting fees
 |---|---|---|
 | CoFee | External system | Primary payment collection and invoice lifecycle in V1 |
 | Razorpay | External payment gateway | Ad-hoc payment links in V1; full integration in V2 |
-| WhatsApp (deeplinks) | External platform | Manual tap-to-send parent communication in V1 |
+| In-app inbox + web push | Internal | System-of-record parent communication channel — structured, logged, archived |
+| SMS (MSG91) | External gateway | Parent communications only (e.g. absence alerts); never used for auth |
+| WhatsApp (deeplinks) | External platform | Manual tap-to-send fallback channel in V1 (no guaranteed delivery) |
 | Notification engine | Internal | Fires 12 named system notifications on defined trigger events |
 | UDISE+ | Government system | National school registry; annual school reporting obligation |
 | APAAR / PEN | Government identifier | Unique student academic ID; voluntary consent required |
@@ -97,7 +99,7 @@ The school runs on three core operations: enrolling children and collecting fees
 | Transport (optional, school-owned) | Fixed monthly by zone | Per distance band and trip type; opt-in per student |
 | Event / one-off | One-off fee | Annual Day, field trips, etc. |
 
-**V1:** CoFee owns invoice generation and payment collection. Happy Feet records the financial picture via CoFee XLSX import; also supports HAPPY_FEET_NATIVE invoices and Razorpay payment links for ad-hoc collection.
+**V1:** CoFee owns invoice generation and payment collection. Happy Feet records the financial picture via CoFee XLSX import; also supports HAPPY_FEET_NATIVE invoices and Razorpay payment links for ad-hoc collection. All payments — CoFee, Razorpay, native — land in a single append-only payment ledger and reconcile to their invoice via a shared external reference (`source` + `external_ref`); the ledger, not any one source, is the system of record for dues and collection.
 **V2:** Happy Feet owns the full billing engine natively via Razorpay API; CoFee redundant. V1 financial tables are designed to accept V2 data with no schema migration.
 
 Student categories (e.g. Standard, Staff Child, Subsidised) allow different fee structures per group.
@@ -111,7 +113,7 @@ Student categories (e.g. Standard, Staff Child, Subsidised) allow different fee 
 | Phase | Key Events |
 |---|---|
 | Pre-Year Setup | 9-step academic configuration: year/term dates, programmes, classes, transport zones, calendar, timetable, milestones, document types — must complete in sequence |
-| Admissions Season (ongoing) | Application → document review → programme assignment → enrollment → first payment → parent portal activation |
+| Admissions Season (ongoing) | Application → document review → programme assignment → enrollment → parent portal activation (parent invited at enrollment) → document upload/verification → first payment |
 | Each Term (×3) | Attendance marking, daily activity logging, fee collection, parent communication |
 | Progress Reporting Window (×3) | Teacher drafts/submits → Branch Admin reviews and publishes |
 | Year-End Rollover | Branch Admin reviews Active students, acknowledges outstanding dues → Active → Completed Programme; switches reset |
@@ -161,10 +163,10 @@ The current state — informal WhatsApp — fails because it has no log, no acco
 - Student information system (profiles, documents, medical, pickup lists, incident reports)
 - Staff management (profiles, attendance, leave, certifications, exit)
 - Admissions and enrollment (application, waitlist, four enrollment conditions)
-- Student lifecycle (status transitions, rollover, TC issuance, Bonafide)
+- Student lifecycle (status transitions, rollover, TC/Bonafide acknowledgment — issued offline, app records who/when, no PDF)
 - Fee management (fee structures, CoFee import, lightweight invoices, Razorpay payment links, Day Care billing)
 - Attendance management (teacher-marked, corrections, chronic absence alerts)
-- Progress tracking (submission windows, draft → publish workflow, PDF generation)
+- Progress tracking (submission windows, draft → publish workflow, lightweight in-app progress view — no PDF; formal cards handed over offline)
 - Communication (announcements, deeplinks, school inbox, notice board, 12 system notifications)
 - Reports and analytics (role-filtered dashboards, CSV exports, audit log, governance log)
 - Daily activity log (meals, naps, activities, health checks, parent feed)
@@ -218,6 +220,6 @@ The current state — informal WhatsApp — fails because it has no log, no acco
 
 ## Summary
 
-Happy Feet is an administration platform for a 105-student privately owned preschool in Hyderabad on an annual 3-term cycle, served by five staff roles and parents across twelve integrated modules. The defining characteristic is the age group (18 months–6 years): safety rules — authorised pickup verification, allergy alert surfacing, welfare concern flagging, incident reporting — are non-negotiable and cannot be overridden without a permanently logged record.
+Happy Feet is an administration platform for a 105-student privately owned preschool in Hyderabad on an annual 3-term cycle, served by five staff roles and parents across twelve domain capabilities (these are capability areas, not code modules — the build organises by data owner into ~7 modules; see AI-DECISIONS.md). The defining characteristic is the age group (18 months–6 years): safety rules — authorised pickup verification, allergy alert surfacing, welfare concern flagging, incident reporting — are non-negotiable and cannot be overridden without a permanently logged record.
 
 ---

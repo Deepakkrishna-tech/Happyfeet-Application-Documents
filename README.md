@@ -1,42 +1,42 @@
 # HappyFeet School ERP — Application Documentation
 
-Welcome! This repository contains the complete documentation for the **HappyFeet School ERP** — covering how the school operates, what the system will do, and the rules it will follow.
+Welcome! This repository contains the documentation for the **HappyFeet School ERP** — covering what the system does, how the school operates inside it, and the rules it follows.
 
 A School ERP (Enterprise Resource Planning) is a centralized, cloud-based software platform that integrates and automates a school's daily academic, administrative, financial, and communication operations into a single system.
 
-These documents are here for your review. Please read through them and flag anything that looks incorrect or incomplete.
-
 ---
 
-## 📁 Document Index
+## 📄 The Product Manual
 
-| # | Document | What It Covers |
-|---|----------|----------------|
-| 01 | [Domain Overview](./01-Domain-Overview.md) | The school at a glance — who's involved, what the system covers, and what it doesn't |
-| 02 | [Business Capability Model](./02-Business-Capability-Model.md) | Everything the ERP needs to be able to do, organised by area |
-| 03 | [Organization Model](./03-Organization-Model.md) | Every role in the school, their responsibilities, and what they can and cannot do in the system |
-| 04 | [Business Processes](./04-Business-Processes.md) | Step-by-step flows for every operation — admissions, fee collection, attendance, safety escalation, and more |
-| 05 | [Business Rules](./05-Business-Rules.md) | The rules the system will enforce — 162 rules documented |
-| 06 | [Domain Model](./06-Domain-Model.md) | A structured map of every key record in the system and how they relate to each other |
-| 07 | [Domain Glossary](./07-Domain-Glossary.md) | Plain-language definitions of every term used across this project |
+The single client-facing document is the **[Product Manual](./docs/index.md)**. It is the only document published to the documentation site, and it is the place to start for any review.
+
+> The Product Manual describes the system as designed and built — what it is, how the business runs inside it, who uses it, and what the school is responsible for maintaining.
 
 ---
 
 ## 📝 How to Review
 
-**For school management**, the most useful starting points are:
+Read the [Product Manual](./docs/index.md) and flag anything that looks incorrect or doesn't match how HappyFeet actually operates. Pay particular attention to:
 
-1. **[03 — Organization Model](./03-Organization-Model.md)** — Does it correctly describe each person's role and responsibilities?
-2. **[04 — Business Processes](./04-Business-Processes.md)** — Do the step-by-step flows match how things actually work at HappyFeet?
-3. **[05 — Business Rules](./05-Business-Rules.md)** — Are there any rules missing, or any that should work differently?
+- **Section 4 — Roles and Actors:** Does it correctly describe each person's role and responsibilities?
+- **Section 3 — How Your Business Runs Inside the System:** Do the step-by-step flows match how things actually work?
+- **Section 11 — Assumptions to Verify:** Confirm or correct each assumption.
 
-If a term is unclear, the [Domain Glossary](./07-Domain-Glossary.md) explains everything in plain language.
+These documents directly shape what gets built. Corrections at this stage are quick and easy.
 
 ---
 
-## ⚠️ Your Feedback Matters
+## 🗄️ Archived Documents
 
-These documents directly shape what gets built. If something looks wrong or doesn't match how HappyFeet operates, please flag it — corrections at this stage are quick and easy.
+The earlier detailed domain documents have been superseded by the Product Manual and moved to [`./archive/`](./archive/) for reference:
+
+- `01-Domain-Overview.md` — the school at a glance
+- `02-Business-Capability-Model.md` — what the ERP must do
+- `03-Organization-Model.md` — roles & permissions
+- `04-Business-Processes.md` — step-by-step flows
+- `05-Business-Rules.md` — enforced rules
+- `06-Domain-Model.md` — records & relationships
+- `07-Domain-Glossary.md` — term definitions
 
 ---
 
