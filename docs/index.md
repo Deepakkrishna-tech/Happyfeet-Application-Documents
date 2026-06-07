@@ -17,9 +17,9 @@
 8. [How People Get Access — Invitations and Accounts](#8-how-people-get-access-invitations-and-accounts)
 9. [Services and Subscriptions You Pay For](#9-services-and-subscriptions-you-pay-for)
 10. [Your Responsibilities as Application Owner](#10-your-responsibilities-as-application-owner)
-11. [Assumptions to Verify](#11-assumptions-to-verify)
-12. [Features and Specifications](#12-features-and-specifications)
-13. [The System's Modules and the Data They Own](#13-the-systems-modules-and-the-data-they-own)
+11. [Features and Specifications](#11-features-and-specifications)
+12. [The System's Modules and the Data They Own](#12-the-systems-modules-and-the-data-they-own)
+13. [Assumptions to Verify](#13-assumptions-to-verify)
 14. [Glossary](#14-glossary)
 
 ---
