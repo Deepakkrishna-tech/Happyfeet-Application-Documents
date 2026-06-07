@@ -17,8 +17,9 @@ survive: enrolling children and collecting fees, delivering daily care
 and education, and maintaining the parent trust that makes both 
 possible.
 
-The system is organised into **16 functional modules**, each owning a 
-distinct slice of the school's operations:
+The complete application spans **16 capabilities**, each owning a 
+distinct slice of the school's operations. **Version 1 delivers a 
+focused subset of these, in phases** — see *What's Being Built Now* below:
 
 - **Identity & access** for secure, role-based, multi-branch usage
 - **Configuration** to model the school's academic structure (years, 
@@ -49,6 +50,34 @@ distinct slice of the school's operations:
 
 ---
 
+## How You'll Use It
+
+Happy Feet is delivered as **one installable app** — staff and parents add 
+it to their phone's home screen and open it like any normal app. You **sign 
+in once and stay signed in**, it works on patchy connectivity, and it sends 
+push notifications. The same app runs on a laptop for office work. All data 
+is stored and backed up **in India**.
+
+---
+
+## What's Being Built Now (Version 1)
+
+The complete capability set above is delivered in focused phases, so you see 
+working software early:
+
+| Phase | What you get |
+|---|---|
+| **A** | Staff & parent login, student records, daily attendance, parent daily feed |
+| **B** | Admissions & enrollment |
+| **C** | Communications — announcements & parent inbox |
+| **D** | Timetable & curriculum, CoFee fee import & export, admin data control |
+
+Fees stay on **CoFee** in Version 1 — the app imports CoFee's data so 
+students, attendance, and fees sit in one place. Capabilities not in a phase 
+above are on the roadmap, sequenced as the school grows.
+
+---
+
 ## Getting Started
 
 | Step | Document | Read If |
@@ -65,21 +94,24 @@ distinct slice of the school's operations:
 
 ## System Modules
 
-| # | Module | Purpose |
-|---|---|---|
-| M1 | Identity & Access Management | User identities, roles, session lifecycle, multi-branch binding, parent portal access, branch data isolation |
-| M2 | School Configuration | Academic year, terms, programmes, classes, calendar, timetable, milestones, document types — the framework all other modules depend on |
-| M3 | Student Records | Permanent student profiles, documents, medical records, pickup lists, incident reports, welfare concern records |
-| M4 | Staff Records | Employment records, certifications with expiry alerts, leave management, staff exit gates, visitor log |
-| M5 | Admissions | Student intake from application through enrollment, waitlist management, parent portal activation |
-| M6 | Student Lifecycle | Status management — discontinuation, rollover, Transfer Certificate, Bonafide certificate, re-admission |
-| M7 | Fee Management | Canonical financial ledger (single source of payment truth); fee structures, CoFee import (temporary V1 source, retired at V2), lightweight invoices, Razorpay payment links, Day Care billing, Fee Query channel, financial dashboard |
-| M8 | Attendance Management | Daily attendance marking, corrections, chronic absence alerting, gate pickup verification, Day Care check-in/check-out |
-| M9 | Curriculum & Lesson Planning | Structured lesson plans authored per class and programme, published to parents |
-| M10 | Progress & Assessments | Progress card authoring, review, Branch Admin publication, PDF generation, submission window management |
-| M11 | Meal Management | Configurable per branch; daily menu planning with allergy-flagged meal entry confirmation and consumption tracking |
-| M12 | Transport Management | Optional per student; fixed routes and stops selected at admission; school-owned and third-party vehicle support |
-| M13 | Communication | Announcements, notice board, school inbox (two-way), WhatsApp deeplink templates, system-triggered notifications |
-| M14 | Reporting & Governance | Role-filtered dashboards, CSV exports, audit log, governance log, monthly digest |
-| M15 | Daily Care Log | Per-child structured daily records — meals, naps, activities, health checks — as the primary parent engagement channel |
-| M16 | Migration Mode | Controlled go-live data entry workflow; entry/exit state per branch; suppresses automated workflows until Branch Admin confirms readiness |
+> The table below is the **complete capability catalog**. ✅ = in Version 1 
+> (with its phase) · ⚙️ = partly in V1 · 🔜 = roadmap, built as the school grows.
+
+| # | Module | Purpose | In V1? |
+|---|---|---|---|
+| M1 | Identity & Access Management | User identities, roles, session lifecycle, multi-branch binding, parent portal access, branch data isolation | ✅ A |
+| M2 | School Configuration | Academic year, terms, programmes, classes, calendar, timetable, milestones, document types — the framework all other modules depend on | ✅ A core · D timetable |
+| M3 | Student Records | Permanent student profiles, documents, medical records, pickup lists, incident reports, welfare concern records | ✅ A |
+| M4 | Staff Records | Employment records, certifications with expiry alerts, leave management, staff exit gates, visitor log | ✅ A (basic) |
+| M5 | Admissions | Student intake from application through enrollment, waitlist management, parent portal activation | ✅ B |
+| M6 | Student Lifecycle | Status management — discontinuation, rollover, Transfer Certificate, Bonafide certificate, re-admission | ⚙️ enroll/rollover in V1; certificates 🔜 |
+| M7 | Fee Management | **Version 1: read-only import of CoFee data** (view + export) so students, attendance and fees sit in one place. Native ledger and in-app billing (invoices, Razorpay, dashboards) are roadmap | ✅ D (CoFee import) |
+| M8 | Attendance Management | Daily attendance marking, corrections, chronic absence alerting, Day Care check-in/check-out; gate pickup verification 🔜 | ✅ A |
+| M9 | Curriculum & Lesson Planning | Structured lesson plans authored per class and programme, published to parents | ✅ D |
+| M10 | Progress & Assessments | Progress card authoring, review, Branch Admin publication, PDF generation, submission window management | 🔜 |
+| M11 | Meal Management | Configurable per branch; daily menu planning with allergy-flagged meal entry confirmation and consumption tracking | 🔜 |
+| M12 | Transport Management | Optional per student; fixed routes and stops selected at admission; school-owned and third-party vehicle support | 🔜 (when the vans go digital) |
+| M13 | Communication | Announcements, notice board, school inbox (two-way), WhatsApp deeplink templates, system-triggered notifications | ✅ C |
+| M14 | Reporting & Governance | Role-filtered dashboards, CSV exports, audit log; governance log & monthly digest 🔜 | ✅ D (export + data control) |
+| M15 | Daily Care Log | Per-child structured daily records — meals, naps, activities, health checks — as the primary parent engagement channel | ✅ A |
+| M16 | Migration Mode | One-time go-live data entry/import to bring existing students and CoFee data into the system | ✅ go-live |

@@ -1,19 +1,37 @@
 <!-- ABOUT
 File: DOMAIN_OVERVIEW.md
-Purpose: Establishes the business identity, stakeholders, business model, and operational cycle of Happy Feet School ERP to orient all subsequent domain analysis.
-Scope: Business purpose, stakeholder roles, business model (revenue streams, V1/V2 split), seasonal cycle, and domain boundaries (V1 in scope, V2 and permanently out of scope); no technical design, no process flows, no capability definitions.
-Dependencies: none
-Stage: Stage 1 — Domain Discovery
-Version: 1.3
+Purpose: The plain-language manual of the complete Happy Feet application — business identity, stakeholders, business model, operational cycle, and how the product is built and delivered. Written for the stakeholders paying for it, and as high-context grounding for developers and AI build tools.
+Scope: Business purpose, stakeholder roles, business model, seasonal cycle, domain boundaries, and delivery/rollout. Conceptual, not implementation detail.
+Dependencies: AI-DECISIONS.md (the Version 1 build plan and module structure), ENGINEERING-SPEC.md (the longer-term engineering backlog)
+Stage: Living manual — Happy Feet application
+Version: 1.4
 Last Updated: 2026-06-06
-Status: In Review
+Status: Active — guiding V1 build
 -->
 
 # Domain Overview — Happy Feet School ERP
 
-> **About This Document:** This is the starting point for understanding the Happy Feet ERP [ Enterprise Resource Planning ] —  a single platform that connects all school operations (admissions, fees, attendance, and communication) so every role works from the same data instead of disconnected registers, spreadsheets, and WhatsApp threads. This document covers who the stakeholders are, what the system does, what it doesn't, and where the Version 1 and Version 2 delivery boundary sits. Read this first if you are new to the project; skip it if you already know the school's context and domain scope.
-
+> **About This Document:** This is the plain-language manual for the complete Happy Feet application — a single platform that connects all school operations (admissions, fees, attendance, and communication) so every role works from the same data instead of disconnected registers, spreadsheets, and WhatsApp threads. It covers who the stakeholders are, what the system does, what it doesn't, and how it is built and delivered. It describes the **complete application**; what is being built **now (Version 1)**, in what order, and how it reaches your staff and parents is summarised in *How It's Built & Delivered* just below.
 **Phase:** 1 — Domain Discovery
+
+---
+
+## How It's Built & Delivered
+
+**One installable app.** Happy Feet is delivered as a single app your staff and parents install on their phones — add it to the home screen and open it like any other app. You **log in once and stay signed in**, so it's a tap to open, not a website-and-login every time. It works on patchy connectivity and can send push notifications, and the same app runs on a laptop for office use. All data is stored and backed up **in India**.
+
+**Built in focused phases, so you see working software early — not after a long wait.** The complete application in this manual is delivered in stages:
+
+| Phase | What you get |
+|---|---|
+| **A** | Staff & parent login, student records, daily attendance, and the parent daily feed |
+| **B** | Admissions and enrollment |
+| **C** | Communications — announcements and the parent inbox |
+| **D** | Timetable & curriculum, CoFee fee import & export, and admin data control |
+
+**Fees in Version 1:** the school keeps using **CoFee** for fee collection; the app **imports CoFee's data** so you see students, attendance, and fees together in one place, with export for your records. Native in-app billing is planned for a later version.
+
+**The rest of this manual** describes the complete application, including deeper compliance and automation that is sequenced *beyond* V1 as the school grows. Developers and AI tools: the exact V1 scope, module layout, and what is deliberately deferred live in `AI-DECISIONS.md`.
 
 ---
 
@@ -109,8 +127,8 @@ A preschool operates across four broad areas on any given day: admissions and en
 | Meal Plan (optional, configurable) | Plan-based | Configurable per branch by Admin or Branch Admin; inactive by default — activated only when the branch begins offering meals; billing model and cycle defined at configuration time |
 | Event / one-off | One-off fee | Annual Day, field trips, etc. |
 
-**V1:** Happy Feet is the canonical financial ledger — the single source of payment truth. CoFee is a temporary collection source (alongside directly-issued Happy Feet invoices for cases not managed through CoFee, such as one-off charges or corrections, and Razorpay payment links for ad-hoc collection) that feeds the ledger via idempotent, reconciled XLSX import; every payment carries its source and external reference, and invoice status is derived from applied payments, never set by hand. CoFee still performs collection in V1 but does not own the financial picture. See §9.9.
-**V2:** Happy Feet owns the full billing flow — Razorpay integrated as the payment processor behind the same ledger — and CoFee is retired entirely. Because V1 already records every CoFee and Razorpay payment in the canonical ledger, the V2 switch needs no schema migration and no data backfill.
+**Version 1:** Fee collection continues on **CoFee**. Happy Feet **imports CoFee's data (read-only)** through an idempotent, reconciled import, so the school sees students, attendance, and fees in one place, with export for its records. The design centres on Happy Feet eventually becoming the single canonical ledger (the source of payment truth) — every imported payment carries its source and reference so figures reconcile — but the native billing engine (derived invoice states, in-app collection, Razorpay links) is **phased in after V1**, not built day one. See §9.9.
+**Later:** Happy Feet owns the full billing flow — a payment gateway (Razorpay) integrated behind its own ledger — and CoFee is retired. Because the data model already records every payment with its source and reference, that switch needs no migration and no data backfill.
 
 Student categories (Standard, Staff Child, Subsidised) determine the applicable fee structure per student. Payer routing is a separate student-level attribute assigned at admission: the primary payer is the parent or guardian by default; a secondary payer (employer, trust, or sponsor) can be added for students whose fees are covered by a third party. The fee structure is the same regardless of who pays.
 
@@ -262,6 +280,8 @@ All timestamps in the system — audit entries, governance log entries, notifica
 
 ## 9. Critical Domain Characteristics
 
+> These characteristics describe the **complete application's design and direction**. Version 1 builds the lean, practical subset of them; the deeper machinery (e.g., cryptographic audit chaining, PII vaulting, fine-grained access engines, full billing) is sequenced as the school grows. What is in V1 versus the roadmap is defined in `AI-DECISIONS.md` — read the concepts below as the *direction*, not as a day-one V1 checklist.
+
 **9.1 Immutability** — Financial records, audit entries, student profiles, admission IDs, welfare concern records, incident reports, PTM (Parent-Teacher Meeting) notes, and leave records are never overwritten or altered — corrections and status changes are appended as new entries, preserving the complete history. Deletion is governed by the retention periods defined in §9.6. Both a governance requirement and a parent trust requirement. Admission IDs follow a dual-path assignment model: for students migrated from existing records, Admin or Branch Admin enters the historically assigned Admission ID during Migration Mode and the system preserves it as the permanent ID; for new admissions after go-live, the system auto-generates the Admission ID at profile creation. Because records are append-only, a retroactive change driven by a calendar correction — for example, a day reclassified as a holiday — is applied as a system-generated compensating entry that voids and supersedes the original mark, never an in-place edit; the current value is derived from the latest entry. The append-only logs are tamper-evident: entries are cryptographically chained so any retroactive edit or deletion breaks the chain and is detectable (see §9.10).
 
 **9.2 Governance Log** — Every override action (authorised-pickup override, attendance correction beyond 30 days, Bonafide or Transfer Certificate (TC) issuance with outstanding dues, discontinuation acknowledgments, capacity overrides, document waivers, Migration Mode entry/exit) generates a permanent governance log entry visible to Admin only. The governance log is not a separate store — it is a filtered, Admin-only view of the audit log showing only override-class actions (see §9.10 for the full logging model). This makes "exceptions always have a sanctioned path" operationally true. State transitions across the system — student enrollment status, fee payment status, attendance records, application stages — move in one direction only. Reversing a transition requires explicit Admin action and generates a governance log entry recording who reversed it, when, and why. This applies to all lifecycle states: a paid invoice cannot be unpaid, a closed attendance record cannot be deleted, a completed rollover cannot be undone without a logged correction workflow.
@@ -288,7 +308,7 @@ Phase 0 Master Data Setup — the creation of Admin, Branch Admin, staff profile
 
 This rule prevents the class of errors where one module's dates drift out of sync with another's — a common failure point in systems where each module manages its own calendar independently. The academic-day boundary is defined explicitly (midnight IST): a day-care checkout after midnight and hour-wise billing that crosses midnight resolve against this boundary, not the wall clock.
 
-**9.9 The Financial Ledger Is the Single Source of Payment Truth** — Happy Feet records every money event — from CoFee import, a Razorpay link, or a directly-issued invoice — in one canonical, append-only ledger. Each payment carries its source and an external reference used as an idempotency key, so the same payment is never counted twice across repeated imports; offline cash/cheque payments that lack a gateway reference are keyed by a deterministic composite. Invoice status is derived from applied payments (Draft, Issued, Partially Paid, Paid, Overdue, Void, Credited) — never a hand-set flag — and dues-gated actions (Transfer Certificate, Bonafide, rollover) read the derived outstanding balance against the latest import. A payment's collection (gross — what the parent paid) and settlement (net — what reached the bank after gateway fees) are recorded as distinct events; advance payments are held as unapplied credit until applied to an invoice; refunds are appended as compensating entries, never deletions. Invoice and receipt numbers are namespaced so CoFee-imported and Happy Feet-native records never collide, and tax receipts are gapless and sequential. Payment confirmation from a Razorpay link arrives via a verified, idempotent webhook — so a link payment reconciles into the ledger without manual entry.
+**9.9 The Financial Ledger Is the Single Source of Payment Truth** — Happy Feet records every money event — from CoFee import, a Razorpay link, or a directly-issued invoice — in one canonical, append-only ledger. Each payment carries its source and an external reference used as an idempotency key, so the same payment is never counted twice across repeated imports; offline cash/cheque payments that lack a gateway reference are keyed by a deterministic composite. Invoice status is derived from applied payments (Draft, Issued, Partially Paid, Paid, Overdue, Void, Credited) — never a hand-set flag — and dues-gated actions (Transfer Certificate, Bonafide, rollover) read the derived outstanding balance against the latest import. A payment's collection (gross — what the parent paid) and settlement (net — what reached the bank after gateway fees) are recorded as distinct events; advance payments are held as unapplied credit until applied to an invoice; refunds are appended as compensating entries, never deletions. Invoice and receipt numbers are namespaced so CoFee-imported and Happy Feet-native records never collide, and tax receipts are gapless and sequential. Payment confirmation from a Razorpay link arrives via a verified, idempotent webhook — so a link payment reconciles into the ledger without manual entry. *In Version 1 this is realised as a **read-only import of CoFee data** (view + export); the derived-state ledger and in-app collection phase in with native billing.*
 
 **9.10 Logging Model: One Audit Spine, Filtered Views** — The system keeps one canonical, append-only audit log recording every write across every module and role, including Admin, with actor, branch, before/after state, and reason where required. The governance log and the compliance view are filtered projections of this single spine — not separate stores — which keeps compliance evidence consistent. A separate access log records reads, exports, and prints of sensitive data (Aadhaar, medical, PEN/APAAR, photo, financial), since reads have no before/after state and carry their own DPDP obligation. All are tamper-evident: entries are cryptographically chained so any retroactive edit or deletion is detectable, and the chain head is anchored externally in the monthly governance digest. Note: because Branch Admins can read their own branch's audit log, the Admin-only governance log is a curated cross-branch view, not a redaction boundary. (Engineering note: per-entry chaining serialises appends; at scale this moves to per-branch chains or periodic batch anchoring rather than a single global chain.)
 
@@ -338,6 +358,6 @@ This rule prevents the class of errors where one module's dates drift out of syn
 
 ## Summary
 
-Happy Feet is an administration platform for a 105-student privately owned preschool in Hyderabad on an annual 3-term cycle, served by five staff roles and parents across sixteen integrated modules (resolving to roughly twelve bounded contexts plus a cross-cutting Migration Mode). The defining characteristic is the age group (18 months–6 years): safety rules — authorised pickup verification, allergy alert surfacing, welfare concern flagging, incident reporting — are non-negotiable and cannot be overridden without a permanently logged record. Two further pillars anchor the design: a single canonical financial ledger that is the source of payment truth (CoFee is a temporary V1 collection source, retired at V2), and one tamper-evident audit spine from which the governance and compliance views are filtered. Access is modelled as role × scope × relationship with multi-guardian custody handling; regulated personal data is vaulted and erasable; and all data is hosted within India.
+Happy Feet is an administration platform for a 105-student privately owned preschool in Hyderabad on an annual 3-term cycle, served by five staff roles and parents across sixteen integrated modules (resolving to roughly twelve bounded contexts plus a cross-cutting Migration Mode). The defining characteristic is the age group (18 months–6 years): safety rules — authorised pickup verification, allergy alert surfacing, welfare concern flagging, incident reporting — are non-negotiable and cannot be overridden without a permanently logged record. Two further pillars anchor the design: a single canonical financial ledger that is the source of payment truth (CoFee is a temporary V1 collection source, retired at V2), and one tamper-evident audit spine from which the governance and compliance views are filtered. Access is modelled as role × scope × relationship with multi-guardian custody handling; regulated personal data is vaulted and erasable; and all data is hosted within India. The application is delivered as a single **installable app** (a PWA — added to staff and parent phones, signed in once) and built in focused **phases** — attendance and the parent feed first, then admissions, communications, and academics with CoFee fee import — with fees continuing on CoFee in Version 1.
 
 ---
