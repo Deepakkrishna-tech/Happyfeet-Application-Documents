@@ -6,18 +6,19 @@
 
 1. [What Is This Product?](#1-what-is-this-product)
 2. [How the Product Works](#2-how-the-product-works)
-3. [How Your Business Runs Inside the System](#3-how-your-business-runs-inside-the-system)
-4. [Who Uses the System — Roles and Actors](#4-who-uses-the-system-roles-and-actors)
-5. [Key Information the System Manages](#5-key-information-the-system-manages)
-6. [How Your Data Is Stored and Protected](#6-how-your-data-is-stored-and-protected)
-7. [How the System Is Organised](#7-how-the-system-is-organised)
-8. [How People Get Access — Invitations and Accounts](#8-how-people-get-access-invitations-and-accounts)
-9. [Services and Subscriptions](#9-services-and-subscriptions)
-10. [Your Responsibilities as Application Owner](#10-your-responsibilities-as-application-owner)
-11. [Features and Specifications](#11-features-and-specifications)
-12. [The System's Modules and the Data They Own](#12-the-systems-modules-and-the-data-they-own)
-13. [Assumptions to Verify](#13-assumptions-to-verify)
-14. [Glossary](#14-glossary)
+3. [Business Model](#3-business-model)
+4. [How Your Business Runs Inside the System](#4-how-your-business-runs-inside-the-system)
+5. [Who Uses the System — Roles and Actors](#5-who-uses-the-system-roles-and-actors)
+6. [Features and Specifications](#6-features-and-specifications)
+7. [The System's Modules and the Data They Own](#7-the-systems-modules-and-the-data-they-own)
+8. [Key Information the System Manages](#8-key-information-the-system-manages)
+9. [How Your Data Is Stored and Protected](#9-how-your-data-is-stored-and-protected)
+10. [How the System Is Organised](#10-how-the-system-is-organised)
+11. [How People Get Access — Invitations and Accounts](#11-how-people-get-access-invitations-and-accounts)
+12. [Services and Subscriptions](#12-services-and-subscriptions)
+13. [Your Responsibilities as Application Owner](#13-your-responsibilities-as-application-owner)
+14. [Assumptions to Verify](#14-assumptions-to-verify)
+15. [Glossary](#15-glossary)
 
 ---
 
@@ -61,11 +62,37 @@ The result is one continuous flow rather than separate islands of work. A new ad
 
 ---
 
-## 3. How Your Business Runs Inside the System
+## 3. Business Model
+
+This section explains how the school earns its income — what it charges for, how each charge is worked out, and the key rule that applies to each.
+
+| Revenue Stream | How It Is Billed | Key Rule |
+|---|---|---|
+| **Academic programmes** (Play Group, Nursery, PP1, PP2) | Per term | The full term fee applies even when a child joins partway through a term. Fees are not split for a partial term. |
+| **Day Care** | By a chosen plan | Billed on the child's assigned Day Care plan — monthly, weekly, day-wise, hour-wise, or term-wise. Staff record check-in and check-out times, which support the plans that bill by the day or hour. |
+| **Transport** (optional, school-run) | Fixed monthly, by zone | Charged by distance band and trip type, and chosen per child. In this version it is a simple optional fee item the Owner or Principal can switch on for a child — full transport management comes in a later version. |
+| **Meals** (optional) | By a chosen plan | A simple optional fee item, off by default and switched on only when a branch starts offering meals. The school does not offer meals today. Full meal management comes in a later version. |
+| **Events and one-offs** | One-off charge | Single charges for things like Annual Day or field trips. |
+
+**Fee structure by student category.** Each child belongs to a category — Standard, Staff Child, or Subsidised — and the category decides which fee structure applies to that child.
+
+**Who pays.** By default, the parent or guardian is the payer. A second payer — an employer, trust, or sponsor — can be added for a child whose fees are covered by someone else. The fee is the same no matter who pays; only the payer differs.
+
+**The fee agreed at enrollment stays fixed.** The fee structure recorded when a child enrolls is the agreed basis for their billing. It is not overwritten when fees change in later years.
+
+**Tax on extras.** Tuition is largely tax-exempt. Extra services — transport, meals, materials, and events — may carry GST. Where it applies, the tax is shown on the invoice and on the parent's receipt.
+
+**A check on fee reductions.** Any fee waiver, concession, or refund needs a second person to approve it. The person who records money is never the one who reduces it.
+
+**How fees are collected in this version.** The school continues to collect fees through CoFee. Happy Feet brings that data in so fees sit alongside students and attendance. Collecting payments inside Happy Feet itself — with its own invoices and receipts — comes in a later version.
+
+---
+
+## 4. How Your Business Runs Inside the System
 
 This section follows the school's year from start to finish and shows where each part lives in the system. Read it as the full journey: setting up, taking in new children, running each day, reporting on progress, and moving children forward at year-end.
 
-### 3.1 Setting Up the System at Go-Live
+### 4.1 Setting Up the System at Go-Live
 
 **What happens:** Before the school can use Happy Feet for the first time, its existing information is entered. The Owner and Principal accounts are created. Staff profiles are added — teachers, coordinators, and the accountant. Existing children are entered with their current records and opening fee balances, and the school's CoFee payment data is brought in. This is a one-time setup for each branch. While it runs, the system relaxes its usual checks so part-finished records can be saved, and it holds back automatic alerts so incomplete data doesn't trigger false reminders.
 
@@ -81,7 +108,7 @@ This section follows the school's year from start to finish and shows where each
 
 ---
 
-### 3.2 Setting Up Each School Year
+### 4.2 Setting Up Each School Year
 
 **What happens:** Before each academic year begins, the school is configured for the year ahead. This is a nine-step sequence done in order: create the year with its start and end dates; set the term dates and the windows when progress reports can be submitted; define the programmes; create the classes with their capacity and teacher slots; set the fee structures for each programme and student category; set up transport zones if offered; enter the school calendar; build the weekly timetable for each class; and define the developmental milestones and the documents each programme requires.
 
@@ -96,7 +123,7 @@ This section follows the school's year from start to finish and shows where each
 
 ---
 
-### 3.3 Receiving an Admission Application
+### 4.3 Receiving an Admission Application
 
 **What happens:** A new child's application enters the system one of two ways. A parent applies themselves from a public web link, with no login needed. Or the Principal enters the application directly. Admissions are open all year by default. The Owner or Principal can set optional open and close dates to limit applications to a defined period.
 
@@ -111,7 +138,7 @@ This section follows the school's year from start to finish and shows where each
 
 ---
 
-### 3.4 Reviewing Documents and Assigning a Programme
+### 4.4 Reviewing Documents and Assigning a Programme
 
 **What happens:** The submitted documents are reviewed, and the child is assigned to a programme. The Coordinator can review and check the documents as part of this. The Principal assigns the programme, since the programme decides which documents are required and which class the child can join.
 
@@ -125,7 +152,7 @@ This section follows the school's year from start to finish and shows where each
 
 ---
 
-### 3.5 Completing Enrollment
+### 4.5 Completing Enrollment
 
 **What happens:** Enrollment turns an applicant into an enrolled child. Four conditions must all be met first: a programme is assigned; the required documents are cleared or individually waived; a class place is available, or an over-capacity place is recorded with a reason; and the child has at least one approved person on their pickup list.
 
@@ -141,7 +168,7 @@ This section follows the school's year from start to finish and shows where each
 
 ---
 
-### 3.6 Activating the Parent and Verifying Documents
+### 4.6 Activating the Parent and Verifying Documents
 
 **What happens:** When a child is enrolled, the parent is invited by email to the parent app. The parent signs in and submits their child's sensitive documents — identity, medical, and a photo. The Owner, Principal, or Coordinator then checks each document and marks it verified. Letting the Coordinator verify means the school's daily document work doesn't wait on core management.
 
@@ -156,7 +183,7 @@ This section follows the school's year from start to finish and shows where each
 
 ---
 
-### 3.7 Marking Daily Attendance
+### 4.7 Marking Daily Attendance
 
 **What happens:** Each school day, the teacher marks who is present, absent, late, or on a half day. When a child is marked absent, the system sends an automatic text message to that child's main registered phone number, once the attendance is confirmed.
 
@@ -171,7 +198,7 @@ This section follows the school's year from start to finish and shows where each
 
 ---
 
-### 3.8 Logging Daily Care
+### 4.8 Logging Daily Care
 
 **What happens:** Through the day, the teacher logs each child's meals, naps, activities, and health checks. Parents see this as a daily feed on their own phones, giving them a clear picture of their child's day.
 
@@ -185,7 +212,7 @@ This section follows the school's year from start to finish and shows where each
 
 ---
 
-### 3.9 Managing Fees
+### 4.9 Managing Fees
 
 **What happens:** The school continues to collect fees through CoFee. Happy Feet brings CoFee's payment data in so the school sees children, attendance, and fees together in one place. Staff can view fee status, export records, and read dashboards showing collection rates and overdue amounts. Happy Feet does not collect payments or issue invoices itself in this version.
 
@@ -200,7 +227,7 @@ This section follows the school's year from start to finish and shows where each
 
 ---
 
-### 3.10 Communicating with Parents
+### 4.10 Communicating with Parents
 
 **What happens:** The school sends announcements and messages to parents through one structured channel — the parent inbox and notice board. This replaces scattered personal WhatsApp messages with a single channel that is logged and accountable.
 
@@ -214,7 +241,7 @@ This section follows the school's year from start to finish and shows where each
 
 ---
 
-### 3.11 Curriculum and Progress Reports
+### 4.11 Curriculum and Progress Reports
 
 **What happens:** Teachers prepare lesson plans linked to a programme and class, and publish them to parents. Each term, within a set submission window, teachers draft and submit a lightweight progress report. The Principal or Coordinator reviews and publishes it. Parents see a simple progress view in the app.
 
@@ -229,7 +256,7 @@ This section follows the school's year from start to finish and shows where each
 
 ---
 
-### 3.12 Year-End Rollover
+### 4.12 Year-End Rollover
 
 **What happens:** At the end of the year, children move up to their next class. The Principal reviews the active children, acknowledges any outstanding dues, and confirms the transitions before the new year begins.
 
@@ -243,7 +270,7 @@ This section follows the school's year from start to finish and shows where each
 
 ---
 
-### 3.13 Student Exit — Certificates, Discontinuation, and Transfer
+### 4.13 Student Exit — Certificates, Discontinuation, and Transfer
 
 **What happens:** When a child leaves or completes their programme, the school records the exit. If the family needs a Transfer Certificate or a Bonafide certificate, the school issues the physical certificate offline, and the app records that it was issued — who issued it and when.
 
@@ -258,7 +285,7 @@ This section follows the school's year from start to finish and shows where each
 
 ---
 
-### 3.14 Staff Joining, Leave, and Exit
+### 4.14 Staff Joining, Leave, and Exit
 
 **What happens:** Staff are added by email invitation. The Owner invites Principals, and each Principal invites their own branch's staff. Staff attendance and leave are tracked, and approved leave shows on the timetable as a coverage gap to fill. When a staff member leaves, their access is removed and their open work is reassigned.
 
@@ -273,11 +300,11 @@ This section follows the school's year from start to finish and shows where each
 
 ---
 
-## 4. Who Uses the System — Roles and Actors
+## 5. Who Uses the System — Roles and Actors
 
 Six kinds of people use Happy Feet. Five are staff inside the school. The sixth is the parent. Each plain-English name below is paired with the **system role** — the exact label the system uses for that person. The guiding idea across all of them: the system shows each person only what belongs to their job and their relationship to a child. Authority sits with the Owner and the Principal. The other staff roles carry out the daily work within clear limits.
 
-### 4.1 Owner
+### 5.1 Owner
 
 **System role:** Admin
 
@@ -293,7 +320,7 @@ Six kinds of people use Happy Feet. Five are staff inside the school. The sixth 
 
 ---
 
-### 4.2 Principal
+### 5.2 Principal
 
 **System role:** Branch Admin
 
@@ -309,7 +336,7 @@ Six kinds of people use Happy Feet. Five are staff inside the school. The sixth 
 
 ---
 
-### 4.3 Teacher
+### 5.3 Teacher
 
 **System role:** Teacher (assigned as Primary, Assistant, or Temporary on a class)
 
@@ -325,7 +352,7 @@ Six kinds of people use Happy Feet. Five are staff inside the school. The sixth 
 
 ---
 
-### 4.4 Coordinator
+### 5.4 Coordinator
 
 **System role:** Coordinator
 
@@ -341,7 +368,7 @@ Six kinds of people use Happy Feet. Five are staff inside the school. The sixth 
 
 ---
 
-### 4.5 Accountant
+### 5.5 Accountant
 
 **System role:** Accountant
 
@@ -357,7 +384,7 @@ Six kinds of people use Happy Feet. Five are staff inside the school. The sixth 
 
 ---
 
-### 4.6 Parent / Guardian
+### 5.6 Parent / Guardian
 
 **System role:** Parent / Guardian
 
@@ -373,196 +400,7 @@ Six kinds of people use Happy Feet. Five are staff inside the school. The sixth 
 
 ---
 
-## 5. Key Information the System Manages
-
-The system keeps a set of connected records. Each one represents something real in the school — a child, a class, a payment, a day's attendance — and they link together so the full picture of each child is always in one place.
-
-| Information | What It Represents | Key Details It Holds | How It Connects |
-|------------|-------------------|----------------------|-----------------|
-| **Student Record** | A child enrolled at, or applying to, the school | Name, date of birth, admission number, programme, class, student category, status | The centre of the system — linked to guardians, attendance, daily care, fees, progress, and documents |
-| **Guardian Record** | A parent or family member connected to a child | Contact details, login, and what they may do — collect the child, receive messages, pay fees | Linked to one or more children; sets what each guardian can see and do |
-| **Staff Record** | A person employed at the school | Name, role, branch, attendance, leave balance, certifications and their expiry dates | Linked to the classes they run and the branch they work in |
-| **Admission Application** | A request to admit a child, before they become a student | Child and family details, chosen programme, submitted documents, application status | Becomes a Student Record once enrollment is completed |
-| **Sensitive Documents** | A child's protected personal records | Identity documents, medical records, and photo | Kept apart from the main record and shown only to staff who need them; every view is recorded |
-| **Programme** | A course of study the school offers | Name (Play Group, Nursery, PP1, PP2, Day Care), billing model, required documents, milestones | Linked to classes, fee structures, and students |
-| **Class** | A group of children taught together | Name, capacity, assigned teachers, weekly timetable | Linked to a programme, its teachers, and its students |
-| **Academic Year & Calendar** | The school's yearly framework | Year start and end, terms, holidays, progress-report windows | The single source of dates for attendance, fees, and progress across the system |
-| **Attendance Record** | A child's daily presence | Date, child, class, status (present, absent, late, half-day) | Linked to the child and class; triggers the absence message to the parent |
-| **Daily Care Log** | The record of a child's day | Meals, naps, activities, health checks, and day-care check-in and check-out times | Linked to the child; shown to parents as the daily feed |
-| **Authorised Pickup List** | The people allowed to collect a child | Approved collectors and their verification details; parent-issued one-time pickup codes | Linked to the child; checked at the gate before release |
-| **Fee Record** | A child's fee and payment picture | Imported payments, invoice references, amounts paid and due, status | Brought in from CoFee, linked to the child; feeds the fee dashboards |
-| **Progress Report** | A child's progress for a term | The teacher's assessment against the programme's milestones | Linked to the child and term; reviewed, published, and shown to the parent |
-| **Lesson Plan** | A teacher's plan for a class | Activities and learning content for a programme and class | Linked to the programme and class; published to parents |
-| **Announcement & Message** | School communication to parents | Announcements, inbox messages, and the record of what was sent | Linked to the branch or class; logged for accountability |
-| **Incident & Welfare Record** | A safety or wellbeing record about a child | What happened, who recorded it, its status, and follow-up | Linked to the child; permanent. Welfare records are never shown to parents; an incident is shared only if the Principal decides to |
-| **Activity Log** | The system's record of who did what | Each action, the person who did it, and when | Spans every area of the system; the Owner's record of accountability |
-| **Branch** | A school location | Name and status | The top unit that children, staff, and fees belong to |
-
----
-
-## 6. How Your Data Is Stored and Protected
-
-The school holds personal records about children — names, documents, medical notes, photos. How that information is stored and protected matters, both by law and for the trust parents place in the school. This section explains, in plain terms, how Happy Feet handles it.
-
-**Your data is stored in India.** All of the school's records — children, staff, fees, attendance, and documents — are stored and backed up on infrastructure located in India. This meets India's data-protection rules on keeping data within the country. The one exception is the sign-in service, which holds only email addresses and phone numbers used to log in; those are held by the login provider outside India. Every sensitive record about a child stays in India.
-
-**Your data is backed up every day.** The system makes automatic daily backups and can be restored to an earlier point in time if something goes wrong. A school cannot afford to lose its financial or child records, so backups are treated as non-negotiable, not optional.
-
-**The most sensitive records are kept apart.** A child's identity documents, medical records, and photo are stored separately from everyday records and are locked down more tightly. Only staff with a genuine need can open them. Each time a staff member opens one, the system records who looked, at what, and when — so the school can always answer who has seen a child's sensitive data. Opening these records also requires the staff member to confirm their identity again.
-
-**Records are preserved, not overwritten.** When something is corrected, the system adds the correction alongside the original rather than erasing it. This keeps a complete and trustworthy history of what happened and when — which protects both the school and the parent.
-
-**Each person sees only what they should.** The system decides what someone can see by combining their role, their branch, and their relationship to a child. Sensitive information is shown only inside the system, to staff who are authorised to see it.
-
-**Parents have rights over their child's data.** Under India's data-protection law, a parent can ask to see, correct, or remove their child's personal information. The school handles these requests. When information must be removed, the system can erase the sensitive content while keeping a simple record that the entry once existed — so the history stays intact without holding on to data that should be gone.
-
-**How long data is kept.** Records are kept for as long as the school needs them to meet its legal and operational obligations, and are removed only by a deliberate, recorded decision — never silently. ⚠️ Needs client input: confirm how long the school must keep financial records and child-safety records, so exact retention periods can be set.
-
----
-
-## 7. How the System Is Organised
-
-### 7.1 Organisational Structure
-
-The system is organised around a single owner account at the top. Beneath the Owner sit the school's branches. Each branch runs its own daily operations through its own staff, while the Owner sees across all of them.
-
-Today the school has one active branch, with a second branch planned. The system is built for more than one branch from the start, so the next branch can be added without rebuilding anything.
-
-Each branch has a Principal who runs it. Under the Principal are the branch's Coordinators, Teachers, and Accountant. Parents sit alongside the branch their child belongs to, with access to their own child only.
-
-```
-ADMIN [Owner] (across all branches)
-   │
-   ├── Branch 1  (active)
-   │      ├──BRANCH ADMIN [Principal] 
-   │      │     ├── Coordinator(s)
-   │      │     ├── Teacher(s)
-   │      │     └── Accountant
-   │      └── Parents  (each linked to their own child)
-   │
-   └── Branch 2  (planned)
-          └── (same structure once it opens)
-```
-
-Every level can have more than one person. There can be more than one Owner, more than one Principal per branch, and many teachers. A staff member can also work across two branches if needed.
-
-### 7.2 How Data Is Managed and Separated Between Branches
-
-Every operational record in the system is tagged with the branch it belongs to. A child, a class, an attendance mark, a fee record, a message to a parent — each one carries the name of its branch. That tag stays with the record wherever it goes. This is the foundation of how branches are kept apart.
-
-When a staff member uses the system, it checks three things together before showing anything: what their role allows, which branch they are assigned to, and their relationship to a particular child. It then shows only the records whose branch tag matches their assignment. So a Teacher in Branch 1 only ever sees Branch 1 records — and only their own classes within it. A Principal sees their whole branch. No staff member below the Owner can see or touch another branch's data.
-
-The Owner is the single exception. The Owner is assigned to every branch, so the Owner sees everything. The Owner's dashboards add the branches together into one school-wide picture — total enrollment, collection, occupancy — while each Principal sees those same numbers for their own branch only.
-
-Some staff legitimately work in more than one branch. When that happens, they are given a separate assignment for each branch. They see each branch's data only when working in that branch, and only for the branches they are assigned to — never any others.
-
-Each branch is set up with its own programmes, classes, and fee structures, following the same overall approach across the school. The day-to-day records — children, staff, attendance, fees, and communication — stay specific to their own branch. Branches do not share these records with one another.
-
-It is important to understand that this is one system, not separate copies. The separation comes from the branch tag and the access rules, not from running a different system per branch. That is what keeps each branch's data private to it while still letting the Owner see the whole school in one place. And because the tag is on every record from day one, opening the second branch needs no rebuilding — the new branch is created, its staff are invited, its children are entered, and the same separation applies to it automatically.
-
----
-
-## 8. How People Get Access — Invitations and Accounts
-
-Access to Happy Feet is given by invitation. No one signs up on their own. A person is invited by someone above them, accepts the invitation, and lands in the system with access limited to their role and branch. Everyone signs in once and stays signed in — they tap the app icon to return, rather than logging in for every task.
-
-### 8.1 How Staff Are Invited
-
-Staff are invited from the top down. The Owner invites Principals. Each Principal then invites their own branch's staff — Coordinators, Teachers, and the Accountant. This keeps each branch's team under the person who runs that branch.
-
-1. The Owner or Principal creates the new staff member's profile, enters their email address, and chooses their role and branch.
-2. The system sends an invitation email with a secure link.
-3. The staff member opens the link, signs in, and sets up a second sign-in step for security — a code from an authenticator app on their phone, along with backup codes.
-4. They land in the system with access limited to the exact role and branch they were given.
-
-Until the staff member accepts, their invitation stays pending and their access is not active. The second sign-in step is required for all staff, because their accounts reach fees, admissions, and children's records. For certain sensitive actions — such as opening a child's protected documents — the system asks the staff member to confirm their identity again, even while they are already signed in.
-
-The school always keeps at least two Owner accounts. This makes sure the school is never locked out if one Owner is unavailable.
-
-### 8.2 How External Users Get Access
-
-Parents are the external users, and they are invited automatically. When a child is enrolled, the system emails that child's parent an invitation to the parent app. The parent does not apply for access — enrollment creates it.
-
-The parent signs in with their email, using a secure link or a one-time code. The extra security step is available to parents but not required. Once signed in, the parent sees only their own child — attendance, the daily feed, a simple progress view, fee status, and school announcements. They can submit their child's documents, but their access to records is view-only.
-
-A child can have more than one guardian. Each guardian receives their own invitation and their own login, and each one's access matches their relationship to the child.
-
-### 8.3 Removing Access
-
-When a staff member leaves, their access is removed by the Owner or Principal. Any work still in their hands — open concerns, unfinished progress drafts, classes they marked attendance for — is reassigned to someone else first. Their account is then switched off. Their profile and everything they recorded stay in the system. Records are never deleted, so the school keeps a complete history.
-
-When a child leaves the school, that child's parent access changes to a read-only archive. The parent can still see their child's past records for the period the school keeps them, but the account is no longer active for day-to-day use.
-
----
-
-## 9. Services and Subscriptions
-
-> **This section will change.** The final list depends on deployment choices still being worked out — in particular, where the application is hosted. New services may be added at any time as the build progresses, and this list is updated here whenever that happens. Treat it as a living list, not a final one.
-
-Happy Feet runs on a few outside services. Some are set up by the developer but billed to you, the school. Others are accounts the school owns directly. This is the list of what you pay for to keep the product running. The app itself installs on phones with no app-store fee, and parent notifications inside the app are free — so they are not listed here.
-
-| Service | What It Does | Who Manages It | Cost | If It Lapses |
-|---------|-------------|----------------|------|--------------|
-| **Application Hosting** *(not yet decided)* | Keeps the application running and reachable on the internet for all staff and parents | Developer sets it up; billed to the school | ⚠️ To be decided — the hosting approach is still being worked out. One option (Vercel) is under consideration, but its fit for a school of this scale has not been confirmed. We will reason through this and settle it later | The application goes offline for everyone |
-| **Database, Storage & Backups** (Supabase, Mumbai) | Stores all the school's data — children, staff, fees, attendance, documents — with daily backups, all held in India | Developer sets it up; billed to the school | Monthly subscription, kept small for the current size · ⚠️ Needs client input: confirm the monthly figure | The data cannot be reached until the service is restored |
-| **Secure Login** (Clerk) | Manages secure sign-in, the extra security step for staff, and keeping people signed in | Developer sets it up; billed to the school | Free for basic sign-in and authenticator-app security; paid as the number of users grows · ⚠️ Needs client input: confirm the tier | No one can sign in to the system |
-| **Text Message Service** (MSG91) | Sends text messages to parents, such as absence alerts | The school owns the account | Charged per message sent · ⚠️ Needs client input: confirm the monthly message budget | Text alerts to parents stop sending. In-app notifications still work |
-| **Fee Collection Software** (CoFee) | The school's existing software for collecting and recording fees. Happy Feet imports its data so fees sit alongside students and attendance | The school owns the account (already in use today) | The cost the school already pays for CoFee · ⚠️ Needs client input: confirm | Happy Feet can no longer bring in up-to-date fee data, and the fee dashboards become out of date |
-| *(open)* | *Reserved for a service added later as the build progresses* | — | — | — |
-| *(open)* | *Reserved for a service added later as the build progresses* | — | — | — |
-
-**A note on a future service:** When the school later moves fee collection into Happy Feet itself, a payment gateway (Razorpay) will be needed to take payments directly. That is not required for this version — fees stay on CoFee for now — so there is nothing to pay for it yet. It will be added to the list above when the time comes.
-
-⚠️ Needs client input: confirm who owns and pays each account above, so billing details and renewals sit with the right person.
-
----
-
-## 10. Your Responsibilities as Application Owner
-
-Happy Feet handles the heavy lifting, but a few things stay the school's responsibility. These keep the system accurate, secure, and running. They are grouped by how often they come up.
-
-### 10.1 Ongoing — Day to Day
-
-- Make sure teachers mark attendance every school day, and follow up on any class that hasn't been marked.
-- Check the day's picture — who is present, who is absent, and any open safety items that need attention.
-- Verify the documents parents submit, so each child's record is complete and trusted. The Coordinator or Principal can handle this.
-- Keep parent communication flowing through the system's inbox and announcements, rather than personal WhatsApp.
-- Review any exception a staff member records — such as an over-capacity place or a pickup override — and confirm it was justified.
-
-### 10.2 Regular — Monthly or Per Term
-
-- Bring in the latest CoFee fee data regularly, so the fee status and dashboards stay current.
-- Review the collection and overdue dashboards, and follow up on outstanding fees.
-- Open and close each term's progress-report window, and make sure progress reports are reviewed and published.
-- Add or deactivate staff accounts as people join or leave the team.
-- Check which staff certifications are due to expire, and arrange renewals.
-- Confirm the outside service invoices — hosting, database, login, and text messages — are being paid on time.
-
-### 10.3 Periodic — Annually or at Key Milestones
-
-- Complete the nine-step setup before each new school year, in order.
-- Run the year-end rollover — review active children, acknowledge outstanding dues, and confirm each child's move to the next class.
-- Renew the outside services and confirm billing details are up to date.
-- Review all user accounts and remove anyone who no longer needs access.
-- Archive or export the records of children who have left, in line with how long the school keeps them.
-- Confirm at least two Owner accounts are active, so the school is never locked out.
-
-### 10.4 What to Do When Something Goes Wrong
-
-When the system has a problem, the path depends on what kind of problem it is. Some issues a Principal or Owner can fix directly from inside the system. Others need the developer. When contacting the developer, describe what happened, what you expected, and include a screenshot where possible.
-
-| Situation | Who to Contact | How | Expected Response |
-|-----------|---------------|-----|-------------------|
-| The system is down or won't open for anyone | Developer | ⚠️ Needs client input: agree a channel (e.g. email or WhatsApp) | ⚠️ Needs client input: agree a response time |
-| A staff member or parent cannot sign in | Owner or Principal resets their access first; Developer if it persists | From inside the system | Usually immediate — no developer needed |
-| Data looks wrong or is missing | Developer | Email with a screenshot and the child or record affected | ⚠️ Needs client input: agree a response time |
-| Fee figures look out of date | Accountant brings in a fresh CoFee import first; Developer if the import fails | From inside the system | After a successful import |
-| Absence texts are not reaching parents | Check the text-message account has balance; Developer if it still fails | ⚠️ Needs client input: agree a channel | ⚠️ Needs client input: agree a response time |
-
-⚠️ Needs client input: confirm the developer's support contact, the hours support is available, and the expected response times — then fill these into the table above.
-
----
-## 11. Features and Specifications
+## 6. Features and Specifications
 
 This is the full list of what Happy Feet does, grouped by area. Everything below is part of the current version unless it appears under **Planned for Later Versions** at the end — those are designed and documented, but built in a future version.
 
@@ -679,7 +517,9 @@ This is the full list of what Happy Feet does, grouped by area. Everything below
 - Predictive analytics and additional reporting
 - An app-store version of the app
 
-## 12. The System's Modules and the Data They Own
+---
+
+## 7. The System's Modules and the Data They Own
 
 Behind the areas described earlier, the system is built as a set of self-contained modules. Each module owns its own records and is fully responsible for them. Modules share information through clear connections — never by reaching into one another's records. This keeps the system organised, keeps each kind of information consistent, and makes the school safe to grow. Here is each module and the information it owns.
 
@@ -697,11 +537,202 @@ Behind the areas described earlier, the system is built as a set of self-contain
 Each module is the only one that writes its own records. Only People & Records creates a student; only Fees touches imported payments; only Attendance marks a child present. When one area needs information from another, it asks through a defined connection rather than editing the other's records directly. This is what keeps the school's information trustworthy and is why a second branch — or a future feature — can be added without disturbing what already works.
 
 ---
-## 13. Assumptions to Verify
+
+## 8. Key Information the System Manages
+
+The system keeps a set of connected records. Each one represents something real in the school — a child, a class, a payment, a day's attendance — and they link together so the full picture of each child is always in one place.
+
+| Information | What It Represents | Key Details It Holds | How It Connects |
+|------------|-------------------|----------------------|-----------------|
+| **Student Record** | A child enrolled at, or applying to, the school | Name, date of birth, admission number, programme, class, student category, status | The centre of the system — linked to guardians, attendance, daily care, fees, progress, and documents |
+| **Guardian Record** | A parent or family member connected to a child | Contact details, login, and what they may do — collect the child, receive messages, pay fees | Linked to one or more children; sets what each guardian can see and do |
+| **Staff Record** | A person employed at the school | Name, role, branch, attendance, leave balance, certifications and their expiry dates | Linked to the classes they run and the branch they work in |
+| **Admission Application** | A request to admit a child, before they become a student | Child and family details, chosen programme, submitted documents, application status | Becomes a Student Record once enrollment is completed |
+| **Sensitive Documents** | A child's protected personal records | Identity documents, medical records, and photo | Kept apart from the main record and shown only to staff who need them; every view is recorded |
+| **Programme** | A course of study the school offers | Name (Play Group, Nursery, PP1, PP2, Day Care), billing model, required documents, milestones | Linked to classes, fee structures, and students |
+| **Class** | A group of children taught together | Name, capacity, assigned teachers, weekly timetable | Linked to a programme, its teachers, and its students |
+| **Academic Year & Calendar** | The school's yearly framework | Year start and end, terms, holidays, progress-report windows | The single source of dates for attendance, fees, and progress across the system |
+| **Attendance Record** | A child's daily presence | Date, child, class, status (present, absent, late, half-day) | Linked to the child and class; triggers the absence message to the parent |
+| **Daily Care Log** | The record of a child's day | Meals, naps, activities, health checks, and day-care check-in and check-out times | Linked to the child; shown to parents as the daily feed |
+| **Authorised Pickup List** | The people allowed to collect a child | Approved collectors and their verification details; parent-issued one-time pickup codes | Linked to the child; checked at the gate before release |
+| **Fee Record** | A child's fee and payment picture | Imported payments, invoice references, amounts paid and due, status | Brought in from CoFee, linked to the child; feeds the fee dashboards |
+| **Progress Report** | A child's progress for a term | The teacher's assessment against the programme's milestones | Linked to the child and term; reviewed, published, and shown to the parent |
+| **Lesson Plan** | A teacher's plan for a class | Activities and learning content for a programme and class | Linked to the programme and class; published to parents |
+| **Announcement & Message** | School communication to parents | Announcements, inbox messages, and the record of what was sent | Linked to the branch or class; logged for accountability |
+| **Incident & Welfare Record** | A safety or wellbeing record about a child | What happened, who recorded it, its status, and follow-up | Linked to the child; permanent. Welfare records are never shown to parents; an incident is shared only if the Principal decides to |
+| **Activity Log** | The system's record of who did what | Each action, the person who did it, and when | Spans every area of the system; the Owner's record of accountability |
+| **Branch** | A school location | Name and status | The top unit that children, staff, and fees belong to |
+
+---
+
+## 9. How Your Data Is Stored and Protected
+
+The school holds personal records about children — names, documents, medical notes, photos. How that information is stored and protected matters, both by law and for the trust parents place in the school. This section explains, in plain terms, how Happy Feet handles it.
+
+**Your data is stored in India.** All of the school's records — children, staff, fees, attendance, and documents — are stored and backed up on infrastructure located in India. This meets India's data-protection rules on keeping data within the country. The one exception is the sign-in service, which holds only email addresses and phone numbers used to log in; those are held by the login provider outside India. Every sensitive record about a child stays in India.
+
+**Your data is backed up every day.** The system makes automatic daily backups and can be restored to an earlier point in time if something goes wrong. A school cannot afford to lose its financial or child records, so backups are treated as non-negotiable, not optional.
+
+**The most sensitive records are kept apart.** A child's identity documents, medical records, and photo are stored separately from everyday records and are locked down more tightly. Only staff with a genuine need can open them. Each time a staff member opens one, the system records who looked, at what, and when — so the school can always answer who has seen a child's sensitive data. Opening these records also requires the staff member to confirm their identity again.
+
+**Records are preserved, not overwritten.** When something is corrected, the system adds the correction alongside the original rather than erasing it. This keeps a complete and trustworthy history of what happened and when — which protects both the school and the parent.
+
+**Each person sees only what they should.** The system decides what someone can see by combining their role, their branch, and their relationship to a child. Sensitive information is shown only inside the system, to staff who are authorised to see it.
+
+**Parents have rights over their child's data.** Under India's data-protection law, a parent can ask to see, correct, or remove their child's personal information. The school handles these requests. When information must be removed, the system can erase the sensitive content while keeping a simple record that the entry once existed — so the history stays intact without holding on to data that should be gone.
+
+**How long data is kept.** Records are kept for as long as the school needs them to meet its legal and operational obligations, and are removed only by a deliberate, recorded decision — never silently. ⚠️ Needs client input: confirm how long the school must keep financial records and child-safety records, so exact retention periods can be set.
+
+---
+
+## 10. How the System Is Organised
+
+### 10.1 Organisational Structure
+
+The system is organised around a single owner account at the top. Beneath the Owner sit the school's branches. Each branch runs its own daily operations through its own staff, while the Owner sees across all of them.
+
+Today the school has one active branch, with a second branch planned. The system is built for more than one branch from the start, so the next branch can be added without rebuilding anything.
+
+Each branch has a Principal who runs it. Under the Principal are the branch's Coordinators, Teachers, and Accountant. Parents sit alongside the branch their child belongs to, with access to their own child only.
+
+```
+ADMIN [Owner] (across all branches)
+   │
+   ├── Branch 1  (active)
+   │      ├──BRANCH ADMIN [Principal] 
+   │      │     ├── Coordinator(s)
+   │      │     ├── Teacher(s)
+   │      │     └── Accountant
+   │      └── Parents  (each linked to their own child)
+   │
+   └── Branch 2  (planned)
+          └── (same structure once it opens)
+```
+
+Every level can have more than one person. There can be more than one Owner, more than one Principal per branch, and many teachers. A staff member can also work across two branches if needed.
+
+### 10.2 How Data Is Managed and Separated Between Branches
+
+Every operational record in the system is tagged with the branch it belongs to. A child, a class, an attendance mark, a fee record, a message to a parent — each one carries the name of its branch. That tag stays with the record wherever it goes. This is the foundation of how branches are kept apart.
+
+When a staff member uses the system, it checks three things together before showing anything: what their role allows, which branch they are assigned to, and their relationship to a particular child. It then shows only the records whose branch tag matches their assignment. So a Teacher in Branch 1 only ever sees Branch 1 records — and only their own classes within it. A Principal sees their whole branch. No staff member below the Owner can see or touch another branch's data.
+
+The Owner is the single exception. The Owner is assigned to every branch, so the Owner sees everything. The Owner's dashboards add the branches together into one school-wide picture — total enrollment, collection, occupancy — while each Principal sees those same numbers for their own branch only.
+
+Some staff legitimately work in more than one branch. When that happens, they are given a separate assignment for each branch. They see each branch's data only when working in that branch, and only for the branches they are assigned to — never any others.
+
+Each branch is set up with its own programmes, classes, and fee structures, following the same overall approach across the school. The day-to-day records — children, staff, attendance, fees, and communication — stay specific to their own branch. Branches do not share these records with one another.
+
+It is important to understand that this is one system, not separate copies. The separation comes from the branch tag and the access rules, not from running a different system per branch. That is what keeps each branch's data private to it while still letting the Owner see the whole school in one place. And because the tag is on every record from day one, opening the second branch needs no rebuilding — the new branch is created, its staff are invited, its children are entered, and the same separation applies to it automatically.
+
+---
+
+## 11. How People Get Access — Invitations and Accounts
+
+Access to Happy Feet is given by invitation. No one signs up on their own. A person is invited by someone above them, accepts the invitation, and lands in the system with access limited to their role and branch. Everyone signs in once and stays signed in — they tap the app icon to return, rather than logging in for every task.
+
+### 11.1 How Staff Are Invited
+
+Staff are invited from the top down. The Owner invites Principals. Each Principal then invites their own branch's staff — Coordinators, Teachers, and the Accountant. This keeps each branch's team under the person who runs that branch.
+
+1. The Owner or Principal creates the new staff member's profile, enters their email address, and chooses their role and branch.
+2. The system sends an invitation email with a secure link.
+3. The staff member opens the link, signs in, and sets up a second sign-in step for security — a code from an authenticator app on their phone, along with backup codes.
+4. They land in the system with access limited to the exact role and branch they were given.
+
+Until the staff member accepts, their invitation stays pending and their access is not active. The second sign-in step is required for all staff, because their accounts reach fees, admissions, and children's records. For certain sensitive actions — such as opening a child's protected documents — the system asks the staff member to confirm their identity again, even while they are already signed in.
+
+The school always keeps at least two Owner accounts. This makes sure the school is never locked out if one Owner is unavailable.
+
+### 11.2 How External Users Get Access
+
+Parents are the external users, and they are invited automatically. When a child is enrolled, the system emails that child's parent an invitation to the parent app. The parent does not apply for access — enrollment creates it.
+
+The parent signs in with their email, using a secure link or a one-time code. The extra security step is available to parents but not required. Once signed in, the parent sees only their own child — attendance, the daily feed, a simple progress view, fee status, and school announcements. They can submit their child's documents, but their access to records is view-only.
+
+A child can have more than one guardian. Each guardian receives their own invitation and their own login, and each one's access matches their relationship to the child.
+
+### 11.3 Removing Access
+
+When a staff member leaves, their access is removed by the Owner or Principal. Any work still in their hands — open concerns, unfinished progress drafts, classes they marked attendance for — is reassigned to someone else first. Their account is then switched off. Their profile and everything they recorded stay in the system. Records are never deleted, so the school keeps a complete history.
+
+When a child leaves the school, that child's parent access changes to a read-only archive. The parent can still see their child's past records for the period the school keeps them, but the account is no longer active for day-to-day use.
+
+---
+
+## 12. Services and Subscriptions
+
+> **This section will change.** The final list depends on deployment choices still being worked out — in particular, where the application is hosted. New services may be added at any time as the build progresses, and this list is updated here whenever that happens. Treat it as a living list, not a final one.
+
+Happy Feet runs on a few outside services. Some are set up by the developer but billed to you, the school. Others are accounts the school owns directly. This is the list of what you pay for to keep the product running. The app itself installs on phones with no app-store fee, and parent notifications inside the app are free — so they are not listed here.
+
+| Service | What It Does | Who Manages It | Cost | If It Lapses |
+|---------|-------------|----------------|------|--------------|
+| **Application Hosting** *(not yet decided)* | Keeps the application running and reachable on the internet for all staff and parents | Developer sets it up; billed to the school | ⚠️ To be decided — the hosting approach is still being worked out. One option (Vercel) is under consideration, but its fit for a school of this scale has not been confirmed. We will reason through this and settle it later | The application goes offline for everyone |
+| **Database, Storage & Backups** (Supabase, Mumbai) | Stores all the school's data — children, staff, fees, attendance, documents — with daily backups, all held in India | Developer sets it up; billed to the school | Monthly subscription, kept small for the current size · ⚠️ Needs client input: confirm the monthly figure | The data cannot be reached until the service is restored |
+| **Secure Login** (Clerk) | Manages secure sign-in, the extra security step for staff, and keeping people signed in | Developer sets it up; billed to the school | Free for basic sign-in and authenticator-app security; paid as the number of users grows · ⚠️ Needs client input: confirm the tier | No one can sign in to the system |
+| **Text Message Service** (MSG91) | Sends text messages to parents, such as absence alerts | The school owns the account | Charged per message sent · ⚠️ Needs client input: confirm the monthly message budget | Text alerts to parents stop sending. In-app notifications still work |
+| **Fee Collection Software** (CoFee) | The school's existing software for collecting and recording fees. Happy Feet imports its data so fees sit alongside students and attendance | The school owns the account (already in use today) | The cost the school already pays for CoFee · ⚠️ Needs client input: confirm | Happy Feet can no longer bring in up-to-date fee data, and the fee dashboards become out of date |
+| *(open)* | *Reserved for a service added later as the build progresses* | — | — | — |
+| *(open)* | *Reserved for a service added later as the build progresses* | — | — | — |
+
+**A note on a future service:** When the school later moves fee collection into Happy Feet itself, a payment gateway (Razorpay) will be needed to take payments directly. That is not required for this version — fees stay on CoFee for now — so there is nothing to pay for it yet. It will be added to the list above when the time comes.
+
+⚠️ Needs client input: confirm who owns and pays each account above, so billing details and renewals sit with the right person.
+
+---
+
+## 13. Your Responsibilities as Application Owner
+
+Happy Feet handles the heavy lifting, but a few things stay the school's responsibility. These keep the system accurate, secure, and running. They are grouped by how often they come up.
+
+### 13.1 Ongoing — Day to Day
+
+- Make sure teachers mark attendance every school day, and follow up on any class that hasn't been marked.
+- Check the day's picture — who is present, who is absent, and any open safety items that need attention.
+- Verify the documents parents submit, so each child's record is complete and trusted. The Coordinator or Principal can handle this.
+- Keep parent communication flowing through the system's inbox and announcements, rather than personal WhatsApp.
+- Review any exception a staff member records — such as an over-capacity place or a pickup override — and confirm it was justified.
+
+### 13.2 Regular — Monthly or Per Term
+
+- Bring in the latest CoFee fee data regularly, so the fee status and dashboards stay current.
+- Review the collection and overdue dashboards, and follow up on outstanding fees.
+- Open and close each term's progress-report window, and make sure progress reports are reviewed and published.
+- Add or deactivate staff accounts as people join or leave the team.
+- Check which staff certifications are due to expire, and arrange renewals.
+- Confirm the outside service invoices — hosting, database, login, and text messages — are being paid on time.
+
+### 13.3 Periodic — Annually or at Key Milestones
+
+- Complete the nine-step setup before each new school year, in order.
+- Run the year-end rollover — review active children, acknowledge outstanding dues, and confirm each child's move to the next class.
+- Renew the outside services and confirm billing details are up to date.
+- Review all user accounts and remove anyone who no longer needs access.
+- Archive or export the records of children who have left, in line with how long the school keeps them.
+- Confirm at least two Owner accounts are active, so the school is never locked out.
+
+### 13.4 What to Do When Something Goes Wrong
+
+When the system has a problem, the path depends on what kind of problem it is. Some issues a Principal or Owner can fix directly from inside the system. Others need the developer. When contacting the developer, describe what happened, what you expected, and include a screenshot where possible.
+
+| Situation | Who to Contact | How | Expected Response |
+|-----------|---------------|-----|-------------------|
+| The system is down or won't open for anyone | Developer | ⚠️ Needs client input: agree a channel (e.g. email or WhatsApp) | ⚠️ Needs client input: agree a response time |
+| A staff member or parent cannot sign in | Owner or Principal resets their access first; Developer if it persists | From inside the system | Usually immediate — no developer needed |
+| Data looks wrong or is missing | Developer | Email with a screenshot and the child or record affected | ⚠️ Needs client input: agree a response time |
+| Fee figures look out of date | Accountant brings in a fresh CoFee import first; Developer if the import fails | From inside the system | After a successful import |
+| Absence texts are not reaching parents | Check the text-message account has balance; Developer if it still fails | ⚠️ Needs client input: agree a channel | ⚠️ Needs client input: agree a response time |
+
+⚠️ Needs client input: confirm the developer's support contact, the hours support is available, and the expected response times — then fill these into the table above.
+
+---
+
+## 14. Assumptions to Verify
 
 > **Instructions for the client:** Please read each item below and confirm whether it is correct. If any assumption is wrong, note the correction so the system can be adjusted before it affects your operations.
 
-### 13.1 No separate admission fee
+### 14.1 No separate admission fee
 
 **What was assumed:** The school does not charge a separate registration or admission deposit. Fees are term-based instalments tied to the programme.
 
@@ -710,7 +741,7 @@ Each module is the only one that writes its own records. Only People & Records c
 - [ ] Correct as stated
 - [ ] Needs correction: _______________
 
-### 13.2 Full term fee for mid-term admissions
+### 14.2 Full term fee for mid-term admissions
 
 **What was assumed:** A child who joins partway through a term is charged the full term fee. Fees are not split for partial terms.
 
@@ -719,7 +750,7 @@ Each module is the only one that writes its own records. Only People & Records c
 - [ ] Correct as stated
 - [ ] Needs correction: _______________
 
-### 13.3 The second branch matches the first
+### 14.3 The second branch matches the first
 
 **What was assumed:** The planned second branch is under the same ownership and uses the same programmes and fee approach as the current branch.
 
@@ -728,7 +759,7 @@ Each module is the only one that writes its own records. Only People & Records c
 - [ ] Correct as stated
 - [ ] Needs correction: _______________
 
-### 13.4 Transport is optional and billed separately
+### 14.4 Transport is optional and billed separately
 
 **What was assumed:** Transport is chosen per child and billed on its own, not bundled into a single programme fee.
 
@@ -737,7 +768,7 @@ Each module is the only one that writes its own records. Only People & Records c
 - [ ] Correct as stated
 - [ ] Needs correction: _______________
 
-### 13.5 Meals are not offered yet
+### 14.5 Meals are not offered yet
 
 **What was assumed:** The school does not currently offer meals. The meal option stays switched off until the school decides to offer them.
 
@@ -746,7 +777,7 @@ Each module is the only one that writes its own records. Only People & Records c
 - [ ] Correct as stated
 - [ ] Needs correction: _______________
 
-### 13.6 Fees stay on CoFee in this version
+### 14.6 Fees stay on CoFee in this version
 
 **What was assumed:** The school keeps collecting fees through CoFee. Happy Feet only brings in CoFee's data to view and report on — it does not take payments or issue invoices itself yet.
 
@@ -755,7 +786,7 @@ Each module is the only one that writes its own records. Only People & Records c
 - [ ] Correct as stated
 - [ ] Needs correction: _______________
 
-### 13.7 Absence alerts go out by text message
+### 14.7 Absence alerts go out by text message
 
 **What was assumed:** When a child is marked absent, the parent is alerted by text message, which is charged per message.
 
@@ -764,7 +795,7 @@ Each module is the only one that writes its own records. Only People & Records c
 - [ ] Correct as stated
 - [ ] Needs correction: _______________
 
-### 13.8 The child's Aadhaar may not be collected
+### 14.8 The child's Aadhaar may not be collected
 
 **What was assumed:** No part of this version requires a child's national identity number (Aadhaar), so it may not be collected at all.
 
@@ -773,7 +804,7 @@ Each module is the only one that writes its own records. Only People & Records c
 - [ ] Correct as stated
 - [ ] Needs correction: _______________
 
-### 13.9 Government student IDs are not handled yet
+### 14.9 Government student IDs are not handled yet
 
 **What was assumed:** The national student identifiers (APAAR and PEN) and government portal submissions are not collected or filed through the system in this version.
 
@@ -782,7 +813,7 @@ Each module is the only one that writes its own records. Only People & Records c
 - [ ] Correct as stated
 - [ ] Needs correction: _______________
 
-### 13.10 Photos are stored but not shared
+### 14.10 Photos are stored but not shared
 
 **What was assumed:** Children's photos are stored for identification and pickup, but are not shared with parents through the system in this version.
 
@@ -793,7 +824,7 @@ Each module is the only one that writes its own records. Only People & Records c
 
 ---
 
-## 14. Glossary
+## 15. Glossary
 
 | Term | Plain English Definition |
 |------|--------------------------|
