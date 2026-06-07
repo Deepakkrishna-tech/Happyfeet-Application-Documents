@@ -1,8 +1,5 @@
 # Happy Feet — Product Manual
 
-> **Audience:** Application owners, business stakeholders, and clients
-> **Purpose:** Understand what this product is, how your business runs inside it, and what you are responsible for maintaining
-
 ---
 
 ## Table of Contents
@@ -15,7 +12,7 @@
 6. [How Your Data Is Stored and Protected](#6-how-your-data-is-stored-and-protected)
 7. [How the System Is Organised](#7-how-the-system-is-organised)
 8. [How People Get Access — Invitations and Accounts](#8-how-people-get-access-invitations-and-accounts)
-9. [Services and Subscriptions You Pay For](#9-services-and-subscriptions-you-pay-for)
+9. [Services and Subscriptions](#9-services-and-subscriptions)
 10. [Your Responsibilities as Application Owner](#10-your-responsibilities-as-application-owner)
 11. [Features and Specifications](#11-features-and-specifications)
 12. [The System's Modules and the Data They Own](#12-the-systems-modules-and-the-data-they-own)
@@ -434,10 +431,10 @@ Today the school has one active branch, with a second branch planned. The system
 Each branch has a Principal who runs it. Under the Principal are the branch's Coordinators, Teachers, and Accountant. Parents sit alongside the branch their child belongs to, with access to their own child only.
 
 ```
-OWNER (across all branches)
+ADMIN [Owner] (across all branches)
    │
    ├── Branch 1  (active)
-   │      ├── Principal
+   │      ├──BRANCH ADMIN [Principal] 
    │      │     ├── Coordinator(s)
    │      │     ├── Teacher(s)
    │      │     └── Accountant
@@ -498,7 +495,7 @@ When a child leaves the school, that child's parent access changes to a read-onl
 
 ---
 
-## 9. Services and Subscriptions You Pay For
+## 9. Services and Subscriptions
 
 > **This section will change.** The final list depends on deployment choices still being worked out — in particular, where the application is hosted. New services may be added at any time as the build progresses, and this list is updated here whenever that happens. Treat it as a living list, not a final one.
 
@@ -704,55 +701,95 @@ Each module is the only one that writes its own records. Only People & Records c
 
 > **Instructions for the client:** Please read each item below and confirm whether it is correct. If any assumption is wrong, note the correction so the system can be adjusted before it affects your operations.
 
-1. **No separate admission fee**
-   - *What was assumed:* The school does not charge a separate registration or admission deposit. Fees are term-based instalments tied to the programme.
-   - *Why it matters:* If a separate admission fee or deposit exists, the fee setup must include it, or it will be missed at admission.
-   - ☐ Correct as stated ☐ Needs correction: _______________
+### 13.1 No separate admission fee
 
-2. **Full term fee for mid-term admissions**
-   - *What was assumed:* A child who joins partway through a term is charged the full term fee. Fees are not split for partial terms.
-   - *Why it matters:* If the school charges part of a term for mid-term joiners, the fee approach is different from what is set up.
-   - ☐ Correct as stated ☐ Needs correction: _______________
+**What was assumed:** The school does not charge a separate registration or admission deposit. Fees are term-based instalments tied to the programme.
 
-3. **The second branch matches the first**
-   - *What was assumed:* The planned second branch is under the same ownership and uses the same programmes and fee approach as the current branch.
-   - *Why it matters:* If the second branch will have its own programmes or its own fees, the setup must allow each branch to differ.
-   - ☐ Correct as stated ☐ Needs correction: _______________
+**Why it matters:** If a separate admission fee or deposit exists, the fee setup must include it, or it will be missed at admission.
 
-4. **Transport is optional and billed separately**
-   - *What was assumed:* Transport is chosen per child and billed on its own, not bundled into a single programme fee.
-   - *Why it matters:* If some children receive transport as part of a combined fee, billing must be handled differently.
-   - ☐ Correct as stated ☐ Needs correction: _______________
+- [ ] Correct as stated
+- [ ] Needs correction: _______________
 
-5. **Meals are not offered yet**
-   - *What was assumed:* The school does not currently offer meals. The meal option stays switched off until the school decides to offer them.
-   - *Why it matters:* If meals are needed at go-live, the meal option must be set up from the start.
-   - ☐ Correct as stated ☐ Needs correction: _______________
+### 13.2 Full term fee for mid-term admissions
 
-6. **Fees stay on CoFee in this version**
-   - *What was assumed:* The school keeps collecting fees through CoFee. Happy Feet only brings in CoFee's data to view and report on — it does not take payments or issue invoices itself yet.
-   - *Why it matters:* If the school expects to collect payments inside Happy Feet now, that is a larger scope than this version covers.
-   - ☐ Correct as stated ☐ Needs correction: _______________
+**What was assumed:** A child who joins partway through a term is charged the full term fee. Fees are not split for partial terms.
 
-7. **Absence alerts go out by text message**
-   - *What was assumed:* When a child is marked absent, the parent is alerted by text message, which is charged per message.
-   - *Why it matters:* Text messages cost money. The school may prefer free in-app alerts instead, which changes how parents are notified.
-   - ☐ Correct as stated ☐ Needs correction: _______________
+**Why it matters:** If the school charges part of a term for mid-term joiners, the fee approach is different from what is set up.
 
-8. **The child's Aadhaar may not be collected**
-   - *What was assumed:* No part of this version requires a child's national identity number (Aadhaar), so it may not be collected at all.
-   - *Why it matters:* Collecting a young child's Aadhaar carries legal responsibility. If it is not needed, it is safer not to hold it.
-   - ☐ Correct as stated ☐ Needs correction: _______________
+- [ ] Correct as stated
+- [ ] Needs correction: _______________
 
-9. **Government student IDs are not handled yet**
-   - *What was assumed:* The national student identifiers (APAAR and PEN) and government portal submissions are not collected or filed through the system in this version.
-   - *Why it matters:* If the school must collect or submit these now, that is additional work to plan for.
-   - ☐ Correct as stated ☐ Needs correction: _______________
+### 13.3 The second branch matches the first
 
-10. **Photos are stored but not shared**
-    - *What was assumed:* Children's photos are stored for identification and pickup, but are not shared with parents through the system in this version.
-    - *Why it matters:* Sharing photos needs a data-protection review first. If the school expects photo sharing now, that review must happen before it can be turned on.
-    - ☐ Correct as stated ☐ Needs correction: _______________
+**What was assumed:** The planned second branch is under the same ownership and uses the same programmes and fee approach as the current branch.
+
+**Why it matters:** If the second branch will have its own programmes or its own fees, the setup must allow each branch to differ.
+
+- [ ] Correct as stated
+- [ ] Needs correction: _______________
+
+### 13.4 Transport is optional and billed separately
+
+**What was assumed:** Transport is chosen per child and billed on its own, not bundled into a single programme fee.
+
+**Why it matters:** If some children receive transport as part of a combined fee, billing must be handled differently.
+
+- [ ] Correct as stated
+- [ ] Needs correction: _______________
+
+### 13.5 Meals are not offered yet
+
+**What was assumed:** The school does not currently offer meals. The meal option stays switched off until the school decides to offer them.
+
+**Why it matters:** If meals are needed at go-live, the meal option must be set up from the start.
+
+- [ ] Correct as stated
+- [ ] Needs correction: _______________
+
+### 13.6 Fees stay on CoFee in this version
+
+**What was assumed:** The school keeps collecting fees through CoFee. Happy Feet only brings in CoFee's data to view and report on — it does not take payments or issue invoices itself yet.
+
+**Why it matters:** If the school expects to collect payments inside Happy Feet now, that is a larger scope than this version covers.
+
+- [ ] Correct as stated
+- [ ] Needs correction: _______________
+
+### 13.7 Absence alerts go out by text message
+
+**What was assumed:** When a child is marked absent, the parent is alerted by text message, which is charged per message.
+
+**Why it matters:** Text messages cost money. The school may prefer free in-app alerts instead, which changes how parents are notified.
+
+- [ ] Correct as stated
+- [ ] Needs correction: _______________
+
+### 13.8 The child's Aadhaar may not be collected
+
+**What was assumed:** No part of this version requires a child's national identity number (Aadhaar), so it may not be collected at all.
+
+**Why it matters:** Collecting a young child's Aadhaar carries legal responsibility. If it is not needed, it is safer not to hold it.
+
+- [ ] Correct as stated
+- [ ] Needs correction: _______________
+
+### 13.9 Government student IDs are not handled yet
+
+**What was assumed:** The national student identifiers (APAAR and PEN) and government portal submissions are not collected or filed through the system in this version.
+
+**Why it matters:** If the school must collect or submit these now, that is additional work to plan for.
+
+- [ ] Correct as stated
+- [ ] Needs correction: _______________
+
+### 13.10 Photos are stored but not shared
+
+**What was assumed:** Children's photos are stored for identification and pickup, but are not shared with parents through the system in this version.
+
+**Why it matters:** Sharing photos needs a data-protection review first. If the school expects photo sharing now, that review must happen before it can be turned on.
+
+- [ ] Correct as stated
+- [ ] Needs correction: _______________
 
 ---
 

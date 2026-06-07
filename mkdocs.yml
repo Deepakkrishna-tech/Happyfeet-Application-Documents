@@ -2,5 +2,8 @@ site_name: Happyfeet Application Docs
 docs_dir: docs
 theme:
   name: material
+markdown_extensions:
+  - pymdownx.tasklist:
+      custom_checkbox: true
 nav:
   - Product Manual: index.md
