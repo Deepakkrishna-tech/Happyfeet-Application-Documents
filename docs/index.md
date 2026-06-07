@@ -88,223 +88,11 @@ This section explains how the school earns its income — what it charges for, h
 
 ---
 
-## 4. How Your Business Runs Inside the System
-
-This section follows the school's year from start to finish and shows where each part lives in the system. Read it as the full journey: setting up, taking in new children, running each day, reporting on progress, and moving children forward at year-end.
-
-### 4.1 Setting Up the System at Go-Live
-
-**What happens:** Before the school can use Happy Feet for the first time, its existing information is entered. The Owner and Principal accounts are created. Staff profiles are added — teachers, coordinators, and the accountant. Existing children are entered with their current records and opening fee balances, and the school's CoFee payment data is brought in. This is a one-time setup for each branch. While it runs, the system relaxes its usual checks so part-finished records can be saved, and it holds back automatic alerts so incomplete data doesn't trigger false reminders.
-
-**Who is responsible:** The Owner and the Principal.
-
-**Information involved:** Owner and staff accounts, staff profiles, existing student records, opening fee balances, and imported CoFee payment history.
-
-**Rules that apply:**
-- This setup runs once per branch, at go-live.
-- Children moved over from the old paper records keep their existing admission number exactly as it was — it is never changed or reissued.
-- Staff profiles must exist before classes can be set up, because classes are linked to the teachers who run them.
-- The Principal confirms all records are entered and correct before the school switches to normal day-to-day operation.
-
----
-
-### 4.2 Setting Up Each School Year
-
-**What happens:** Before each academic year begins, the school is configured for the year ahead. This is a nine-step sequence done in order: create the year with its start and end dates; set the term dates and the windows when progress reports can be submitted; define the programmes; create the classes with their capacity and teacher slots; set the fee structures for each programme and student category; set up transport zones if offered; enter the school calendar; build the weekly timetable for each class; and define the developmental milestones and the documents each programme requires.
-
-**Who is responsible:** The Principal, with the Owner.
-
-**Information involved:** Academic year, terms, programmes, classes, fee structures, transport zones, school calendar, timetable, milestones, and required document types.
-
-**Rules that apply:**
-- The steps must be completed in order. A later step that depends on an earlier one is blocked until the earlier one is done.
-- The fee structure is set per programme and per student category (Standard, Staff Child, Subsidised).
-- Setup is completed before the new year begins, so the year is ready when the session starts.
-
----
-
-### 4.3 Receiving an Admission Application
-
-**What happens:** A new child's application enters the system one of two ways. A parent applies themselves from a public web link, with no login needed. Or the Principal enters the application directly. Admissions are open all year by default. The Owner or Principal can set optional open and close dates to limit applications to a defined period.
-
-**Who is responsible:** The parent (public form) or the Principal (direct entry).
-
-**Information involved:** The application record — the child's and family's details captured at this stage.
-
-**Rules that apply:**
-- An application is only a request to be considered. It does not create an enrolled child.
-- If the school has set an admissions window, applications sent outside that window are not accepted.
-- The public form is open to anyone, so it is treated carefully — it can only create a pending application, nothing more.
-
----
-
-### 4.4 Reviewing Documents and Assigning a Programme
-
-**What happens:** The submitted documents are reviewed, and the child is assigned to a programme. The Coordinator can review and check the documents as part of this. The Principal assigns the programme, since the programme decides which documents are required and which class the child can join.
-
-**Who is responsible:** The Coordinator reviews documents; the Principal assigns the programme.
-
-**Information involved:** The application, submitted documents, and the assigned programme.
-
-**Rules that apply:**
-- A programme must be assigned before the document and capacity checks can be made.
-- The required document list depends on the programme.
-
----
-
-### 4.5 Completing Enrollment
-
-**What happens:** Enrollment turns an applicant into an enrolled child. Four conditions must all be met first: a programme is assigned; the required documents are cleared or individually waived; a class place is available, or an over-capacity place is recorded with a reason; and the child has at least one approved person on their pickup list.
-
-**Who is responsible:** The Principal.
-
-**Information involved:** The application, programme, class place, document checklist, and authorised pickup list. On enrollment, a permanent student record is created.
-
-**Rules that apply:**
-- All four conditions must be satisfied. Meeting some but not all does not complete enrollment.
-- Each missing document needs its own waiver with a recorded reason. Waiving everything at once is not allowed.
-- Going over a class's capacity is allowed only if the Principal records a reason, which is permanently logged.
-- For a new child admitted after go-live, the system generates a new admission number automatically.
-
----
-
-### 4.6 Activating the Parent and Verifying Documents
-
-**What happens:** When a child is enrolled, the parent is invited by email to the parent app. The parent signs in and submits their child's sensitive documents — identity, medical, and a photo. The Owner, Principal, or Coordinator then checks each document and marks it verified. Letting the Coordinator verify means the school's daily document work doesn't wait on core management.
-
-**Who is responsible:** The parent submits; the Owner, Principal, or Coordinator verifies.
-
-**Information involved:** The parent's account, the child's sensitive documents, and each document's status (submitted, then verified).
-
-**Rules that apply:**
-- The parent app is useful from the first day of enrollment.
-- Sensitive documents move from "submitted" to "verified" only after a staff member checks them.
-- Every time a staff member opens a child's sensitive documents, the system records it — so the school can always show who viewed what.
-
----
-
-### 4.7 Marking Daily Attendance
-
-**What happens:** Each school day, the teacher marks who is present, absent, late, or on a half day. When a child is marked absent, the system sends an automatic text message to that child's main registered phone number, once the attendance is confirmed.
-
-**Who is responsible:** The Teacher.
-
-**Information involved:** The daily attendance record for each child, linked to their class and the school day.
-
-**Rules that apply:**
-- Each class has one teacher who is the authoritative marker, so two teachers cannot overwrite each other's marks.
-- The absence text is sent once, after the attendance is confirmed.
-- Holidays on the school calendar block attendance for that day, with no exceptions.
-
----
-
-### 4.8 Logging Daily Care
-
-**What happens:** Through the day, the teacher logs each child's meals, naps, activities, and health checks. Parents see this as a daily feed on their own phones, giving them a clear picture of their child's day.
-
-**Who is responsible:** The Teacher.
-
-**Information involved:** The daily care log for each child — meals, naps, activities, and health checks.
-
-**Rules that apply:**
-- The daily feed is the main way the school replaces informal updates with a structured, reliable record.
-- For day care children, staff also record check-in and check-out times.
-
----
-
-### 4.9 Managing Fees
-
-**What happens:** The school continues to collect fees through CoFee. Happy Feet brings CoFee's payment data in so the school sees children, attendance, and fees together in one place. Staff can view fee status, export records, and read dashboards showing collection rates and overdue amounts. Happy Feet does not collect payments or issue invoices itself in this version.
-
-**Who is responsible:** The Accountant, with the Owner reviewing dashboards.
-
-**Information involved:** Imported CoFee payments and invoices, each child's fee status, and fee dashboards.
-
-**Rules that apply:**
-- Imported fee data is read-only. It is viewed and reported on, never changed inside Happy Feet.
-- Each payment is brought in with its source and reference so figures reconcile and nothing is counted twice.
-- Fee figures are shown as of the last import, so a fresh import keeps them current.
-
----
-
-### 4.10 Communicating with Parents
-
-**What happens:** The school sends announcements and messages to parents through one structured channel — the parent inbox and notice board. This replaces scattered personal WhatsApp messages with a single channel that is logged and accountable.
-
-**Who is responsible:** The Principal and Coordinator, and staff sending class-level updates.
-
-**Information involved:** Announcements, inbox messages, and the record of what was sent.
-
-**Rules that apply:**
-- Every message is logged, so the school always has a record of what was communicated.
-- WhatsApp links are sent by tapping to send manually, and are recorded as generated rather than confirmed delivered.
-
----
-
-### 4.11 Curriculum and Progress Reports
-
-**What happens:** Teachers prepare lesson plans linked to a programme and class, and publish them to parents. Each term, within a set submission window, teachers draft and submit a lightweight progress report. The Principal or Coordinator reviews and publishes it. Parents see a simple progress view in the app.
-
-**Who is responsible:** Teachers draft and submit; the Principal or Coordinator reviews and publishes.
-
-**Information involved:** Lesson plans, progress reports, and the term submission windows.
-
-**Rules that apply:**
-- Progress reports can only be submitted during the term's open window.
-- The person who reviews and publishes is never the teacher who drafted it.
-- Formal printed progress cards are handed over offline. The app shows a lightweight view only.
-
----
-
-### 4.12 Year-End Rollover
-
-**What happens:** At the end of the year, children move up to their next class. The Principal reviews the active children, acknowledges any outstanding dues, and confirms the transitions before the new year begins.
-
-**Who is responsible:** The Principal.
-
-**Information involved:** Each child's status, class assignment, and outstanding dues.
-
-**Rules that apply:**
-- Rollover is not automatic. The Principal reviews and confirms it.
-- Outstanding dues are acknowledged as part of the review.
-
----
-
-### 4.13 Student Exit — Certificates, Discontinuation, and Transfer
-
-**What happens:** When a child leaves or completes their programme, the school records the exit. If the family needs a Transfer Certificate or a Bonafide certificate, the school issues the physical certificate offline, and the app records that it was issued — who issued it and when.
-
-**Who is responsible:** The Owner, Principal, or Coordinator records the certificate; the Principal handles discontinuation.
-
-**Information involved:** The child's status (completed, discontinued, or transferred) and the record of any certificate issued.
-
-**Rules that apply:**
-- Transfer and Bonafide certificates are issued on paper by the school. The app acknowledges and logs them — it does not produce the document.
-- A child who has left keeps their original admission number. If they return, the system links back to their existing record rather than creating a new one.
-- Once a child has left, the parent's view becomes a read-only archive.
-
----
-
-### 4.14 Staff Joining, Leave, and Exit
-
-**What happens:** Staff are added by email invitation. The Owner invites Principals, and each Principal invites their own branch's staff. Staff attendance and leave are tracked, and approved leave shows on the timetable as a coverage gap to fill. When a staff member leaves, their access is removed and their open work is reassigned.
-
-**Who is responsible:** The Owner and the Principal.
-
-**Information involved:** Staff profiles, role assignments, attendance, leave balances, certifications, and exit records.
-
-**Rules that apply:**
-- Invitations flow top-down: Owner to Principal, Principal to branch staff.
-- When someone leaves, their access is switched off, but their record and past work are kept, never deleted.
-- Staff certifications are tracked with expiry dates, and the system flags ones that are due to expire.
-
----
-
-## 5. Who Uses the System — Roles and Actors
+## 4. Who Uses the System — Roles and Actors
 
 Six kinds of people use Happy Feet. Five are staff inside the school. The sixth is the parent. Each plain-English name below is paired with the **system role** — the exact label the system uses for that person. The guiding idea across all of them: the system shows each person only what belongs to their job and their relationship to a child. Authority sits with the Owner and the Principal. The other staff roles carry out the daily work within clear limits.
 
-### 5.1 Owner
+### 4.1 Owner
 
 **System role:** Admin
 
@@ -320,7 +108,7 @@ Six kinds of people use Happy Feet. Five are staff inside the school. The sixth 
 
 ---
 
-### 5.2 Principal
+### 4.2 Principal
 
 **System role:** Branch Admin
 
@@ -336,7 +124,7 @@ Six kinds of people use Happy Feet. Five are staff inside the school. The sixth 
 
 ---
 
-### 5.3 Teacher
+### 4.3 Teacher
 
 **System role:** Teacher (assigned as Primary, Assistant, or Temporary on a class)
 
@@ -352,7 +140,7 @@ Six kinds of people use Happy Feet. Five are staff inside the school. The sixth 
 
 ---
 
-### 5.4 Coordinator
+### 4.4 Coordinator
 
 **System role:** Coordinator
 
@@ -368,7 +156,7 @@ Six kinds of people use Happy Feet. Five are staff inside the school. The sixth 
 
 ---
 
-### 5.5 Accountant
+### 4.5 Accountant
 
 **System role:** Accountant
 
@@ -384,7 +172,7 @@ Six kinds of people use Happy Feet. Five are staff inside the school. The sixth 
 
 ---
 
-### 5.6 Parent / Guardian
+### 4.6 Parent / Guardian
 
 **System role:** Parent / Guardian
 
@@ -400,6 +188,296 @@ Six kinds of people use Happy Feet. Five are staff inside the school. The sixth 
 
 ---
 
+## 5. How Your Business Runs Inside the System
+
+This section follows the school's year from start to finish and shows where each part lives in the system. Read it as the full journey: setting up, taking in new children, running each day, reporting on progress, and moving children forward at year-end.
+
+### 5.1 Setting Up the System at Go-Live
+
+**What happens:** Before the school can use Happy Feet for the first time, its existing information is entered. The Owner and Principal accounts are created. Staff profiles are added — teachers, coordinators, and the accountant. Existing children are entered with their current records and opening fee balances, and the school's CoFee payment data is brought in. This is a one-time setup for each branch. While it runs, the system relaxes its usual checks so part-finished records can be saved, and it holds back automatic alerts so incomplete data doesn't trigger false reminders.
+
+**Who is responsible:** The Owner and the Principal.
+
+**Information involved:** Owner and staff accounts, staff profiles, existing student records, opening fee balances, and imported CoFee payment history.
+
+**Rules that apply:**
+- This setup runs once per branch, at go-live.
+- Children moved over from the old paper records keep their existing admission number exactly as it was — it is never changed or reissued.
+- Staff profiles must exist before classes can be set up, because classes are linked to the teachers who run them.
+- The Principal confirms all records are entered and correct before the school switches to normal day-to-day operation.
+
+---
+
+### 5.2 Setting Up Each School Year
+
+**What happens:** Before each academic year begins, the school is configured for the year ahead. This is a nine-step sequence done in order: create the year with its start and end dates; set the term dates and the windows when progress reports can be submitted; define the programmes; create the classes with their capacity and teacher slots; set the fee structures for each programme and student category; set up transport zones if offered; enter the school calendar; build the weekly timetable for each class; and define the developmental milestones and the documents each programme requires.
+
+**Who is responsible:** The Principal, with the Owner.
+
+**Information involved:** Academic year, terms, programmes, classes, fee structures, transport zones, school calendar, timetable, milestones, and required document types.
+
+**Rules that apply:**
+- The steps must be completed in order. A later step that depends on an earlier one is blocked until the earlier one is done.
+- The fee structure is set per programme and per student category (Standard, Staff Child, Subsidised).
+- Setup is completed before the new year begins, so the year is ready when the session starts.
+
+---
+
+### 5.3 Receiving an Admission Application
+
+**What happens:** A new child's application enters the system one of two ways. A parent applies themselves from a public web link, with no login needed. Or the Principal enters the application directly. Admissions are open all year by default. The Owner or Principal can set optional open and close dates to limit applications to a defined period.
+
+**Who is responsible:** The parent (public form) or the Principal (direct entry).
+
+**Information involved:** The application record — the child's and family's details captured at this stage.
+
+**Rules that apply:**
+- An application is only a request to be considered. It does not create an enrolled child.
+- If the school has set an admissions window, applications sent outside that window are not accepted.
+- The public form is open to anyone, so it is treated carefully — it can only create a pending application, nothing more.
+- A child the school cannot place straight away can be held on a waitlist until a place opens.
+
+---
+
+### 5.4 Reviewing Documents and Assigning a Programme
+
+**What happens:** The submitted documents are reviewed, and the child is assigned to a programme. The Coordinator can review and check the documents as part of this. The Principal assigns the programme, since the programme decides which documents are required and which class the child can join.
+
+**Who is responsible:** The Coordinator reviews documents; the Principal assigns the programme.
+
+**Information involved:** The application, submitted documents, and the assigned programme.
+
+**Rules that apply:**
+- A programme must be assigned before the document and capacity checks can be made.
+- The required document list depends on the programme.
+
+---
+
+### 5.5 Completing Enrollment
+
+**What happens:** Enrollment turns an applicant into an enrolled child. Four conditions must all be met first: a programme is assigned; the required documents are cleared or individually waived; a class place is available, or an over-capacity place is recorded with a reason; and the child has at least one approved person on their pickup list.
+
+**Who is responsible:** The Principal.
+
+**Information involved:** The application, programme, class place, document checklist, and authorised pickup list. On enrollment, a permanent student record is created.
+
+**Rules that apply:**
+- All four conditions must be satisfied. Meeting some but not all does not complete enrollment.
+- Each missing document needs its own waiver with a recorded reason. Waiving everything at once is not allowed.
+- Going over a class's capacity is allowed only if the Principal records a reason, which is permanently logged.
+- If no place is available and capacity is not overridden, the child stays on the waitlist until a place opens.
+- For a new child admitted after go-live, the system generates a new admission number automatically.
+
+---
+
+### 5.6 Activating the Parent and Verifying Documents
+
+**What happens:** When a child is enrolled, the parent is invited by email to the parent app. The parent signs in and submits their child's sensitive documents — identity, medical, and a photo. The Owner, Principal, or Coordinator then checks each document and marks it verified. Letting the Coordinator verify means the school's daily document work doesn't wait on core management.
+
+**Who is responsible:** The parent submits; the Owner, Principal, or Coordinator verifies.
+
+**Information involved:** The parent's account, the child's sensitive documents, and each document's status (submitted, then verified).
+
+**Rules that apply:**
+- The parent app is useful from the first day of enrollment.
+- Sensitive documents move from "submitted" to "verified" only after a staff member checks them.
+- Every time a staff member opens a child's sensitive documents, the system records it — so the school can always show who viewed what.
+
+---
+
+### 5.7 Marking Daily Attendance
+
+**What happens:** Each school day, the teacher marks who is present, absent, late, or on a half day. When a child is marked absent, the system sends an automatic text message to that child's main registered phone number, once the attendance is confirmed. A mark can be corrected later if needed. The system also flags repeated absences so staff can follow up, and it watches the number of adults present against the number of children, alerting staff if a safe ratio is crossed.
+
+**Who is responsible:** The Teacher.
+
+**Information involved:** The daily attendance record for each child, linked to their class and the school day.
+
+**Rules that apply:**
+- Each class has one teacher who is the authoritative marker, so two teachers cannot overwrite each other's marks.
+- The absence text is sent once, after the attendance is confirmed.
+- Holidays on the school calendar block attendance for that day, with no exceptions.
+- A correction made long after the day is recorded as a logged change.
+
+---
+
+### 5.8 Logging Daily Care
+
+**What happens:** Through the day, the teacher logs each child's meals, naps, activities, and health checks. Parents see this as a daily feed on their own phones, giving them a clear picture of their child's day.
+
+**Who is responsible:** The Teacher.
+
+**Information involved:** The daily care log for each child — meals, naps, activities, and health checks.
+
+**Rules that apply:**
+- The daily feed is the main way the school replaces informal updates with a structured, reliable record.
+- For day care children, staff also record check-in and check-out times.
+
+---
+
+### 5.9 Keeping Children Safe at Pickup
+
+**What happens:** A child is released only to someone who is allowed to collect them. A pickup is approved in one of three ways. A person on the child's standing pickup list is checked by their saved code or QR and their photo. For a one-off pickup, the parent creates a one-time code in their app and gives it to whoever is collecting that day. If neither applies, a two-person override is used — the Principal authorises it, the parent confirms by phone, and a photo is taken. The front desk also keeps a digital visitor log, recording who came in and left and when.
+
+**Who is responsible:** The Coordinator runs the gate; the Principal authorises overrides; the parent issues one-time codes.
+
+**Information involved:** The authorised pickup list, parent-issued one-time codes, the visitor log, and the record of each release.
+
+**Rules that apply:**
+- Every enrolled child must always have at least one active person on their standing pickup list.
+- A guardian marked as excluded — for custody or safeguarding reasons — is removed from the list and cannot collect the child.
+- The two-person override is the only way to release a child to someone not otherwise approved, and it is always recorded.
+- The digital visitor log replaces the paper gate register.
+
+---
+
+### 5.10 Raising and Resolving a Welfare Concern
+
+**What happens:** When a teacher is worried about a child's wellbeing, they raise a welfare concern. The Principal is notified at once and must review it within three school days. If it is not reviewed in time, the system sends a reminder and then escalates it to the Owner. The concern moves through clear stages — raised, acknowledged, under review, and then resolved, escalated, or closed with a recorded reason — so it always reaches a clear end rather than being left open.
+
+**Who is responsible:** The Teacher raises it; the Principal reviews it; the Owner handles any escalation.
+
+**Information involved:** The welfare concern record and the stage it has reached.
+
+**Rules that apply:**
+- The Principal must review a concern within three school days.
+- A concern not reviewed in time is reminded, then escalated to the Owner.
+- The record is permanent and is never shown to parents.
+
+---
+
+### 5.11 Recording an Incident
+
+**What happens:** When something happens involving a child — an injury, an accident, or another event worth recording — the Principal records it as an incident. The Principal then decides whether to share the incident with the child's parents or to keep it as an internal record.
+
+**Who is responsible:** The Principal.
+
+**Information involved:** The incident record and whether it is shared with parents or kept internal.
+
+**Rules that apply:**
+- The Principal decides whether an incident is shared with parents or kept internal.
+- Internal notes are never shown to parents under any circumstances.
+- The record is permanent.
+
+---
+
+### 5.12 Managing Fees
+
+**What happens:** The school continues to collect fees through CoFee. Happy Feet brings CoFee's payment data in so the school sees children, attendance, and fees together in one place. Staff can view fee status, export records, and read dashboards showing collection rates and overdue amounts. Happy Feet does not collect payments or issue invoices itself in this version.
+
+**Who is responsible:** The Accountant, with the Owner reviewing dashboards.
+
+**Information involved:** Imported CoFee payments and invoices, each child's fee status, and fee dashboards.
+
+**Rules that apply:**
+- Imported fee data is read-only. It is viewed and reported on, never changed inside Happy Feet.
+- Each payment is brought in with its source and reference so figures reconcile and nothing is counted twice.
+- Fee figures are shown as of the last import, so a fresh import keeps them current.
+
+---
+
+### 5.13 Communicating with Parents
+
+**What happens:** The school sends announcements and messages to parents through one structured channel — the parent inbox and notice board. This replaces scattered personal WhatsApp messages with a single channel that is logged and accountable.
+
+**Who is responsible:** The Principal and Coordinator, and staff sending class-level updates.
+
+**Information involved:** Announcements, inbox messages, and the record of what was sent.
+
+**Rules that apply:**
+- Every message is logged, so the school always has a record of what was communicated.
+- WhatsApp links are sent by tapping to send manually, and are recorded as generated rather than confirmed delivered.
+
+---
+
+### 5.14 Curriculum and Progress Reports
+
+**What happens:** Teachers prepare lesson plans linked to a programme and class, and publish them to parents. Each term, within a set submission window, teachers draft and submit a lightweight progress report. The Principal or Coordinator reviews and publishes it. Parents see a simple progress view in the app.
+
+**Who is responsible:** Teachers draft and submit; the Principal or Coordinator reviews and publishes.
+
+**Information involved:** Lesson plans, progress reports, and the term submission windows.
+
+**Rules that apply:**
+- Progress reports can only be submitted during the term's open window.
+- The person who reviews and publishes is never the teacher who drafted it.
+- Formal printed progress cards are handed over offline. The app shows a lightweight view only.
+
+---
+
+### 5.15 Reviewing the School's Numbers
+
+**What happens:** The Owner and Principal review the school's key numbers on dashboards, whenever they need them. The numbers include fee collection and overdue amounts, how full the classes are, the admissions pipeline, and any open safety items. The Owner sees the whole school; each Principal sees their own branch.
+
+**Who is responsible:** The Owner (across all branches) and the Principal (their own branch).
+
+**Information involved:** Dashboards drawn from live data — fees, attendance, admissions, and safety records.
+
+**Rules that apply:**
+- Each person sees only the numbers for the branches they are responsible for.
+- Dashboards are available at any time. Some governance reports are produced on a set schedule.
+
+---
+
+### 5.16 Bringing Data In and Getting Data Out
+
+**What happens:** Information enters and leaves Happy Feet in defined ways. It comes **in** four ways: the one-time entry of existing records at go-live; regular imports of CoFee payment data; documents parents upload for their child; and applications submitted through the public link. It goes **out** as files the school can download — student lists, fee records, and reports as spreadsheets — and as the archived records of children who have left. A parent can also ask to receive or remove their child's personal data.
+
+**Who is responsible:** The Accountant runs CoFee imports; the Owner and Principal run exports; the Principal handles a parent's data request.
+
+**Information involved:** Imported CoFee data, uploaded documents, submitted applications, and exported files.
+
+**Rules that apply:**
+- Imported fee data is matched and reconciled so nothing is counted twice. A payment that cannot be matched is held for review, never dropped.
+- Imported fee data is read-only inside Happy Feet.
+- Children moved in at go-live keep their existing admission numbers exactly.
+- Exports are available to the Owner and Principal. Opening or exporting sensitive data is always recorded.
+- A parent's request to see or remove their child's data is handled under the rules in Section 9.
+
+---
+
+### 5.17 Year-End Rollover
+
+**What happens:** At the end of the year, children move up to their next class. The Principal reviews the active children, acknowledges any outstanding dues, and confirms the transitions before the new year begins.
+
+**Who is responsible:** The Principal.
+
+**Information involved:** Each child's status, class assignment, and outstanding dues.
+
+**Rules that apply:**
+- Rollover is not automatic. The Principal reviews and confirms it.
+- Outstanding dues are acknowledged as part of the review.
+
+---
+
+### 5.18 Student Exit — Certificates, Discontinuation, and Transfer
+
+**What happens:** When a child leaves or completes their programme, the school records the exit. If the family needs a Transfer Certificate or a Bonafide certificate, the school issues the physical certificate offline, and the app records that it was issued — who issued it and when.
+
+**Who is responsible:** The Owner, Principal, or Coordinator records the certificate; the Principal handles discontinuation.
+
+**Information involved:** The child's status (completed, discontinued, or transferred) and the record of any certificate issued.
+
+**Rules that apply:**
+- Transfer and Bonafide certificates are issued on paper by the school. The app acknowledges and logs them — it does not produce the document.
+- A child who has left keeps their original admission number. If they return, the system links back to their existing record rather than creating a new one.
+- Once a child has left, the parent's view becomes a read-only archive.
+
+---
+
+### 5.19 Staff Joining, Leave, and Exit
+
+**What happens:** Staff are added by email invitation. The Owner invites Principals, and each Principal invites their own branch's staff. Staff attendance and leave are tracked, and approved leave shows on the timetable as a coverage gap to fill. When a staff member leaves, their access is removed and their open work is reassigned.
+
+**Who is responsible:** The Owner and the Principal.
+
+**Information involved:** Staff profiles, role assignments, attendance, leave balances, certifications, and exit records.
+
+**Rules that apply:**
+- Invitations flow top-down: Owner to Principal, Principal to branch staff.
+- When someone leaves, their access is switched off, but their record and past work are kept, never deleted.
+- Staff certifications are tracked with expiry dates, and the system flags ones that are due to expire.
+---
 ## 6. Features and Specifications
 
 This is the full list of what Happy Feet does, grouped by area. Everything below is part of the current version unless it appears under **Planned for Later Versions** at the end — those are designed and documented, but built in a future version.
