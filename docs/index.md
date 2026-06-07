@@ -67,10 +67,10 @@ working software early:
 
 | Phase | What you get |
 |---|---|
-| **A** | Staff & parent login, student records, daily attendance, parent daily feed |
-| **B** | Admissions & enrollment |
+| **A** | Secure login (two-factor for staff), student & staff records, daily attendance, parent daily feed |
+| **B** | Admissions, enrollment & student lifecycle (certificates, rollover, exit) |
 | **C** | Communications — announcements & parent inbox |
-| **D** | Timetable & curriculum, CoFee fee import & export, admin data control |
+| **D** | Timetable & curriculum, lightweight progress reports, CoFee fee import & export **with fee dashboards**, admin data control |
 
 Fees stay on **CoFee** in Version 1 — the app imports CoFee's data so 
 students, attendance, and fees sit in one place. Capabilities not in a phase 
@@ -99,16 +99,16 @@ above are on the roadmap, sequenced as the school grows.
 
 | # | Module | Purpose | In V1? |
 |---|---|---|---|
-| M1 | Identity & Access Management | User identities, roles, session lifecycle, multi-branch binding, parent portal access, branch data isolation | ✅ A |
+| M1 | Identity & Access Management | User identities, **MFA + role-based access** (staff sign in with two-factor), session lifecycle, multi-branch binding, parent portal access, branch data isolation | ✅ A |
 | M2 | School Configuration | Academic year, terms, programmes, classes, calendar, timetable, milestones, document types — the framework all other modules depend on | ✅ A core · D timetable |
 | M3 | Student Records | Permanent student profiles, documents, medical records, pickup lists, incident reports, welfare concern records | ✅ A |
-| M4 | Staff Records | Employment records, certifications with expiry alerts, leave management, staff exit gates, visitor log | ✅ A (basic) |
+| M4 | Staff Records | Employment records, **certifications with expiry alerts, staff attendance, lightweight leave management, staff exit gates**; visitor log roadmap | ✅ A |
 | M5 | Admissions | Student intake from application through enrollment, waitlist management, parent portal activation | ✅ B |
-| M6 | Student Lifecycle | Status management — discontinuation, rollover, Transfer Certificate, Bonafide certificate, re-admission | ⚙️ enroll/rollover in V1; certificates 🔜 |
-| M7 | Fee Management | **Version 1: read-only import of CoFee data** (view + export) so students, attendance and fees sit in one place. Native ledger and in-app billing (invoices, Razorpay, dashboards) are roadmap | ✅ D (CoFee import) |
+| M6 | Student Lifecycle | Status management — enrollment, rollover, discontinuation, re-admission; **Transfer Certificate & Bonafide are issued offline and acknowledged in-app** (admin/branch admin/coordinator) — no PDF generation | ✅ B |
+| M7 | Fee Management | **Version 1: read-only import of CoFee data** (view + export) plus **fee dashboards** (collection rate, dues aging) so students, attendance and fees sit in one place. Native ledger and in-app billing (invoice generation, Razorpay collection) are roadmap | ✅ D (CoFee import + dashboards) |
 | M8 | Attendance Management | Daily attendance marking, corrections, chronic absence alerting, Day Care check-in/check-out; gate pickup verification 🔜 | ✅ A |
 | M9 | Curriculum & Lesson Planning | Structured lesson plans authored per class and programme, published to parents | ✅ D |
-| M10 | Progress & Assessments | Progress card authoring, review, Branch Admin publication, PDF generation, submission window management | 🔜 |
+| M10 | Progress & Assessments | **Submission windows toggled by admin/branch admin + a lightweight in-app progress report for parents**; formal progress cards are handed to students offline (no PDF generation) | ✅ D (lightweight) |
 | M11 | Meal Management | Configurable per branch; daily menu planning with allergy-flagged meal entry confirmation and consumption tracking | 🔜 |
 | M12 | Transport Management | Optional per student; fixed routes and stops selected at admission; school-owned and third-party vehicle support | 🔜 (when the vans go digital) |
 | M13 | Communication | Announcements, notice board, school inbox (two-way), WhatsApp deeplink templates, system-triggered notifications | ✅ C |
