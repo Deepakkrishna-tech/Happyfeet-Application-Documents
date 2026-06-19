@@ -1,0 +1,3570 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Happyfeet Application Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#happy-feet-product-manual" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Happyfeet Application Docs" class="md-header__button md-logo" aria-label="Happyfeet Application Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Happyfeet Application Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Product Manual
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Happyfeet Application Docs" class="md-nav__button md-logo" aria-label="Happyfeet Application Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Happyfeet Application Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Product Manual
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Product Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-this-product" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. What Is This Product?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-how-the-product-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. How the Product Works
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. How the Product Works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-the-big-picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 The Big Picture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-what-a-typical-day-looks-like" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 What a Typical Day Looks Like
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-how-the-system-connects-everything" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 How the System Connects Everything
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-business-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Business Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-who-uses-the-system-roles-and-actors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Who Uses the System — Roles and Actors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Who Uses the System — Roles and Actors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-owner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Owner
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-principal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Principal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-teacher" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Teacher
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-coordinator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Coordinator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-accountant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 Accountant
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46-parent-guardian" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6 Parent / Guardian
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-how-your-business-runs-inside-the-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. How Your Business Runs Inside the System
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. How Your Business Runs Inside the System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-setting-up-the-system-at-go-live" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Setting Up the System at Go-Live
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-setting-up-each-school-year" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Setting Up Each School Year
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-receiving-an-admission-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Receiving an Admission Application
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-reviewing-documents-and-assigning-a-programme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 Reviewing Documents and Assigning a Programme
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-completing-enrollment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5 Completing Enrollment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#56-activating-the-parent-and-verifying-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.6 Activating the Parent and Verifying Documents
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#57-marking-daily-attendance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.7 Marking Daily Attendance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#58-logging-daily-care" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.8 Logging Daily Care
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#59-keeping-children-safe-at-pickup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.9 Keeping Children Safe at Pickup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#510-raising-and-resolving-a-welfare-concern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.10 Raising and Resolving a Welfare Concern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#511-recording-an-incident" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.11 Recording an Incident
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#512-managing-fees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.12 Managing Fees
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#513-communicating-with-parents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.13 Communicating with Parents
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#514-curriculum-and-progress-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.14 Curriculum and Progress Reports
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#515-reviewing-the-schools-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.15 Reviewing the School's Numbers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#516-bringing-data-in-and-getting-data-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.16 Bringing Data In and Getting Data Out
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#517-year-end-rollover" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.17 Year-End Rollover
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#518-student-exit-certificates-discontinuation-and-transfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.18 Student Exit — Certificates, Discontinuation, and Transfer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#519-staff-joining-leave-and-exit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.19 Staff Joining, Leave, and Exit
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-features-and-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Features and Specifications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Features and Specifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-is-delivered-in-phases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Is Delivered — In Phases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-and-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access and Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#school-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        School Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admissions-and-enrollment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Admissions and Enrollment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#childrens-records-and-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Children's Records and Lifecycle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#staff-records" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Staff Records
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attendance-daily-care-and-safety" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attendance, Daily Care, and Safety
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#curriculum-and-progress" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Curriculum and Progress
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fees
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Communication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reporting-oversight-and-data-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reporting, Oversight, and Data Protection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coming-next-right-after-this-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coming Next, Right After This Build
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#planned-for-later-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Planned for Later Versions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-the-systems-modules-and-the-data-they-own" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. The System's Modules and the Data They Own
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-key-information-the-system-manages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Key Information the System Manages
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-how-your-data-is-stored-and-protected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. How Your Data Is Stored and Protected
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-how-the-system-is-organised" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. How the System Is Organised
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. How the System Is Organised">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-organisational-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 Organisational Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-how-data-is-managed-and-separated-between-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 How Data Is Managed and Separated Between Branches
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-how-people-get-access-invitations-and-accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. How People Get Access — Invitations and Accounts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. How People Get Access — Invitations and Accounts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-how-staff-are-invited" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 How Staff Are Invited
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-how-external-users-get-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 How External Users Get Access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-removing-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 Removing Access
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-services-and-subscriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Services and Subscriptions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-your-responsibilities-as-application-owner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Your Responsibilities as Application Owner
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Your Responsibilities as Application Owner">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131-ongoing-day-to-day" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.1 Ongoing — Day to Day
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132-regular-monthly-or-per-term" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2 Regular — Monthly or Per Term
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#133-periodic-annually-or-at-key-milestones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.3 Periodic — Annually or at Key Milestones
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#134-what-to-do-when-something-goes-wrong" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.4 What to Do When Something Goes Wrong
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-assumptions-to-verify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Assumptions to Verify
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14. Assumptions to Verify">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#140-all-open-items-at-a-glance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.0 All Open Items at a Glance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#141-no-separate-admission-fee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.1 No separate admission fee
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142-full-term-fee-for-mid-term-admissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.2 Full term fee for mid-term admissions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#143-the-second-branch-matches-the-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.3 The second branch matches the first
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#144-transport-is-optional-and-billed-separately" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.4 Transport is optional and billed separately
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#145-meals-are-not-offered-yet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.5 Meals are not offered yet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#146-fees-stay-on-cofee-in-this-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.6 Fees stay on CoFee in this version
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#147-absence-alerts-go-out-by-text-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.7 Absence alerts go out by text message
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#148-the-childs-aadhaar-may-not-be-collected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.8 The child's Aadhaar may not be collected
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#149-government-student-ids-are-not-handled-yet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.9 Government student IDs are not handled yet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1410-photos-are-stored-but-not-shared" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.10 Photos are stored but not shared
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1411-open-questions-still-awaiting-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.11 Open Questions Still Awaiting Input
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-glossary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Glossary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-this-product" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. What Is This Product?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-how-the-product-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. How the Product Works
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. How the Product Works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-the-big-picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 The Big Picture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-what-a-typical-day-looks-like" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 What a Typical Day Looks Like
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-how-the-system-connects-everything" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 How the System Connects Everything
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-business-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Business Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-who-uses-the-system-roles-and-actors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Who Uses the System — Roles and Actors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Who Uses the System — Roles and Actors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-owner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Owner
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-principal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Principal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-teacher" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Teacher
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-coordinator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Coordinator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-accountant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 Accountant
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46-parent-guardian" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6 Parent / Guardian
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-how-your-business-runs-inside-the-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. How Your Business Runs Inside the System
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. How Your Business Runs Inside the System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-setting-up-the-system-at-go-live" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Setting Up the System at Go-Live
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-setting-up-each-school-year" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Setting Up Each School Year
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-receiving-an-admission-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Receiving an Admission Application
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-reviewing-documents-and-assigning-a-programme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 Reviewing Documents and Assigning a Programme
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-completing-enrollment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5 Completing Enrollment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#56-activating-the-parent-and-verifying-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.6 Activating the Parent and Verifying Documents
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#57-marking-daily-attendance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.7 Marking Daily Attendance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#58-logging-daily-care" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.8 Logging Daily Care
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#59-keeping-children-safe-at-pickup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.9 Keeping Children Safe at Pickup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#510-raising-and-resolving-a-welfare-concern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.10 Raising and Resolving a Welfare Concern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#511-recording-an-incident" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.11 Recording an Incident
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#512-managing-fees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.12 Managing Fees
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#513-communicating-with-parents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.13 Communicating with Parents
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#514-curriculum-and-progress-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.14 Curriculum and Progress Reports
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#515-reviewing-the-schools-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.15 Reviewing the School's Numbers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#516-bringing-data-in-and-getting-data-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.16 Bringing Data In and Getting Data Out
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#517-year-end-rollover" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.17 Year-End Rollover
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#518-student-exit-certificates-discontinuation-and-transfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.18 Student Exit — Certificates, Discontinuation, and Transfer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#519-staff-joining-leave-and-exit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.19 Staff Joining, Leave, and Exit
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-features-and-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Features and Specifications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Features and Specifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-is-delivered-in-phases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Is Delivered — In Phases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-and-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access and Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#school-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        School Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admissions-and-enrollment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Admissions and Enrollment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#childrens-records-and-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Children's Records and Lifecycle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#staff-records" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Staff Records
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attendance-daily-care-and-safety" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attendance, Daily Care, and Safety
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#curriculum-and-progress" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Curriculum and Progress
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fees
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Communication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reporting-oversight-and-data-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reporting, Oversight, and Data Protection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coming-next-right-after-this-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coming Next, Right After This Build
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#planned-for-later-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Planned for Later Versions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-the-systems-modules-and-the-data-they-own" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. The System's Modules and the Data They Own
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-key-information-the-system-manages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Key Information the System Manages
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-how-your-data-is-stored-and-protected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. How Your Data Is Stored and Protected
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-how-the-system-is-organised" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. How the System Is Organised
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. How the System Is Organised">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-organisational-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 Organisational Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-how-data-is-managed-and-separated-between-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 How Data Is Managed and Separated Between Branches
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-how-people-get-access-invitations-and-accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. How People Get Access — Invitations and Accounts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. How People Get Access — Invitations and Accounts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-how-staff-are-invited" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 How Staff Are Invited
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-how-external-users-get-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 How External Users Get Access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-removing-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 Removing Access
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-services-and-subscriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Services and Subscriptions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-your-responsibilities-as-application-owner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Your Responsibilities as Application Owner
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Your Responsibilities as Application Owner">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131-ongoing-day-to-day" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.1 Ongoing — Day to Day
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132-regular-monthly-or-per-term" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2 Regular — Monthly or Per Term
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#133-periodic-annually-or-at-key-milestones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.3 Periodic — Annually or at Key Milestones
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#134-what-to-do-when-something-goes-wrong" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.4 What to Do When Something Goes Wrong
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-assumptions-to-verify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Assumptions to Verify
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14. Assumptions to Verify">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#140-all-open-items-at-a-glance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.0 All Open Items at a Glance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#141-no-separate-admission-fee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.1 No separate admission fee
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142-full-term-fee-for-mid-term-admissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.2 Full term fee for mid-term admissions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#143-the-second-branch-matches-the-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.3 The second branch matches the first
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#144-transport-is-optional-and-billed-separately" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.4 Transport is optional and billed separately
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#145-meals-are-not-offered-yet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.5 Meals are not offered yet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#146-fees-stay-on-cofee-in-this-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.6 Fees stay on CoFee in this version
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#147-absence-alerts-go-out-by-text-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.7 Absence alerts go out by text message
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#148-the-childs-aadhaar-may-not-be-collected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.8 The child's Aadhaar may not be collected
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#149-government-student-ids-are-not-handled-yet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.9 Government student IDs are not handled yet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1410-photos-are-stored-but-not-shared" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.10 Photos are stored but not shared
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1411-open-questions-still-awaiting-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.11 Open Questions Still Awaiting Input
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-glossary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Glossary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="happy-feet-product-manual">Happy Feet — Product Manual</h1>
+<hr />
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="#1-what-is-this-product">What Is This Product?</a></li>
+<li><a href="#2-how-the-product-works">How the Product Works</a></li>
+<li><a href="#3-business-model">Business Model</a></li>
+<li><a href="#4-how-your-business-runs-inside-the-system">How Your Business Runs Inside the System</a></li>
+<li><a href="#5-who-uses-the-system-roles-and-actors">Who Uses the System — Roles and Actors</a></li>
+<li><a href="#6-features-and-specifications">Features and Specifications</a></li>
+<li><a href="#7-the-systems-modules-and-the-data-they-own">The System's Modules and the Data They Own</a></li>
+<li><a href="#8-key-information-the-system-manages">Key Information the System Manages</a></li>
+<li><a href="#9-how-your-data-is-stored-and-protected">How Your Data Is Stored and Protected</a></li>
+<li><a href="#10-how-the-system-is-organised">How the System Is Organised</a></li>
+<li><a href="#11-how-people-get-access-invitations-and-accounts">How People Get Access — Invitations and Accounts</a></li>
+<li><a href="#12-services-and-subscriptions">Services and Subscriptions</a></li>
+<li><a href="#13-your-responsibilities-as-application-owner">Your Responsibilities as Application Owner</a></li>
+<li><a href="#14-assumptions-to-verify">Assumptions to Verify</a></li>
+<li><a href="#15-glossary">Glossary</a></li>
+</ol>
+<hr />
+<h2 id="1-what-is-this-product">1. What Is This Product?</h2>
+<p>Happy Feet is an administration platform for your preschool. It brings admissions, fees, attendance, daily care, and parent communication into one place. Today these run on paper registers, spreadsheets, CoFee, and WhatsApp — each separate from the others. Happy Feet replaces that scattered setup with a single system where every staff member and every parent works from the same live information.</p>
+<p>The platform is built for one privately owned preschool in Hyderabad. It currently serves 105 children across one branch, with room to add more branches as the school grows. It is made for the people who run the school day to day: the owner, the principal, teachers, the front-desk coordinator, and the accountant — and for the parents of every enrolled child.</p>
+<p>It replaces four things that don't talk to each other today. Paper admission forms become searchable online records. Verbal updates to the owner become real-time visibility. Informal WhatsApp messages become a structured, logged communication channel that both the school and parents can rely on. And fee tracking — currently disconnected from student records — sits alongside attendance and student information, so the full picture of each child is in one screen.</p>
+<p>You open Happy Feet as a single app on your phone or laptop. You sign in once and stay signed in. Staff and parents simply tap the icon to pick up where they left off.</p>
+<p>Why a custom system instead of a ready-made preschool app? Off-the-shelf products charge per child every month, cannot read the school's CoFee fee data, and force their own workflows on the school. Happy Feet is built around how this school already works — CoFee stays, pickup works the way the gate actually works, and all data stays in India — with no per-child subscription cost as the school grows.</p>
+<hr />
+<h2 id="2-how-the-product-works">2. How the Product Works</h2>
+<h3 id="21-the-big-picture">2.1 The Big Picture</h3>
+<p>Happy Feet is one system made up of a few connected areas, each handling a part of school life. There is an area for <strong>student and staff records</strong>, where every child's profile, documents, and medical notes live alongside staff details. There is an area for <strong>admissions</strong>, where new applications come in and become enrolled students. There is an area for <strong>attendance and daily care</strong>, where teachers mark who is present and log each child's meals, naps, and activities. There is an area for <strong>fees</strong>, where the school's payment data from CoFee is brought in and shown next to each student. There is an area for <strong>communication</strong>, for announcements and messages to parents. And there is an area for <strong>school setup</strong>, where the academic year, classes, timetable, and calendar are configured.</p>
+<p>These areas are not separate apps. They are sections of one platform, and they share the same information. A child enrolled in admissions becomes a record everyone else works from — the teacher who marks their attendance, the accountant who tracks their fees, and the parent who follows their day are all looking at the same child, the same facts, kept current.</p>
+<p>Underneath all of it is a layer that controls <strong>who can see and do what</strong>. Every person signs in as themselves, and the system shows each role only what belongs to them. The owner sees everything across the school. A teacher sees their own classes. A parent sees only their own child. This keeps sensitive information — medical records, identity documents, fees — in front of the people who need it and away from everyone else.</p>
+<h3 id="22-what-a-typical-day-looks-like">2.2 What a Typical Day Looks Like</h3>
+<p>A typical day runs through the front-line staff. Each teacher opens the app and marks attendance for their class. The moment a child is marked absent, the system can alert that child's parent — no separate phone call needed. Through the day, the teacher logs what each child did: what they ate, when they napped, the activities they joined. Parents see this as a running feed on their own phones, so they know their child is safe and cared for without having to ask.</p>
+<p>The principal — the Branch Admin — uses the day to keep operations moving. They review new admission applications, check that documents parents have uploaded are correct, post announcements, and watch the day's numbers: who is in, who is absent, what fees are outstanding. The owner doesn't need to be on site. They open the app from a laptop and see the same live picture across the school, instead of waiting for a verbal update at the end of the day.</p>
+<p>What the system removes is the manual stitching. No paper register to tally by hand. No spreadsheet to reconcile against CoFee. No WhatsApp thread to scroll through to find what was said. The work that used to live in four disconnected places now happens once, in one place, and is recorded as it happens.</p>
+<h3 id="23-how-the-system-connects-everything">2.3 How the System Connects Everything</h3>
+<p>The connections are what make Happy Feet more than a set of digital forms. When a child is enrolled, their record immediately becomes available everywhere it is needed. The teacher can mark their attendance. The accountant can see their fee status once the CoFee data is brought in. The parent is invited to follow their child from day one. Nothing has to be re-entered from one area to the next.</p>
+<p>Time ties the system together as well. The school's calendar — the academic year, the terms, the holidays — is set in one place, and every other area follows it. Attendance knows which days are school days. Fees know which term they belong to. Progress reports open and close on the dates the school configures. Because there is a single shared calendar, the different areas never drift out of step with one another.</p>
+<p>The result is one continuous flow rather than separate islands of work. A new admission, a day's attendance, a fee payment, and a message to a parent are all part of the same connected record of each child — kept live, kept consistent, and visible to exactly the right people.</p>
+<hr />
+<h2 id="3-business-model">3. Business Model</h2>
+<p>This section explains how the school earns its income — what it charges for, how each charge is worked out, and the key rule that applies to each.</p>
+<table>
+<thead>
+<tr>
+<th>Revenue Stream</th>
+<th>How It Is Billed</th>
+<th>Key Rule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Academic programmes</strong> (Play Group, Nursery, PP1, PP2)</td>
+<td>Per term</td>
+<td>The full term fee applies even when a child joins partway through a term. Fees are not split for a partial term.</td>
+</tr>
+<tr>
+<td><strong>Day Care</strong></td>
+<td>By a chosen plan</td>
+<td>Billed on the child's assigned Day Care plan — monthly, weekly, day-wise, hour-wise, or term-wise. Staff record check-in and check-out times, which support the plans that bill by the day or hour. In this version, billing itself happens in CoFee — each month the Accountant exports the recorded hours from Happy Feet and enters them into CoFee for the children on day-wise or hour-wise plans.</td>
+</tr>
+<tr>
+<td><strong>Transport</strong> (optional, school-run)</td>
+<td>Fixed monthly, by zone</td>
+<td>Charged by distance band and trip type, and chosen per child. In this version it is a simple optional fee item the Owner or Principal can switch on for a child — full transport management comes in a later version.</td>
+</tr>
+<tr>
+<td><strong>Meals</strong> (optional)</td>
+<td>By a chosen plan</td>
+<td>A simple optional fee item, off by default and switched on only when a branch starts offering meals. The school does not offer meals today. Full meal management comes in a later version.</td>
+</tr>
+<tr>
+<td><strong>Events and one-offs</strong></td>
+<td>One-off charge</td>
+<td>Single charges for things like Annual Day or field trips.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Fee structure by student category.</strong> Each child belongs to a category — Standard, Staff Child, or Subsidised — and the category decides which fee structure applies to that child.</p>
+<p><strong>Who pays.</strong> By default, the parent or guardian is the payer. A second payer — an employer, trust, or sponsor — can be added for a child whose fees are covered by someone else. The fee is the same no matter who pays; only the payer differs.</p>
+<p><strong>The fee agreed at enrollment stays fixed.</strong> The fee structure recorded when a child enrolls is the agreed basis for their billing. It is not overwritten when fees change in later years.</p>
+<p><strong>Tax on extras.</strong> Tuition is expected to be largely tax-exempt. Whether extra services — transport, meals, materials, and events — carry GST, and which ones, is still being confirmed with the school's accountant (see §14). Where GST applies, the tax will be shown on the invoice and on the parent's receipt.</p>
+<p><strong>A check on fee reductions.</strong> Any fee waiver, concession, or refund needs a second person to approve it. The person who records money is never the one who reduces it. In this version, the Accountant or Principal proposes a waiver and the Owner approves or declines it — a declined waiver stays on permanent record too, with who proposed it, who declined it, and why.</p>
+<p><strong>How fees are collected in this version.</strong> The school continues to collect most fees through CoFee, and Happy Feet brings that data in so fees sit alongside students and attendance. For payments that come in outside CoFee — cash or a direct bank transfer — the Accountant records them manually in Happy Feet, and each manual receipt gets its own automatically generated number. Happy Feet does not yet issue its own invoices or take payments online directly from parents — that comes in a later version.</p>
+<hr />
+<h2 id="4-who-uses-the-system-roles-and-actors">4. Who Uses the System — Roles and Actors</h2>
+<p>Six kinds of people use Happy Feet. Five are staff inside the school. The sixth is the parent. Each plain-English name below is paired with the <strong>system role</strong> — the exact label the system uses for that person. The guiding idea across all of them: the system shows each person only what belongs to their job and their relationship to a child. Authority sits with the Owner and the Principal. The other staff roles carry out the daily work within clear limits.</p>
+<table>
+<thead>
+<tr>
+<th>System Role</th>
+<th>Who</th>
+<th>Scope</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ADMIN</strong></td>
+<td>Owner</td>
+<td>All branches; creates branches and staff</td>
+</tr>
+<tr>
+<td><strong>BRANCH_ADMIN</strong></td>
+<td>Principal</td>
+<td>One branch</td>
+</tr>
+<tr>
+<td><strong>COORDINATOR</strong></td>
+<td>Front desk</td>
+<td>Enquiry, students, gate</td>
+</tr>
+<tr>
+<td><strong>ACCOUNTANT</strong></td>
+<td>Fees staff</td>
+<td>Fees &amp; payments</td>
+</tr>
+<tr>
+<td><strong>TEACHER</strong></td>
+<td>Class teacher</td>
+<td>Own class</td>
+</tr>
+<tr>
+<td><strong>PARENT</strong></td>
+<td>Guardian</td>
+<td>Own children only</td>
+</tr>
+</tbody>
+</table>
+<h3 id="41-owner">4.1 Owner</h3>
+<p><strong>System role:</strong> Admin</p>
+<p><strong>Who they are:</strong> The school owner. The highest authority in the system, across every branch.</p>
+<p><strong>What they can see:</strong> Everything. All branches, all children, all staff, all fees, attendance, communication, and the full record of who did what in the system.</p>
+<p><strong>What they can do:</strong> Run the whole school. Create branches, invite Principals, set up the system, review dashboards across every branch, and step in on any decision. The Owner also sets the rules the other roles work within.</p>
+<p><strong>What they cannot do:</strong> Nothing is closed to the Owner by role. Even so, opening a child's sensitive records or running an export requires re-confirming their identity first, and every such action is recorded.</p>
+<p><strong>Type:</strong> Internal staff.</p>
+<hr />
+<h3 id="42-principal">4.2 Principal</h3>
+<p><strong>System role:</strong> Branch Admin</p>
+<p><strong>Who they are:</strong> The principal, or branch head. The main person running a single branch day to day.</p>
+<p><strong>What they can see:</strong> Everything within their own branch — its children, staff, fees, attendance, communication, and reports.</p>
+<p><strong>What they can do:</strong> Run the branch end to end. Set up the school year, create classes, set fee structures, invite the branch's staff, approve enrollments, verify documents, discontinue a child, acknowledge certificates, review and publish progress reports, adjust the timetable, and approve staff leave.</p>
+<p><strong>What they cannot do:</strong> See or affect any other branch. A few actions stay with the Owner alone — creating new branches and inviting other Principals.</p>
+<p><strong>Type:</strong> Internal staff.</p>
+<hr />
+<h3 id="43-teacher">4.3 Teacher</h3>
+<p><strong>System role:</strong> Teacher (assigned as Primary, Assistant, or Temporary on a class)</p>
+<p><strong>Who they are:</strong> A class teacher, assigned to one or more classes. A teacher can be the main teacher for a class (Primary), an assistant (Assistant), or a temporary substitute (Temporary).</p>
+<p><strong>What they can see:</strong> Their own classes. For each child in those classes, they see what they need to do their job — attendance, the daily care log, the child's allergy and medical-alert flag, and their class's progress. They do not see a child's full medical record or identity documents.</p>
+<p><strong>What they can do:</strong> Mark daily attendance for their class, log each child's meals, naps, activities, and health checks, prepare lesson plans, and draft and submit progress reports. The Primary teacher is the one who marks the class's attendance of record.</p>
+<p><strong>What they cannot do:</strong> See other classes or branches. Publish their own progress reports — someone else reviews and publishes them. Change the school's setup or touch fees. A Temporary substitute sees even less — attendance and the daily log only — to keep sensitive information away from rotating staff.</p>
+<p><strong>Type:</strong> Internal staff.</p>
+<hr />
+<h3 id="44-coordinator">4.4 Coordinator</h3>
+<p><strong>System role:</strong> Coordinator</p>
+<p><strong>Who they are:</strong> The front-desk assistant for a branch. The Coordinator keeps the daily paperwork and front-desk work moving so the Principal isn't pulled into every task.</p>
+<p><strong>What they can see:</strong> The branch's day-to-day operational information — applications, student documents, the timetable, and communication. They have limited access to the school's setup.</p>
+<p><strong>What they can do:</strong> Handle intake, collect documents, review and verify the documents parents submit, run gate operations, send communications, adjust the timetable to cover substitutions, and review and publish progress reports.</p>
+<p><strong>What they cannot do:</strong> Edit or delete anything in the school's setup. Make the final enrollment decision or approve an over-capacity place — those stay with the Principal. Write curriculum or progress reports themselves. Manage fees or staff accounts. Work across other branches.</p>
+<p><strong>Type:</strong> Internal staff.</p>
+<hr />
+<h3 id="45-accountant">4.5 Accountant</h3>
+<p><strong>System role:</strong> Accountant</p>
+<p><strong>Who they are:</strong> The finance staff member for a branch.</p>
+<p><strong>What they can see:</strong> The branch's fee picture — payments brought in from CoFee, each child's fee status, and the fee dashboards showing collection rates and overdue amounts.</p>
+<p><strong>What they can do:</strong> Bring in CoFee payment data, view and export fee records, read the fee dashboards, handle billing-related communication, record a cash or bank payment received outside CoFee, and propose a fee waiver for the Owner to approve.</p>
+<p><strong>What they cannot do:</strong> Change an imported payment's amount, source, or reference — those are view-only. They may, though, link an unmatched payment to the right child; matching a payment is allowed, editing it is not. Approve their own fee waiver proposal — a different, more senior person must approve it. Mark attendance, write progress, or change the school's setup.</p>
+<p><strong>Type:</strong> Internal staff.</p>
+<hr />
+<h3 id="46-parent-guardian">4.6 Parent / Guardian</h3>
+<p><strong>System role:</strong> Parent / Guardian</p>
+<p><strong>Who they are:</strong> A child's family. A child can have more than one guardian, and each guardian has their own login. Each guardian's access is set by their relationship to the child — whether they can collect the child, whether they receive communications, and whether they are a fee payer.</p>
+<p><strong>What they can see:</strong> Only their own child or children. For each, they see attendance, the daily care feed, a simple progress view, fee status, and school announcements.</p>
+<p><strong>What they can do:</strong> Submit their child's documents, follow the daily feed, view attendance, progress, and fees, and receive school messages. Their access to records is view-only.</p>
+<p><strong>What they cannot do:</strong> See any other child. Change any school record. A guardian marked as excluded — for custody or safeguarding reasons — cannot collect the child and is kept off the pickup list.</p>
+<p><strong>Type:</strong> External user.</p>
+<hr />
+<h2 id="5-how-your-business-runs-inside-the-system">5. How Your Business Runs Inside the System</h2>
+<p>This section follows the school's year from start to finish and shows where each part lives in the system. Read it as the full journey: setting up, taking in new children, running each day, reporting on progress, and moving children forward at year-end.</p>
+<h3 id="51-setting-up-the-system-at-go-live">5.1 Setting Up the System at Go-Live</h3>
+<p><strong>What happens:</strong> Before the school can use Happy Feet for the first time, its existing information is entered. The Owner and Principal accounts are created. Staff profiles are added — teachers, coordinators, and the accountant. Existing children are entered with their current records and opening fee balances, and the school's CoFee payment data is brought in. This is a one-time setup for each branch. While it runs, the system allows part-finished records to be saved, and it holds back automatic alerts so incomplete data doesn't trigger false reminders or messages to parents.</p>
+<p><strong>Who is responsible:</strong> The Owner and the Principal.</p>
+<p><strong>Information involved:</strong> Owner and staff accounts, staff profiles, existing student records, opening fee balances, and imported CoFee payment history.</p>
+<p><strong>Rules that apply:</strong>
+- If Happy Feet goes live partway through a school year, the part of that year that happened before go-live is held as a <strong>legacy year</strong> — a read-only container for the attendance totals and fee history from before the system existed. It is never the school's active year and is never edited day-by-day.
+- This setup runs once per branch, at go-live.
+- Even during go-live setup, the safeguards that protect data quality stay switched on: admission numbers stay unique, and every record must link to a real class, programme, or guardian. Only optional details may be left to fill in later — a record can be <strong>incomplete, never invalid</strong>.
+- Children moved over from the old paper records keep their existing admission number exactly as it was — it is never changed or reissued.
+- Staff profiles must exist before classes can be set up, because classes are linked to the teachers who run them.
+- The Principal confirms all records are entered and correct before the school switches to normal day-to-day operation.</p>
+<hr />
+<h3 id="52-setting-up-each-school-year">5.2 Setting Up Each School Year</h3>
+<p><strong>What happens:</strong> Before each academic year begins, the school is configured for the year ahead. This is a nine-step sequence done in order: create the year with its start and end dates; set the term dates and the windows when progress reports can be submitted; define the programmes; create the classes with their capacity and teacher slots; set the fee structures for each programme and student category; set up transport zones if offered; enter the school calendar; build the weekly timetable for each class; and define the developmental milestones and the documents each programme requires.</p>
+<p><strong>Who is responsible:</strong> The Principal, with the Owner.</p>
+<p><strong>Information involved:</strong> Academic year, terms, programmes, classes, fee structures, transport zones, school calendar, timetable, milestones, and required document types.</p>
+<p><strong>Rules that apply:</strong>
+- The steps must be completed in order. A later step that depends on an earlier one is blocked until the earlier one is done.
+- Each branch sets up and runs its own academic year. Branches can be on different years at the same time, so a second branch can open mid-year without affecting the first.
+- The fee structure is set per programme and per student category (Standard, Staff Child, Subsidised).
+- Setup is completed before the new year begins, so the year is ready when the session starts.</p>
+<hr />
+<h3 id="53-receiving-an-admission-application">5.3 Receiving an Admission Application</h3>
+<p><strong>What happens:</strong> A new child's application enters the system one of two ways. A parent applies themselves from a public web link, with no login needed. Or the Principal enters the application directly. Admissions are open all year by default. The Owner or Principal can set optional open and close dates to limit applications to a defined period.</p>
+<p><strong>Who is responsible:</strong> The parent (public form) or the Principal (direct entry).</p>
+<p><strong>Information involved:</strong> The application record — the child's and family's details captured at this stage.</p>
+<p><strong>Rules that apply:</strong>
+- An application is only a request to be considered. It does not create an enrolled child.
+- If the school has set an admissions window, applications sent outside that window are not accepted.
+- The public form is open to anyone, so it is treated carefully — it can only create a pending application, nothing more.
+- Because it is open, the form is protected: a quick email verification before it submits, a duplicate check on the child's name, date of birth, and contact, and spam protection — so it cannot be flooded or used to enter the same child twice.
+- A child the school cannot place straight away can be held on a waitlist until a place opens.
+- An application moves through clear stages: received, under review, offered a place, and accepted (which becomes enrollment) — or a recorded closed outcome: declined, withdrawn, or waitlist-expired. Each closed outcome is a kept end state, never a deletion.</p>
+<hr />
+<h3 id="54-reviewing-documents-and-assigning-a-programme">5.4 Reviewing Documents and Assigning a Programme</h3>
+<p><strong>What happens:</strong> The submitted documents are reviewed, and the child is assigned to a programme. The Coordinator can review and check the documents as part of this. The Principal assigns the programme, since the programme decides which documents are required and which class the child can join.</p>
+<p><strong>Who is responsible:</strong> The Coordinator reviews documents; the Principal assigns the programme.</p>
+<p><strong>Information involved:</strong> The application, submitted documents, and the assigned programme.</p>
+<p><strong>Rules that apply:</strong>
+- A programme must be assigned before the document and capacity checks can be made.
+- The required document list depends on the programme.</p>
+<hr />
+<h3 id="55-completing-enrollment">5.5 Completing Enrollment</h3>
+<p><strong>What happens:</strong> Enrollment turns an applicant into an enrolled child. Four conditions must all be met first: a programme is assigned; the required documents are cleared or individually waived; a class place is available, or an over-capacity place is recorded with a reason; and the child has at least one approved person on their pickup list.</p>
+<p><strong>Who is responsible:</strong> The Principal.</p>
+<p><strong>Information involved:</strong> The application, programme, class place, document checklist, and authorised pickup list. On enrollment, a permanent student record is created.</p>
+<p><strong>Rules that apply:</strong>
+- All four conditions must be satisfied. Meeting some but not all does not complete enrollment.
+- Each missing document needs its own waiver with a recorded reason. Waiving everything at once is not allowed.
+- Going over a class's capacity is allowed only if the Principal records a reason, which is permanently logged.
+- If no place is available and capacity is not overridden, the child stays on the waitlist until a place opens.
+- For a new child admitted after go-live, the system generates a new admission number automatically.</p>
+<hr />
+<h3 id="56-activating-the-parent-and-verifying-documents">5.6 Activating the Parent and Verifying Documents</h3>
+<p><strong>What happens:</strong> When a child is enrolled, the parent is invited by email to the parent app — once parent access has been switched on for the branch (see §6, staff trial period). Until then, the school continues to update families the old way (WhatsApp, phone) while staff get used to the system. Once invited, the parent signs in and submits their child's sensitive documents — identity, medical, and a photo. The Owner, Principal, or Coordinator then checks each document and marks it verified. Letting the Coordinator verify means the school's daily document work doesn't wait on core management.</p>
+<p><strong>Who is responsible:</strong> The parent submits; the Owner, Principal, or Coordinator verifies.</p>
+<p><strong>Information involved:</strong> The parent's account, the child's sensitive documents, and each document's status (submitted, then verified).</p>
+<p><strong>Rules that apply:</strong>
+- The parent app is useful from the first day a branch's parent access is switched on — not necessarily the first day of enrollment, if enrollment happens during the staff-only trial period.
+- Sensitive documents move from "submitted" to "verified" only after a staff member checks them. If a document is unclear or wrong, staff return it to the parent with a reason and the parent submits a new one — so a rejected document never sits in limbo.
+- Every time a staff member opens a child's sensitive documents, the system records it — so the school can always show who viewed what.</p>
+<hr />
+<h3 id="57-marking-daily-attendance">5.7 Marking Daily Attendance</h3>
+<p><strong>What happens:</strong> Each school day, the teacher marks who is present, absent, late, or on a half day. When a child is marked absent, the system alerts the child's guardians once the attendance is confirmed: the primary guardian receives a text message, and other guardians set to receive communications get a free in-app notification. A mark can be corrected later if needed. The system also flags repeated absences so staff can follow up, and it watches the number of adults present against the number of children, alerting staff if a safe ratio is crossed.</p>
+<p><strong>Who is responsible:</strong> The Teacher.</p>
+<p><strong>Information involved:</strong> The daily attendance record for each child, linked to their class and the school day.</p>
+<p><strong>Rules that apply:</strong>
+- Each class has one teacher who is the authoritative marker, so two teachers cannot overwrite each other's marks.
+- The absence text is sent once, after the attendance is confirmed. Messages are held until a set cut-off time each morning, so a correction made before then never sends a wrong alert.
+- If a child is changed from absent to present after the alert has already gone out, a short follow-up text is sent to correct it, and the change is logged.
+- Holidays on the school calendar block attendance for that day, with no exceptions.
+- Corrections follow clear authority: same-day edits are free; a teacher may correct within a few days; older changes need the Principal; and once a year is closed, only the Owner can correct it. Every correction is logged.</p>
+<hr />
+<h3 id="58-logging-daily-care">5.8 Logging Daily Care</h3>
+<p><strong>What happens:</strong> Through the day, the teacher logs each child's meals, naps, activities, and health checks. Parents see this as a daily feed on their own phones, giving them a clear picture of their child's day.</p>
+<p><strong>Who is responsible:</strong> The Teacher.</p>
+<p><strong>Information involved:</strong> The daily care log for each child — meals, naps, activities, and health checks.</p>
+<p><strong>Rules that apply:</strong>
+- The daily feed is the main way the school replaces informal updates with a structured, reliable record.
+- For day care children, staff also record check-in and check-out times.</p>
+<hr />
+<h3 id="59-keeping-children-safe-at-pickup">5.9 Keeping Children Safe at Pickup</h3>
+<p><strong>What happens:</strong> A child is released only to someone who is allowed to collect them. A pickup is approved in one of three ways, each matched to how often it happens. For someone on the child's standing pickup list — the everyday case, around 95% of pickups — the Coordinator confirms their identity against the photo on the standing list; no code is needed. A teacher may confirm a standing-list pickup only at an exit the Principal has assigned to them for that session, and the release record notes who confirmed. For a one-off pickup, the parent generates a short numeric one-time code in their app and shares it by phone call or WhatsApp with whoever is collecting that day; the teacher matches the code and the person's face at the gate. If neither applies, a two-person override is used — the Principal authorises it, the parent confirms by phone, and a photo is taken, and the release is logged automatically. The front desk also keeps a digital visitor log, recording who came in and left and when. There is no QR scanning at the gate — a numeric code shared over the phone or WhatsApp fits the way the school already works.</p>
+<p><strong>Who is responsible:</strong> The Coordinator runs the gate; the Principal authorises overrides; the parent issues one-time codes.</p>
+<p><strong>Information involved:</strong> The authorised pickup list, parent-issued one-time codes, the visitor log, and the record of each release.</p>
+<p><strong>Rules that apply:</strong>
+- Every enrolled child must always have at least one active person on their standing pickup list.
+- A parent-issued one-time code works for that day only and for a single pickup — it cannot be reused, and any unused code stops working at the end of the day.
+- A guardian marked as excluded — for custody or safeguarding reasons — is removed from the list and cannot collect the child.
+- The two-person override is the only way to release a child to someone not otherwise approved, and it is always recorded.
+- The digital visitor log replaces the paper gate register.</p>
+<hr />
+<h3 id="510-raising-and-resolving-a-welfare-concern">5.10 Raising and Resolving a Welfare Concern</h3>
+<p><strong>What happens:</strong> When a teacher is worried about a child's wellbeing, they raise a welfare concern. The Principal is notified at once and must review it within three school days. If it is not reviewed in time, the system sends a reminder and then escalates it to the Owner. The concern moves through clear stages — raised, acknowledged, under review, and then resolved, escalated, or closed with a recorded reason — so it always reaches a clear end rather than being left open.</p>
+<p><strong>Who is responsible:</strong> The Teacher raises it; the Principal reviews it; the Owner handles any escalation.</p>
+<p><strong>Information involved:</strong> The welfare concern record and the stage it has reached.</p>
+<p><strong>Rules that apply:</strong>
+- The Principal must review a concern within three school days.
+- A concern not reviewed in time is reminded, then escalated to the Owner.
+- If the concern involves the Principal, the teacher can flag it as such; it then goes straight to the Owner, bypassing the Principal, who cannot see it.
+- The record is permanent and is never shown to parents.</p>
+<hr />
+<h3 id="511-recording-an-incident">5.11 Recording an Incident</h3>
+<p><strong>What happens:</strong> When something happens involving a child — an injury, an accident, or another event worth recording — the Principal records it as an incident. The Principal then decides whether to share the incident with the child's parents or to keep it as an internal record.</p>
+<p><strong>Who is responsible:</strong> The Principal.</p>
+<p><strong>Information involved:</strong> The incident record and whether it is shared with parents or kept internal.</p>
+<p><strong>Rules that apply:</strong>
+- The Principal decides whether an incident is shared with parents or kept internal.
+- Internal notes are never shown to parents under any circumstances.
+- The record is permanent.</p>
+<hr />
+<h3 id="512-managing-fees">5.12 Managing Fees</h3>
+<p><strong>What happens:</strong> The school continues to collect most fees through CoFee. Happy Feet brings CoFee's payment data in so the school sees children, attendance, and fees together in one place. For a payment that comes in outside CoFee — cash in hand or a direct bank transfer — the Accountant records it manually in Happy Feet, and it becomes part of the same fee record. Staff can view fee status, export records, and read dashboards showing collection rates and overdue amounts. Happy Feet does not issue its own invoices or take online payments from parents in this version. For the full integration contract — file format, field mapping, trigger mechanism, and reconciliation rules — see Decision Log Q15–Q18.</p>
+<p><strong>Who is responsible:</strong> The Accountant, with the Owner reviewing dashboards and approving any fee waiver.</p>
+<p><strong>Information involved:</strong> Imported CoFee payments, manually recorded cash/bank receipts, each child's fee status, and fee dashboards.</p>
+<p><strong>Rules that apply:</strong>
+- Imported CoFee data is read-only — amounts, sources, and references cannot be changed inside Happy Feet. Unmatched payments can be associated to the right student record by the Accountant; that association is not an edit.
+- A manually recorded cash or bank payment is entered directly by the Accountant and gets its own automatically generated receipt number.
+- Each payment is brought in or recorded with its source and reference so figures reconcile and nothing is counted twice.
+- A fee waiver is proposed by the Accountant or Principal and only takes effect once the Owner approves it; a declined waiver stays on permanent record.
+- Fee figures are shown as of the last import or the last manual entry, so a fresh import keeps them current.</p>
+<hr />
+<h3 id="513-communicating-with-parents">5.13 Communicating with Parents</h3>
+<p><strong>What happens:</strong> The school sends announcements and messages to parents through one structured channel — the parent inbox and notice board. This replaces scattered personal WhatsApp messages with a single channel that is logged and accountable.</p>
+<p><strong>Who is responsible:</strong> The Principal and Coordinator, and staff sending class-level updates.</p>
+<p><strong>Information involved:</strong> Announcements, inbox messages, and the record of what was sent.</p>
+<p><strong>Rules that apply:</strong>
+- Every message is logged, so the school always has a record of what was communicated.
+- WhatsApp links are sent by tapping to send manually, and are recorded as generated rather than confirmed delivered.</p>
+<hr />
+<h3 id="514-curriculum-and-progress-reports">5.14 Curriculum and Progress Reports</h3>
+<p><strong>What happens:</strong> Teachers prepare lesson plans linked to a programme and class, and publish them to parents. Each term, within a set submission window, teachers draft and submit a lightweight progress report. The Principal or Coordinator reviews and publishes it. Parents see a simple progress view in the app.</p>
+<p><strong>Who is responsible:</strong> Teachers draft and submit; the Principal or Coordinator reviews and publishes.</p>
+<p><strong>Information involved:</strong> Lesson plans, progress reports, and the term submission windows.</p>
+<p><strong>Rules that apply:</strong>
+- Progress reports can only be submitted during the term's open window.
+- If the window closes while a report is still a draft, the draft is kept but can no longer be submitted; the teacher is told, and the Principal can reopen the window for that teacher if there is a good reason.
+- The reviewer can send a report back to the teacher for changes, with a note; the teacher revises and resubmits.
+- The person who reviews and publishes is never the teacher who drafted it.
+- Formal printed progress cards are handed over offline. The app shows a lightweight view only.</p>
+<hr />
+<h3 id="515-reviewing-the-schools-numbers">5.15 Reviewing the School's Numbers</h3>
+<p><strong>What happens:</strong> The Owner and Principal review the school's key numbers on dashboards, whenever they need them. The numbers include fee collection and overdue amounts, how full the classes are, the admissions pipeline, and any open safety items. The Owner sees the whole school; each Principal sees their own branch.</p>
+<p><strong>Who is responsible:</strong> The Owner (across all branches) and the Principal (their own branch).</p>
+<p><strong>Information involved:</strong> Dashboards drawn from live data — fees, attendance, admissions, and safety records.</p>
+<p><strong>Rules that apply:</strong>
+- Each person sees only the numbers for the branches they are responsible for.
+- Dashboards are available at any time. Some governance reports are produced on a set schedule.</p>
+<hr />
+<h3 id="516-bringing-data-in-and-getting-data-out">5.16 Bringing Data In and Getting Data Out</h3>
+<p><strong>What happens:</strong> Information enters and leaves Happy Feet in defined ways. It comes <strong>in</strong> four ways: the one-time entry of existing records at go-live; regular imports of CoFee payment data; documents parents upload for their child; and applications submitted through the public link. It goes <strong>out</strong> as files the school can download — student lists, fee records, and reports as spreadsheets — and as the archived records of children who have left. A parent can also ask to receive or remove their child's personal data.</p>
+<p><strong>Who is responsible:</strong> The Accountant runs CoFee imports; the Owner and Principal run exports; the Principal handles a parent's data request.</p>
+<p><strong>Information involved:</strong> Imported CoFee data, uploaded documents, submitted applications, and exported files.</p>
+<p><strong>Rules that apply:</strong>
+- Imported fee data is matched and reconciled so nothing is counted twice. A payment that cannot be matched is held for review, never dropped.
+- Imported fee data is read-only inside Happy Feet — amounts, sources, and references cannot be changed. Unmatched payments can be associated to a student record by the Accountant.
+- Children moved in at go-live keep their existing admission numbers exactly.
+- Exports are available to the Owner and Principal. Opening or exporting sensitive data is always recorded.
+- A parent's request to see or remove their child's data is handled under the rules in Section 9.</p>
+<hr />
+<h3 id="517-year-end-rollover">5.17 Year-End Rollover</h3>
+<p><strong>What happens:</strong> At the end of the year, children move up to their next class. The Principal reviews the active children, acknowledges any outstanding dues, and confirms the transitions before the new year begins.</p>
+<p><strong>Who is responsible:</strong> The Principal.</p>
+<p><strong>Information involved:</strong> Each child's status, class assignment, and outstanding dues.</p>
+<p><strong>Rules that apply:</strong>
+- Rollover is not automatic. The Principal reviews and confirms it.
+- Outstanding dues are acknowledged as part of the review.
+- Because the child moves to a new programme, rollover is a new fee-enrollment event — the Principal selects the new programme's fee plan and student category as part of the rollover step; the fee does not carry forward automatically from the prior year. The previous year's agreed fee is kept on record and is not changed.</p>
+<hr />
+<h3 id="518-student-exit-certificates-discontinuation-and-transfer">5.18 Student Exit — Certificates, Discontinuation, and Transfer</h3>
+<p><strong>What happens:</strong> When a child leaves or completes their programme, the school records the exit. If the family needs a Transfer Certificate or a Bonafide certificate, the school issues the physical certificate offline, and the app records that it was issued — who issued it and when.</p>
+<p><strong>Who is responsible:</strong> The Owner, Principal, or Coordinator records the certificate; the Principal handles discontinuation.</p>
+<p><strong>Information involved:</strong> The child's status (completed, discontinued, or transferred) and the record of any certificate issued.</p>
+<p><strong>Rules that apply:</strong>
+- Transfer and Bonafide certificates are issued on paper by the school. The app acknowledges and logs them — it does not produce the document.
+- A child who has left keeps their original admission number. If they return, the system links back to their existing record rather than creating a new one.
+- Once a child has left, the parent's view becomes a read-only archive.</p>
+<hr />
+<h3 id="519-staff-joining-leave-and-exit">5.19 Staff Joining, Leave, and Exit</h3>
+<p><strong>What happens:</strong> Staff are added by email invitation. The Owner invites Principals, and each Principal invites their own branch's staff. Staff attendance and leave are tracked, and approved leave shows on the timetable as a coverage gap to fill. When a staff member leaves, their access is removed and their open work is reassigned.</p>
+<p><strong>Who is responsible:</strong> The Owner and the Principal.</p>
+<p><strong>Information involved:</strong> Staff profiles, role assignments, attendance, leave balances, certifications, and exit records.</p>
+<p><strong>Rules that apply:</strong>
+- Invitations flow top-down: Owner to Principal, Principal to branch staff.
+- When someone leaves, their access is switched off, but their record and past work are kept, never deleted.
+- Staff certifications are tracked with expiry dates, and the system flags ones that are due to expire.</p>
+<hr />
+<h2 id="6-features-and-specifications">6. Features and Specifications</h2>
+<p>This is the full list of what Happy Feet does, grouped by area. Everything below is part of the current version unless it appears under <strong>Planned for Later Versions</strong> at the end — those are designed and documented, but built in a future version.</p>
+<h3 id="how-it-is-delivered-in-phases">How It Is Delivered — In Phases</h3>
+<p>The current version is built and rolled out in stages, not all at once. Each phase is usable on its own, and the everyday features come first so staff settle into the daily habit before the back-office tools arrive.</p>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>What goes live</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A</strong></td>
+<td>Staff login, student records, staff records, and daily attendance</td>
+</tr>
+<tr>
+<td><strong>B</strong></td>
+<td>Admissions, enrollment, and the student lifecycle (certificates, rollover, exit)</td>
+</tr>
+<tr>
+<td><strong>C</strong></td>
+<td>Communication — announcements and the parent inbox</td>
+</tr>
+<tr>
+<td><strong>D</strong></td>
+<td>Timetable and curriculum, progress reports, CoFee fee import and dashboards, and admin data tools</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Staff go first.</strong> Once Phase A is live, staff run the system on their own for a trial period of at least two weeks before any parent is invited. Paper registers and WhatsApp stay active as a backup during this window. Once staff have shown they can mark attendance and keep records reliably, the Owner switches on parent access — the parent app and the parent daily feed go live at that point, not on day one of Phase A.</p>
+<p>All of the features in this section ship across these four phases. Items under <strong>Planned for Later Versions</strong> come afterwards.</p>
+<h3 id="access-and-security">Access and Security</h3>
+<ul>
+<li>Installs on a phone's home screen and opens like any other app; the same app also runs on an office laptop</li>
+<li>Sign in once and stay signed in — a tap to return, not a login every task</li>
+<li>Staff are added by email invitation, top-down (Owner invites Principals; Principals invite their branch's staff)</li>
+<li>A second sign-in step for staff who handle management, money, or sensitive records (Owner, Principal, Coordinator, Accountant); teachers sign in by secure email link and are asked for the second step only when opening a sensitive record such as a medical flag; parents sign in by email link or one-time code with no second step in this version</li>
+<li>Identity re-confirmation before sensitive actions, such as opening a child's protected records</li>
+<li>Access decided by role, branch, and relationship to a child; nothing is shown unless explicitly allowed</li>
+<li>Built for multiple branches from day one, with each branch's data kept separate</li>
+<li>One person can hold more than one role, or work across more than one branch</li>
+<li>Several guardians per child, each with their own login and permissions (collect the child, receive messages, pay fees, or be excluded)</li>
+<li>At least two Owner accounts kept active; access removed when someone leaves, with their records preserved</li>
+</ul>
+<h3 id="school-setup">School Setup</h3>
+<ul>
+<li>Nine-step start-of-year setup, completed in order</li>
+<li>Academic year with four stages — legacy (pre-launch history, read-only), upcoming, active, and closed</li>
+<li>Terms, with progress-report windows per term</li>
+<li>Programmes: Play Group, Nursery, PP1, PP2, and Day Care</li>
+<li>Classes with capacity and teacher slots</li>
+<li>Weekly timetable per class, with same-day coverage and substitution changes</li>
+<li>School calendar with holidays that block attendance</li>
+<li>Developmental milestones defined per programme</li>
+<li>Required document types defined per programme</li>
+<li>Fee structures set per programme and per student category</li>
+</ul>
+<h3 id="admissions-and-enrollment">Admissions and Enrollment</h3>
+<ul>
+<li>Public self-apply web link for parents, with no login needed</li>
+<li>Applications also entered directly by staff</li>
+<li>Admissions open year-round, with optional open and close windows</li>
+<li>Document review and programme assignment</li>
+<li>Four enrollment checks: programme assigned, documents cleared, class capacity, and pickup list</li>
+<li>Over-capacity place allowed with a recorded reason; each missing document waived individually with a reason</li>
+<li>Waitlist</li>
+<li>A new admission number generated automatically; a migrated child keeps their existing number</li>
+</ul>
+<h3 id="childrens-records-and-lifecycle">Children's Records and Lifecycle</h3>
+<ul>
+<li>Permanent student profiles</li>
+<li>Sensitive documents — identity, medical, and photo — stored separately and access-controlled</li>
+<li>Document verification, from submitted to verified</li>
+<li>Clear, named lifecycle stages from application through to exit</li>
+<li>Year-end rollover to the next class</li>
+<li>Discontinuation and re-admission, with re-admission linking back to the existing record</li>
+<li>Transfer and Bonafide certificate acknowledgment — issued offline, logged in the app with who and when</li>
+<li>Parent-Teacher Meeting notes, kept private to staff</li>
+</ul>
+<h3 id="staff-records">Staff Records</h3>
+<ul>
+<li>Staff profiles, roles, and branch assignment, each with an automatically issued staff ID (email stays the login)</li>
+<li>Staff attendance</li>
+<li>Leave balances and approval, shown as coverage gaps on the timetable</li>
+<li>Certifications with expiry alerts</li>
+<li>Exit workflow that reassigns open work before access is removed</li>
+</ul>
+<h3 id="attendance-daily-care-and-safety">Attendance, Daily Care, and Safety</h3>
+<ul>
+<li>Daily attendance — present, absent, late, or half-day</li>
+<li>One authoritative marker per class, so edits never clash</li>
+<li>Automatic absence alert — text message to the primary guardian, in-app notification to other guardians who receive communications</li>
+<li>Attendance corrections</li>
+<li>Repeated-absence alerts</li>
+<li>Live staff-to-child ratio monitoring, with alerts when a ratio is breached</li>
+<li>Daily care log: meals, naps, activities, and health checks</li>
+<li>Day-care check-in and check-out times</li>
+<li>Parent daily feed</li>
+<li>Authorised pickup: a photo-based standing list, parent-issued numeric one-time codes (shared by phone or WhatsApp), and a two-person override for exceptions — no QR scanning at the gate</li>
+<li>Allergy protocol confirmation at meal time</li>
+<li>Welfare concern pathway, with a review deadline and escalation, kept private to staff</li>
+<li>Incident reporting, shared with parents or kept internal at the Principal's decision</li>
+<li>Works on patchy connectivity — saves the entry and syncs when the connection returns</li>
+</ul>
+<h3 id="curriculum-and-progress">Curriculum and Progress</h3>
+<ul>
+<li>Lesson plans per programme and class, published to parents</li>
+<li>Progress reports, submitted within each term's window</li>
+<li>A simple in-app progress view for parents</li>
+<li>Draft, review, and publish steps — the person who publishes is never the one who drafted</li>
+</ul>
+<h3 id="fees">Fees</h3>
+<ul>
+<li>Brings in CoFee payment data, matched and reconciled, with no double-counting</li>
+<li>Manual recording of cash or bank payments received outside CoFee, each with its own auto-generated receipt number</li>
+<li>Fee waiver proposal (Accountant or Principal) and Owner approval, with declined waivers kept on record</li>
+<li>Each child's fee status in one place</li>
+<li>Fee dashboards: collection rate and overdue aging</li>
+<li>Export of fee records</li>
+<li>Unmatched payments held for review rather than dropped</li>
+<li>Monthly export of day-care check-in and check-out hours, for billing the day-wise and hour-wise plans in CoFee</li>
+<li>Student categories (Standard, Staff Child, Subsidised) and payer routing (parent, employer, or sponsor)</li>
+</ul>
+<h3 id="communication">Communication</h3>
+<ul>
+<li>Announcements, including ones scheduled to send later</li>
+<li>Parent inbox and notice board</li>
+<li>WhatsApp tap-to-send links</li>
+<li>Text-message alerts, such as absence</li>
+<li>In-app push notifications</li>
+<li>A record of what was sent, with failed messages shown to staff to follow up</li>
+</ul>
+<h3 id="reporting-oversight-and-data-protection">Reporting, Oversight, and Data Protection</h3>
+<ul>
+<li>Role-filtered dashboards — the Owner sees the key numbers: collection, dues, occupancy, admissions, and open safety items</li>
+<li>CSV exports</li>
+<li>An activity log of who did what, across the system</li>
+<li>An Owner-only view of override actions</li>
+<li>A separate log of who viewed sensitive data</li>
+<li>All data stored and backed up in India</li>
+<li>Daily backups with point-in-time recovery</li>
+<li>Records preserved rather than overwritten, keeping a full history</li>
+<li>Removal of a child's personal data on a valid request, keeping a trace that the record once existed</li>
+</ul>
+<h3 id="coming-next-right-after-this-build">Coming Next, Right After This Build</h3>
+<p><em>Scoped and ready to design, expected in the version right after Phases A–D — not a far-off "someday."</em></p>
+<ul>
+<li>Full transport management: routes, stops, boarding and drop confirmation, and a dedicated Transport Staff role who sees only the children on their assigned route. In the current version, transport is only an optional fee item.</li>
+</ul>
+<h3 id="planned-for-later-versions">Planned for Later Versions</h3>
+<p><em>Designed and documented, but built in a future version — not part of the current build.</em></p>
+<ul>
+<li>Native fee billing inside Happy Feet — invoices, in-app payment, receipts, and tax handling — which replaces CoFee</li>
+<li>Full meal management: daily menus, allergy-checked meal entries, and consumption tracking. In the current version, meals are only an optional fee item</li>
+<li>Sharing children's photos with parents, after a data-protection review</li>
+<li>Automated WhatsApp messaging</li>
+<li>Custom staff roles built by the Owner</li>
+<li>Government submissions (APAAR, PEN, and UDISE+)</li>
+<li>Predictive analytics and additional reporting</li>
+<li>An app-store version of the app</li>
+</ul>
+<hr />
+<h2 id="7-the-systems-modules-and-the-data-they-own">7. The System's Modules and the Data They Own</h2>
+<p>Behind the areas described earlier, the system is built as a set of self-contained modules. Each module owns its own records and is fully responsible for them. Modules share information through clear connections — never by reaching into one another's records. This keeps the system organised, keeps each kind of information consistent, and makes the school safe to grow. Here is each module and the information it owns.</p>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>What It Handles</th>
+<th>Information It Owns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Identity &amp; Access</strong></td>
+<td>Who each person is and what they are allowed to do</td>
+<td>User accounts, role assignments, branches, sign-in sessions, and the access rules</td>
+</tr>
+<tr>
+<td><strong>People &amp; Records</strong></td>
+<td>Children, families, and staff</td>
+<td>Student records, guardian records, staff records, and the separate sensitive-document store</td>
+</tr>
+<tr>
+<td><strong>School Setup</strong></td>
+<td>The academic framework and teaching plans</td>
+<td>Academic year, terms, calendar, programmes, classes, timetable, milestones, lesson plans, and progress reports</td>
+</tr>
+<tr>
+<td><strong>Admissions</strong></td>
+<td>Taking in new children, up to the point of enrollment</td>
+<td>Admission applications and the waitlist</td>
+</tr>
+<tr>
+<td><strong>Attendance, Daily Care &amp; Safety</strong></td>
+<td>The school day and child safety</td>
+<td>Attendance records, daily care logs, authorised pickup lists, the visitor log, allergy confirmations, welfare concerns, and incident reports</td>
+</tr>
+<tr>
+<td><strong>Fees</strong></td>
+<td>The money picture, brought in from CoFee</td>
+<td>Imported payments and invoices, each child's fee status, and the fee dashboards</td>
+</tr>
+<tr>
+<td><strong>Communication</strong></td>
+<td>Reaching parents</td>
+<td>Announcements, inbox messages, the notice board, and notification records</td>
+</tr>
+<tr>
+<td><strong>Administration &amp; Reporting</strong></td>
+<td>Oversight across the whole system</td>
+<td>Dashboards, exports, settings, and the activity log</td>
+</tr>
+</tbody>
+</table>
+<p>Each module is the only one that writes its own records. Only People &amp; Records creates a student; only Fees touches imported payments; only Attendance marks a child present. When one area needs information from another, it asks through a defined connection rather than editing the other's records directly. This is what keeps the school's information trustworthy and is why a second branch — or a future feature — can be added without disturbing what already works.</p>
+<hr />
+<h2 id="8-key-information-the-system-manages">8. Key Information the System Manages</h2>
+<p>The system keeps a set of connected records. Each one represents something real in the school — a child, a class, a payment, a day's attendance — and they link together so the full picture of each child is always in one place.</p>
+<table>
+<thead>
+<tr>
+<th>Information</th>
+<th>What It Represents</th>
+<th>Key Details It Holds</th>
+<th>How It Connects</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Student Record</strong></td>
+<td>A child enrolled at, or applying to, the school</td>
+<td>Name, date of birth, admission number, programme, class, student category, status</td>
+<td>The centre of the system — linked to guardians, attendance, daily care, fees, progress, and documents</td>
+</tr>
+<tr>
+<td><strong>Guardian Record</strong></td>
+<td>A parent or family member connected to a child</td>
+<td>Contact details, login, and what they may do — collect the child, receive messages, pay fees</td>
+<td>Linked to one or more children; sets what each guardian can see and do</td>
+</tr>
+<tr>
+<td><strong>Staff Record</strong></td>
+<td>A person employed at the school</td>
+<td>Name, role, branch, attendance, leave balance, certifications and their expiry dates</td>
+<td>Linked to the classes they run and the branch they work in</td>
+</tr>
+<tr>
+<td><strong>Admission Application</strong></td>
+<td>A request to admit a child, before they become a student</td>
+<td>Child and family details, chosen programme, submitted documents, application status</td>
+<td>Becomes a Student Record once enrollment is completed</td>
+</tr>
+<tr>
+<td><strong>Sensitive Documents</strong></td>
+<td>A child's protected personal records</td>
+<td>Identity documents, medical records, and photo</td>
+<td>Kept apart from the main record and shown only to staff who need them; every view is recorded</td>
+</tr>
+<tr>
+<td><strong>Programme</strong></td>
+<td>A course of study the school offers</td>
+<td>Name (Play Group, Nursery, PP1, PP2, Day Care), billing model, required documents, milestones</td>
+<td>Linked to classes, fee structures, and students</td>
+</tr>
+<tr>
+<td><strong>Class</strong></td>
+<td>A group of children taught together</td>
+<td>Name, capacity, assigned teachers, weekly timetable</td>
+<td>Linked to a programme, its teachers, and its students</td>
+</tr>
+<tr>
+<td><strong>Academic Year &amp; Calendar</strong></td>
+<td>The school's yearly framework</td>
+<td>Year start and end, terms, holidays, progress-report windows</td>
+<td>The single source of dates for attendance, fees, and progress across the system</td>
+</tr>
+<tr>
+<td><strong>Attendance Record</strong></td>
+<td>A child's daily presence</td>
+<td>Date, child, class, status (present, absent, late, half-day)</td>
+<td>Linked to the child and class; triggers the absence alert (text to the primary guardian, in-app notification to other guardians who receive communications)</td>
+</tr>
+<tr>
+<td><strong>Daily Care Log</strong></td>
+<td>The record of a child's day</td>
+<td>Meals, naps, activities, health checks, and day-care check-in and check-out times</td>
+<td>Linked to the child; shown to parents as the daily feed</td>
+</tr>
+<tr>
+<td><strong>Authorised Pickup List</strong></td>
+<td>The people allowed to collect a child</td>
+<td>Approved collectors with photos for face verification; parent-issued numeric one-time pickup codes</td>
+<td>Linked to the child; checked at the gate before release</td>
+</tr>
+<tr>
+<td><strong>Fee Record</strong></td>
+<td>A child's fee and payment picture</td>
+<td>Imported payments, invoice references, amounts paid and due, status</td>
+<td>Brought in from CoFee, linked to the child; feeds the fee dashboards</td>
+</tr>
+<tr>
+<td><strong>Progress Report</strong></td>
+<td>A child's progress for a term</td>
+<td>The teacher's assessment against the programme's milestones</td>
+<td>Linked to the child and term; reviewed, published, and shown to the parent</td>
+</tr>
+<tr>
+<td><strong>Lesson Plan</strong></td>
+<td>A teacher's plan for a class</td>
+<td>Activities and learning content for a programme and class</td>
+<td>Linked to the programme and class; published to parents</td>
+</tr>
+<tr>
+<td><strong>Announcement &amp; Message</strong></td>
+<td>School communication to parents</td>
+<td>Announcements, inbox messages, and the record of what was sent</td>
+<td>Linked to the branch or class; logged for accountability</td>
+</tr>
+<tr>
+<td><strong>Incident &amp; Welfare Record</strong></td>
+<td>A safety or wellbeing record about a child</td>
+<td>What happened, who recorded it, its status, and follow-up</td>
+<td>Linked to the child; permanent. Welfare records are never shown to parents; an incident is shared only if the Principal decides to</td>
+</tr>
+<tr>
+<td><strong>Activity Log</strong></td>
+<td>The system's record of who did what</td>
+<td>Each action, the person who did it, and when</td>
+<td>Spans every area of the system; the Owner's record of accountability</td>
+</tr>
+<tr>
+<td><strong>Branch</strong></td>
+<td>A school location</td>
+<td>Name and status</td>
+<td>The top unit that children, staff, and fees belong to</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="9-how-your-data-is-stored-and-protected">9. How Your Data Is Stored and Protected</h2>
+<p>The school holds personal records about children — names, documents, medical notes, photos. How that information is stored and protected matters, both by law and for the trust parents place in the school. This section explains, in plain terms, how Happy Feet handles it.</p>
+<p><strong>Your data is stored in India.</strong> All of the school's records — children, staff, fees, attendance, and documents — are stored and backed up on infrastructure located in India. This meets India's data-protection rules on keeping data within the country. The one exception is the sign-in service, which holds only email addresses and phone numbers used to log in; those are held by the login provider outside India. Every sensitive record about a child stays in India.</p>
+<p><strong>Your data is backed up every day.</strong> The system makes automatic daily backups and can be restored to an earlier point in time if something goes wrong. A school cannot afford to lose its financial or child records, so backups are treated as non-negotiable, not optional.</p>
+<p><strong>The most sensitive records are kept apart.</strong> A child's identity documents, medical records, and photo are stored separately from everyday records and are locked down more tightly. Only staff with a genuine need can open them. Each time a staff member opens one, the system records who looked, at what, and when — so the school can always answer who has seen a child's sensitive data. Opening these records also requires the staff member to confirm their identity again.</p>
+<p><strong>Records are preserved, not overwritten.</strong> When something is corrected, the system adds the correction alongside the original rather than erasing it. This keeps a complete and trustworthy history of what happened and when — which protects both the school and the parent. This applies to the school's operational records — attendance, fees, documents, incidents. Setup items like the timetable and calendar are simply edited, with earlier versions kept for reference.</p>
+<p><strong>Each person sees only what they should.</strong> The system decides what someone can see by combining their role, their branch, and their relationship to a child. Sensitive information is shown only inside the system, to staff who are authorised to see it.</p>
+<p><strong>Parents have rights over their child's data.</strong> Under India's data-protection law, a parent can ask to see, correct, or remove their child's personal information. The school handles these requests. When information must be removed, the system can erase the sensitive content while keeping a simple record that the entry once existed — so the history stays intact without holding on to data that should be gone. One part of a request needs the login provider: the email address used to sign in is held by that provider, so a request to see or remove login information is answered together with them.</p>
+<p><strong>How long data is kept.</strong> Records are kept only as long as the school needs them to meet its legal and operational obligations, and are removed only by a deliberate, recorded decision — never silently. The set periods are: financial and fee records for at least seven years; student, welfare, and incident records for the time the child is enrolled plus three years; and parent-teacher meeting notes for two years after the child leaves. ⚠️ One period is still being confirmed with a lawyer: how long child-safety records (incident, welfare, and pickup) must be held. Until that is settled, the floor is a minimum of three years, and in practice these are kept until the child would turn 18 plus a few years — the safe side, and well past the three-year floor.</p>
+<hr />
+<h2 id="10-how-the-system-is-organised">10. How the System Is Organised</h2>
+<h3 id="101-organisational-structure">10.1 Organisational Structure</h3>
+<p>The system is organised around a single owner account at the top. Beneath the Owner sit the school's branches. Each branch runs its own daily operations through its own staff, while the Owner sees across all of them.</p>
+<p>Today the school has one active branch, with a second branch planned. The system is built for more than one branch from the start, so the next branch can be added without rebuilding anything.</p>
+<p>Each branch has a Principal who runs it. Under the Principal are the branch's Coordinators, Teachers, and Accountant. Parents sit alongside the branch their child belongs to, with access to their own child only.</p>
+<pre><code>ADMIN [Owner] (across all branches)
+   │
+   ├── Branch 1  (active)
+   │      ├──BRANCH ADMIN [Principal] 
+   │      │     ├── Coordinator(s)
+   │      │     ├── Teacher(s)
+   │      │     └── Accountant
+   │      └── Parents  (each linked to their own child)
+   │
+   └── Branch 2  (planned)
+          └── (same structure once it opens)
+</code></pre>
+<p>Every level can have more than one person. There can be more than one Owner, more than one Principal per branch, and many teachers. A staff member can also work across two branches if needed.</p>
+<h3 id="102-how-data-is-managed-and-separated-between-branches">10.2 How Data Is Managed and Separated Between Branches</h3>
+<p>Every operational record in the system is tagged with the branch it belongs to. A child, a class, an attendance mark, a fee record, a message to a parent — each one carries the name of its branch. That tag stays with the record wherever it goes. This is the foundation of how branches are kept apart.</p>
+<p>When a staff member uses the system, it checks three things together before showing anything: what their role allows, which branch they are assigned to, and their relationship to a particular child. It then shows only the records whose branch tag matches their assignment. So a Teacher in Branch 1 only ever sees Branch 1 records — and only their own classes within it. A Principal sees their whole branch. No staff member below the Owner can see or touch another branch's data.</p>
+<p>The Owner is the single exception. The Owner is assigned to every branch, so the Owner sees everything. The Owner's dashboards add the branches together into one school-wide picture — total enrollment, collection, occupancy — while each Principal sees those same numbers for their own branch only.</p>
+<p>Some staff legitimately work in more than one branch. When that happens, they are given a separate assignment for each branch. They see each branch's data only when working in that branch, and only for the branches they are assigned to — never any others.</p>
+<p>Each branch is set up with its own programmes, classes, and fee structures, following the same overall approach across the school. The day-to-day records — children, staff, attendance, fees, and communication — stay specific to their own branch. Branches do not share these records with one another.</p>
+<p>It is important to understand that this is one system, not separate copies. The separation comes from the branch tag and the access rules, not from running a different system per branch. That is what keeps each branch's data private to it while still letting the Owner see the whole school in one place. And because the tag is on every record from day one, opening the second branch needs no rebuilding — the new branch is created, its staff are invited, its children are entered, and the same separation applies to it automatically.</p>
+<hr />
+<h2 id="11-how-people-get-access-invitations-and-accounts">11. How People Get Access — Invitations and Accounts</h2>
+<p>Access to Happy Feet is given by invitation. No one signs up on their own. A person is invited by someone above them, accepts the invitation, and lands in the system with access limited to their role and branch. Everyone signs in once and stays signed in — they tap the app icon to return, rather than logging in for every task.</p>
+<h3 id="111-how-staff-are-invited">11.1 How Staff Are Invited</h3>
+<p>Staff are invited from the top down. The Owner invites Principals. Each Principal then invites their own branch's staff — Coordinators, Teachers, and the Accountant. This keeps each branch's team under the person who runs that branch.</p>
+<ol>
+<li>The Owner or Principal creates the new staff member's profile, enters their email address, and chooses their role and branch.</li>
+<li>The system sends an invitation email with a secure link.</li>
+<li>The staff member opens the link, signs in, and sets up a second sign-in step for security — a code from an authenticator app on their phone, along with backup codes.</li>
+<li>They land in the system with access limited to the exact role and branch they were given.</li>
+</ol>
+<p>Until the staff member accepts, their invitation stays pending and their access is not active. The second sign-in step is required at every login for staff whose accounts reach management, money, or sensitive records — the Owner, Principal, Coordinator, and Accountant. Teachers sign in with a secure email link instead, and the system asks them for the second step only at the moment they open a sensitive record, such as a child's medical flag or protected documents. For these sensitive actions, the system asks any staff member to confirm their identity again, even while they are already signed in.</p>
+<p>The school always keeps at least two Owner accounts. This makes sure the school is never locked out if one Owner is unavailable.</p>
+<h3 id="112-how-external-users-get-access">11.2 How External Users Get Access</h3>
+<p>Parents are the external users, and they are invited automatically — but only once a branch's staff trial period is complete and parent access has been switched on (see §6). Before that point, no parent invitations go out, regardless of how many children are enrolled. Once parent access is live, enrolling a child is what creates their invitation: the system emails that child's parent an invitation to the parent app. The parent does not apply for access — enrollment creates it.</p>
+<p>The parent signs in with their email, using a secure link or a one-time code. There is no second sign-in step for parents in this version. Once signed in, the parent sees only their own child — attendance, the daily feed, a simple progress view, fee status, and school announcements. They can submit their child's documents, but their access to records is view-only.</p>
+<p>A child can have more than one guardian. Each guardian receives their own invitation and their own login, and each one's access matches their relationship to the child.</p>
+<h3 id="113-removing-access">11.3 Removing Access</h3>
+<p>When a staff member leaves, their access is removed by the Owner or Principal. Any work still in their hands — open concerns, unfinished progress drafts, classes they marked attendance for — is reassigned to someone else first. Their account is then switched off. Their profile and everything they recorded stay in the system. Records are never deleted, so the school keeps a complete history.</p>
+<p>When a child leaves the school, that child's parent access changes to a read-only archive. The parent can still see their child's past records for the period the school keeps them, but the account is no longer active for day-to-day use.</p>
+<hr />
+<h2 id="12-services-and-subscriptions">12. Services and Subscriptions</h2>
+<blockquote>
+<p><strong>This section is subject to change</strong> The final list depends on deployment choices still being worked out — in particular, where the application is hosted. New services may be added at any time as the build progresses, and this list is updated here whenever that happens. Treat it as a living list, not a final one.</p>
+</blockquote>
+<p>Happy Feet runs on a few outside services. Some are set up by the developer but billed to you, the school. Others are accounts the school owns directly. This is the list of what you pay for to keep the product running. The app itself installs on phones with no app-store fee, and parent notifications inside the app are free — so they are not listed here.</p>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>What It Does</th>
+<th>Who Manages It</th>
+<th>Cost</th>
+<th>If It Lapses</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Application Hosting</strong> (Vercel, Mumbai)</td>
+<td>Keeps the application running and reachable on the internet for all staff and parents</td>
+<td>Developer sets it up; billed to the school</td>
+<td>For the MVP, hosting runs on Vercel (Mumbai). It holds no personal data — every record sits in the database in India — so this is the running cost only · ⚠️ Needs client input: confirm the monthly figure at the first invoice</td>
+<td>The application goes offline for everyone</td>
+</tr>
+<tr>
+<td><strong>Database, Storage &amp; Backups</strong> (Supabase, Mumbai)</td>
+<td>Stores all the school's data — children, staff, fees, attendance, documents — with daily backups, all held in India</td>
+<td>Developer sets it up; billed to the school</td>
+<td>Monthly subscription, kept small for the current size · ⚠️ Needs client input: confirm the monthly figure</td>
+<td>The data cannot be reached until the service is restored</td>
+</tr>
+<tr>
+<td><strong>Secure Login</strong> (Clerk)</td>
+<td>Manages secure sign-in, the extra security step for staff, and keeping people signed in</td>
+<td>Developer sets it up; billed to the school</td>
+<td>Free for basic sign-in and authenticator-app security; paid as the number of users grows · ⚠️ Needs client input: confirm the tier</td>
+<td>No one can sign in to the system</td>
+</tr>
+<tr>
+<td><strong>Text Message Service</strong> (MSG91)</td>
+<td>Sends text messages to parents, such as absence alerts</td>
+<td>The school owns the account</td>
+<td>Charged per message sent · ⚠️ Needs client input: confirm the monthly message budget</td>
+<td>Text alerts to parents stop sending. In-app notifications still work</td>
+</tr>
+<tr>
+<td><strong>Fee Collection Software</strong> (CoFee)</td>
+<td>The school's existing software for collecting and recording fees. Happy Feet imports its data so fees sit alongside students and attendance</td>
+<td>The school owns the account (already in use today)</td>
+<td>The cost the school already pays for CoFee · ⚠️ Needs client input: confirm</td>
+<td>Happy Feet can no longer bring in up-to-date fee data, and the fee dashboards become out of date</td>
+</tr>
+<tr>
+<td><em>(open)</em></td>
+<td><em>Reserved for a service added later as the build progresses</em></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><em>(open)</em></td>
+<td><em>Reserved for a service added later as the build progresses</em></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>A note on a future service:</strong> When the school later moves fee collection into Happy Feet itself, a payment gateway (Razorpay) will be needed to take payments directly. That is not required for this version — fees stay on CoFee for now — so there is nothing to pay for it yet. It will be added to the list above when the time comes.</p>
+<p>⚠️ Needs client input: confirm who owns and pays each account above, so billing details and renewals sit with the right person.</p>
+<hr />
+<h2 id="13-your-responsibilities-as-application-owner">13. Your Responsibilities as Application Owner</h2>
+<p>Happy Feet handles the heavy lifting, but a few things stay the school's responsibility. These keep the system accurate, secure, and running. They are grouped by how often they come up.</p>
+<h3 id="131-ongoing-day-to-day">13.1 Ongoing — Day to Day</h3>
+<ul>
+<li>Make sure teachers mark attendance every school day, and follow up on any class that hasn't been marked.</li>
+<li>Check the day's picture — who is present, who is absent, and any open safety items that need attention.</li>
+<li>Verify the documents parents submit, so each child's record is complete and trusted. The Coordinator or Principal can handle this.</li>
+<li>Keep parent communication flowing through the system's inbox and announcements, rather than personal WhatsApp.</li>
+<li>Review any exception a staff member records — such as an over-capacity place or a pickup override — and confirm it was justified.</li>
+</ul>
+<h3 id="132-regular-monthly-or-per-term">13.2 Regular — Monthly or Per Term</h3>
+<ul>
+<li>Bring in the latest CoFee fee data regularly, so the fee status and dashboards stay current.</li>
+<li>Each month, export the day-care check-in and check-out hours from Happy Feet and enter them into CoFee, so children on day-wise or hour-wise plans are billed correctly. The Accountant runs this.</li>
+<li>Review the collection and overdue dashboards, and follow up on outstanding fees.</li>
+<li>Open and close each term's progress-report window, and make sure progress reports are reviewed and published.</li>
+<li>Add or deactivate staff accounts as people join or leave the team.</li>
+<li>Check which staff certifications are due to expire, and arrange renewals.</li>
+<li>Confirm the outside service invoices — hosting, database, login, and text messages — are being paid on time.</li>
+</ul>
+<h3 id="133-periodic-annually-or-at-key-milestones">13.3 Periodic — Annually or at Key Milestones</h3>
+<ul>
+<li>Before go-live (one time): register the absence-alert text-message template with MSG91 — a step required by Indian telecom rules (DLT registration). Approval takes days, and no text message can be sent to parents until it is done.</li>
+<li>Complete the nine-step setup before each new school year, in order.</li>
+<li>Run the year-end rollover — review active children, acknowledge outstanding dues, and confirm each child's move to the next class.</li>
+<li>Renew the outside services and confirm billing details are up to date.</li>
+<li>Review all user accounts and remove anyone who no longer needs access.</li>
+<li>Archive or export the records of children who have left, in line with how long the school keeps them.</li>
+<li>Confirm at least two Owner accounts are active, so the school is never locked out.</li>
+</ul>
+<h3 id="134-what-to-do-when-something-goes-wrong">13.4 What to Do When Something Goes Wrong</h3>
+<p>When the system has a problem, the path depends on what kind of problem it is. Some issues a Principal or Owner can fix directly from inside the system. Others need the developer. When contacting the developer, describe what happened, what you expected, and include a screenshot where possible.</p>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Who to Contact</th>
+<th>How</th>
+<th>Expected Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The system is down or won't open for anyone</td>
+<td>Developer</td>
+<td>⚠️ Needs client input: agree a channel (e.g. email or WhatsApp)</td>
+<td>⚠️ Needs client input: agree a response time</td>
+</tr>
+<tr>
+<td>A staff member or parent cannot sign in</td>
+<td>Owner or Principal resets their access first; Developer if it persists</td>
+<td>From inside the system</td>
+<td>Usually immediate — no developer needed</td>
+</tr>
+<tr>
+<td>Data looks wrong or is missing</td>
+<td>Developer</td>
+<td>Email with a screenshot and the child or record affected</td>
+<td>⚠️ Needs client input: agree a response time</td>
+</tr>
+<tr>
+<td>Fee figures look out of date</td>
+<td>Accountant brings in a fresh CoFee import first; Developer if the import fails</td>
+<td>From inside the system</td>
+<td>After a successful import</td>
+</tr>
+<tr>
+<td>Absence texts are not reaching parents</td>
+<td>Check the text-message account has balance; Developer if it still fails</td>
+<td>⚠️ Needs client input: agree a channel</td>
+<td>⚠️ Needs client input: agree a response time</td>
+</tr>
+</tbody>
+</table>
+<p>⚠️ Needs client input: confirm the developer's support contact, the hours support is available, and the expected response times — then fill these into the table above.</p>
+<hr />
+<h2 id="14-assumptions-to-verify">14. Assumptions to Verify</h2>
+<blockquote>
+<p><strong>Instructions for the client:</strong> Please read each item below and confirm whether it is correct. If any assumption is wrong, note the correction so the system can be adjusted before it affects your operations.</p>
+</blockquote>
+<h3 id="140-all-open-items-at-a-glance">14.0 All Open Items at a Glance</h3>
+<p>This is the single place that lists <strong>every open question in this document</strong> — the assumptions to confirm (14.1–14.10), the inputs we need (14.11), and the billing and support details flagged elsewhere. Nothing here blocks the build; each has a safe default or interim handling. The detail for each sits where the "Where" column points.</p>
+<table>
+<thead>
+<tr>
+<th>Open item</th>
+<th>Who answers</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Separate admission / registration fee?</td>
+<td>Owner</td>
+<td>§14.1</td>
+</tr>
+<tr>
+<td>Full term fee for mid-term joiners (no splitting)</td>
+<td>Owner</td>
+<td>§14.2</td>
+</tr>
+<tr>
+<td>Branch 2 same programmes &amp; fees as Branch 1</td>
+<td>Owner</td>
+<td>§14.3</td>
+</tr>
+<tr>
+<td>Transport optional and billed separately</td>
+<td>Owner</td>
+<td>§14.4</td>
+</tr>
+<tr>
+<td>Meals not offered yet</td>
+<td>Owner</td>
+<td>§14.5</td>
+</tr>
+<tr>
+<td>Fees stay on CoFee this version</td>
+<td>Owner</td>
+<td>§14.6</td>
+</tr>
+<tr>
+<td>Absence alerts go by paid text message</td>
+<td>Owner</td>
+<td>§14.7</td>
+</tr>
+<tr>
+<td>Collect the child's Aadhaar at all?</td>
+<td>Owner + lawyer</td>
+<td>§14.8</td>
+</tr>
+<tr>
+<td>Collect / submit APAAR &amp; PEN now?</td>
+<td>Owner + lawyer</td>
+<td>§14.9</td>
+</tr>
+<tr>
+<td>Photos stored but not shared</td>
+<td>Owner</td>
+<td>§14.10</td>
+</tr>
+<tr>
+<td>Safe adults-to-children ratio (default 1:10 / 1:5)</td>
+<td>Owner</td>
+<td>§14.11</td>
+</tr>
+<tr>
+<td>Morning cut-off time for sending absence texts (default 9:30 AM)</td>
+<td>Owner</td>
+<td>§5.7</td>
+</tr>
+<tr>
+<td>Staff-ID format (default <code>HF-EMP-001</code>)</td>
+<td>Owner</td>
+<td>§14.11</td>
+</tr>
+<tr>
+<td>Waitlist expiry + decline-message wording</td>
+<td>Owner</td>
+<td>§14.11</td>
+</tr>
+<tr>
+<td>Which fee categories carry GST (tuition exempt; transport, meals, materials, events — confirm which)</td>
+<td>Owner + Accountant</td>
+<td>§14.11</td>
+</tr>
+<tr>
+<td>Child-safety record retention period</td>
+<td>Lawyer</td>
+<td>§14.11, §9</td>
+</tr>
+<tr>
+<td>Retention period for child photographs under DPDP</td>
+<td>Lawyer</td>
+<td>§14.11</td>
+</tr>
+<tr>
+<td>Payment cutover date — when Happy Feet becomes the official fee record</td>
+<td>Owner</td>
+<td>§14.11</td>
+</tr>
+<tr>
+<td>Can CoFee produce a per-child paid/due statement as of the cutover date</td>
+<td>Owner</td>
+<td>§14.11</td>
+</tr>
+<tr>
+<td>Automatic notification to guardian on a manually recorded cash/bank payment</td>
+<td>Owner</td>
+<td>§14.11</td>
+</tr>
+<tr>
+<td>Approved wording for the standard fee reminder message</td>
+<td>Owner</td>
+<td>§14.11</td>
+</tr>
+<tr>
+<td>Outstanding fees visible to non-paying guardians (default: payer only)</td>
+<td>Owner</td>
+<td>§14.11</td>
+</tr>
+<tr>
+<td>Security deposits tracked in this release</td>
+<td>Owner</td>
+<td>§14.11</td>
+</tr>
+<tr>
+<td>Approved expense categories (default list provided)</td>
+<td>Owner</td>
+<td>§14.11</td>
+</tr>
+<tr>
+<td>Confirmed term dates for Academic Year 2026–27</td>
+<td>Owner</td>
+<td>§14.11</td>
+</tr>
+<tr>
+<td>Term 1 school days before the attendance cutover date</td>
+<td>Owner</td>
+<td>§14.11</td>
+</tr>
+<tr>
+<td>Hosting monthly cost</td>
+<td>Owner, at first invoice</td>
+<td>§14.11, §12</td>
+</tr>
+<tr>
+<td>Database, Login, and Text-Message monthly figures</td>
+<td>Owner, at first invoice</td>
+<td>§12</td>
+</tr>
+<tr>
+<td>CoFee cost; who owns and pays each outside service</td>
+<td>Owner</td>
+<td>§12</td>
+</tr>
+<tr>
+<td>Developer support channel, hours, and response times</td>
+<td>Owner + developer</td>
+<td>§13.4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="141-no-separate-admission-fee">14.1 No separate admission fee</h3>
+<p><strong>What was assumed:</strong> The school does not charge a separate registration or admission deposit. Fees are term-based instalments tied to the programme.</p>
+<p><strong>Why it matters:</strong> If a separate admission fee or deposit exists, the fee setup must include it, or it will be missed at admission.</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Correct as stated</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Needs correction: <strong><em>_</em></strong><strong><em>_</em></strong>_</li>
+</ul>
+<h3 id="142-full-term-fee-for-mid-term-admissions">14.2 Full term fee for mid-term admissions</h3>
+<p><strong>What was assumed:</strong> A child who joins partway through a term is charged the full term fee. Fees are not split for partial terms.</p>
+<p><strong>Why it matters:</strong> If the school charges part of a term for mid-term joiners, the fee approach is different from what is set up.</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Correct as stated</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Needs correction: <strong><em>_</em></strong><strong><em>_</em></strong>_</li>
+</ul>
+<h3 id="143-the-second-branch-matches-the-first">14.3 The second branch matches the first</h3>
+<p><strong>What was assumed:</strong> The planned second branch is under the same ownership and uses the same programmes and fee approach as the current branch.</p>
+<p><strong>Why it matters:</strong> If the second branch will have its own programmes or its own fees, the setup must allow each branch to differ.</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Correct as stated</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Needs correction: <strong><em>_</em></strong><strong><em>_</em></strong>_</li>
+</ul>
+<h3 id="144-transport-is-optional-and-billed-separately">14.4 Transport is optional and billed separately</h3>
+<p><strong>What was assumed:</strong> Transport is chosen per child and billed on its own, not bundled into a single programme fee.</p>
+<p><strong>Why it matters:</strong> If some children receive transport as part of a combined fee, billing must be handled differently.</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Correct as stated</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Needs correction: <strong><em>_</em></strong><strong><em>_</em></strong>_</li>
+</ul>
+<h3 id="145-meals-are-not-offered-yet">14.5 Meals are not offered yet</h3>
+<p><strong>What was assumed:</strong> The school does not currently offer meals. The meal option stays switched off until the school decides to offer them.</p>
+<p><strong>Why it matters:</strong> If meals are needed at go-live, the meal option must be set up from the start.</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Correct as stated</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Needs correction: <strong><em>_</em></strong><strong><em>_</em></strong>_</li>
+</ul>
+<h3 id="146-fees-stay-on-cofee-in-this-version">14.6 Fees stay on CoFee in this version</h3>
+<p><strong>What was assumed:</strong> The school keeps collecting most fees through CoFee. Happy Feet brings in CoFee's data to view and report on, and also lets the Accountant manually record cash or bank payments collected outside CoFee. It does not issue its own invoices or take online payments from parents yet.</p>
+<p><strong>Why it matters:</strong> If the school expects to take payments online through Happy Feet now, that is a larger scope than this version covers.</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Correct as stated</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Needs correction: <strong><em>_</em></strong><strong><em>_</em></strong>_</li>
+</ul>
+<h3 id="147-absence-alerts-go-out-by-text-message">14.7 Absence alerts go out by text message</h3>
+<p><strong>What was assumed:</strong> When a child is marked absent, the parent is alerted by text message, which is charged per message.</p>
+<p><strong>Why it matters:</strong> Text messages cost money. The school may prefer free in-app alerts instead, which changes how parents are notified.</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Correct as stated</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Needs correction: <strong><em>_</em></strong><strong><em>_</em></strong>_</li>
+</ul>
+<h3 id="148-the-childs-aadhaar-may-not-be-collected">14.8 The child's Aadhaar may not be collected</h3>
+<p><strong>What was assumed:</strong> No part of this version requires a child's national identity number (Aadhaar), so it may not be collected at all.</p>
+<p><strong>Why it matters:</strong> Collecting a young child's Aadhaar carries legal responsibility. If it is not needed, it is safer not to hold it.</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Correct as stated</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Needs correction: <strong><em>_</em></strong><strong><em>_</em></strong>_</li>
+</ul>
+<h3 id="149-government-student-ids-are-not-handled-yet">14.9 Government student IDs are not handled yet</h3>
+<p><strong>What was assumed:</strong> The national student identifiers (APAAR and PEN) and government portal submissions are not collected or filed through the system in this version.</p>
+<p><strong>Why it matters:</strong> If the school must collect or submit these now, that is additional work to plan for.</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Correct as stated</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Needs correction: <strong><em>_</em></strong><strong><em>_</em></strong>_</li>
+</ul>
+<h3 id="1410-photos-are-stored-but-not-shared">14.10 Photos are stored but not shared</h3>
+<p><strong>What was assumed:</strong> Children's photos are stored for identification and pickup, but are not shared with parents through the system in this version.</p>
+<p><strong>Why it matters:</strong> Sharing photos needs a data-protection review first. If the school expects photo sharing now, that review must happen before it can be turned on.</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Correct as stated</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Needs correction: <strong><em>_</em></strong><strong><em>_</em></strong>_</li>
+</ul>
+<hr />
+<h2 id="1411-open-questions-still-awaiting-input">14.11 Open Questions Still Awaiting Input</h2>
+<p>These are not assumptions to confirm — they are open items we need an answer on before, or shortly after, go-live. Each has a safe default so nothing is blocked in the meantime. Please fill in the blanks.</p>
+<p><strong>1. Safe adults-to-children ratio</strong> <em>(owner)</em></p>
+<p><strong>What to understand:</strong> The system checks, in real time, whether enough adults are present for the number of children in a class or activity, and warns staff when the ratio drops too low. The safe number may differ by age group. Default we will use unless you change it: <strong>1 adult per 10 children</strong> for Nursery, PP1, and PP2; <strong>1 per 5</strong> for Play Group and Day Care.</p>
+<p><strong>Why it matters:</strong> Set the ratio too strict and staff get warnings for no reason; set it too loose and the system stays silent during a genuine staffing shortfall. Either way undermines trust in the safety check.</p>
+<ul>
+<li>Nursery / PP1 / PP2: 1 adult per <strong><em>_</em></strong> children</li>
+<li>Play Group / Day Care: 1 adult per <strong><em>_</em></strong> children</li>
+</ul>
+<p><strong>2. Hosting monthly cost</strong> <em>(owner — at first invoice)</em></p>
+<p><strong>What to understand:</strong> The hosting provider and setup are already decided (see §12). Only the actual rupee figure is missing, which can only be confirmed once the first invoice arrives.</p>
+<p><strong>Why it matters:</strong> Without the real figure, the cost section in §12 stays an estimate rather than a number the Owner can budget against.</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Confirm the monthly hosting figure once the first invoice arrives.</li>
+</ul>
+<p><strong>3. Child-safety record retention period</strong> <em>(lawyer)</em></p>
+<p><strong>What to understand:</strong> How long the school must legally keep child-safety records — incidents, welfare concerns, and pickup records (see §9). This needs an Indian education / child-welfare lawyer, because three laws pull in different directions at once: limitation (a child can claim after turning 18), POCSO (no time limit for child-abuse cases), and DPDP (don't keep data longer than needed). Until confirmed, the floor is a minimum of three years, and in practice these are held until the child would turn 18 plus a few years.</p>
+<p><strong>Why it matters:</strong> Delete these records too early and the school may lose its protection if a claim is raised years later; keep them too long and the school risks breaching DPDP's "don't hold longer than needed" rule. This number should come from a lawyer, not a guess.</p>
+<ul>
+<li>Confirmed retention period for child-safety records: <strong><em>_</em></strong><strong><em>_</em></strong>_</li>
+</ul>
+<p><strong>4. Staff ID format</strong> <em>(owner — cosmetic)</em></p>
+<p><strong>What to understand:</strong> Every staff member already gets an ID number automatically (see §6). This only asks what that ID should look like — its prefix or format — not whether one is issued. Default: <code>HF-EMP-001</code>.</p>
+<p><strong>Why it matters:</strong> Low-stakes, but staff IDs appear on staff lists and exports, so settling the format once avoids relabeling everyone later.</p>
+<ul>
+<li>Preferred staff-ID format / prefix: <strong><em>_</em></strong><strong><em>_</em></strong>_</li>
+</ul>
+<p><strong>5. Waitlist expiry and decline wording</strong> <em>(owner)</em></p>
+<p><strong>What to understand:</strong> Two small but separate choices about an application that does not become an enrolment: (a) how long a waitlisted family has to respond before the offer expires, and (b) whether a family who doesn't get a place is sent a short message or simply sees the application close with no message.</p>
+<p><strong>Why it matters:</strong> Without an expiry, a waitlisted spot can sit reserved indefinitely instead of freeing up for the next family in line. Without agreed wording, staff are left improvising a sensitive message to a family that didn't get in.</p>
+<ul>
+<li>Waitlist stays open for: <strong><em>_</em></strong><strong><em>_</em></strong>_</li>
+<li>On decline: [ ] send a short message  [ ] close with no message</li>
+</ul>
+<p><strong>6. GST on extra services</strong> <em>(owner, with the school's accountant)</em></p>
+<p><strong>What to understand:</strong> Tuition is expected to stay GST-exempt, but transport, meals, materials, and events fees may or may not attract GST individually — each needs to be confirmed on its own with the school's accountant, not assumed from the others.</p>
+<p><strong>Why it matters:</strong> Getting this wrong is a tax compliance risk, not just a wording detail — invoices could charge tax that shouldn't be there, or miss tax that should.</p>
+<ul>
+<li>Transport: [ ] GST applies  [ ] no GST</li>
+<li>Meals: [ ] GST applies  [ ] no GST</li>
+<li>Materials: [ ] GST applies  [ ] no GST</li>
+<li>Events: [ ] GST applies  [ ] no GST</li>
+</ul>
+<p><strong>7. Retention period for child photographs</strong> <em>(lawyer)</em></p>
+<p><strong>What to understand:</strong> A narrower question than item 3 above — specifically how long child photographs (not records or incidents) may be legally retained under DPDP, since photos carry their own data-protection rules (see §14.10).</p>
+<p><strong>Why it matters:</strong> Photos are currently stored but not shared with parents. Before that policy changes, or before old photos are routinely deleted, the school needs this legal retention window confirmed.</p>
+<ul>
+<li>Confirmed retention period for child photographs: <strong><em>_</em></strong><strong><em>_</em></strong>_</li>
+</ul>
+<p><strong>8. Payment cutover date</strong> <em>(owner)</em></p>
+<p><strong>What to understand:</strong> The exact date the school stops treating CoFee and paper as the source of truth for fees and starts treating Happy Feet as the official record — a specific date, not just "go-live week" in general.</p>
+<p><strong>Why it matters:</strong> Every fee calculated after that date depends on knowing precisely where the old records stop and the new ones start. An unclear cutover risks double-charging or missing charges right around the transition.</p>
+<ul>
+<li>Cutover date: <strong><em>_</em></strong><strong><em>_</em></strong>_</li>
+</ul>
+<p><strong>9. CoFee paid/due statement at cutover</strong> <em>(owner)</em></p>
+<p><strong>What to understand:</strong> Whether CoFee can generate a clean, per-child list of what's been paid and what's still owed, dated exactly at the cutover point — not whether the data exists somewhere in CoFee, but whether it can be produced as one statement.</p>
+<p><strong>Why it matters:</strong> The opening fee balances entered during go-live setup (see §5.1) are only as accurate as this statement. Without it, the school risks starting Happy Feet with wrong balances that take months to notice and unwind.</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Yes, a statement can be produced  [ ] No</li>
+</ul>
+<p><strong>10. Notification on manually recorded payments</strong> <em>(owner)</em></p>
+<p><strong>What to understand:</strong> When the Accountant manually enters a cash or bank payment received outside CoFee (see §5.12), this decides whether the paying guardian is automatically told the payment was recorded — similar to a receipt.</p>
+<p><strong>Why it matters:</strong> Skip this and parents may stay unsure their payment was received; turn it on without it being wanted and it creates notification noise for a routine bookkeeping action.</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Yes, notify automatically  [ ] No, no notification needed</li>
+</ul>
+<p><strong>11. Fee reminder wording</strong> <em>(owner)</em></p>
+<p><strong>What to understand:</strong> The exact words sent to a guardian when a fee is due or overdue. Tone matters here, since it is a message to a parent about money.</p>
+<p><strong>Why it matters:</strong> Without approved wording, the system either sends nothing — so parents miss reminders — or staff have to draft and approve a message every time, which defeats the point of automating it.</p>
+<ul>
+<li>Approved wording: <strong><em>_</em></strong><strong><em>_</em></strong>_</li>
+</ul>
+<p><strong>12. Outstanding fees visible to non-paying guardians</strong> <em>(owner)</em></p>
+<p><strong>What to understand:</strong> A child can have more than one guardian, but usually only one is the designated payer (see §3, "Who pays"). This decides whether a second guardian — who is not the payer — can also see what's owed. Default we will use unless you change it: no, payer only.</p>
+<p><strong>Why it matters:</strong> Family financial information can be sensitive between guardians, for example separated parents. The "payer only" default protects privacy, but the school may prefer it shared more widely.</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Visible to all guardians  [ ] Payer only (default)</li>
+</ul>
+<p><strong>13. Security deposits</strong> <em>(owner)</em></p>
+<p><strong>What to understand:</strong> Different from the admission/registration fee question in §14.1 — this asks whether the school takes a refundable security deposit at all. If so, it needs its own tracking (held, refunded, forfeited), separate from ordinary fee income.</p>
+<p><strong>Why it matters:</strong> If deposits exist but aren't tracked as their own item, that money has nowhere clear to live in the fee system and risks being recorded incorrectly as ordinary fee income.</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Yes, track deposits  [ ] No, not in this release</li>
+</ul>
+<p><strong>14. Expense categories</strong> <em>(owner)</em></p>
+<p><strong>What to understand:</strong> How the school's outgoing costs — not fees coming in — get labelled when recorded. The default list covers common preschool costs, but the school may already use different categories. Default we will use unless you change it: salaries, rent, utilities, supplies, maintenance, food, transport, other.</p>
+<p><strong>Why it matters:</strong> The categories decide how useful expense reports are later. Changing them after data has already been entered means relabeling everything retroactively.</p>
+<ul>
+<li>Approved categories: <strong><em>_</em></strong><strong><em>_</em></strong>_</li>
+</ul>
+<p><strong>15. Confirmed term dates for the coming year</strong> <em>(owner)</em></p>
+<p><strong>What to understand:</strong> The year-setup sequence in §5.2 needs the real start and end dates for each term before classes, fees, and the calendar can be built around them. This is data entry, not a policy decision.</p>
+<p><strong>Why it matters:</strong> Attendance, fee terms, and progress-report windows all follow this calendar (see §2). Without confirmed dates, none of those areas can be finished for the new year.</p>
+<ul>
+<li>Term 1: <strong><em>_</em></strong><strong><em>_</em></strong><em>  Term 2: <strong><em>_</em></strong><strong><em>_</em></strong></em>  Term 3: <strong><em>_</em></strong><strong><em>_</em></strong>_</li>
+</ul>
+<p><strong>16. Term 1 school days before the attendance cutover</strong> <em>(owner)</em></p>
+<p><strong>What to understand:</strong> The count of school days that already happened in Term 1 before Happy Feet went live and started tracking attendance day by day — the days that instead sit inside the read-only legacy year (see §5.1).</p>
+<p><strong>Why it matters:</strong> Term-level attendance totals and reports need this number to stay accurate. Without it, Term 1's attendance percentage would silently look lower than it really was, since the pre-launch days are otherwise invisible to the system.</p>
+<ul>
+<li>Number of days: <strong><em>_</em></strong><strong><em>_</em></strong>_</li>
+</ul>
+<hr />
+<h2 id="15-glossary">15. Glossary</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Plain English Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Academic Year</strong></td>
+<td>The school's yearly cycle, divided into terms, that all dates and operations follow. Has four stages: legacy (a read-only, pre-launch year), upcoming, active, and closed.</td>
+</tr>
+<tr>
+<td><strong>Admission Number</strong></td>
+<td>The unique number that identifies a child at the school; kept for life and never changed.</td>
+</tr>
+<tr>
+<td><strong>Application</strong></td>
+<td>A request to admit a child, recorded before they become an enrolled student.</td>
+</tr>
+<tr>
+<td><strong>Authenticator App</strong></td>
+<td>A free app on a staff member's phone that generates the security code used as the second sign-in step.</td>
+</tr>
+<tr>
+<td><strong>Authorised Pickup List</strong></td>
+<td>The list of people approved to collect a child from the school.</td>
+</tr>
+<tr>
+<td><strong>Bonafide Certificate</strong></td>
+<td>A formal letter confirming a child is enrolled, often needed for banks, travel, or a sibling's admission.</td>
+</tr>
+<tr>
+<td><strong>Branch</strong></td>
+<td>A single school location; the school has one active branch and a second planned.</td>
+</tr>
+<tr>
+<td><strong>CoFee</strong></td>
+<td>The school's existing fee-collection software, whose data Happy Feet brings in.</td>
+</tr>
+<tr>
+<td><strong>Coordinator</strong></td>
+<td>The front-desk staff member who handles intake, documents, gate, and communication for a branch.</td>
+</tr>
+<tr>
+<td><strong>Daily Care Log (Daily Feed)</strong></td>
+<td>The running record of a child's day — meals, naps, activities, health checks — shown to parents.</td>
+</tr>
+<tr>
+<td><strong>Dashboard</strong></td>
+<td>An on-screen summary of key numbers, such as fee collection or attendance.</td>
+</tr>
+<tr>
+<td><strong>Day Care</strong></td>
+<td>Childcare that runs on its own billing plan and daily record, sharing the same platform.</td>
+</tr>
+<tr>
+<td><strong>Enrollment</strong></td>
+<td>The point at which an applicant becomes an enrolled child, once all four conditions are met.</td>
+</tr>
+<tr>
+<td><strong>Go-Live Setup (Migration Mode)</strong></td>
+<td>The one-time setup when a branch's existing records are first entered into the system.</td>
+</tr>
+<tr>
+<td><strong>Guardian</strong></td>
+<td>A parent or family member linked to a child, with their own login and set permissions.</td>
+</tr>
+<tr>
+<td><strong>Incident</strong></td>
+<td>A formally recorded event involving a child; the Principal decides whether to share it with parents.</td>
+</tr>
+<tr>
+<td><strong>Installable App</strong></td>
+<td>An app added to a phone's home screen from the web, opening like any other app without an app store.</td>
+</tr>
+<tr>
+<td><strong>Milestone</strong></td>
+<td>A developmental goal set for a programme, used to assess a child's progress.</td>
+</tr>
+<tr>
+<td><strong>Owner (Admin)</strong></td>
+<td>The school owner; the highest authority, across all branches.</td>
+</tr>
+<tr>
+<td><strong>Parent App</strong></td>
+<td>The part of the system parents use to follow their own child.</td>
+</tr>
+<tr>
+<td><strong>Pickup Code</strong></td>
+<td>A short numeric one-time code a parent creates in the app and shares by phone or WhatsApp to authorise a one-off pickup.</td>
+</tr>
+<tr>
+<td><strong>Principal (Branch Admin)</strong></td>
+<td>The person who runs a single branch day to day.</td>
+</tr>
+<tr>
+<td><strong>Programme</strong></td>
+<td>A course of study the school offers — Play Group, Nursery, PP1, PP2, or Day Care.</td>
+</tr>
+<tr>
+<td><strong>Progress Report</strong></td>
+<td>A child's termly assessment against milestones, reviewed and published to the parent.</td>
+</tr>
+<tr>
+<td><strong>Rollover</strong></td>
+<td>The year-end process of moving children up to their next class.</td>
+</tr>
+<tr>
+<td><strong>Sensitive Documents</strong></td>
+<td>A child's protected records — identity, medical, and photo — kept apart and access-controlled.</td>
+</tr>
+<tr>
+<td><strong>Student Category</strong></td>
+<td>The grouping (Standard, Staff Child, Subsidised) that decides which fee structure applies to a child.</td>
+</tr>
+<tr>
+<td><strong>Submission Window</strong></td>
+<td>The set period each term when teachers can submit progress reports.</td>
+</tr>
+<tr>
+<td><strong>Term</strong></td>
+<td>One of the three parts the school year is divided into.</td>
+</tr>
+<tr>
+<td><strong>Transfer Certificate</strong></td>
+<td>A formal document the school issues when a child leaves, confirming their transfer.</td>
+</tr>
+<tr>
+<td><strong>Two-Step Sign-In</strong></td>
+<td>A sign-in that needs a second security code in addition to the login; required at every login for the Owner, Principal, Coordinator, and Accountant, and required of teachers at the point they open a sensitive record.</td>
+</tr>
+<tr>
+<td><strong>Welfare Concern</strong></td>
+<td>A teacher-raised concern about a child's wellbeing; a permanent record never shown to parents.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<blockquote>
+<p><strong>Note to client:</strong> This document describes your system as it was designed and built. It is not a legal contract. If anything in this document does not match how your business actually works, please flag it so the system can be corrected before it causes problems in your operations.</p>
+<p><strong>For technical documentation</strong> — architecture, data models, business rules, and developer references — refer to the separate technical documentation maintained by the development team. This document intentionally contains no technical detail.</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": [], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
