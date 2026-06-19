@@ -32,6 +32,8 @@ It replaces four things that don't talk to each other today. Paper admission for
 
 You open Happy Feet as a single app on your phone or laptop. You sign in once and stay signed in. Staff and parents simply tap the icon to pick up where they left off.
 
+Why a custom system instead of a ready-made preschool app? Off-the-shelf products charge per child every month, cannot read the school's CoFee fee data, and force their own workflows on the school. Happy Feet is built around how this school already works — CoFee stays, pickup works the way the gate actually works, and all data stays in India — with no per-child subscription cost as the school grows.
+
 ---
 
 ## 2. How the Product Works
@@ -69,7 +71,7 @@ This section explains how the school earns its income — what it charges for, h
 | Revenue Stream | How It Is Billed | Key Rule |
 |---|---|---|
 | **Academic programmes** (Play Group, Nursery, PP1, PP2) | Per term | The full term fee applies even when a child joins partway through a term. Fees are not split for a partial term. |
-| **Day Care** | By a chosen plan | Billed on the child's assigned Day Care plan — monthly, weekly, day-wise, hour-wise, or term-wise. Staff record check-in and check-out times, which support the plans that bill by the day or hour. |
+| **Day Care** | By a chosen plan | Billed on the child's assigned Day Care plan — monthly, weekly, day-wise, hour-wise, or term-wise. Staff record check-in and check-out times, which support the plans that bill by the day or hour. In this version, billing itself happens in CoFee — each month the Accountant exports the recorded hours from Happy Feet and enters them into CoFee for the children on day-wise or hour-wise plans. |
 | **Transport** (optional, school-run) | Fixed monthly, by zone | Charged by distance band and trip type, and chosen per child. In this version it is a simple optional fee item the Owner or Principal can switch on for a child — full transport management comes in a later version. |
 | **Meals** (optional) | By a chosen plan | A simple optional fee item, off by default and switched on only when a branch starts offering meals. The school does not offer meals today. Full meal management comes in a later version. |
 | **Events and one-offs** | One-off charge | Single charges for things like Annual Day or field trips. |
@@ -80,17 +82,26 @@ This section explains how the school earns its income — what it charges for, h
 
 **The fee agreed at enrollment stays fixed.** The fee structure recorded when a child enrolls is the agreed basis for their billing. It is not overwritten when fees change in later years.
 
-**Tax on extras.** Tuition is largely tax-exempt. Extra services — transport, meals, materials, and events — may carry GST. Where it applies, the tax is shown on the invoice and on the parent's receipt.
+**Tax on extras.** Tuition is expected to be largely tax-exempt. Whether extra services — transport, meals, materials, and events — carry GST, and which ones, is still being confirmed with the school's accountant (see §14). Where GST applies, the tax will be shown on the invoice and on the parent's receipt.
 
-**A check on fee reductions.** Any fee waiver, concession, or refund needs a second person to approve it. The person who records money is never the one who reduces it.
+**A check on fee reductions.** Any fee waiver, concession, or refund needs a second person to approve it. The person who records money is never the one who reduces it. In this version, the Accountant or Principal proposes a waiver and the Owner approves or declines it — a declined waiver stays on permanent record too, with who proposed it, who declined it, and why.
 
-**How fees are collected in this version.** The school continues to collect fees through CoFee. Happy Feet brings that data in so fees sit alongside students and attendance. Collecting payments inside Happy Feet itself — with its own invoices and receipts — comes in a later version.
+**How fees are collected in this version.** The school continues to collect most fees through CoFee, and Happy Feet brings that data in so fees sit alongside students and attendance. For payments that come in outside CoFee — cash or a direct bank transfer — the Accountant records them manually in Happy Feet, and each manual receipt gets its own automatically generated number. Happy Feet does not yet issue its own invoices or take payments online directly from parents — that comes in a later version.
 
 ---
 
 ## 4. Who Uses the System — Roles and Actors
 
 Six kinds of people use Happy Feet. Five are staff inside the school. The sixth is the parent. Each plain-English name below is paired with the **system role** — the exact label the system uses for that person. The guiding idea across all of them: the system shows each person only what belongs to their job and their relationship to a child. Authority sits with the Owner and the Principal. The other staff roles carry out the daily work within clear limits.
+
+| System Role | Who | Scope |
+|---|---|---|
+| **ADMIN** | Owner | All branches; creates branches and staff |
+| **BRANCH_ADMIN** | Principal | One branch |
+| **COORDINATOR** | Front desk | Enquiry, students, gate |
+| **ACCOUNTANT** | Fees staff | Fees & payments |
+| **TEACHER** | Class teacher | Own class |
+| **PARENT** | Guardian | Own children only |
 
 ### 4.1 Owner
 
@@ -164,9 +175,9 @@ Six kinds of people use Happy Feet. Five are staff inside the school. The sixth 
 
 **What they can see:** The branch's fee picture — payments brought in from CoFee, each child's fee status, and the fee dashboards showing collection rates and overdue amounts.
 
-**What they can do:** Bring in CoFee payment data, view and export fee records, read the fee dashboards, and handle billing-related communication.
+**What they can do:** Bring in CoFee payment data, view and export fee records, read the fee dashboards, handle billing-related communication, record a cash or bank payment received outside CoFee, and propose a fee waiver for the Owner to approve.
 
-**What they cannot do:** Change the imported fee data — it is view-only. Mark attendance, write progress, or change the school's setup.
+**What they cannot do:** Change an imported payment's amount, source, or reference — those are view-only. They may, though, link an unmatched payment to the right child; matching a payment is allowed, editing it is not. Approve their own fee waiver proposal — a different, more senior person must approve it. Mark attendance, write progress, or change the school's setup.
 
 **Type:** Internal staff.
 
@@ -194,14 +205,16 @@ This section follows the school's year from start to finish and shows where each
 
 ### 5.1 Setting Up the System at Go-Live
 
-**What happens:** Before the school can use Happy Feet for the first time, its existing information is entered. The Owner and Principal accounts are created. Staff profiles are added — teachers, coordinators, and the accountant. Existing children are entered with their current records and opening fee balances, and the school's CoFee payment data is brought in. This is a one-time setup for each branch. While it runs, the system relaxes its usual checks so part-finished records can be saved, and it holds back automatic alerts so incomplete data doesn't trigger false reminders.
+**What happens:** Before the school can use Happy Feet for the first time, its existing information is entered. The Owner and Principal accounts are created. Staff profiles are added — teachers, coordinators, and the accountant. Existing children are entered with their current records and opening fee balances, and the school's CoFee payment data is brought in. This is a one-time setup for each branch. While it runs, the system allows part-finished records to be saved, and it holds back automatic alerts so incomplete data doesn't trigger false reminders or messages to parents.
 
 **Who is responsible:** The Owner and the Principal.
 
 **Information involved:** Owner and staff accounts, staff profiles, existing student records, opening fee balances, and imported CoFee payment history.
 
 **Rules that apply:**
+- If Happy Feet goes live partway through a school year, the part of that year that happened before go-live is held as a **legacy year** — a read-only container for the attendance totals and fee history from before the system existed. It is never the school's active year and is never edited day-by-day.
 - This setup runs once per branch, at go-live.
+- Even during go-live setup, the safeguards that protect data quality stay switched on: admission numbers stay unique, and every record must link to a real class, programme, or guardian. Only optional details may be left to fill in later — a record can be **incomplete, never invalid**.
 - Children moved over from the old paper records keep their existing admission number exactly as it was — it is never changed or reissued.
 - Staff profiles must exist before classes can be set up, because classes are linked to the teachers who run them.
 - The Principal confirms all records are entered and correct before the school switches to normal day-to-day operation.
@@ -218,6 +231,7 @@ This section follows the school's year from start to finish and shows where each
 
 **Rules that apply:**
 - The steps must be completed in order. A later step that depends on an earlier one is blocked until the earlier one is done.
+- Each branch sets up and runs its own academic year. Branches can be on different years at the same time, so a second branch can open mid-year without affecting the first.
 - The fee structure is set per programme and per student category (Standard, Staff Child, Subsidised).
 - Setup is completed before the new year begins, so the year is ready when the session starts.
 
@@ -235,7 +249,9 @@ This section follows the school's year from start to finish and shows where each
 - An application is only a request to be considered. It does not create an enrolled child.
 - If the school has set an admissions window, applications sent outside that window are not accepted.
 - The public form is open to anyone, so it is treated carefully — it can only create a pending application, nothing more.
+- Because it is open, the form is protected: a quick email verification before it submits, a duplicate check on the child's name, date of birth, and contact, and spam protection — so it cannot be flooded or used to enter the same child twice.
 - A child the school cannot place straight away can be held on a waitlist until a place opens.
+- An application moves through clear stages: received, under review, offered a place, and accepted (which becomes enrollment) — or a recorded closed outcome: declined, withdrawn, or waitlist-expired. Each closed outcome is a kept end state, never a deletion.
 
 ---
 
@@ -272,22 +288,22 @@ This section follows the school's year from start to finish and shows where each
 
 ### 5.6 Activating the Parent and Verifying Documents
 
-**What happens:** When a child is enrolled, the parent is invited by email to the parent app. The parent signs in and submits their child's sensitive documents — identity, medical, and a photo. The Owner, Principal, or Coordinator then checks each document and marks it verified. Letting the Coordinator verify means the school's daily document work doesn't wait on core management.
+**What happens:** When a child is enrolled, the parent is invited by email to the parent app — once parent access has been switched on for the branch (see §6, staff trial period). Until then, the school continues to update families the old way (WhatsApp, phone) while staff get used to the system. Once invited, the parent signs in and submits their child's sensitive documents — identity, medical, and a photo. The Owner, Principal, or Coordinator then checks each document and marks it verified. Letting the Coordinator verify means the school's daily document work doesn't wait on core management.
 
 **Who is responsible:** The parent submits; the Owner, Principal, or Coordinator verifies.
 
 **Information involved:** The parent's account, the child's sensitive documents, and each document's status (submitted, then verified).
 
 **Rules that apply:**
-- The parent app is useful from the first day of enrollment.
-- Sensitive documents move from "submitted" to "verified" only after a staff member checks them.
+- The parent app is useful from the first day a branch's parent access is switched on — not necessarily the first day of enrollment, if enrollment happens during the staff-only trial period.
+- Sensitive documents move from "submitted" to "verified" only after a staff member checks them. If a document is unclear or wrong, staff return it to the parent with a reason and the parent submits a new one — so a rejected document never sits in limbo.
 - Every time a staff member opens a child's sensitive documents, the system records it — so the school can always show who viewed what.
 
 ---
 
 ### 5.7 Marking Daily Attendance
 
-**What happens:** Each school day, the teacher marks who is present, absent, late, or on a half day. When a child is marked absent, the system sends an automatic text message to that child's main registered phone number, once the attendance is confirmed. A mark can be corrected later if needed. The system also flags repeated absences so staff can follow up, and it watches the number of adults present against the number of children, alerting staff if a safe ratio is crossed.
+**What happens:** Each school day, the teacher marks who is present, absent, late, or on a half day. When a child is marked absent, the system alerts the child's guardians once the attendance is confirmed: the primary guardian receives a text message, and other guardians set to receive communications get a free in-app notification. A mark can be corrected later if needed. The system also flags repeated absences so staff can follow up, and it watches the number of adults present against the number of children, alerting staff if a safe ratio is crossed.
 
 **Who is responsible:** The Teacher.
 
@@ -295,9 +311,10 @@ This section follows the school's year from start to finish and shows where each
 
 **Rules that apply:**
 - Each class has one teacher who is the authoritative marker, so two teachers cannot overwrite each other's marks.
-- The absence text is sent once, after the attendance is confirmed.
+- The absence text is sent once, after the attendance is confirmed. Messages are held until a set cut-off time each morning, so a correction made before then never sends a wrong alert.
+- If a child is changed from absent to present after the alert has already gone out, a short follow-up text is sent to correct it, and the change is logged.
 - Holidays on the school calendar block attendance for that day, with no exceptions.
-- A correction made long after the day is recorded as a logged change.
+- Corrections follow clear authority: same-day edits are free; a teacher may correct within a few days; older changes need the Principal; and once a year is closed, only the Owner can correct it. Every correction is logged.
 
 ---
 
@@ -317,7 +334,7 @@ This section follows the school's year from start to finish and shows where each
 
 ### 5.9 Keeping Children Safe at Pickup
 
-**What happens:** A child is released only to someone who is allowed to collect them. A pickup is approved in one of three ways. A person on the child's standing pickup list is checked by their saved code or QR and their photo. For a one-off pickup, the parent creates a one-time code in their app and gives it to whoever is collecting that day. If neither applies, a two-person override is used — the Principal authorises it, the parent confirms by phone, and a photo is taken. The front desk also keeps a digital visitor log, recording who came in and left and when.
+**What happens:** A child is released only to someone who is allowed to collect them. A pickup is approved in one of three ways, each matched to how often it happens. For someone on the child's standing pickup list — the everyday case, around 95% of pickups — the Coordinator confirms their identity against the photo on the standing list; no code is needed. A teacher may confirm a standing-list pickup only at an exit the Principal has assigned to them for that session, and the release record notes who confirmed. For a one-off pickup, the parent generates a short numeric one-time code in their app and shares it by phone call or WhatsApp with whoever is collecting that day; the teacher matches the code and the person's face at the gate. If neither applies, a two-person override is used — the Principal authorises it, the parent confirms by phone, and a photo is taken, and the release is logged automatically. The front desk also keeps a digital visitor log, recording who came in and left and when. There is no QR scanning at the gate — a numeric code shared over the phone or WhatsApp fits the way the school already works.
 
 **Who is responsible:** The Coordinator runs the gate; the Principal authorises overrides; the parent issues one-time codes.
 
@@ -325,6 +342,7 @@ This section follows the school's year from start to finish and shows where each
 
 **Rules that apply:**
 - Every enrolled child must always have at least one active person on their standing pickup list.
+- A parent-issued one-time code works for that day only and for a single pickup — it cannot be reused, and any unused code stops working at the end of the day.
 - A guardian marked as excluded — for custody or safeguarding reasons — is removed from the list and cannot collect the child.
 - The two-person override is the only way to release a child to someone not otherwise approved, and it is always recorded.
 - The digital visitor log replaces the paper gate register.
@@ -342,6 +360,7 @@ This section follows the school's year from start to finish and shows where each
 **Rules that apply:**
 - The Principal must review a concern within three school days.
 - A concern not reviewed in time is reminded, then escalated to the Owner.
+- If the concern involves the Principal, the teacher can flag it as such; it then goes straight to the Owner, bypassing the Principal, who cannot see it.
 - The record is permanent and is never shown to parents.
 
 ---
@@ -363,16 +382,18 @@ This section follows the school's year from start to finish and shows where each
 
 ### 5.12 Managing Fees
 
-**What happens:** The school continues to collect fees through CoFee. Happy Feet brings CoFee's payment data in so the school sees children, attendance, and fees together in one place. Staff can view fee status, export records, and read dashboards showing collection rates and overdue amounts. Happy Feet does not collect payments or issue invoices itself in this version.
+**What happens:** The school continues to collect most fees through CoFee. Happy Feet brings CoFee's payment data in so the school sees children, attendance, and fees together in one place. For a payment that comes in outside CoFee — cash in hand or a direct bank transfer — the Accountant records it manually in Happy Feet, and it becomes part of the same fee record. Staff can view fee status, export records, and read dashboards showing collection rates and overdue amounts. Happy Feet does not issue its own invoices or take online payments from parents in this version. For the full integration contract — file format, field mapping, trigger mechanism, and reconciliation rules — see Decision Log Q15–Q18.
 
-**Who is responsible:** The Accountant, with the Owner reviewing dashboards.
+**Who is responsible:** The Accountant, with the Owner reviewing dashboards and approving any fee waiver.
 
-**Information involved:** Imported CoFee payments and invoices, each child's fee status, and fee dashboards.
+**Information involved:** Imported CoFee payments, manually recorded cash/bank receipts, each child's fee status, and fee dashboards.
 
 **Rules that apply:**
-- Imported fee data is read-only. It is viewed and reported on, never changed inside Happy Feet.
-- Each payment is brought in with its source and reference so figures reconcile and nothing is counted twice.
-- Fee figures are shown as of the last import, so a fresh import keeps them current.
+- Imported CoFee data is read-only — amounts, sources, and references cannot be changed inside Happy Feet. Unmatched payments can be associated to the right student record by the Accountant; that association is not an edit.
+- A manually recorded cash or bank payment is entered directly by the Accountant and gets its own automatically generated receipt number.
+- Each payment is brought in or recorded with its source and reference so figures reconcile and nothing is counted twice.
+- A fee waiver is proposed by the Accountant or Principal and only takes effect once the Owner approves it; a declined waiver stays on permanent record.
+- Fee figures are shown as of the last import or the last manual entry, so a fresh import keeps them current.
 
 ---
 
@@ -400,6 +421,8 @@ This section follows the school's year from start to finish and shows where each
 
 **Rules that apply:**
 - Progress reports can only be submitted during the term's open window.
+- If the window closes while a report is still a draft, the draft is kept but can no longer be submitted; the teacher is told, and the Principal can reopen the window for that teacher if there is a good reason.
+- The reviewer can send a report back to the teacher for changes, with a note; the teacher revises and resubmits.
 - The person who reviews and publishes is never the teacher who drafted it.
 - Formal printed progress cards are handed over offline. The app shows a lightweight view only.
 
@@ -429,7 +452,7 @@ This section follows the school's year from start to finish and shows where each
 
 **Rules that apply:**
 - Imported fee data is matched and reconciled so nothing is counted twice. A payment that cannot be matched is held for review, never dropped.
-- Imported fee data is read-only inside Happy Feet.
+- Imported fee data is read-only inside Happy Feet — amounts, sources, and references cannot be changed. Unmatched payments can be associated to a student record by the Accountant.
 - Children moved in at go-live keep their existing admission numbers exactly.
 - Exports are available to the Owner and Principal. Opening or exporting sensitive data is always recorded.
 - A parent's request to see or remove their child's data is handled under the rules in Section 9.
@@ -447,6 +470,7 @@ This section follows the school's year from start to finish and shows where each
 **Rules that apply:**
 - Rollover is not automatic. The Principal reviews and confirms it.
 - Outstanding dues are acknowledged as part of the review.
+- Because the child moves to a new programme, rollover is a new fee-enrollment event — the Principal selects the new programme's fee plan and student category as part of the rollover step; the fee does not carry forward automatically from the prior year. The previous year's agreed fee is kept on record and is not changed.
 
 ---
 
@@ -482,11 +506,26 @@ This section follows the school's year from start to finish and shows where each
 
 This is the full list of what Happy Feet does, grouped by area. Everything below is part of the current version unless it appears under **Planned for Later Versions** at the end — those are designed and documented, but built in a future version.
 
+### How It Is Delivered — In Phases
+
+The current version is built and rolled out in stages, not all at once. Each phase is usable on its own, and the everyday features come first so staff settle into the daily habit before the back-office tools arrive.
+
+| Phase | What goes live |
+|---|---|
+| **A** | Staff login, student records, staff records, and daily attendance |
+| **B** | Admissions, enrollment, and the student lifecycle (certificates, rollover, exit) |
+| **C** | Communication — announcements and the parent inbox |
+| **D** | Timetable and curriculum, progress reports, CoFee fee import and dashboards, and admin data tools |
+
+**Staff go first.** Once Phase A is live, staff run the system on their own for a trial period of at least two weeks before any parent is invited. Paper registers and WhatsApp stay active as a backup during this window. Once staff have shown they can mark attendance and keep records reliably, the Owner switches on parent access — the parent app and the parent daily feed go live at that point, not on day one of Phase A.
+
+All of the features in this section ship across these four phases. Items under **Planned for Later Versions** come afterwards.
+
 ### Access and Security
 - Installs on a phone's home screen and opens like any other app; the same app also runs on an office laptop
 - Sign in once and stay signed in — a tap to return, not a login every task
 - Staff are added by email invitation, top-down (Owner invites Principals; Principals invite their branch's staff)
-- A second sign-in step for all staff; optional for parents
+- A second sign-in step for staff who handle management, money, or sensitive records (Owner, Principal, Coordinator, Accountant); teachers sign in by secure email link and are asked for the second step only when opening a sensitive record such as a medical flag; parents sign in by email link or one-time code with no second step in this version
 - Identity re-confirmation before sensitive actions, such as opening a child's protected records
 - Access decided by role, branch, and relationship to a child; nothing is shown unless explicitly allowed
 - Built for multiple branches from day one, with each branch's data kept separate
@@ -496,7 +535,7 @@ This is the full list of what Happy Feet does, grouped by area. Everything below
 
 ### School Setup
 - Nine-step start-of-year setup, completed in order
-- Academic year with three stages — upcoming, active, and closed
+- Academic year with four stages — legacy (pre-launch history, read-only), upcoming, active, and closed
 - Terms, with progress-report windows per term
 - Programmes: Play Group, Nursery, PP1, PP2, and Day Care
 - Classes with capacity and teacher slots
@@ -527,7 +566,7 @@ This is the full list of what Happy Feet does, grouped by area. Everything below
 - Parent-Teacher Meeting notes, kept private to staff
 
 ### Staff Records
-- Staff profiles, roles, and branch assignment
+- Staff profiles, roles, and branch assignment, each with an automatically issued staff ID (email stays the login)
 - Staff attendance
 - Leave balances and approval, shown as coverage gaps on the timetable
 - Certifications with expiry alerts
@@ -536,14 +575,14 @@ This is the full list of what Happy Feet does, grouped by area. Everything below
 ### Attendance, Daily Care, and Safety
 - Daily attendance — present, absent, late, or half-day
 - One authoritative marker per class, so edits never clash
-- Automatic absence text message to the parent
+- Automatic absence alert — text message to the primary guardian, in-app notification to other guardians who receive communications
 - Attendance corrections
 - Repeated-absence alerts
 - Live staff-to-child ratio monitoring, with alerts when a ratio is breached
 - Daily care log: meals, naps, activities, and health checks
 - Day-care check-in and check-out times
 - Parent daily feed
-- Authorised pickup: a standing list, parent-issued one-time codes, and a two-person override for exceptions
+- Authorised pickup: a photo-based standing list, parent-issued numeric one-time codes (shared by phone or WhatsApp), and a two-person override for exceptions — no QR scanning at the gate
 - Allergy protocol confirmation at meal time
 - Welfare concern pathway, with a review deadline and escalation, kept private to staff
 - Incident reporting, shared with parents or kept internal at the Principal's decision
@@ -557,10 +596,13 @@ This is the full list of what Happy Feet does, grouped by area. Everything below
 
 ### Fees
 - Brings in CoFee payment data, matched and reconciled, with no double-counting
+- Manual recording of cash or bank payments received outside CoFee, each with its own auto-generated receipt number
+- Fee waiver proposal (Accountant or Principal) and Owner approval, with declined waivers kept on record
 - Each child's fee status in one place
 - Fee dashboards: collection rate and overdue aging
 - Export of fee records
 - Unmatched payments held for review rather than dropped
+- Monthly export of day-care check-in and check-out hours, for billing the day-wise and hour-wise plans in CoFee
 - Student categories (Standard, Staff Child, Subsidised) and payer routing (parent, employer, or sponsor)
 
 ### Communication
@@ -582,11 +624,15 @@ This is the full list of what Happy Feet does, grouped by area. Everything below
 - Records preserved rather than overwritten, keeping a full history
 - Removal of a child's personal data on a valid request, keeping a trace that the record once existed
 
+### Coming Next, Right After This Build
+*Scoped and ready to design, expected in the version right after Phases A–D — not a far-off "someday."*
+
+- Full transport management: routes, stops, boarding and drop confirmation, and a dedicated Transport Staff role who sees only the children on their assigned route. In the current version, transport is only an optional fee item.
+
 ### Planned for Later Versions
 *Designed and documented, but built in a future version — not part of the current build.*
 
 - Native fee billing inside Happy Feet — invoices, in-app payment, receipts, and tax handling — which replaces CoFee
-- Full transport management: routes, stops, boarding and drop confirmation, and a transport staff role. In the current version, transport is only an optional fee item
 - Full meal management: daily menus, allergy-checked meal entries, and consumption tracking. In the current version, meals are only an optional fee item
 - Sharing children's photos with parents, after a data-protection review
 - Automated WhatsApp messaging
@@ -607,7 +653,7 @@ Behind the areas described earlier, the system is built as a set of self-contain
 | **People & Records** | Children, families, and staff | Student records, guardian records, staff records, and the separate sensitive-document store |
 | **School Setup** | The academic framework and teaching plans | Academic year, terms, calendar, programmes, classes, timetable, milestones, lesson plans, and progress reports |
 | **Admissions** | Taking in new children, up to the point of enrollment | Admission applications and the waitlist |
-| **Attendance, Daily Care & Safety** | The school day and child safety | Attendance records, daily care logs, authorised pickup lists, allergy confirmations, welfare concerns, and incident reports |
+| **Attendance, Daily Care & Safety** | The school day and child safety | Attendance records, daily care logs, authorised pickup lists, the visitor log, allergy confirmations, welfare concerns, and incident reports |
 | **Fees** | The money picture, brought in from CoFee | Imported payments and invoices, each child's fee status, and the fee dashboards |
 | **Communication** | Reaching parents | Announcements, inbox messages, the notice board, and notification records |
 | **Administration & Reporting** | Oversight across the whole system | Dashboards, exports, settings, and the activity log |
@@ -630,9 +676,9 @@ The system keeps a set of connected records. Each one represents something real 
 | **Programme** | A course of study the school offers | Name (Play Group, Nursery, PP1, PP2, Day Care), billing model, required documents, milestones | Linked to classes, fee structures, and students |
 | **Class** | A group of children taught together | Name, capacity, assigned teachers, weekly timetable | Linked to a programme, its teachers, and its students |
 | **Academic Year & Calendar** | The school's yearly framework | Year start and end, terms, holidays, progress-report windows | The single source of dates for attendance, fees, and progress across the system |
-| **Attendance Record** | A child's daily presence | Date, child, class, status (present, absent, late, half-day) | Linked to the child and class; triggers the absence message to the parent |
+| **Attendance Record** | A child's daily presence | Date, child, class, status (present, absent, late, half-day) | Linked to the child and class; triggers the absence alert (text to the primary guardian, in-app notification to other guardians who receive communications) |
 | **Daily Care Log** | The record of a child's day | Meals, naps, activities, health checks, and day-care check-in and check-out times | Linked to the child; shown to parents as the daily feed |
-| **Authorised Pickup List** | The people allowed to collect a child | Approved collectors and their verification details; parent-issued one-time pickup codes | Linked to the child; checked at the gate before release |
+| **Authorised Pickup List** | The people allowed to collect a child | Approved collectors with photos for face verification; parent-issued numeric one-time pickup codes | Linked to the child; checked at the gate before release |
 | **Fee Record** | A child's fee and payment picture | Imported payments, invoice references, amounts paid and due, status | Brought in from CoFee, linked to the child; feeds the fee dashboards |
 | **Progress Report** | A child's progress for a term | The teacher's assessment against the programme's milestones | Linked to the child and term; reviewed, published, and shown to the parent |
 | **Lesson Plan** | A teacher's plan for a class | Activities and learning content for a programme and class | Linked to the programme and class; published to parents |
@@ -653,13 +699,13 @@ The school holds personal records about children — names, documents, medical n
 
 **The most sensitive records are kept apart.** A child's identity documents, medical records, and photo are stored separately from everyday records and are locked down more tightly. Only staff with a genuine need can open them. Each time a staff member opens one, the system records who looked, at what, and when — so the school can always answer who has seen a child's sensitive data. Opening these records also requires the staff member to confirm their identity again.
 
-**Records are preserved, not overwritten.** When something is corrected, the system adds the correction alongside the original rather than erasing it. This keeps a complete and trustworthy history of what happened and when — which protects both the school and the parent.
+**Records are preserved, not overwritten.** When something is corrected, the system adds the correction alongside the original rather than erasing it. This keeps a complete and trustworthy history of what happened and when — which protects both the school and the parent. This applies to the school's operational records — attendance, fees, documents, incidents. Setup items like the timetable and calendar are simply edited, with earlier versions kept for reference.
 
 **Each person sees only what they should.** The system decides what someone can see by combining their role, their branch, and their relationship to a child. Sensitive information is shown only inside the system, to staff who are authorised to see it.
 
-**Parents have rights over their child's data.** Under India's data-protection law, a parent can ask to see, correct, or remove their child's personal information. The school handles these requests. When information must be removed, the system can erase the sensitive content while keeping a simple record that the entry once existed — so the history stays intact without holding on to data that should be gone.
+**Parents have rights over their child's data.** Under India's data-protection law, a parent can ask to see, correct, or remove their child's personal information. The school handles these requests. When information must be removed, the system can erase the sensitive content while keeping a simple record that the entry once existed — so the history stays intact without holding on to data that should be gone. One part of a request needs the login provider: the email address used to sign in is held by that provider, so a request to see or remove login information is answered together with them.
 
-**How long data is kept.** Records are kept for as long as the school needs them to meet its legal and operational obligations, and are removed only by a deliberate, recorded decision — never silently. ⚠️ Needs client input: confirm how long the school must keep financial records and child-safety records, so exact retention periods can be set.
+**How long data is kept.** Records are kept only as long as the school needs them to meet its legal and operational obligations, and are removed only by a deliberate, recorded decision — never silently. The set periods are: financial and fee records for at least seven years; student, welfare, and incident records for the time the child is enrolled plus three years; and parent-teacher meeting notes for two years after the child leaves. ⚠️ One period is still being confirmed with a lawyer: how long child-safety records (incident, welfare, and pickup) must be held. Until that is settled, the floor is a minimum of three years, and in practice these are kept until the child would turn 18 plus a few years — the safe side, and well past the three-year floor.
 
 ---
 
@@ -718,15 +764,15 @@ Staff are invited from the top down. The Owner invites Principals. Each Principa
 3. The staff member opens the link, signs in, and sets up a second sign-in step for security — a code from an authenticator app on their phone, along with backup codes.
 4. They land in the system with access limited to the exact role and branch they were given.
 
-Until the staff member accepts, their invitation stays pending and their access is not active. The second sign-in step is required for all staff, because their accounts reach fees, admissions, and children's records. For certain sensitive actions — such as opening a child's protected documents — the system asks the staff member to confirm their identity again, even while they are already signed in.
+Until the staff member accepts, their invitation stays pending and their access is not active. The second sign-in step is required at every login for staff whose accounts reach management, money, or sensitive records — the Owner, Principal, Coordinator, and Accountant. Teachers sign in with a secure email link instead, and the system asks them for the second step only at the moment they open a sensitive record, such as a child's medical flag or protected documents. For these sensitive actions, the system asks any staff member to confirm their identity again, even while they are already signed in.
 
 The school always keeps at least two Owner accounts. This makes sure the school is never locked out if one Owner is unavailable.
 
 ### 11.2 How External Users Get Access
 
-Parents are the external users, and they are invited automatically. When a child is enrolled, the system emails that child's parent an invitation to the parent app. The parent does not apply for access — enrollment creates it.
+Parents are the external users, and they are invited automatically — but only once a branch's staff trial period is complete and parent access has been switched on (see §6). Before that point, no parent invitations go out, regardless of how many children are enrolled. Once parent access is live, enrolling a child is what creates their invitation: the system emails that child's parent an invitation to the parent app. The parent does not apply for access — enrollment creates it.
 
-The parent signs in with their email, using a secure link or a one-time code. The extra security step is available to parents but not required. Once signed in, the parent sees only their own child — attendance, the daily feed, a simple progress view, fee status, and school announcements. They can submit their child's documents, but their access to records is view-only.
+The parent signs in with their email, using a secure link or a one-time code. There is no second sign-in step for parents in this version. Once signed in, the parent sees only their own child — attendance, the daily feed, a simple progress view, fee status, and school announcements. They can submit their child's documents, but their access to records is view-only.
 
 A child can have more than one guardian. Each guardian receives their own invitation and their own login, and each one's access matches their relationship to the child.
 
@@ -746,7 +792,7 @@ Happy Feet runs on a few outside services. Some are set up by the developer but 
 
 | Service | What It Does | Who Manages It | Cost | If It Lapses |
 |---------|-------------|----------------|------|--------------|
-| **Application Hosting** *(not yet decided)* | Keeps the application running and reachable on the internet for all staff and parents | Developer sets it up; billed to the school | ⚠️ To be decided — the hosting approach is still being worked out. One option (Vercel) is under consideration, but its fit for a school of this scale has not been confirmed. We will reason through this and settle it later | The application goes offline for everyone |
+| **Application Hosting** (Vercel, Mumbai) | Keeps the application running and reachable on the internet for all staff and parents | Developer sets it up; billed to the school | For the MVP, hosting runs on Vercel (Mumbai). It holds no personal data — every record sits in the database in India — so this is the running cost only · ⚠️ Needs client input: confirm the monthly figure at the first invoice | The application goes offline for everyone |
 | **Database, Storage & Backups** (Supabase, Mumbai) | Stores all the school's data — children, staff, fees, attendance, documents — with daily backups, all held in India | Developer sets it up; billed to the school | Monthly subscription, kept small for the current size · ⚠️ Needs client input: confirm the monthly figure | The data cannot be reached until the service is restored |
 | **Secure Login** (Clerk) | Manages secure sign-in, the extra security step for staff, and keeping people signed in | Developer sets it up; billed to the school | Free for basic sign-in and authenticator-app security; paid as the number of users grows · ⚠️ Needs client input: confirm the tier | No one can sign in to the system |
 | **Text Message Service** (MSG91) | Sends text messages to parents, such as absence alerts | The school owns the account | Charged per message sent · ⚠️ Needs client input: confirm the monthly message budget | Text alerts to parents stop sending. In-app notifications still work |
@@ -775,6 +821,7 @@ Happy Feet handles the heavy lifting, but a few things stay the school's respons
 ### 13.2 Regular — Monthly or Per Term
 
 - Bring in the latest CoFee fee data regularly, so the fee status and dashboards stay current.
+- Each month, export the day-care check-in and check-out hours from Happy Feet and enter them into CoFee, so children on day-wise or hour-wise plans are billed correctly. The Accountant runs this.
 - Review the collection and overdue dashboards, and follow up on outstanding fees.
 - Open and close each term's progress-report window, and make sure progress reports are reviewed and published.
 - Add or deactivate staff accounts as people join or leave the team.
@@ -783,6 +830,7 @@ Happy Feet handles the heavy lifting, but a few things stay the school's respons
 
 ### 13.3 Periodic — Annually or at Key Milestones
 
+- Before go-live (one time): register the absence-alert text-message template with MSG91 — a step required by Indian telecom rules (DLT registration). Approval takes days, and no text message can be sent to parents until it is done.
 - Complete the nine-step setup before each new school year, in order.
 - Run the year-end rollover — review active children, acknowledge outstanding dues, and confirm each child's move to the next class.
 - Renew the outside services and confirm billing details are up to date.
@@ -809,6 +857,45 @@ When the system has a problem, the path depends on what kind of problem it is. S
 ## 14. Assumptions to Verify
 
 > **Instructions for the client:** Please read each item below and confirm whether it is correct. If any assumption is wrong, note the correction so the system can be adjusted before it affects your operations.
+
+### 14.0 All Open Items at a Glance
+
+This is the single place that lists **every open question in this document** — the assumptions to confirm (14.1–14.10), the inputs we need (14.11), and the billing and support details flagged elsewhere. Nothing here blocks the build; each has a safe default or interim handling. The detail for each sits where the "Where" column points.
+
+| Open item | Who answers | Where |
+|---|---|---|
+| Separate admission / registration fee? | Owner | §14.1 |
+| Full term fee for mid-term joiners (no splitting) | Owner | §14.2 |
+| Branch 2 same programmes & fees as Branch 1 | Owner | §14.3 |
+| Transport optional and billed separately | Owner | §14.4 |
+| Meals not offered yet | Owner | §14.5 |
+| Fees stay on CoFee this version | Owner | §14.6 |
+| Absence alerts go by paid text message | Owner | §14.7 |
+| Collect the child's Aadhaar at all? | Owner + lawyer | §14.8 |
+| Collect / submit APAAR & PEN now? | Owner + lawyer | §14.9 |
+| Photos stored but not shared | Owner | §14.10 |
+| Safe adults-to-children ratio (default 1:10 / 1:5) | Owner | §14.11 |
+| Morning cut-off time for sending absence texts (default 9:30 AM) | Owner | §5.7 |
+| Staff-ID format (default `HF-EMP-001`) | Owner | §14.11 |
+| Waitlist expiry + decline-message wording | Owner | §14.11 |
+| Which fee categories carry GST (tuition exempt; transport, meals, materials, events — confirm which) | Owner + Accountant | §14.11 |
+| Child-safety record retention period | Lawyer | §14.11, §9 |
+| Retention period for child photographs under DPDP | Lawyer | §14.11 |
+| Payment cutover date — when Happy Feet becomes the official fee record | Owner | §14.11 |
+| Can CoFee produce a per-child paid/due statement as of the cutover date | Owner | §14.11 |
+| Automatic notification to guardian on a manually recorded cash/bank payment | Owner | §14.11 |
+| Approved wording for the standard fee reminder message | Owner | §14.11 |
+| Outstanding fees visible to non-paying guardians (default: payer only) | Owner | §14.11 |
+| Security deposits tracked in this release | Owner | §14.11 |
+| Approved expense categories (default list provided) | Owner | §14.11 |
+| Confirmed term dates for Academic Year 2026–27 | Owner | §14.11 |
+| Term 1 school days before the attendance cutover date | Owner | §14.11 |
+| Hosting monthly cost | Owner, at first invoice | §14.11, §12 |
+| Database, Login, and Text-Message monthly figures | Owner, at first invoice | §12 |
+| CoFee cost; who owns and pays each outside service | Owner | §12 |
+| Developer support channel, hours, and response times | Owner + developer | §13.4 |
+
+---
 
 ### 14.1 No separate admission fee
 
@@ -857,9 +944,9 @@ When the system has a problem, the path depends on what kind of problem it is. S
 
 ### 14.6 Fees stay on CoFee in this version
 
-**What was assumed:** The school keeps collecting fees through CoFee. Happy Feet only brings in CoFee's data to view and report on — it does not take payments or issue invoices itself yet.
+**What was assumed:** The school keeps collecting most fees through CoFee. Happy Feet brings in CoFee's data to view and report on, and also lets the Accountant manually record cash or bank payments collected outside CoFee. It does not issue its own invoices or take online payments from parents yet.
 
-**Why it matters:** If the school expects to collect payments inside Happy Feet now, that is a larger scope than this version covers.
+**Why it matters:** If the school expects to take payments online through Happy Feet now, that is a larger scope than this version covers.
 
 - [ ] Correct as stated
 - [ ] Needs correction: _______________
@@ -902,11 +989,150 @@ When the system has a problem, the path depends on what kind of problem it is. S
 
 ---
 
+## 14.11 Open Questions Still Awaiting Input
+
+These are not assumptions to confirm — they are open items we need an answer on before, or shortly after, go-live. Each has a safe default so nothing is blocked in the meantime. Please fill in the blanks.
+
+**1. Safe adults-to-children ratio** *(owner)*
+
+**What to understand:** The system checks, in real time, whether enough adults are present for the number of children in a class or activity, and warns staff when the ratio drops too low. The safe number may differ by age group. Default we will use unless you change it: **1 adult per 10 children** for Nursery, PP1, and PP2; **1 per 5** for Play Group and Day Care.
+
+**Why it matters:** Set the ratio too strict and staff get warnings for no reason; set it too loose and the system stays silent during a genuine staffing shortfall. Either way undermines trust in the safety check.
+
+- Nursery / PP1 / PP2: 1 adult per _______ children
+- Play Group / Day Care: 1 adult per _______ children
+
+**2. Hosting monthly cost** *(owner — at first invoice)*
+
+**What to understand:** The hosting provider and setup are already decided (see §12). Only the actual rupee figure is missing, which can only be confirmed once the first invoice arrives.
+
+**Why it matters:** Without the real figure, the cost section in §12 stays an estimate rather than a number the Owner can budget against.
+
+- [ ] Confirm the monthly hosting figure once the first invoice arrives.
+
+**3. Child-safety record retention period** *(lawyer)*
+
+**What to understand:** How long the school must legally keep child-safety records — incidents, welfare concerns, and pickup records (see §9). This needs an Indian education / child-welfare lawyer, because three laws pull in different directions at once: limitation (a child can claim after turning 18), POCSO (no time limit for child-abuse cases), and DPDP (don't keep data longer than needed). Until confirmed, the floor is a minimum of three years, and in practice these are held until the child would turn 18 plus a few years.
+
+**Why it matters:** Delete these records too early and the school may lose its protection if a claim is raised years later; keep them too long and the school risks breaching DPDP's "don't hold longer than needed" rule. This number should come from a lawyer, not a guess.
+
+- Confirmed retention period for child-safety records: _______________
+
+**4. Staff ID format** *(owner — cosmetic)*
+
+**What to understand:** Every staff member already gets an ID number automatically (see §6). This only asks what that ID should look like — its prefix or format — not whether one is issued. Default: `HF-EMP-001`.
+
+**Why it matters:** Low-stakes, but staff IDs appear on staff lists and exports, so settling the format once avoids relabeling everyone later.
+
+- Preferred staff-ID format / prefix: _______________
+
+**5. Waitlist expiry and decline wording** *(owner)*
+
+**What to understand:** Two small but separate choices about an application that does not become an enrolment: (a) how long a waitlisted family has to respond before the offer expires, and (b) whether a family who doesn't get a place is sent a short message or simply sees the application close with no message.
+
+**Why it matters:** Without an expiry, a waitlisted spot can sit reserved indefinitely instead of freeing up for the next family in line. Without agreed wording, staff are left improvising a sensitive message to a family that didn't get in.
+
+- Waitlist stays open for: _______________
+- On decline: [ ] send a short message  [ ] close with no message
+
+**6. GST on extra services** *(owner, with the school's accountant)*
+
+**What to understand:** Tuition is expected to stay GST-exempt, but transport, meals, materials, and events fees may or may not attract GST individually — each needs to be confirmed on its own with the school's accountant, not assumed from the others.
+
+**Why it matters:** Getting this wrong is a tax compliance risk, not just a wording detail — invoices could charge tax that shouldn't be there, or miss tax that should.
+
+- Transport: [ ] GST applies  [ ] no GST
+- Meals: [ ] GST applies  [ ] no GST
+- Materials: [ ] GST applies  [ ] no GST
+- Events: [ ] GST applies  [ ] no GST
+
+**7. Retention period for child photographs** *(lawyer)*
+
+**What to understand:** A narrower question than item 3 above — specifically how long child photographs (not records or incidents) may be legally retained under DPDP, since photos carry their own data-protection rules (see §14.10).
+
+**Why it matters:** Photos are currently stored but not shared with parents. Before that policy changes, or before old photos are routinely deleted, the school needs this legal retention window confirmed.
+
+- Confirmed retention period for child photographs: _______________
+
+**8. Payment cutover date** *(owner)*
+
+**What to understand:** The exact date the school stops treating CoFee and paper as the source of truth for fees and starts treating Happy Feet as the official record — a specific date, not just "go-live week" in general.
+
+**Why it matters:** Every fee calculated after that date depends on knowing precisely where the old records stop and the new ones start. An unclear cutover risks double-charging or missing charges right around the transition.
+
+- Cutover date: _______________
+
+**9. CoFee paid/due statement at cutover** *(owner)*
+
+**What to understand:** Whether CoFee can generate a clean, per-child list of what's been paid and what's still owed, dated exactly at the cutover point — not whether the data exists somewhere in CoFee, but whether it can be produced as one statement.
+
+**Why it matters:** The opening fee balances entered during go-live setup (see §5.1) are only as accurate as this statement. Without it, the school risks starting Happy Feet with wrong balances that take months to notice and unwind.
+
+- [ ] Yes, a statement can be produced  [ ] No
+
+**10. Notification on manually recorded payments** *(owner)*
+
+**What to understand:** When the Accountant manually enters a cash or bank payment received outside CoFee (see §5.12), this decides whether the paying guardian is automatically told the payment was recorded — similar to a receipt.
+
+**Why it matters:** Skip this and parents may stay unsure their payment was received; turn it on without it being wanted and it creates notification noise for a routine bookkeeping action.
+
+- [ ] Yes, notify automatically  [ ] No, no notification needed
+
+**11. Fee reminder wording** *(owner)*
+
+**What to understand:** The exact words sent to a guardian when a fee is due or overdue. Tone matters here, since it is a message to a parent about money.
+
+**Why it matters:** Without approved wording, the system either sends nothing — so parents miss reminders — or staff have to draft and approve a message every time, which defeats the point of automating it.
+
+- Approved wording: _______________
+
+**12. Outstanding fees visible to non-paying guardians** *(owner)*
+
+**What to understand:** A child can have more than one guardian, but usually only one is the designated payer (see §3, "Who pays"). This decides whether a second guardian — who is not the payer — can also see what's owed. Default we will use unless you change it: no, payer only.
+
+**Why it matters:** Family financial information can be sensitive between guardians, for example separated parents. The "payer only" default protects privacy, but the school may prefer it shared more widely.
+
+- [ ] Visible to all guardians  [ ] Payer only (default)
+
+**13. Security deposits** *(owner)*
+
+**What to understand:** Different from the admission/registration fee question in §14.1 — this asks whether the school takes a refundable security deposit at all. If so, it needs its own tracking (held, refunded, forfeited), separate from ordinary fee income.
+
+**Why it matters:** If deposits exist but aren't tracked as their own item, that money has nowhere clear to live in the fee system and risks being recorded incorrectly as ordinary fee income.
+
+- [ ] Yes, track deposits  [ ] No, not in this release
+
+**14. Expense categories** *(owner)*
+
+**What to understand:** How the school's outgoing costs — not fees coming in — get labelled when recorded. The default list covers common preschool costs, but the school may already use different categories. Default we will use unless you change it: salaries, rent, utilities, supplies, maintenance, food, transport, other.
+
+**Why it matters:** The categories decide how useful expense reports are later. Changing them after data has already been entered means relabeling everything retroactively.
+
+- Approved categories: _______________
+
+**15. Confirmed term dates for the coming year** *(owner)*
+
+**What to understand:** The year-setup sequence in §5.2 needs the real start and end dates for each term before classes, fees, and the calendar can be built around them. This is data entry, not a policy decision.
+
+**Why it matters:** Attendance, fee terms, and progress-report windows all follow this calendar (see §2). Without confirmed dates, none of those areas can be finished for the new year.
+
+- Term 1: _______________  Term 2: _______________  Term 3: _______________
+
+**16. Term 1 school days before the attendance cutover** *(owner)*
+
+**What to understand:** The count of school days that already happened in Term 1 before Happy Feet went live and started tracking attendance day by day — the days that instead sit inside the read-only legacy year (see §5.1).
+
+**Why it matters:** Term-level attendance totals and reports need this number to stay accurate. Without it, Term 1's attendance percentage would silently look lower than it really was, since the pre-launch days are otherwise invisible to the system.
+
+- Number of days: _______________
+
+---
+
 ## 15. Glossary
 
 | Term | Plain English Definition |
 |------|--------------------------|
-| **Academic Year** | The school's yearly cycle, divided into terms, that all dates and operations follow. |
+| **Academic Year** | The school's yearly cycle, divided into terms, that all dates and operations follow. Has four stages: legacy (a read-only, pre-launch year), upcoming, active, and closed. |
 | **Admission Number** | The unique number that identifies a child at the school; kept for life and never changed. |
 | **Application** | A request to admit a child, recorded before they become an enrolled student. |
 | **Authenticator App** | A free app on a staff member's phone that generates the security code used as the second sign-in step. |
@@ -926,7 +1152,7 @@ When the system has a problem, the path depends on what kind of problem it is. S
 | **Milestone** | A developmental goal set for a programme, used to assess a child's progress. |
 | **Owner (Admin)** | The school owner; the highest authority, across all branches. |
 | **Parent App** | The part of the system parents use to follow their own child. |
-| **Pickup Code** | A one-time code a parent creates in the app to authorise a one-off pickup. |
+| **Pickup Code** | A short numeric one-time code a parent creates in the app and shares by phone or WhatsApp to authorise a one-off pickup. |
 | **Principal (Branch Admin)** | The person who runs a single branch day to day. |
 | **Programme** | A course of study the school offers — Play Group, Nursery, PP1, PP2, or Day Care. |
 | **Progress Report** | A child's termly assessment against milestones, reviewed and published to the parent. |
@@ -936,7 +1162,7 @@ When the system has a problem, the path depends on what kind of problem it is. S
 | **Submission Window** | The set period each term when teachers can submit progress reports. |
 | **Term** | One of the three parts the school year is divided into. |
 | **Transfer Certificate** | A formal document the school issues when a child leaves, confirming their transfer. |
-| **Two-Step Sign-In** | A sign-in that needs a password plus a security code; required for all staff. |
+| **Two-Step Sign-In** | A sign-in that needs a second security code in addition to the login; required at every login for the Owner, Principal, Coordinator, and Accountant, and required of teachers at the point they open a sensitive record. |
 | **Welfare Concern** | A teacher-raised concern about a child's wellbeing; a permanent record never shown to parents. |
 
 ---
